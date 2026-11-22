@@ -571,3 +571,4 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 .qb-omni .qb-ic,.qb-omni .qb-ic:hover:not(:disabled),.qb-omni .qb-ic:active,.qb-omni .qb-ic:focus,.qb-omni .qb-ic:focus-visible{background:transparent;color:var(--gray);outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}
 .qb-omni input,.qb-omni input:focus,.qb-omni .qb-disp,.qb-omni .qb-disp:hover,.qb-omni .qb-disp:active,.qb-omni .qb-disp:focus,.qb-omni .qb-disp:focus-visible{outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}
 .qb-omni .qb-ic:active svg,.qb-omni .qb-ic:hover svg{transform:none}
+.cs-note[data-ok="0"],.cs-note[data-ok="2"]{color:var(--gray)} .cs-form .cs-send:disabled{cursor:not-allowed;opacity:.45}
