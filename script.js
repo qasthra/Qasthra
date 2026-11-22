@@ -632,8 +632,8 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
     + '<button class="btn btn-mono au-go" type="submit">Continue</button>'
     + '<p class="au-note" role="status" aria-live="polite"></p>'
     + '<div class="au-why">'
-    + '<p>Google and Apple sign-in are not supported on purpose. Qasthra is built to stand on its own, so your account never depends on another company.</p>'
-    + '<p>By continuing you agree to the <a href="#signin">Terms of Service</a> and <a href="#signin">Privacy Policy</a>. Forgot your password? <a href="#signin">Account Recovery</a> helps you regain access to your account if you cannot sign in.</p></div>'
+    + '<p>Google and Apple sign-in are not supported. Qasthra stands on its own foundations and technologies.</p>'
+    + '<p>By continuing you agree and have read:</p><p class="au-links"><a href="#">Licenses and Policies</a> | <a href="#">Terms and Conditions</a> | <a href="#">Guidance</a> | <a href="#">Recovery</a> | <a href="#">Certificates</a></p></div>'
     + '</form></main></div>';
 
   const DASH = '<div class="qa"><header class="qa-bar" id="qbHost"></header><main class="qa-view"></main></div>';
