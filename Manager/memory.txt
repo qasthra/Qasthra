@@ -1,0 +1,6 @@
+[2026-11-22 20:08:57] RUN  /auto(0)
+    -> 1 planner command(s)
+[2026-11-22 20:09:00] OK   /replace(script.js|e.q = ctext(e.c); ctlOn = true;|e.q = ctext(e.c); if (e.q === QZ && !qfull(w)) { w.tr[w.i] = { k: 'universe', q: '' }; ctlOn = false; clearTimeout(ctlT); clearTimeout(hrec); keep(); draw(); document.querySelectorAll('[data-ro]').forEach((n) => { n.textContent = '0'; }); return true; } ctlOn = true;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 20:09:00] DONE /auto(0)
+    -> 1/1 applied
