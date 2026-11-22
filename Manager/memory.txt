@@ -237,3 +237,43 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-22 23:48:25] DONE /auto(1)
     -> 6/6 applied
+[2026-11-23 00:02:13] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-23 00:02:14] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261123_000214.js
+[2026-11-23 00:02:14] OK   /replace(script.js|</a>' + THEME + '</header>|</a></header>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 00:02:15] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261123_000215.css
+[2026-11-23 00:02:16] OK   /replace(style.css|gap:6px 14px|gap:6px 4px)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-23 00:02:16] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-23 00:28:39] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-23 00:28:40] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261123_002840.js
+[2026-11-23 00:28:40] OK   /delete(script.js|let qtm = 0;)
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 00:28:41] OK   /delete(script.js|const queueCoordLoad)
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 00:28:41] OK   /replace(script.js|{ const now = speed(t0); if (!nudge(k, 1))|{ if (!nudge(k, 1))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 00:28:41] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261123_002841.css
+[2026-11-23 00:28:42] OK   /append(style.css|/* ---------- touch + reduced motion ---------- */)
+    -> Appended to style.css
+[2026-11-23 00:28:42] OK   /append(style.css|.btn,.qb-btn,.qb-item,.qb-w,.cs-copy{touch-action:manipulation})
+    -> Appended to style.css
+[2026-11-23 00:28:43] OK   /append(style.css|@media (prefers-reduced-motion:reduce){html,body,.btn{transition:none}.btn:active{transform:none}})
+    -> Appended to style.css
+[2026-11-23 00:28:43] DONE /auto(1)
+    -> 6/6 applied
+[2026-11-23 00:29:58] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-23 00:30:00] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261123_003000.js
+[2026-11-23 00:30:01] OK   /replace(script.js|if (!nudge(k, 1) {|if (!nudge(k, 1)) {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 00:30:01] DONE /auto(1)
+    -> 1/1 applied
