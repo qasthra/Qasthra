@@ -12,11 +12,10 @@
 # ---
 Manager/planner.txt
 
-# Materials: show the folder tree, not the contents
+# Materials: show only the folder
 !Materials/
-!Materials/*/
-!Materials/*/*/
-!Materials/**/.gitkeep
+Materials/*
+!Materials/.gitkeep
 
 # Files
 !system.py
