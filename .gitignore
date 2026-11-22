@@ -1,20 +1,22 @@
-#Default
+# Ignore everything
 *
 
-#Included
-Manager/
-Manager/**
-#Excluded
+# Except these folders
 !Materials/
-!Sources/**
 !Materials/**
+!Sources/
+!Sources/**
+!Language/
+!Language/**
+# Except these files
+!system.py
+!datahub.db
+# ---
 !index.html
 !style.css
 !script.js
 !.gitignore
-!Sources/
-!system.py
-!datahub.db
 !README.md
-!Pages/
-!Pages/**
+# ---
+!core-unit.zip
+!manifest.webmanifest
