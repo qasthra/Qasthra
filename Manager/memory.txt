@@ -62,3 +62,65 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-22 20:46:59] DONE /auto(1)
     -> 7/7 applied
+[2026-11-22 21:31:20] RUN  /auto(1)
+    -> 10 planner command(s)
+[2026-11-22 21:31:20] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261122_213120.js
+[2026-11-22 21:31:20] OK   /replace(script.js|const SITES = {}, SC = new Map();|const SITES = {}, ICONS = {}, SC = new Map(), FAV = 'Sources/Icons/Qasthra.svg';\nconst favOf = (x) => { const e = ent(x); const k = e.k === 'coord' ? ctext(e.c) : ''; return ICONS[k] ? ICONS[k] : FAV; };\nconst favBind = (im) => { im.onerror = () => { im.onerror = null; im.src = FAV; }; };\nconst favDraw = () => { document.querySelectorAll('.qb-strip .qb-w').forEach((t) => { const x = st.worlds.find((y) => String(y.id) === t.dataset.w); const im = t.querySelector('.qb-fav'); if (!x || !im) return; const s = favOf(x); if (im.getAttribute('src') !== s) { favBind(im); im.src = s; } }); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:21] OK   /replace(script.js|sel = 'id,name,coord,official,searches'|sel = 'id,name,coord,official,searches,icon')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:21] OK   /replace(script.js|r.forEach((s) => { SITES[s.coord] = s.name; });|r.forEach((s) => { SITES[s.coord] = s.name; ICONS[s.coord] = /^https:/i.test(s.icon) ? s.icon : ''; });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:21] OK   /replace(script.js|select('name').eq('coord', k)|select('name,icon').eq('coord', k))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:22] OK   /replace(script.js|else SITES[k] = r.data && r.data.name ? r.data.name : ''; } catch (e) { SITES[k] = ''; } dispDraw();|else { SITES[k] = r.data && r.data.name ? r.data.name : ''; ICONS[k] = r.data && /^https:/i.test(r.data.icon) ? r.data.icon : ''; } } catch (e) { SITES[k] = ''; } favDraw(); dispDraw();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:22] OK   /replace(script.js|'><span>' + esc(title(x)) + '</span>'|'><img class="qb-fav" src="' + esc(favOf(x)) + '" alt="" width="16" height="16"><span>' + esc(title(x)) + '</span>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:23] OK   /replace(script.js|const a = $('[aria-selected="true"]', strip);|strip.querySelectorAll('.qb-fav').forEach(favBind); const a = $('[aria-selected="true"]', strip);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:23] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261122_213123.css
+[2026-11-22 21:31:23] OK   /append(style.css|.qb-w{padding-left:10px}\n.qb-fav{flex:none;width:16px;height:16px;border-radius:4px;object-fit:contain;pointer-events:none}\n.qb-w[data-priv] .qb-fav{opacity:.85})
+    -> Appended to style.css
+[2026-11-22 21:31:24] OK   /replace(script.js|Qasthra_outro.gif', 3200|Qasthra_outro.gif', 4300)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:31:24] OK   /replace(script.js|Qasthra_intro.gif', 3200|Qasthra_intro.gif', 4300)
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-22 21:31:24] DONE /auto(1)
+    -> 10/10 applied
+[2026-11-22 21:37:31] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-22 21:37:32] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261122_213732.js
+[2026-11-22 21:37:32] OK   /replace(script.js|if (k0 === QZ) { msg(ov, 'Nothing to show here yet.'); return; } const w = cur();|const bar = $('.qb-omni input'); if (res && !res.text) { if (e.k === 'search') { e.k = 'coord'; e.c = res.c; e.q = ctext(res.c); } if (res.name) SITES[res.k] = res.name; qSeen = res.k; window.QST = null; ov.innerHTML = ''; const t2 = $('.qb-w[aria-selected="true"] span'); if (t2) t2.textContent = title(cur()); if (bar) bar.value = ''; dispDraw(); keep(); return; } if (k0 === QZ) { ov.innerHTML = ''; if (bar) bar.value = ''; return; } const w = cur();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:37:34] OK   /replace(script.js|else msg(ov, 'Nothing found here.');|else { if (bar) bar.value = ''; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:37:34] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-22 21:41:17] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-22 21:41:18] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261122_214117.js
+[2026-11-22 21:41:18] OK   /replace(script.js|if (k0 === QZ) { ov.innerHTML = ''; if (bar) bar.value = ''; return; }|if (k0 === QZ) { const w1 = cur(); w1.tr[w1.i] = { k: 'universe', q: '' }; keep(); draw(); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:41:20] OK   /replace(script.js|w.tr[w.i] = { k: 'coord', q: QZ, c: coords(QZ) };|w.tr[w.i] = { k: 'universe', q: '' };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:41:20] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-22 21:51:06] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-22 21:51:06] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261122_215106.js
+[2026-11-22 21:51:06] OK   /replace(script.js|Math.max(180, Math.round(700 - 520 * sp * sp))|Math.max(40, Math.round(1000 / (3 + 22 * sp * sp))))
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-22 21:51:07] OK   /replace(script.js|(Date.now() - s) / 3500|(Date.now() - s) / 2500)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-22 21:51:08] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261122_215108.css
+[2026-11-22 21:51:08] OK   /append(style.css|.qb-omni,.qb-omni:hover,.qb-omni:active,.qb-omni:focus-within{border-color:var(--line);box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}\n.qb-omni .qb-ic,.qb-omni .qb-ic:hover:not(:disabled),.qb-omni .qb-ic:active,.qb-omni .qb-ic:focus,.qb-omni .qb-ic:focus-visible{background:transparent;color:var(--gray);outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}\n.qb-omni input,.qb-omni input:focus,.qb-omni .qb-disp,.qb-omni .qb-disp:hover,.qb-omni .qb-disp:active,.qb-omni .qb-disp:focus,.qb-omni .qb-disp:focus-visible{outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}\n.qb-omni .qb-ic:active svg,.qb-omni .qb-ic:hover svg{transform:none})
+    -> Appended to style.css
+[2026-11-22 21:51:08] DONE /auto(1)
+    -> 3/3 applied
