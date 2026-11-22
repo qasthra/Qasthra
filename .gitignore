@@ -9,6 +9,9 @@
 !Manager/
 !Manager/**
 
+# ---
+Manager/planner.txt
+
 # Materials: show the folder tree, not the contents
 !Materials/
 !Materials/*/
