@@ -1,14 +1,21 @@
 # Ignore everything
 *
 
-# Except these folders
-!Materials/
-!Materials/**
+# Folders (with contents)
 !Sources/
 !Sources/**
 !Language/
 !Language/**
-# Except these files
+!Manager/
+!Manager/**
+
+# Materials: show the folder tree, not the contents
+!Materials/
+!Materials/*/
+!Materials/*/*/
+!Materials/**/.gitkeep
+
+# Files
 !system.py
 !datahub.db
 # ---
