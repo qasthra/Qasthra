@@ -630,7 +630,7 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
     + '<p class="au-note" role="status" aria-live="polite"></p>'
     + '<div class="au-why">'
     + '<p>Google and Apple sign-in are not supported. Qasthra stands on its own foundations and technologies.</p>'
-    + '<p>By continuing you agree and have read:</p><p class="au-links"><a href="#">Licenses and Policies</a> | <a href="#">Terms and Conditions</a> | <a href="#">Guidance</a> | <a href="#">Recovery</a> | <a href="#">Certificates</a></p></div>'
+    + '<p>By continuing you agree and have read:</p><p class="au-links"><a href="#" data-pop="licenses">Licenses and Policies</a> | <a href="#" data-pop="terms">Terms and Conditions</a> | <a href="#" data-pop="guidance">Guidance</a> | <a href="#" data-pop="recovery">Recovery</a> | <a href="#" data-pop="certificates">Certificates</a></p></div>'
     + '</form></main></div>';
 
   const DASH = '<div class="qa"><header class="qa-bar" id="qbHost"></header><main class="qa-view"></main></div>';
@@ -1180,3 +1180,4 @@ const prev = Q.dashboard; Q.dashboard = () => { prev(); init('qbOrb', 'qbBall');
   init();
 })();
 ['keyup', 'compositionend', 'paste', 'focusout'].forEach((t) => document.addEventListener(t, (e) => { const f = e.target && e.target.closest ? e.target.closest('.cs-form') : null; if (f && window.csGate) setTimeout(() => window.csGate(f), 0); }));
+(function(){var last=null,app=document.getElementById('app');function close(){var p=document.querySelector('.pop');if(!p)return;p.remove();document.documentElement.classList.remove('pop-open');if(app)app.inert=false;if(last&&last.focus)last.focus();last=null}function open(id,from){close();last=from;var p=document.createElement('div');p.className='pop';p.setAttribute('role','dialog');p.setAttribute('aria-modal','true');p.setAttribute('aria-label',from.textContent);p.dataset.pop=id;var b=document.createElement('button');b.type='button';b.className='pop-x';b.setAttribute('aria-label','Close');b.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';p.appendChild(b);document.body.appendChild(p);document.documentElement.classList.add('pop-open');if(app)app.inert=true;b.focus()}document.addEventListener('click',function(e){var a=e.target.closest('a[data-pop]');if(a){e.preventDefault();open(a.dataset.pop,a);return}if(e.target.closest('.pop-x'))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})})();

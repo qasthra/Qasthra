@@ -596,3 +596,4 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 .qb-kirby .qb-jx{display:none!important}
 }
 
+.pop{position:fixed;inset:0;z-index:1000;background:var(--bg);color:var(--mono)}.pop-x{position:absolute;top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--mono);cursor:pointer}.pop-x:hover{border-color:var(--gray)}.pop-x:focus-visible{outline:2px solid var(--mono);outline-offset:2px}html.pop-open,html.pop-open body{overflow:hidden}
