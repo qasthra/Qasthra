@@ -29,3 +29,5 @@ Materials/*
 # ---
 !core-unit.zip
 !manifest.webmanifest
+!pwa.js
+!sw.js
