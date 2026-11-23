@@ -552,3 +552,47 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 /* ---------- touch + reduced motion ---------- */
 .btn,.qb-btn,.qb-item,.qb-w,.cs-copy{touch-action:manipulation}
 @media (prefers-reduced-motion:reduce){html,body,.btn{transition:none}.btn:active{transform:none}}
+
+/* ---------- tab stars, tab drag, sync dot, lock between Back and Next, Kirby strip ---------- */
+@keyframes qPop{0%{transform:scale(1)}45%{transform:scale(1.75)}100%{transform:scale(1)}}
+@keyframes qSpin{to{transform:rotate(360deg)}}
+@keyframes qBlink{50%{opacity:.25}}
+.qb-w{min-width:124px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.qb-star{flex:none;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;border-radius:6px;background:transparent;color:inherit;opacity:.7;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.qb-star:hover:not(:disabled){opacity:1;background:color-mix(in srgb,var(--gray) 22%,transparent)}
+.qb-star:focus-visible{outline:2px solid var(--mono);outline-offset:2px}
+.qb-star svg{width:14px;height:14px}
+.qb-star[aria-pressed="true"]{opacity:1}
+.qb-star[aria-pressed="true"] svg{fill:currentColor}
+.qb-star:disabled{opacity:.28;cursor:default}
+.qb-star.pop svg{animation:qPop .42s cubic-bezier(.2,.9,.3,1.5)}
+.qb-w.shift{transition:transform .22s cubic-bezier(.2,.8,.2,1),background .15s ease,color .15s ease}
+.qb-w.drag{transition:none;z-index:5;cursor:grabbing;background:color-mix(in srgb,var(--gray) 26%,var(--bg));color:var(--mono)}
+.qb-nav{align-items:center;gap:2px;flex:none}
+.qb-nav .qb-ic[aria-pressed="true"]{color:var(--mono);background:transparent}
+.qb-sync{position:relative}
+.qb-sync[data-s="off"]{opacity:.5}
+.qb-set .qb-sync[aria-pressed="true"]{background:transparent}
+.qb-sync:not([data-s="off"]){color:var(--mono)}
+.qb-sync:not([data-s="off"])::after{content:"";position:absolute;right:5px;top:5px;width:7px;height:7px;border-radius:50%;background:var(--mono);box-shadow:0 0 0 2px var(--bg)}
+.qb-sync[data-s="busy"] svg{animation:qSpin 1s linear infinite}
+.qb-sync[data-s="busy"]::after{animation:qBlink 1s ease-in-out infinite}
+.qb-sync[data-s="err"]{color:#e5484d}
+.qb-sync[data-s="err"]::after{background:#e5484d}
+@media (prefers-reduced-motion:reduce){.qb-sync svg,.qb-sync::after,.qb-star.pop svg{animation:none!important}}
+.qb-col{display:contents}
+.qb-kirby{display:none}
+@media (min-width:561px){
+.qb{flex-direction:row;align-items:stretch}
+.qb-col{display:flex;flex-direction:column;flex:1 1 auto;min-width:0}
+.qb-kirby{display:block;position:relative;flex:none;width:88px;height:86px;z-index:3;background:linear-gradient(to bottom,color-mix(in srgb,var(--gray) 10%,var(--bg)) 38px,var(--bg) 38px)}
+.qb-kb{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.qb-kf{fill:var(--bg)}
+.qb-ks{fill:none;stroke:var(--line);stroke-width:1}
+.qb-kirby .qb-orb{display:block;position:absolute;left:12px;top:11px;width:64px;height:64px;border-radius:50%;background:var(--bg);box-shadow:0 0 0 1px var(--line);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;outline:0;transition:box-shadow .3s ease}
+.qb-kirby .qb-orb.on{box-shadow:0 0 0 1px var(--gray)}
+.qb-kirby .qb-orb:focus-visible{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--mono)}
+.qb-kirby .qb-orb canvas{display:block;width:100%;height:100%;border-radius:50%;pointer-events:none}
+.qb-kirby .qb-jx{display:none!important}
+}
+
