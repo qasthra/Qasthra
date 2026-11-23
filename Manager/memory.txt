@@ -277,3 +277,89 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-23 00:30:01] DONE /auto(1)
     -> 1/1 applied
+[2026-11-23 10:05:58] RUN  /auto(0)
+    -> 41 planner command(s)
+[2026-11-23 10:05:58] OK   /replace(script.js|window.addEventListener('hashchange', sync);|window.addEventListener('hashchange', sync); document.addEventListener('visibilitychange', () => { if (document.hidden) { stop(); } else if (isDash() && !window.QBLOCK) { authed().then((ok) => { if (ok && isDash() && !window.QBLOCK && !document.hidden) start(); }); } }); window.addEventListener('pagehide', stop);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:05:59] OK   /replace(script.js|e.k === 'coord' ? siteName(e.c) : e.q; };|e.k === 'coord' ? siteTitle(e.c) : e.q; };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:05:59] OK   /replace(script.js|const lbl = (q) => { const c = coords(q); return c ? siteName(c) : q; };|const lbl = (q) => { const c = coords(q); return c ? siteTitle(c) : q; };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:00] OK   /replace(script.js|const dispDraw = () =>|const siteTitle = (c) => SITES[ctext(c)] || (ctext(c) === QZ ? 'Qasthra' : ctext(c));\nconst dispDraw = () =>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:00] OK   /replace(script.js|rec('world', title(w));|rec('world', ent(w).q || title(w));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:01] OK   /replace(script.js|window.QAUTH.showVeil('Sources/Videos/Qasthra_intro.gif', 4300); const saved = await authed();|window.QAUTH.showVeil('Sources/Videos/Qasthra_intro.gif', 4300); window.QWAIT = true; let saved = false; try { saved = await Promise.race([authed(), new Promise((r) => setTimeout(() => r(false), 8000))]); } catch (e) { saved = false; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:01] OK   /replace(script.js|if (saved && !isDash()) location.hash = 'dashboard';|if (saved && !isDash()) { location.hash = 'dashboard'; window.QWAIT = false; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:02] OK   /replace(script.js|else if (!isDash()) { delete document.documentElement.dataset.screenTransition; if (window.QAUTH) window.QAUTH.hideVeil(); }|else { window.QWAIT = false; if (!isDash()) { delete document.documentElement.dataset.screenTransition; if (window.QAUTH) window.QAUTH.hideVeil(); } })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:02] OK   /replace(script.js|veilTimer = setTimeout(() => { L.classList.add('out'); veilRemoveTimer = setTimeout(() => {|const finish = () => { if (window.QWAIT) { veilTimer = setTimeout(finish, 150); return; } L.classList.add('out'); veilRemoveTimer = setTimeout(() => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:03] OK   /replace(script.js|resolve(); }, 400); }, ms|resolve(); }, 400); }; veilTimer = setTimeout(finish, ms)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:03] OK   /replace(script.js|await showVeil('Sources/Videos/Qasthra_outro.gif', 4300); try { if (window.db) await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} sP = null; location.hash = '';|const veil = showVeil('Sources/Videos/Qasthra_outro.gif', 4300); try { if (window.db) await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} sP = null; await veil; location.hash = '';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:03] OK   /replace(script.js|Any missing user or validation error means the local session is invalid.|A missing user or a rejected token means the local session is invalid. A network error (offline) keeps it.)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:04] OK   /replace(script.js|const clearInvalid = async () => { try { await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} };|const clearInvalid = async () => { try { await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} }; const net = (e) => !!e && (e.name === 'AuthRetryableFetchError' || e.status === 0 || e.status >= 500 || navigator.onLine === false);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:04] OK   /replace(script.js|{ await clearInvalid(); return null; }\n      return s;\n    } catch (e) { await clearInvalid(); return null; }|{ if (net(u.error)) return s; await clearInvalid(); return null; }\n      return s;\n    } catch (e) { if (!net(e)) await clearInvalid(); return null; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:05] OK   /replace(script.js|const QZ = 'X=0, Y=0, Z=0',|/* Qasthra.qst is a placeholder. It is the page the universe (X=0, Y=0, Z=0, the Qasthra tab) will load the way a site loads index.html. Nothing reads it yet. Other sites still read their text from the Supabase sites.qst column. */\nconst HOME_QST = 'Qasthra.qst';\nconst QZ = 'X=0, Y=0, Z=0',)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:05] OK   /delete(script.js|const THEME = )
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 10:06:06] OK   /delete(script.js|const SUN = '<svg)
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 10:06:06] OK   /delete(script.js|const MOON = '<svg)
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 10:06:07] OK   /delete(script.js|const cycleRate = )
+    -> Deleted 1 line(s) from script.js
+[2026-11-23 10:06:07] OK   /replace(script.js|, rate: ld('rate', 0.5) };| };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:08] OK   /replace(script.js|focus: () => { const i = $('.qb-omni input'); if (i) i.focus(); }, zero: zero, copy: copy, rate: cycleRate, reload: reloadWorld,|reload: reloadWorld,)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:08] OK   /replace(script.js|const msg = (ov, t) => { ov.innerHTML = '<div class="qb-page qb-qast"><p class="qb-empty"></p></div>'; ov.querySelector('.qb-empty').textContent = t; }; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:09] OK   /replace(script.js|, grid: ic('<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:09] OK   /replace(script.js|, more: ic('<circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/>')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:10] OK   /replace(script.js|, pad: ic('<circle cx="12" cy="12" r="2"/><path d="M12 7V3M12 17v4M7 12H3M17 12h4"/><path d="M10 5l2-2 2 2M10 19l2 2 2-2M5 10l-2 2 2 2M19 10l2 2-2 2"/>')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:10] OK   /replace(script.js|, set: ic('<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-23 10:06:10] OK   /delete(style.css|.qb-seg{display:flex;flex:none})
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:11] OK   /delete(style.css|.qb-tools{display:none;flex:none;gap:2px})
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:11] OK   /delete(style.css|.qb-more{display:inline-flex})
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:12] OK   /delete(style.css|@media (min-width:900px){.qb-tools{display:flex}.qb-more{display:none}})
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:12] OK   /delete(style.css|@media (min-width:561px){.qb-tools{display:flex}})
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:13] OK   /delete(style.css|.qb-grid{)
+    -> Deleted 2 line(s) from style.css
+[2026-11-23 10:06:13] OK   /delete(style.css|.qb-new{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:14] OK   /delete(style.css|.qb-ctl{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:14] OK   /delete(style.css|.qb-sep{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:15] OK   /delete(style.css|.qb-zl{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:15] OK   /delete(style.css|.qb-pad{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:16] OK   /delete(style.css|.qb-dpad)
+    -> Deleted 7 line(s) from style.css
+[2026-11-23 10:06:16] OK   /delete(style.css|.qb-hub{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-23 10:06:16] OK   /delete(style.css|.qb-zr)
+    -> Deleted 4 line(s) from style.css
+[2026-11-23 10:06:17] OK   /delete(style.css|.qb-res)
+    -> Deleted 2 line(s) from style.css
+[2026-11-23 10:06:17] DONE /auto(0)
+    -> 41/41 applied
