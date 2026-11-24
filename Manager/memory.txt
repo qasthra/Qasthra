@@ -977,3 +977,11 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-24 13:57:06] DONE /auto(1)
     -> 1/1 applied
+[2026-11-24 15:21:32] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-24 15:21:33] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_152133.css
+[2026-11-24 15:21:34] OK   /append(style.css|/* ---------- settings: hidden scrollbar ---------- */\n.qs,.qs-pf,.qs-sh-c{scrollbar-width:none;-ms-overflow-style:none}\n.qs::-webkit-scrollbar,.qs-pf::-webkit-scrollbar,.qs-sh-c::-webkit-scrollbar{display:none;width:0;height:0})
+    -> Appended to style.css
+[2026-11-24 15:21:34] DONE /auto(1)
+    -> 1/1 applied
