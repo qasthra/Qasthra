@@ -1112,3 +1112,103 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-24 21:35:29] DONE /auto(1)
     -> 19/19 applied
+[2026-11-24 22:44:38] RUN  /auto(1)
+    -> 23 planner command(s)
+[2026-11-24 22:44:38] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_224438.js
+[2026-11-24 22:44:39] OK   /delete(script.js|const PLUGS = [)
+    -> Deleted 1 line(s) from script.js
+[2026-11-24 22:44:39] OK   /delete(script.js|const on = (k) => (k === 'hud')
+    -> Deleted 1 line(s) from script.js
+[2026-11-24 22:44:39] OK   /delete(script.js|Plugins and Plugouts are previews for now)
+    -> Deleted 1 line(s) from script.js
+[2026-11-24 22:44:40] OK   /replace(script.js|plug: ld('plug', {}), |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:40] OK   /replace(script.js|if (d.plug) { st.plug[d.plug] = !on(d.plug); sv('plug', st.plug); pop(); view(cur()); return; } |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:41] OK   /replace(script.js|[data-tab],[data-plug],[data-sw]|[data-tab],[data-sw])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:41] OK   /replace(script.js|<button class="qb-item" type="button" data-p="plug">' + I.plug + '<span>Plugins and Plugouts</span></button>|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:42] OK   /replace(script.js| + bt('data-p="plug"', 'Plugins and Plugouts', I.plug)|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:42] OK   /replace(script.js|l: 'plug', |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:43] OK   /replace(script.js|, act('plug', 'Wirings', 'panel', '', '', 'plug')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:43] OK   /replace(script.js|Wirings: 'Add-ons.', |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:44] OK   /replace(script.js|['Panels', 'H', 'U', 'L', ',']|['Panels', 'H', 'U', ','])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:44] OK   /replace(script.js|data: [tog('sync', (B ? B.syncOn() : false) ? 'Synced' : 'Unsynced', 'sync', B ? B.syncOn() : false), act('download', 'Export'|data: [act('download', 'Export')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:44] OK   /replace(script.js|privacy: [tog('lock', (B ? B.enc() : false) ? 'Encrypted' : 'Decrypted', 'enc', B ? B.enc() : false)]|privacy: [tog('lock', (B ? B.enc() : false) ? 'Encrypted' : 'Decrypted', 'enc', B ? B.enc() : false), tog('sync', (B ? B.syncOn() : false) ? 'Synced' : 'Unsynced', 'sync', B ? B.syncOn() : false)])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:45] OK   /replace(script.js|const pick = (n, t, k, o, cur) =>|const pick = (n, t, k, o, cur) => '<button class="qs-row qs-hit" type="button" data-do="pick" data-k="' + k + '" data-o="' + esc(JSON.stringify(o)) + '"><i class="qs-ic">' + ic(n) + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div><span class="qs-v">' + (o.find((x) => x[0] === cur) ? o.find((x) => x[0] === cur)[1] : o[0][1]) + '</span><i class="qs-ch">' + ic('chev') + '</i></button>'; const pickOld = (n, t, k, o, cur) =>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:45] OK   /replace(script.js|const A = { edit: (a) => accEdit(a),|const spEl = () => (root ? $('.qs-sp', root) : null); const spClose = () => { const s = spEl(); if (s) s.hidden = true; }; const spOpen = (a) => { const s = spEl(); if (!s) return; const o = JSON.parse(a.dataset.o), k = a.dataset.k, cur = k === 'theme' ? th() : get(k); s.dataset.k = k; $('.qs-sh-t', s).textContent = $('.qs-tx b', a).textContent; $('.qs-sh-c', s).innerHTML = '<div class="qs-op-l" role="listbox">' + o.map((x) => '<button class="qs-op" type="button" role="option" data-sp="' + esc(x[0]) + '" aria-selected="' + (x[0] === cur) + '"><span>' + esc(x[1]) + '</span>' + CHK + '</button>').join('') + '</div>'; s.hidden = false; }; const A = { pick: (a) => spOpen(a), edit: (a) => accEdit(a),)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:46] OK   /replace(script.js|const t = e.target; const r = t.closest('.qs-row[data-tr]');|const t = e.target; const sp = t.closest('[data-sp]'); if (sp) { const s = spEl(), k = s.dataset.k; if (k === 'theme') setTheme(sp.dataset.sp); else set(k, sp.dataset.sp); spClose(); refresh(); return; } if (t.closest('[data-spx]')) { spClose(); return; } const r = t.closest('.qs-row[data-tr]');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:46] OK   /replace(script.js|+ '<div class="qs-toast" role="status" aria-live="polite"></div>';|+ '<div class="qs-sh qs-sp" hidden><div class="qs-sh-bd" data-spx="1"></div><div class="qs-sh-p" role="dialog" aria-modal="true" aria-label="Choose"><h4 class="qs-sh-t"></h4><div class="qs-sh-c"></div></div></div><div class="qs-toast" role="status" aria-live="polite"></div>';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:47] OK   /replace(script.js|if (document.querySelector('.pop')) return; const ip = $('.qs-pop', root);|if (document.querySelector('.pop')) return; const sp0 = spEl(); if (sp0 && !sp0.hidden) { sp0.hidden = true; return; } const ip = $('.qs-pop', root);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:44:47] OK   /append(script.js|(() => { const CHK = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'; const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => '&#' + c.charCodeAt(0) + ';'); let sheet = null, from = null; const close = () => { if (sheet) { sheet.remove(); sheet = null; } const f = from; from = null; if (f && f.focus) { try { f.focus({ preventScroll: true }); } catch (e) {} } }; const shown = (s) => { const o = s.options[s.selectedIndex]; return o && o.value !== '' ? o.text : ''; }; const paint = (b, s) => { const t = shown(s); b.firstChild.textContent = t ? t : s.options[0].text; b.classList.toggle('qd-ph', !t); }; const open = (b, s) => { close(); from = b; const lb = s.closest('.cs-f'); const sp = lb ? lb.querySelector('span') : null; const title = s.getAttribute('aria-label') ? s.getAttribute('aria-label') : (sp ? sp.textContent.replace(/\s*\*\s*$/, '').trim() : 'Choose'); sheet = document.createElement('div'); sheet.className = 'qs-sh'; sheet.innerHTML = '<div class="qs-sh-bd" data-qx="1"></div><div class="qs-sh-p" role="dialog" aria-modal="true"><h4 class="qs-sh-t"></h4><div class="qs-sh-c"><div class="qs-op-l" role="listbox"></div></div></div>'; sheet.querySelector('.qs-sh-t').textContent = title; const cur = s.value; sheet.querySelector('.qs-op-l').innerHTML = Array.from(s.options).filter((o) => o.value !== '').map((o) => '<button class="qs-op" type="button" role="option" data-v="' + esc(o.value) + '" aria-selected="' + (o.value === cur) + '"><span>' + esc(o.text) + '</span>' + CHK + '</button>').join(''); sheet.addEventListener('click', (e) => { if (e.target.closest('[data-qx]')) { close(); return; } const x = e.target.closest('.qs-op'); if (!x) return; s.value = x.dataset.v; s.dispatchEvent(new Event('change', { bubbles: true })); s.dispatchEvent(new Event('input', { bubbles: true })); close(); }); document.body.appendChild(sheet); const on = sheet.querySelector('.qs-op[aria-selected="true"]'); if (on) on.scrollIntoView({ block: 'center' }); }; const enhance = (s) => { if (s.dataset.qd) return; s.dataset.qd = '1'; const b = document.createElement('button'); b.type = 'button'; b.className = 'qd-b'; b.setAttribute('aria-haspopup', 'dialog'); b.innerHTML = '<span></span>'; s.classList.add('qd-n'); s.tabIndex = -1; s.setAttribute('aria-hidden', 'true'); s.before(b); const d = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value'); Object.defineProperty(s, 'value', { configurable: true, get() { return d.get.call(s); }, set(v) { d.set.call(s, v); paint(b, s); } }); s.addEventListener('change', () => paint(b, s)); b.addEventListener('click', () => open(b, s)); paint(b, s); }; const scan = () => { document.querySelectorAll('.au-setup select').forEach(enhance); }; new MutationObserver(scan).observe(document.body, { childList: true, subtree: true }); scan(); document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && sheet) close(); }); window.addEventListener('hashchange', close); })();)
+    -> Appended to script.js
+[2026-11-24 22:44:48] OK   /append(script.js|(() => { const h = document.documentElement; const wrap = (obj, name) => { const f = obj[name]; if (typeof f !== 'function') return; obj[name] = function (a, b) { if (h.dataset.motion === 'reduce' && a && typeof a === 'object') a = Object.assign({}, a, { behavior: 'auto' }); return f.call(this, a, b); }; }; wrap(Element.prototype, 'scrollIntoView'); wrap(Element.prototype, 'scrollTo'); wrap(Element.prototype, 'scrollBy'); wrap(window, 'scrollTo'); wrap(window, 'scrollBy'); })();)
+    -> Appended to script.js
+[2026-11-24 22:44:48] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_224448.css
+[2026-11-24 22:44:48] OK   /replace(style.css|.qs-row:focus-visible,.qs-pick:focus-within,.qs-back:focus-visible|.qs-row:focus-visible,.qs-back:focus-visible)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:44:49] OK   /append(style.css|html[data-motion="reduce"] *,html[data-motion="reduce"] *::before,html[data-motion="reduce"] *::after{animation-delay:0s!important;transition-delay:0s!important;animation-duration:.001ms!important;transition-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}\n.qs-sec .qs-cap{color:transparent;-webkit-user-select:none;user-select:none}\n.qd-n{display:none!important}\n.qd-b{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-width:0;padding:13px 38px 13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b8b90' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;color:var(--mono);font:500 14px/1.4 var(--font);text-align:left;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}\n.qd-b span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.qd-b.qd-ph span{color:var(--gray)}\n.au-3 .qd-b{padding:13px 30px 13px 12px;background-position:right 11px center}\n.au-setup .au-2 .qd-b{padding-left:12px})
+    -> Appended to style.css
+[2026-11-24 22:44:49] DONE /auto(1)
+    -> 23/23 applied
+[2026-11-24 22:51:22] RUN  /auto(1)
+    -> 19 planner command(s)
+[2026-11-24 22:51:22] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_225122.js
+[2026-11-24 22:51:22] OK   /replace(script.js|<h3 class="qs-cap">' + t + '</h3>|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:51:23] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_225123.css
+[2026-11-24 22:51:23] OK   /replace(style.css|.qs-cap{margin:22px 0 6px;color:var(--gray);font:600 12px/1 var(--font);letter-spacing:.02em} |)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:23] OK   /replace(style.css|.qs-sec .qs-cap{margin:26px 0 10px;color:var(--mono);font:700 17px/1.2 var(--font);letter-spacing:-.02em}|.qs-sec .qs-list{margin-top:24px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:24] OK   /replace(style.css|@media (min-width:900px){.qs-sec .qs-cap{margin-top:0}}|@media (min-width:900px){.qs-sec .qs-list{margin-top:0}})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:24] OK   /replace(style.css|.qs-acc .qs-af>.qs-cap{margin:26px 0 10px;color:var(--mono);font:700 17px/1.2 var(--font);letter-spacing:-.02em} |)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:25] OK   /delete(style.css|.qs-sec .qs-cap{color:transparent)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:25] OK   /replace(style.css|.qs-sec.on{display:block} .qs-sec .qs-cap{margin-top:0} }|.qs-sec.on{display:block} })
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:26] OK   /replace(script.js|const pickOld = (n, t, k, o, cur) => '<div class="qs-row qs-pick">|\nconst pickOld = (n, t, k, o, cur) => '<div class="qs-row qs-pick">)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:51:26] OK   /replace(script.js|'</select></div>'; const act = (|'</select></div>';\nconst act = ()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 22:51:27] OK   /delete(script.js|const pickOld)
+    -> Deleted 1 line(s) from script.js
+[2026-11-24 22:51:27] OK   /replace(style.css|.qs-pick{cursor:pointer} .qs-pick select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;-webkit-appearance:none;appearance:none} .qs-row:focus-visible|.qs-row:focus-visible)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:28] OK   /replace(style.css|.qb-dock,.qb-mo{display:none}|.qb-dock{display:none})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-24 22:51:28] OK   /delete(style.css|.qb-mo{display:flex})
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:29] OK   /delete(style.css|.qb-ro{display:grid)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:29] OK   /delete(style.css|.qb-ro div{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:29] OK   /delete(style.css|.qb-ro small{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:30] OK   /delete(style.css|.qb-ro b{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:30] OK   /delete(style.css|.qb-acts{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:31] OK   /delete(style.css|.qb-acts .qb-btn{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 22:51:31] DONE /auto(1)
+    -> 19/19 applied
