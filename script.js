@@ -1,11 +1,3 @@
-// Copyrights Applies to this file
-// IMPORTANT: Never add a forced cache system or trust the presence of an auth-token key.
-// The old code treated stale local Supabase tokens as valid, which showed the loading GIF,
-// redirected to the dashboard, and eventually opened the Create an account form after the
-// account had been deleted. Authentication must always be validated by Supabase first.
-// ---------- screens: index.html is only a container, every fullscreen is rendered here ----------
-// screen.render('home') is the landing page (nav, hero, 3D scene, in-page views).
-// screen.render('dashboard') is the dashboard (browser nav + worlds).
 (() => {
   const app = document.getElementById('app');
   if (!app) return;
@@ -20,7 +12,7 @@
   <div class="nav-group" role="group" aria-label="Sections"><button class="nav-text" type="button" data-view="qa">Q&amp;A</button><button class="nav-text" type="button" data-view="info">Informations</button><button class="nav-text" type="button" data-view="ps">P&amp;S</button></div>
   <div class="nav-right"><button class="nav-text nav-center" type="button" data-view="showcase">Version</button>
   <nav class="nav-links" id="navLinks" aria-label="Primary">
-    
+
     <button class="btn btn-second btn-nav" type="button" data-view="contact">Contact</button>
     <button class="btn btn-second btn-nav" type="button" data-view="support">Support</button>
     <a class="btn btn-second btn-icon btn-nav" href="https://x.com/Qasthra" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
@@ -88,7 +80,7 @@
     route() { const h = location.hash; api.render(/^#dashboard/.test(h) ? 'dashboard' : /^#signin/.test(h) ? 'auth' : 'home'); }
   };
   Object.defineProperty(window, 'screen', { value: api, writable: true, configurable: true });
-  api.render('home');            // build the home shell first so the scripts below can find it
+  api.render('home');
   window.addEventListener('hashchange', api.route);
   api.route();
 })();
@@ -97,13 +89,10 @@
   const host = document.getElementById('scene');
   if (!host || typeof THREE === 'undefined') return;
 
-  // Keep the landing page interactive first: Three.js geometry and its animation loop
-  // are intentionally initialized during browser idle time instead of blocking first paint.
   const init = () => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dark = matchMedia('(prefers-color-scheme: dark)');
 
-  // ---------- renderer ----------
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, 1, .1, 200);
   camera.position.set(0, 0, 34);
@@ -122,7 +111,6 @@
   }
   new ResizeObserver(resize).observe(host);
 
-  // ---------- object: node globe, nearest-neighbor links ----------
   const N = 120;
   const R = 10, pos = [], edges = [], nbr = Array.from({ length: N }, () => []);
   for (let i = 0; i < N; i++) {
@@ -181,7 +169,6 @@
 
   root.add(lines, syns, nodes);
 
-  // ---------- theme colours (white on dark site, black on light site) ----------
   const fg = new THREE.Color(), lineBase = new THREE.Color(), nodeBase = new THREE.Color(), tmp = new THREE.Color();
   const isDark = () => {
     const t = document.documentElement.dataset.theme;
@@ -195,7 +182,6 @@
   dark.addEventListener('change', () => { theme(); lit.fill(1); });
   window.addEventListener('themechange', () => { theme(); lit.fill(1); });
 
-  // ---------- random animation state ----------
   const glowSyn = new Float32Array(synCount);
   const lit = new Uint8Array(synCount).fill(1);
   const glowNode = new Float32Array(N);
@@ -216,7 +202,6 @@
   let spinV = 0, spinTarget = .15, rotX = .15, rotY = -.35;
   let nextSpin = 0, nextPulse = 0, last = performance.now();
 
-  // ---------- drag / wheel interaction ----------
   let offX = 0, offY = 0, dragging = false, lastTouch = 0, px = 0, py = 0;
   const TAU = Math.PI * 2, MAXX = 1.3;
   const clampX = (v) => Math.max(-MAXX, Math.min(MAXX, v));
@@ -253,7 +238,6 @@
     bump();
   }, { passive: false });
 
-  // ---------- zoom: pinch or ctrl+wheel, clamped so it cannot over-zoom ----------
   const ZMIN = -2, ZMAX = 18;
   let zoomOff = 0, pinching = false, pinchD = 0;
   const pts = new Map();
@@ -291,7 +275,6 @@
     last = now;
     const m = reduce ? .15 : 1;
 
-    // random drift: speed and direction change every few seconds, eased
     if (now > nextSpin) {
       spinTarget = rnd(-.45, .45) * (Math.random() < .25 ? 2 : 1);
       nextSpin = now + rnd(2500, 6000);
@@ -299,7 +282,6 @@
     spinV += (spinTarget - spinV) * Math.min(1, dt * .8);
     rotY += spinV * dt * m;
     rotX = .18 + Math.sin(now * .00035) * .22 + Math.sin(now * .00091) * .06;
-    // after 1.5s without touch, the tilt/turn eases back to the normal face
     if (!dragging && !pinching && now - lastTouch > 1500) {
       offY -= Math.round(offY / TAU) * TAU;
       const back = 1 - Math.exp(-dt * 1.2);
@@ -329,7 +311,6 @@
       wv.f = nf; wv.d++; wv.t = now + 70 / m;
       if (!nf.length || wv.d > 6) waves.splice(w, 1);
     }
-    // decay + write colours
     const decay = Math.exp(-dt * 2.4);
     let changed = false;
     for (let i = 0; i < synCount; i++) {
@@ -369,12 +350,10 @@
   const schedule = window.requestIdleCallback ? (fn) => window.requestIdleCallback(fn, { timeout: 900 }) : (fn) => setTimeout(fn, 0);
   const authHint = () => { try { return Object.keys(localStorage).some((k) => /auth-token/i.test(k)); } catch (e) { return false; } };
   const waitStarted = Date.now();
-  // This storage check is only a short performance hint; it never authenticates or routes anyone.
   const waitForRoute = () => { if (document.documentElement.dataset.screenTransition === '1' || /^#dashboard/.test(location.hash) || (authHint() && Date.now() - waitStarted < 2500)) { setTimeout(waitForRoute, 180); return; } init(); };
   schedule(waitForRoute);
 })();
 
-// ---------- theme toggle (moon / sun) ----------
 (() => {
   const btn = document.getElementById('themeToggle');
   if (!btn) return;
@@ -392,7 +371,6 @@
   });
 })();
 
-// ---------- mobile menu ----------
 (() => {
   const btn = document.getElementById('menuToggle');
   const nav = document.querySelector('.nav');
@@ -408,12 +386,8 @@
   matchMedia('(min-width:561px)').addEventListener('change', () => set(false));
 })();
 
-// ---------- database (Supabase) ----------
-// Do not purge auth storage with a one-time flag and do not add a cache workaround here.
-// Invalid sessions are cleared by QAUTH.session() after Supabase validates them.
 window.db = (window.supabase && window.supabase.createClient) ? window.supabase.createClient('https://hwffsxhonbymzwomhoyd.supabase.co', 'sb_publishable_Rqtyo62gG01MIWkF5Jz8Qw_Xe-UoXCZ', { auth: { flowType: 'pkce' } }) : null;
 
-// ---------- contact & support views: same page, new render, top nav stays ----------
 (() => {
   const page = document.getElementById('page');
   const nav = document.querySelector('.nav');
@@ -435,30 +409,24 @@ window.db = (window.supabase && window.supabase.createClient) ? window.supabase.
   window.addEventListener('hashchange', render);
   render();
 })();
-// ---------- nav showcase button: show only when hero showcase button is out of view ----------
 (() => {
   const nb = document.querySelector('.nav-center');
   const hb = document.getElementById('showBtn');
   if (!nb || !hb || !('IntersectionObserver' in window)) return;
   new IntersectionObserver((en) => nb.classList.toggle('show', !en[0].isIntersecting)).observe(hb);
 })();
-// ---------- view renders: informations, contact, support ----------
 (() => { const box = document.querySelector('#page .page-in'); if (!box) return; const data = { info: { t: 'Informations', d: ['Everything about how Qasthra works.', 'Guides and references in one place.'] }, contact: { t: 'Contact', d: ['Questions, ideas and partnerships.', 'We reply as soon as we can.'] }, support: { t: 'Support', d: ['Help us improve the service and product.', 'Share suggestions, report bugs or send code.'] } }; const draw = () => { const x = data[location.hash.slice(1)]; if (!x) { box.innerHTML = ''; return; } box.innerHTML = '<header class="view-head"><h2>' + x.t + '</h2><p class="sub">' + x.d[0] + '<br>' + x.d[1] + '</p></header>'; }; window.addEventListener('hashchange', draw); draw(); })();
-// ---------- contact & support content: info, safe forms, Supabase ----------
-(() => { const box = document.querySelector('#page .page-in'); if (!box) return; const BAD = /[<>{}\[\]`]/; const BAD0 = /[<>{}\[\]()`$;\\|^~"]|--|\/\*|\*\/|&#|%3c|%3e|javascript:|\bor\s+1\s*=\s*1|\b(select|insert|update|delete|drop|union|alter|exec|script|truncate|onerror|onload)\b/i; const EMAIL = /^[A-Za-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com|proton\.me)$/i; const GH = /^https:\/\/github\.com\/[A-Za-z0-9_.\/-]{1,120}$/; const clean = (s) => String(s || '').replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim(); const PH = { name: 'Your name', email: 'you@example.com', phone: '+63 900 000 0000', link: 'https://github.com/qasthra/Qasthra' }; const AC = { name: 'name', email: 'email', phone: 'tel' }; const inp = (n, l, t, m, req) => '<label class="cs-f"><span>' + l.replace(' *', ' <em>*</em>') + '</span><input name="' + n + '" type="' + t + '" maxlength="' + m + '" autocomplete="' + (AC[n] || 'off') + '" placeholder="' + (PH[n] || '') + '"' + (t === 'tel' ? ' inputmode="tel"' : '') + (req ? ' required' : '') + '></label>'; const area = '<label class="cs-f"><span>Message <em>*</em></span><textarea name="message" rows="5" maxlength="1000" placeholder="Write your message here" required></textarea></label>'; const hp = '<div class="cs-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>'; const tail = '<button class="btn btn-mono cs-send" type="submit">Send message</button><p class="cs-note" role="status" aria-live="polite"></p></form></div>'; const HTML = { contact: '<div class="cs"><div class="cs-info"><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><div class="cs-txt"><b>Email</b><a href="mailto:Qasthra@gmail.com">Qasthra@gmail.com</a></div><button class="cs-copy" type="button" data-copy="Qasthra@gmail.com">Copy</button></div><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><div class="cs-txt"><b>Phone</b><a href="tel:+639245266251">+63 924 526 6251</a></div><button class="cs-copy" type="button" data-copy="+63 924 526 6251">Copy</button></div></div><form class="cs-form" novalidate data-v="contact"><h3 class="cs-title">Send us a message</h3><p class="cs-hint">Fields marked * are required.</p>' + inp('name', 'Name *', 'text', 60, 1) + '<div class="cs-row">' + inp('email', 'Email *', 'email', 120, 1) + inp('phone', 'Phone *', 'tel', 30, 1) + '</div>' + area + hp + tail, support: '<div class="cs"><div class="cs-info"><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></i><div class="cs-txt"><b>GitHub</b><a class="cs-stretch" href="https://github.com/qasthra/Qasthra" target="_blank" rel="noopener noreferrer">github.com/qasthra/Qasthra</a></div></div><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg></i><div class="cs-txt"><b>Help us improve</b><span>Suggest features, report bugs or share code.</span></div></div></div><form class="cs-form" novalidate data-v="support"><h3 class="cs-title">Share your idea</h3><p class="cs-hint">Fields marked * are required.</p><div class="cs-row">' + inp('name', 'Name *', 'text', 60, 1) + inp('email', 'Email', 'email', 120, 0) + '</div><div class="cs-row">' + inp('phone', 'Phone', 'tel', 30, 0) + '<label class="cs-f"><span>Type</span><select name="kind"><option value="Suggestion">Suggestion</option><option value="Feature request">Feature request</option><option value="Bug report">Bug report</option><option value="Code contribution">Code contribution</option><option value="Performance issue">Performance issue</option><option value="Security concern">Security concern</option><option value="Design feedback">Design feedback</option><option value="Documentation">Documentation</option><option value="Integration request">Integration request</option><option value="Partnership">Partnership</option><option value="Question">Question</option><option value="Other">Other</option></select></label></div>' + inp('link', 'GitHub', 'url', 200, 0) + area + hp + tail }; const draw = () => { const h = location.hash.slice(1); if (!HTML[h] || box.querySelector('.cs')) return; box.insertAdjacentHTML('beforeend', HTML[h]); }; window.addEventListener('hashchange', draw); draw(); box.addEventListener('submit', async (e) => { const f = e.target.closest('form.cs-form'); if (!f) return; e.preventDefault(); const note = f.querySelector('.cs-note'), btn = f.querySelector('button'); const say = (t, ok) => { note.textContent = ok === 0 ? '' : t; note.dataset.ok = ok === 1 ? '1' : ok === 2 ? '2' : '0'; }; const v = f.dataset.v, d = new FormData(f); if (d.get('website')) { say('Thanks!', 1); f.reset(); return; } const row = {}; for (const k of ['name', 'email', 'phone', 'kind', 'link', 'message']) { if (!d.has(k)) continue; const x = clean(d.get(k)); if (x && BAD.test(x)) { say('Please remove these symbols and try again: < > { } [ ] and backtick.', 0); return; } row[k] = x || null; } if (!row.message || row.message.length < 5) { say('Please write a message of at least 5 characters.', 0); return; } if (!row.name) { say('Please enter your name.', 0); return; } if (v === 'contact' && !row.phone) { say('Please enter your phone number.', 0); return; } if ((v === 'contact' || row.email) && !EMAIL.test(row.email || '')) { say('Please enter a valid email address.', 0); return; } if (row.link && !GH.test(row.link)) { say('Link must start with https://github.com/', 0); return; } if (row.phone && !/^\+?[0-9][0-9 -]{5,18}[0-9]$/.test(row.phone)) { say('Please enter a valid phone number.', 0); return; } try { if (Date.now() - Number(localStorage.getItem('cs_last') || 0) < 30000) { say('Please wait a moment before sending again.', 2); return; } } catch (x) {} if (!window.db) { say('Connection unavailable. Please try again later.', 2); return; } btn.disabled = true; try { const r = await window.db.from(v === 'contact' ? 'contact_messages' : 'support_suggestions').insert([row]); if (r.error) throw r.error; try { localStorage.setItem('cs_last', String(Date.now())); } catch (x) {} f.reset(); say('Sent. Thank you!', 1); } catch (x) { say('Could not send. Please try again later.', 2); } if (window.csGate) window.csGate(f); else btn.disabled = false; }); })();
-// ---------- contact & support: copy buttons ---------- (() => { const box = document.querySelector('#page .page-in'); if (!box) return; box.addEventListener('click', (e) => { const b = e.target.closest('.cs-copy'); if (!b) return; const t = b.dataset.copy; const done = () => { b.textContent = 'Copied'; setTimeout(() => { b.textContent = 'Copy'; }, 1500); }; const fb = () => { const x = document.createElement('textarea'); x.value = t; x.style.position = 'fixed'; x.style.opacity = '0'; document.body.appendChild(x); x.select(); try { document.execCommand('copy'); done(); } catch (z) {} x.remove(); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, fb); else fb(); }); })();
+(() => { const box = document.querySelector('#page .page-in'); if (!box) return; const BAD = /[<>{}\[\]`]/; const EMAIL = /^[A-Za-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com|proton\.me)$/i; const GH = /^https:\/\/github\.com\/[A-Za-z0-9_.\/-]{1,120}$/; const clean = (s) => String(s || '').replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim(); const PH = { name: 'Your name', email: 'you@example.com', phone: '+63 900 000 0000', link: 'https://github.com/qasthra/Qasthra' }; const AC = { name: 'name', email: 'email', phone: 'tel' }; const inp = (n, l, t, m, req) => '<label class="cs-f"><span>' + l.replace(' *', ' <em>*</em>') + '</span><input name="' + n + '" type="' + t + '" maxlength="' + m + '" autocomplete="' + (AC[n] || 'off') + '" placeholder="' + (PH[n] || '') + '"' + (t === 'tel' ? ' inputmode="tel"' : '') + (req ? ' required' : '') + '></label>'; const area = '<label class="cs-f"><span>Message <em>*</em></span><textarea name="message" rows="5" maxlength="1000" placeholder="Write your message here" required></textarea></label>'; const hp = '<div class="cs-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>'; const tail = '<button class="btn btn-mono cs-send" type="submit">Send message</button><p class="cs-note" role="status" aria-live="polite"></p></form></div>'; const HTML = { contact: '<div class="cs"><div class="cs-info"><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><div class="cs-txt"><b>Email</b><a href="mailto:Qasthra@gmail.com">Qasthra@gmail.com</a></div><button class="cs-copy" type="button" data-copy="Qasthra@gmail.com">Copy</button></div><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><div class="cs-txt"><b>Phone</b><a href="tel:+639245266251">+63 924 526 6251</a></div><button class="cs-copy" type="button" data-copy="+63 924 526 6251">Copy</button></div></div><form class="cs-form" novalidate data-v="contact"><h3 class="cs-title">Send us a message</h3><p class="cs-hint">Fields marked * are required.</p>' + inp('name', 'Name *', 'text', 60, 1) + '<div class="cs-row">' + inp('email', 'Email *', 'email', 120, 1) + inp('phone', 'Phone *', 'tel', 30, 1) + '</div>' + area + hp + tail, support: '<div class="cs"><div class="cs-info"><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></i><div class="cs-txt"><b>GitHub</b><a class="cs-stretch" href="https://github.com/qasthra/Qasthra" target="_blank" rel="noopener noreferrer">github.com/qasthra/Qasthra</a></div></div><div class="cs-card"><i class="cs-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg></i><div class="cs-txt"><b>Help us improve</b><span>Suggest features, report bugs or share code.</span></div></div></div><form class="cs-form" novalidate data-v="support"><h3 class="cs-title">Share your idea</h3><p class="cs-hint">Fields marked * are required.</p><div class="cs-row">' + inp('name', 'Name *', 'text', 60, 1) + inp('email', 'Email', 'email', 120, 0) + '</div><div class="cs-row">' + inp('phone', 'Phone', 'tel', 30, 0) + '<label class="cs-f"><span>Type</span><select name="kind"><option value="Suggestion">Suggestion</option><option value="Feature request">Feature request</option><option value="Bug report">Bug report</option><option value="Code contribution">Code contribution</option><option value="Performance issue">Performance issue</option><option value="Security concern">Security concern</option><option value="Design feedback">Design feedback</option><option value="Documentation">Documentation</option><option value="Integration request">Integration request</option><option value="Partnership">Partnership</option><option value="Question">Question</option><option value="Other">Other</option></select></label></div>' + inp('link', 'GitHub', 'url', 200, 0) + area + hp + tail }; const draw = () => { const h = location.hash.slice(1); if (!HTML[h] || box.querySelector('.cs')) return; box.insertAdjacentHTML('beforeend', HTML[h]); }; window.addEventListener('hashchange', draw); draw(); box.addEventListener('submit', async (e) => { const f = e.target.closest('form.cs-form'); if (!f) return; e.preventDefault(); const note = f.querySelector('.cs-note'), btn = f.querySelector('button'); const say = (t, ok) => { note.textContent = ok === 0 ? '' : t; note.dataset.ok = ok === 1 ? '1' : ok === 2 ? '2' : '0'; }; const v = f.dataset.v, d = new FormData(f); if (d.get('website')) { say('Thanks!', 1); f.reset(); return; } const row = {}; for (const k of ['name', 'email', 'phone', 'kind', 'link', 'message']) { if (!d.has(k)) continue; const x = clean(d.get(k)); if (x && BAD.test(x)) { say('Please remove these symbols and try again: < > { } [ ] and backtick.', 0); return; } row[k] = x || null; } if (!row.message || row.message.length < 5) { say('Please write a message of at least 5 characters.', 0); return; } if (!row.name) { say('Please enter your name.', 0); return; } if (v === 'contact' && !row.phone) { say('Please enter your phone number.', 0); return; } if ((v === 'contact' || row.email) && !EMAIL.test(row.email || '')) { say('Please enter a valid email address.', 0); return; } if (row.link && !GH.test(row.link)) { say('Link must start with https://github.com/', 0); return; } if (row.phone && !/^\+?[0-9][0-9 -]{5,18}[0-9]$/.test(row.phone)) { say('Please enter a valid phone number.', 0); return; } try { if (Date.now() - Number(localStorage.getItem('cs_last') || 0) < 30000) { say('Please wait a moment before sending again.', 2); return; } } catch (x) {} if (!window.db) { say('Connection unavailable. Please try again later.', 2); return; } btn.disabled = true; try { const r = await window.db.from(v === 'contact' ? 'contact_messages' : 'support_suggestions').insert([row]); if (r.error) throw r.error; try { localStorage.setItem('cs_last', String(Date.now())); } catch (x) {} f.reset(); say('Sent. Thank you!', 1); } catch (x) { say('Could not send. Please try again later.', 2); } if (window.csGate) window.csGate(f); else btn.disabled = false; }); })();
 
 
 
 
 
-// ---------- hero Version button: tap for A1.00, tap again to restore ----------
 (() => { const show = document.getElementById('showBtn'), dash = document.getElementById('dashBtn'); if (!show || !dash) return; const name = show.textContent.trim(); let on = false, busy = false, w0 = 0, vw = window.innerWidth, tm;
 const expand = () => { if (busy) return; busy = true; clearTimeout(tm); const s = show.getBoundingClientRect(), d = dash.getBoundingClientRect(); w0 = s.width; dash.style.width = dash.getBoundingClientRect().width + 'px'; const w1 = Math.abs(s.top - d.top) < 6 ? Math.max(s.width, s.right - d.left) : s.width; show.style.width = w0 + 'px'; show.style.marginLeft = '0px'; void show.offsetWidth; on = true; show.textContent = 'A1.00'; show.setAttribute('aria-expanded', 'true'); show.parentElement.classList.add('soon'); show.style.width = w1 + 'px'; show.style.marginLeft = (w0 - w1) + 'px'; setTimeout(() => { busy = false; }, 450); };
 const collapse = () => { if (!on || busy) return; busy = true; on = false; show.textContent = name; show.setAttribute('aria-expanded', 'false'); show.parentElement.classList.remove('soon'); show.style.width = w0 + 'px'; show.style.marginLeft = '0px'; tm = setTimeout(() => { show.style.width = ''; show.style.marginLeft = ''; dash.style.width = ''; busy = false; }, 450); };
 show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () => { if (on) collapse(); else expand(); }); dash.addEventListener('click', collapse); window.addEventListener('resize', () => { if (window.innerWidth !== vw) { vw = window.innerWidth; if (on && !busy) collapse(); } });
 })();
-// ---------- captcha status on the Dashboard button: starts on arrival, retries until verified ----------
 (() => {
   const KEY = '0x4AAAAAAGLGlnJ2L6nuIdEP';
   const btn = document.getElementById('dashBtn');
@@ -521,17 +489,13 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
   set('check'); start();
 })();
 
-// ---------- qasthra auth (one form: sign in or set up) + dashboard alpha ----------
 (() => {
-  const KEY = '0x4AAAAAAGLGlnJ2L6nuIdEP';
   const $ = (s, r) => (r || document).querySelector(s);
   const html = document.documentElement;
   const sys = matchMedia('(prefers-color-scheme: dark)');
   const isDark = () => (html.dataset.theme ? html.dataset.theme === 'dark' : sys.matches);
   const flip = () => { const n = isDark() ? 'light' : 'dark'; html.dataset.theme = n; try { localStorage.setItem('theme', n); } catch (e) {} window.dispatchEvent(new Event('themechange')); };
   document.addEventListener('click', (e) => { if (e.target.closest('[data-theme-btn]')) flip(); });
-  // One auth gate for the whole app. getSession() reads local state; getUser() validates it
-  // with Supabase. A missing user or a rejected token means the local session is invalid. A network error (offline) keeps it.
   const clearInvalid = async () => { try { await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} }; const net = (e) => !!e && (e.name === 'AuthRetryableFetchError' || e.status === 0 || e.status >= 500 || navigator.onLine === false);
   let sP = null; const session = () => { if (sP) return sP; const p = session0().then((r) => { if (!r && sP === p) sP = null; return r; }, () => { if (sP === p) sP = null; return null; }); sP = p; setTimeout(() => { if (sP === p) sP = null; }, 8000); return p; }; const session0 = async () => {
     try {
@@ -560,8 +524,6 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
   window.QAUTH = { session, showVeil, hideVeil, signOut };
   const clean = (s) => String(s || '').replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim();
   const EMAIL = /^[A-Za-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com|proton\.me)$/i;
-  // Account identifiers accept only letters, numbers, underscore, and hyphen.
-  // Full names are validated separately as letters and spaces only below.
   const USER = /^[a-z][a-z0-9_-]{4,24}$/;
   const RESERVED = ['admin', 'administrator', 'root', 'system', 'support', 'help', 'staff', 'team', 'official', 'security', 'moderator', 'owner', 'founder', 'anonymous', 'username', 'dashboard', 'signin', 'signup', 'login', 'logout', 'settings', 'account', 'billing', 'contact', 'terms', 'privacy', 'null', 'undefined', 'github', 'notion'];
   const BLOCKED = ['fuck', 'shit', 'bitch', 'cunt', 'nigg', 'fagg', 'rape', 'nazi', 'hitler', 'porn'];
@@ -572,10 +534,8 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
     if (BLOCKED.some((w) => flat.indexOf(w) >= 0)) return 'That username is not allowed. Pick another one.';
     return '';
   };
-  // hidden login address: Supabase signs in with an email, the person only ever sees the username. Change this one line to use your own domain.
   const addr = (u) => 'qasthra+' + u + '@gmail.com';
   const ageOf = (iso) => { const b = new Date(iso); if (isNaN(b)) return -1; const n = new Date(); let a = n.getFullYear() - b.getFullYear(); if (n.getMonth() < b.getMonth() || (n.getMonth() === b.getMonth() && n.getDate() < b.getDate())) a--; return a; };
-  const X = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   const LP = () => window.libphonenumber;
   const loadLP = () => { if (window.libphonenumber || document.getElementById('lpjs')) return; const s = document.createElement('script'); s.id = 'lpjs'; s.src = 'https://cdn.jsdelivr.net/npm/libphonenumber-js@1/bundle/libphonenumber-min.js'; s.async = true; document.head.appendChild(s); };
   const fmtPhone = (raw) => {
@@ -671,8 +631,6 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
     const NAME = /^\p{L}+(?:\s+\p{L}+)*$/u;
     const cleanNameInput = (v) => String(v || '').replace(/[^\p{L}\s]/gu, '').replace(/\s+/g, ' ').slice(0, 60);
     const LK = []; const lookup = async (u) => { if (seen.has(u)) return seen.get(u); const t = Date.now(); while (LK.length && t - LK[0] > 60000) LK.shift(); if (LK.length >= 5 || (LK.length && t - LK[LK.length - 1] < 1500)) return null; LK.push(t); try { const r = await window.db.rpc('username_exists', { u: u }); if (r.error) return null; seen.set(u, r.data === true); return r.data === true; } catch (e) { return null; } };
-    const settle = (has) => { exists = has; if (has === false) { say(mode === 'up' ? '' : 'This username is free. Press Continue to create your account.'); } else if (has === true) { say(mode === 'up' ? TAKEN : 'Account found. Enter your password to sign in.'); } };
-    const check = async () => { const u = clean(un.value).toLowerCase(); if (userErr(u)) { exists = null; return null; } const my = ++seq; const has = await lookup(u); if (my !== seq) return null; if (has !== null) settle(has); return has; };
     un.addEventListener('input', () => { un.value = un.value.toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 25); clearTimeout(tmr); ++seq; exists = null; if (mode === 'up') backToSignIn(); say(''); });
     un.addEventListener('blur', () => { clearTimeout(tmr); });
     $('.au-show', host).addEventListener('click', (e) => { const on = pw.type === 'password'; pw.type = on ? 'text' : 'password'; e.currentTarget.textContent = on ? 'Hide' : 'Show'; });
@@ -768,7 +726,6 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
     location.hash = 'signin';
   });
 })();
-/* ---------- qb: browser top nav on the dashboard ---------- */
 (() => {
 const Q = window.QA; if (!Q || !Q.dashboard) return;
 const $ = (s, r) => (r || document).querySelector(s);
@@ -778,25 +735,14 @@ const ld = (k, d) => { try { const v = localStorage.getItem('qb:' + k); return v
 const sv = (k, v) => { try { localStorage.setItem('qb:' + k, JSON.stringify(v)); } catch (e) {} };
 const ic = (d) => '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
 const I = { left: ic('<path d="M15 6l-6 6 6 6"/>'), right: ic('<path d="M9 6l6 6-6 6"/>'), up: ic('<path d="M6 15l6-6 6 6"/>'), down: ic('<path d="M6 9l6 6 6-6"/>'), reload: ic('<path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/>'), plus: ic('<path d="M12 5v14M5 12h14"/>'), x: ic('<path d="M6 6l12 12M18 6L6 18"/>'), clock: ic('<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'), star: ic('<path d="M12 4l2.4 5 5.6.7-4.1 3.8 1 5.5-4.9-2.7-4.9 2.7 1-5.5L4 9.7 9.6 9z"/>'), xfer: ic('<path d="M8 4v14M4 14l4 4 4-4M16 20V6M12 10l4-4 4 4"/>'), plug: ic('<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>'), lock: ic('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'), unlock: ic('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.4-2"/>'), minus: ic('<path d="M5 12h14"/>'), search: ic('<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>'), gear: ic('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>') };
-/* coordinates: X=1028, Y=-92810, Z=1029.202 ; a run of one digit may be written 1{10} (only when the run is continuous) */
 const DIG = /^(\d)(?:\{(\d{1,9})\})?/;
 const rle = (s) => { const r = []; let i = 0; while (i < s.length) { const m = DIG.exec(s.slice(i)); if (!m) return null; const b = !!m[2], n = b ? +m[2] : 1, l = r[r.length - 1]; if (b && n < 2) return null; if (l && l.d === m[1]) { if (b || l.b) return null; l.n += 1; } else r.push({ d: m[1], n: n, b: b }); i += m[0].length; } return r.length ? r : null; };
 const axis = (s) => { const m = /^([+-]?)([0-9{}]+)(?:\.([0-9{}]+))?$/.exec(s.trim()); if (!m) return null; const a = rle(m[2]), f = m[3] ? rle(m[3]) : []; if (!a || !f) return null; const len = a.reduce((t, x) => t + x.n, 0), zero = a.length === 1 && a[0].d === '0', mag = len - 1 + Math.log10(Math.max(1, +a[0].d)), p = zero ? 0 : Math.min(46, 4 + 5 * Math.log2(2 + mag)); return { raw: m[1] + m[2] + (m[3] ? '.' + m[3] : ''), p: m[1] === '-' ? -p : p }; };
 const coords = (q) => { q = q.trim().replace(/^[("']+|[)"']+$/g, ''); const w = q.split(','); if (w.length !== 3) return null; const o = {}; for (let i = 0; i < 3; i++) { const m = /^\s*([XYZxyz])\s*=\s*(.+)$/.exec(w[i]); if (!m || m[1].toUpperCase() !== 'XYZ'.charAt(i)) return null; const v = axis(m[2]); if (!v) return null; o[m[1].toUpperCase()] = v; } return o; };
 const ctext = (c) => 'X=' + c.X.raw + ', Y=' + c.Y.raw + ', Z=' + c.Z.raw;
-/* state */
 const TIERS = ['Core', 'Orbit', 'Archive'];
 const PLUGS = [['shield', 'Shield', 'Blocks trackers inside a World.'], ['reader', 'Reader', 'A clean reading layout.']];
-/* ENCRYPTED / DECRYPTED (acstatus) - DESIGN NOTE, DO NOT REMOVE
-   Yoan's intent: this is a SECURITY status, not a privacy or anonymity feature.
-   It marks whether the account's browser activity is encrypted or decrypted (encryption and decryption of user browser activity).
-   It is only a localStorage flag: key qb:acstatus, value Decrypted or Encrypted, same on every device. The labels are Encrypted and Decrypted on purpose, never Public, Private, Secured or Unsecured.
-   It must never create tabs, dots or private Worlds. No Supabase and no SQL for now.
-   Encryption itself is NOT built yet. This flag is the hook for it.
-   Nothing else may depend on it: no history, favorites, sync or tab-saving rules, and no dashed or dotted UI. */
 const st = { worlds: [], active: '', priv: ['Encrypted', 'Private'].includes(ld('acstatus', 'Decrypted')), panel: '', tab: 'search', hist: ld('hist', []), saved: ld('saved', []), xfer: [], plug: ld('plug', {}), sync: ld('sync', false) };
-/* Qasthra.qst is a placeholder. It is the page the universe (X=0, Y=0, Z=0, the Qasthra tab) will load the way a site loads index.html. Nothing reads it yet. Other sites still read their text from the Supabase sites.qst column. */
-const HOME_QST = 'Qasthra.qst';
 const QZ = 'X=0, Y=0, Z=0', QMSG = 'Only 2 Qasthra tabs are allowed.';
 const qfull = (w) => st.worlds.filter((x) => x !== w && title(x) === 'Qasthra').length >= 2;
 const nw = () => ({ id: uid(), tr: [{ k: 'universe', q: '' }], i: 0 });
@@ -809,7 +755,6 @@ let kt = 0; const keep = () => { sv('worlds', st.worlds); if (st.sync) { clearTi
 const ago = (t) => { const s = Math.max(0, (Date.now() - t) / 1000); return s < 60 ? 'now' : s < 3600 ? Math.floor(s / 60) + 'm' : s < 86400 ? Math.floor(s / 3600) + 'h' : Math.floor(s / 86400) + 'd'; };
 const size = (n) => (n < 1024 ? n + ' B' : n < 1048576 ? Math.round(n / 1024) + ' KB' : (n / 1048576).toFixed(1) + ' MB');
 const say = () => {};
-/* sync with Supabase (tables worlds_saved and worlds_history), manual on and off */
 const who = async () => { try { const r = await window.db.auth.getSession(); return r.data.session.user.id; } catch (e) { return null; } };
 const push0 = async () => { if (!st.sync || !window.db) return; await flush(); await pushTabs(); await push1(); }; const push1 = async () => { if (!st.sync || !window.db) return; const u = await who(); if (!u) return; try { await window.db.from('worlds_saved').upsert(st.saved.map((s) => ({ id: s.id, user_id: u, title: s.title, q: s.q, tier: s.tier, at: s.at })), { onConflict: 'id' }); await window.db.from('worlds_history').upsert(st.hist.map((h) => ({ id: h.id, user_id: u, kind: h.k, q: h.q, at: h.at })), { onConflict: 'id' }); } catch (e) {} };
 const pull0 = async () => { if (!st.sync) return; await flush(); await pullTabs(); await pull1(); }; const pull1 = async () => { if (!window.db) return; const u = await who(); if (!u) return; try { const a = await window.db.from('worlds_saved').select('*').eq('user_id', u), b = await window.db.from('worlds_history').select('*').eq('user_id', u).order('at', { ascending: false }).limit(200); (a.data || []).forEach((r) => { if (!st.saved.some((s) => s.id === r.id)) st.saved.push({ id: r.id, title: r.title, q: r.q, tier: r.tier, at: Number(r.at) }); }); (b.data || []).forEach((r) => { if (!st.hist.some((h) => h.id === r.id)) st.hist.push({ id: r.id, k: r.kind, q: r.q, at: Number(r.at) }); }); st.hist.sort((x, y) => y.at - x.at); st.hist.length = Math.min(st.hist.length, 200); sv('saved', st.saved); sv('hist', st.hist); } catch (e) {} };
@@ -821,10 +766,9 @@ const syncRun = (f) => async (...a) => { if (!st.sync) return f(...a); syncB++; 
 const push = syncRun(push0), pull = syncRun(pull0);
 window.addEventListener('online', () => { syncDraw(); push(); });
 window.addEventListener('offline', syncDraw);
-const ob = ld('outbox', []); const flush = async () => { if (!st.sync || !window.db || navigator.onLine === false || !ob.length) return; const batch = ob.splice(0); for (const o of batch) { let bad = true; try { const r = await window.db.from(o.t).delete().eq(o.c, o.v); bad = !!r.error; } catch (e) {} if (bad) ob.push(o); } sv('outbox', ob); }; const drop = async (t, c, v) => { if (!st.sync) return; ob.push({ t: t, c: c, v: v }); sv('outbox', ob); flush(); }; const drop0 = async (t, c, v) => { if (!st.sync || !window.db) return; try { await window.db.from(t).delete().eq(c, v); } catch (e) {} };
+const ob = ld('outbox', []); const flush = async () => { if (!st.sync || !window.db || navigator.onLine === false || !ob.length) return; const batch = ob.splice(0); for (const o of batch) { let bad = true; try { const r = await window.db.from(o.t).delete().eq(o.c, o.v); bad = !!r.error; } catch (e) {} if (bad) ob.push(o); } sv('outbox', ob); }; const drop = async (t, c, v) => { if (!st.sync) return; ob.push({ t: t, c: c, v: v }); sv('outbox', ob); flush(); };
 const toggleSync = async () => { st.sync = !st.sync; sv('sync', st.sync); pop(); if (st.sync) { await pull(); await push(); } else { const u = await who(); if (u && window.db) { try { await window.db.from('worlds_saved').delete().eq('user_id', u); await window.db.from('worlds_history').delete().eq('user_id', u); await window.db.from('worlds_open').delete().eq('user_id', u); ob.length = 0; sv('outbox', ob); } catch (e) {} } } pop(); };
 
-/* site names: SITES maps a coordinate text to its name, filled in later */
 const SITES = {}, ICONS = {}, SC = new Map(), FAV = 'Sources/Icons/Qasthra.svg';
 const favOf = (x) => { const e = ent(x); const k = e.k === 'coord' ? ctext(e.c) : ''; return ICONS[k] ? ICONS[k] : FAV; };
 const favBind = (im) => { im.onerror = () => { im.onerror = null; im.src = FAV; }; };
@@ -839,12 +783,10 @@ const lbl = (q) => { const c = coords(q); return c ? siteTitle(c) : q; };
 const siteName = (c) => (SITES[ctext(c)] ? SITES[ctext(c)] : ctext(c) === 'X=0, Y=0, Z=0' ? 'Qasthra' : 'Unknown');
 const siteTitle = (c) => SITES[ctext(c)] || (ctext(c) === QZ ? 'Qasthra' : ctext(c));
 const dispDraw = () => { const f = $('.qb-omni'), d = $('.qb-disp'), i = $('.qb-omni input'); if (!f || !d || !i) return; const e = ent(cur()); if (e.k === 'coord') lookupName(e.c); const on = e.k === 'coord' && document.activeElement !== i; f.classList.toggle('show-disp', on); d.hidden = !on; const xw = $('.qb-wipe'); if (xw) xw.hidden = !(i.value || on); if (on) { if (!d.firstChild) d.innerHTML = '<span class="qb-nm"></span><span class="qb-co"></span>'; d.firstChild.textContent = siteName(e.c); d.lastChild.textContent = e.q; d.classList.toggle('cc', ctlOn); } };
-/* search: suggestions from Favorites and History, clear button */
 const sugs = (t) => { t = t.trim().toLowerCase(); if (!t) return []; const out = [], seen = new Set(); const add = (q, tag) => { if (coords(q)) return; const k = q.toLowerCase(); if (k === t) return; if (seen.has(k)) return; if (k.indexOf(t) < 0) return; seen.add(k); out.push({ q: q, tag: tag }); }; st.saved.forEach((s) => add(s.q, 'Favorite')); st.hist.forEach((h) => { if (h.k === 'search') add(h.q, 'History'); }); out.sort((a, b) => (b.q.toLowerCase().indexOf(t) === 0) - (a.q.toLowerCase().indexOf(t) === 0)); return out.slice(0, 6); };
 const sugDraw = (show) => { const i = $('.qb-omni input'), b = $('#qbSug'), x = $('.qb-wipe'); if (!i) return; if (x) x.hidden = !i.value; if (!b) return; const rs = RS.q === i.value.trim().toLowerCase() ? RS.r : []; const r = show ? rs.concat(sugs(i.value)).slice(0, 8) : []; if (show) siteSug(i.value); if (!r.length) { b.hidden = true; b.innerHTML = ''; return; } b.innerHTML = r.map((s) => '<button class="qb-item" type="button" role="option" data-pick="' + esc(s.site ? s.site : s.q) + '"' + (s.id ? ' data-sid="' + esc(s.id) + '"' : '') + '><span>' + esc(s.q) + '</span><small>' + s.tag + '</small></button>').join(''); b.hidden = false; };
 const wipe = () => { const i = $('.qb-omni input'), f = $('.qb-omni'), d = $('.qb-disp'); if (!i) return; const w0 = cur(); if (ent(w0).k !== 'universe') { if (qfull(w0)) { say(QMSG); return; } w0.tr = w0.tr.slice(0, w0.i + 1); w0.tr.push({ k: 'universe', q: '' }); if (w0.tr.length > 50) w0.tr.shift(); w0.i = w0.tr.length - 1; keep(); draw(); } if (f) f.classList.remove('show-disp'); if (d) d.hidden = true; i.value = ''; i.focus(); sugDraw(false); };
 const pick = (e) => { const b = e.target.closest('[data-pick]'); if (!b) return; const i = $('.qb-omni input'); if (b.dataset.sid) bumpSite(b.dataset.sid); go(b.dataset.pick); if (i) i.blur(); sugDraw(false); };
-/* controller: tap nudges X, Y or Z by 1, hold repeats */
 const exp = (s) => { let n = 0; const r = s.replace(/(\d)\{(\d+)\}/g, (m, d, k) => { n += +k; return n > 2000 ? '' : d.repeat(+k); }); return n > 2000 ? null : r; };
 const pack = (s) => s.replace(/(\d)\1{3,}/g, (m, d) => d + '{' + m.length + '}');
 const bump = (a, d) => { const m = /^([+-]?)([0-9{}]+)(?:\.([0-9{}]+))?$/.exec(a.raw); if (!m) return null; const i = exp(m[2]), f = m[3] ? exp(m[3]) : ''; if (i === null) return null; if (f === null) return null; const sc = f.length; const v = BigInt((m[1] === '-' ? '-' : '') + i + f) + BigInt('1' + '0'.repeat(sc)) * BigInt(d); const neg = v < 0n; const s = (neg ? -v : v).toString().padStart(sc + 1, '0'); const ip = s.slice(0, s.length - sc), fp = s.slice(s.length - sc); return axis((neg ? '-' : '') + pack(ip) + (sc ? '.' + pack(fp) : '')); };
@@ -858,7 +800,6 @@ const copy = () => { const e = ent(cur()); if (e.k !== 'coord') { say('No coordi
 const speed = (t0) => { const d = window.QPUSH == null ? 0 : window.QPUSH, s = window.QHOLD ? window.QHOLD : t0 ? t0 : Date.now(), h = Math.min(1, (Date.now() - s) / 2500); return Math.min(1, d * 0.35 + h * 0.65); }; window.QSPEED = speed; const stop = () => { clearTimeout(rep); rep = 0; };
 const press = (e) => { if (e.button > 0) return; const b = e.target.closest('[data-n]'); if (!b) return; e.preventDefault(); stop(); const k = b.dataset.n; if (!nudge(k, 1)) return; const t0 = Date.now(); const step = () => { const sp = speed(t0); rep = setTimeout(() => { if (!nudge(k, 1)) { stop(); return; } step(); }, Math.max(40, Math.round(1000 / (3 + 22 * sp * sp)))); }; step(); };
 const tap = (e) => { const b = e.target.closest('[data-n]'); if (b && e.detail === 0) nudge(b.dataset.n); };
-/* history, worlds and movement */
 const rec = (k, q) => { if (!q) return; st.hist.unshift({ id: uid(), k: k, q: q, at: Date.now() }); st.hist.length = Math.min(st.hist.length, 200); sv('hist', st.hist); push(); };
 const go = (q) => { q = String(q).trim(); if (!q) return; if (/^qasthra$/i.test(q)) q = QZ; const c = coords(q); if (!c && /^[xyz]\s*=/i.test(q)) { say('Use X=1028, Y=-92810, Z=1029.202. A repeat looks like 1{10}.'); return; } const w = cur(), e = c ? { k: 'coord', q: ctext(c), c: c } : { k: 'search', q: q.slice(0, 200) }; if (c && ctext(c) === QZ && title(w) !== 'Qasthra' && qfull(w)) { say(QMSG); return; } w.tr = w.tr.slice(0, w.i + 1); w.tr.push(e); if (w.tr.length > 50) w.tr.shift(); w.i = w.tr.length - 1; rec('search', e.q); keep(); draw(); };
 const hop = (d) => { const w = cur(), n = w.i + d; if (n < 0 || n >= w.tr.length) return; w.i = n; keep(); draw(); };
@@ -873,11 +814,10 @@ const starDraw = () => { document.querySelectorAll('.qb-star').forEach((b) => { 
 const toggleFav = (id) => { const w = st.worlds.find((x) => x.id === id); if (!w) return; const e = ent(w); if (e.k === 'universe') return; const f = starOf(w); if (f) { st.saved = st.saved.filter((s) => s.id !== f.id); sv('saved', st.saved); drop('worlds_saved', 'id', f.id); } else { st.saved.unshift({ id: uid(), title: title(w), q: e.q, tier: 'Core', at: Date.now() }); sv('saved', st.saved); push(); const b = document.querySelector('.qb-star[data-fav="' + id + '"]'); if (b) { b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); } } starDraw(); if (st.panel === 'saved') pop(); };
 const clearHist = async () => { st.hist = []; sv('hist', []); const u = await who(); if (u) drop('worlds_history', 'user_id', u); say('History cleared.'); pop(); };
 const signout = async () => { if (window.QAUTH && window.QAUTH.signOut) await window.QAUTH.signOut(); try { if (window.CAP) window.CAP.fresh(); } catch (e) {} };
-/* the content area */
 let qTok = 0, qSeen = '', noLoad = false; const qStop = () => { qTok++; const ov = $('.qb-ov'); if (ov && ov.querySelector('.qb-world-loader')) ov.innerHTML = ''; }; const qOpen = (e) => { const o = $('.qb-ov'); if (!o) return; const tok = ++qTok, t0 = Date.now(), LOAD = 2500, MAXQ = 5000, k0 = e.k === 'coord' ? ctext(e.c) : ''; qSeen = k0; window.QST = null; o.innerHTML = '<div class="qb-page qb-qast"><img class="qb-world-loader" src="Sources/Videos/Qasthra.gif" alt="Loading"></div>'; const live = () => tok === qTok && cur() && ent(cur()) === e && (e.k !== 'coord' || ctext(e.c) === k0) && $('.qb-ov'); const done = (res) => { setTimeout(() => { const ov = live(); if (!ov) return; if (res && res.text) { if (e.k === 'search') { e.k = 'coord'; e.c = res.c; e.q = ctext(res.c); } if (res.name) SITES[res.k] = res.name; qSeen = res.k; window.QST = { coord: res.k, text: res.text }; ov.innerHTML = '<div class="qb-page qb-qast"><div class="qb-qtext"></div></div>'; ov.querySelector('.qb-qtext').textContent = res.text; const t = $('.qb-w[aria-selected="true"] span'), i = $('.qb-omni input'); if (t) t.textContent = title(cur()); if (i && document.activeElement !== i) i.value = ''; dispDraw(); keep(); return; } const bar = $('.qb-omni input'); if (res && !res.text) { if (e.k === 'search') { e.k = 'coord'; e.c = res.c; e.q = ctext(res.c); } if (res.name) SITES[res.k] = res.name; qSeen = res.k; window.QST = null; ov.innerHTML = ''; const t2 = $('.qb-w[aria-selected="true"] span'); if (t2) t2.textContent = title(cur()); if (bar) bar.value = ''; dispDraw(); keep(); return; } if (k0 === QZ) { const w1 = cur(); w1.tr[w1.i] = { k: 'universe', q: '' }; keep(); draw(); return; } const w = cur(); if (!qfull(w)) { w.tr[w.i] = { k: 'universe', q: '' }; keep(); draw(); } else if (w.i > 0) hop(-1); else { if (bar) bar.value = ''; } }, Math.max(0, LOAD - (Date.now() - t0))); }; const job = async () => { let c = e.c; if (e.k === 'search') { const r = await siteFind(e.q, 5), t = e.q.trim().toLowerCase(), s = r.find((x) => String(x.name).toLowerCase() === t) || r[0]; if (!s) return null; c = coords(s.coord); if (!c) return null; bumpSite(s.id); } const k = ctext(c), r2 = await window.db.from('sites').select('name,qst').eq('coord', k).maybeSingle(); if (r2.error || !r2.data) return null; return { c: c, k: k, name: r2.data.name || '', text: typeof r2.data.qst === 'string' ? r2.data.qst.trim().slice(0, MAXQ) : '' }; }; if (!window.db) { done(null); return; } Promise.race([job().catch(() => null), new Promise((r) => setTimeout(() => r(null), LOAD))]).then(done); };
 const view = (w) => { const v = $('.qa-view'); if (!v) return; let s = $('.qb-stage', v); if (!s) { v.innerHTML = '<div class="qb-stage"><div class="qb-ov"></div></div>'; s = $('.qb-stage', v); } if (noLoad) { qStop(); return; } const e = ent(w); if (e.k === 'universe') { qTok++; qSeen = ''; window.QST = null; $('.qb-ov', s).innerHTML = ''; return; } qOpen(e); };
 const nb = (k, l, ico, cls) => '<button class="qb-ic qb-nb' + (cls ? ' ' + cls : '') + '" type="button" data-n="' + k + '" aria-label="' + l + '" title="' + l + '">' + ico + '</button>';
-I.prev = ic('<path d="M19 12H6M11 6l-6 6 6 6"/>'); I.next = ic('<path d="M5 12h13M13 6l6 6-6 6"/>'); /* panels */
+I.prev = ic('<path d="M19 12H6M11 6l-6 6 6 6"/>'); I.next = ic('<path d="M5 12h13M13 6l6 6-6 6"/>');
 const pill = (a, t, o) => '<button class="qb-pill" type="button" data-tab="' + a + '" aria-pressed="' + o + '">' + t + '</button>';
 const PANELS = {
 history: () => { const k = st.tab === 'world' ? 'world' : 'search', r = st.hist.filter((h) => h.k === k); return '<div class="qb-top"><h3 class="qb-h">History</h3><button class="qb-btn" type="button" data-a="clear">Clear</button></div><div class="qb-tabs">' + pill('search', 'Searches', k === 'search') + pill('world', 'Closed Worlds', k === 'world') + '</div>' + (r.length ? '<div class="qb-list">' + r.map((h) => '<button class="qb-item" type="button" data-' + (k === 'world' ? 'reopen' : 'run') + '="' + esc(h.q) + '"><span>' + esc(lbl(h.q)) + '</span><small>' + ago(h.at) + '</small></button>').join('') + '</div>' : '<p class="qb-empty">Nothing here yet.</p>'); },
@@ -887,11 +827,9 @@ plug: () => '<div class="qb-top"><h3 class="qb-h">Plugins and Plugouts</h3><butt
 set: () => '<h3 class="qb-h">Settings</h3><div class="qb-row2 qb-mob"><div><b>Encrypted</b><small>Security status of your browsing: Encrypted or Decrypted. Saved on this device.</small></div><button class="qb-sw" type="button" role="switch" aria-checked="' + st.priv + '" aria-label="Encrypted" data-a="priv"></button></div><div class="qb-list qb-mob"><button class="qb-item" type="button" data-p="saved">' + I.star + '<span>Favorites</span></button><button class="qb-item" type="button" data-p="history">' + I.clock + '<span>History</span></button><button class="qb-item" type="button" data-p="plug">' + I.plug + '<span>Plugins and Plugouts</span></button><button class="qb-item" type="button" data-p="xfer">' + I.xfer + '<span>Uploads and Downloads</span></button></div><div class="qb-row2 qb-mob"><div><b>Theme</b><small>Dark or light.</small></div><button class="qb-btn" type="button" data-theme-btn>Switch</button></div><div class="qb-row2 qb-mob"><div><b>Sync</b><small>On: follows your account. Off: the cloud copy is deleted.</small></div><button class="qb-sw" type="button" role="switch" aria-checked="' + st.sync + '" aria-label="Sync" data-sw="sync"></button></div><div class="qb-row2"><div><b>History</b><small>Clear searches and closed Worlds on this device.</small></div><button class="qb-btn" type="button" data-a="clear">Clear</button></div><div class="qb-row2"><div><b>Account</b><small>Sign out of Qasthra.</small></div><button class="qb-btn" type="button" data-a="signout">Sign out</button></div>'
 };
 const pop = () => { document.querySelectorAll('.qb-set [data-p]').forEach((b) => { b.setAttribute('aria-pressed', String(st.panel === b.dataset.p)); }); syncDraw(); const p = $('.qb-pop'); if (!p) return; if (!st.panel) { p.hidden = true; return; } p.hidden = false; p.className = 'qb-pop' + (st.panel === 'quick' ? ' wide' : ''); p.innerHTML = PANELS[st.panel](); };
-/* the bar */
 const draw = () => { if (dg) { clearTimeout(dg.t); dg = null; } const h = $('#qbHost'); if (!h) return; const w = cur(), i = st.worlds.indexOf(w), strip = $('.qb-strip', h), firstQ = st.worlds.findIndex((x) => title(x) === 'Qasthra'); strip.innerHTML = st.worlds.map((x, n) => '<div class="qb-w" role="tab" tabindex="0" data-w="' + esc(x.id) + '" aria-selected="' + (x.id === w.id) + '"><img class="qb-fav" src="' + esc(favOf(x)) + '" alt="" width="16" height="16"><span>' + esc(title(x)) + '</span>' + starBtn(x) + (title(x) === 'Qasthra' && n === firstQ ? '' : '<button class="qb-x" type="button" data-x="' + esc(x.id) + '" aria-label="Close World">' + I.x + '</button>') + '</div>').join(''); strip.querySelectorAll('.qb-fav').forEach(favBind); const a = $('[aria-selected="true"]', strip); if (a && a.scrollIntoView) a.scrollIntoView({ inline: 'nearest', block: 'nearest' }); const all = (s) => Array.from(h.querySelectorAll(s)); all('[data-a="back"]').forEach((b) => { b.disabled = w.i < 1; }); all('[data-a="fwd"]').forEach((b) => { b.disabled = w.i >= w.tr.length - 1; }); all('[data-a="wprev"]').forEach((b) => { b.disabled = i < 1; }); all('[data-a="wnext"]').forEach((b) => { b.disabled = i >= st.worlds.length - 1; }); all('.qb-count b').forEach((b) => { b.textContent = st.worlds.length; }); all('[data-a="priv"]').forEach((b) => { b.setAttribute('aria-pressed', String(st.priv)); b.setAttribute('title', st.priv ? 'Encrypted, tap to decrypt' : 'Decrypted, tap to encrypt'); const s = b.querySelector('svg'); if (s) s.outerHTML = st.priv ? I.lock : I.unlock; }); $('.qb-omni input', h).value = ent(w).k === 'search' ? ent(w).q : ''; sugDraw(false); dispDraw(); view(w); pop(); };
 const bt = (attr, label, icon, cls) => '<button class="qb-ic' + (cls ? ' ' + cls : '') + '" type="button" ' + attr + ' aria-label="' + label + '" title="' + label + '">' + icon + '</button>';
 const SET = '<div class="qb-set" role="toolbar" aria-label="Quick settings">' + bt('data-p="history"', 'History', I.clock) + bt('data-p="xfer"', 'Uploads and Downloads', I.xfer) + bt('data-p="saved"', 'Favorites', I.star) + bt('data-p="plug"', 'Plugins and Plugouts', I.plug) + bt('data-sw="sync"', 'Sync off, tap to Sync', ic('<path d="M4 12a8 8 0 0 1 13.7-5.6L20 8M20 4v4h-4M20 12a8 8 0 0 1-13.7 5.6L4 16M4 20v-4h4"/>'), 'qb-sync') + '<button class="qb-ic qb-th" type="button" data-theme-btn aria-label="Switch theme" title="Switch theme"><span class="t-d">' + ic('<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>') + '</span><span class="t-l">' + ic('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>') + '</span></button></div>';
-/* SPIRIT (soon): the Kirby strip is where a talker will live, an AI model or a human model, acting as a support system while browsing. For now it only holds the 3D control. */
 const KIRBY = '<' + '!-- SPIRIT (soon): the Kirby strip is where a talker will live, an AI model or a human model, as a support system while browsing. For now it only holds the 3D control. --' + '>' + '<div class="qb-kirby" aria-label="Spirit and 3D control"><svg class="qb-kb" viewBox="0 0 88 86" preserveAspectRatio="none" aria-hidden="true"><path class="qb-kf" d="M88 86H44A43 43 0 0 1 44 0H88Z"/><path class="qb-ks" d="M44 .5A42.5 42.5 0 0 0 1.6 38"/><path class="qb-ks" d="M0 85.5H88"/></svg><div class="qb-orb" id="qbOrbK" role="button" tabindex="0" aria-label="3D control" aria-expanded="false"><canvas id="qbBallK" width="128" height="128"></canvas><span class="qb-jx" hidden>' + nb('left', 'Left, X minus', I.left) + nb('right', 'Right, X plus', I.right) + nb('up', 'Up, Y plus', I.up) + nb('down', 'Down, Y minus', I.down) + nb('zin', 'Z plus, depth in', I.plus) + nb('zout', 'Z minus, depth out', I.minus) + '</span></div></div>';
 const BAR = '<div class="qb"><div class="qb-col"><div class="qb-row qb-worlds"><div class="qb-strip" role="tablist" aria-label="Worlds"></div>' + bt('data-a="add"', 'New World', I.plus) + '</div><div class="qb-row qb-tool">' + '<div class="qb-nav qb-dk">' + bt('data-a="back"', 'Back', I.prev) + bt('data-a="priv"', 'Decrypted, tap to encrypt', I.unlock) + bt('data-a="fwd"', 'Next', I.next) + '</div><form class="qb-omni" autocomplete="off"><span class="qb-ic qb-mag" aria-hidden="true">' + I.search + '</span><button class="qb-disp" type="button" hidden aria-label="Edit search"></button><input type="text" maxlength="400" enterkeyhint="go" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Search" placeholder="Search">' + bt('data-a="wipe" hidden', 'Clear search', I.x, 'qb-wipe') + bt('data-a="reload"', 'Reload', I.reload) + '<div class="qb-sug" id="qbSug" role="listbox" hidden></div></form>' + SET + bt('data-p="set"', 'Settings', I.gear, 'qb-gear-m') + '</div></div>' + KIRBY + '<div class="qb-dock" role="toolbar" aria-label="Browser">' + bt('data-a="back"', 'Back', I.prev, 'qb-bk') + '<div class="qb-orb" id="qbOrb" role="button" tabindex="0" aria-label="3D control" aria-expanded="false"><canvas id="qbBall" width="224" height="224"></canvas><svg class="qb-arc" viewBox="-50 -50 100 56" aria-hidden="true"><path class="qb-ae" pathLength="100" d="M-36.66 16A40 40 0 1 1 36.66 16"/><path class="qb-at" pathLength="100" d="M-36.66 16A40 40 0 1 1 36.66 16"/><path class="qb-ag" pathLength="100" d="M-36.66 16A40 40 0 1 1 36.66 16"/><path class="qb-af" pathLength="100" d="M-36.66 16A40 40 0 1 1 36.66 16"/></svg>' + nb('zin', 'Z plus, depth in', I.plus, 'qb-zb qb-zu') + nb('zout', 'Z minus, depth out', I.minus, 'qb-zb qb-zd') + '<span class="qb-jx" hidden>' + nb('left', 'Left, X minus', I.left) + nb('right', 'Right, X plus', I.right) + nb('up', 'Up, Y plus', I.up) + nb('down', 'Down, Y minus', I.down) + '</span></div>' + bt('data-a="fwd"', 'Next', I.next, 'qb-fw') + '</div><div class="qb-pop" hidden></div><input type="file" id="qbFile" multiple hidden></div>';
 const reloadWorld = () => { const w = cur(); if (!w) return; st.panel = ''; const e = ent(w); if (e.k === 'coord') { window.QST = null; view(w); } else if (e.k === 'search') { view(w); } else { draw(); } };
@@ -902,7 +840,6 @@ let kdown = '';
 const hold = (k) => { stop(); if (!nudge(k, 1)) return; const t0 = Date.now(); const step = () => { const sp = speed(t0); rep = setTimeout(() => { if (!nudge(k, 1)) { stop(); return; } step(); }, Math.max(40, Math.round(1000 / (3 + 22 * sp * sp)))); }; step(); };
 const kbd = (e) => { if (e.ctrlKey || e.metaKey) { if (e.ctrlKey && e.key.toLowerCase() === 'k') { e.preventDefault(); const i = $('.qb-omni input'); if (i) i.focus(); } return; } const t = e.target; if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return; const k = e.key.length === 1 ? e.key.toLowerCase() : e.key; if (KN[k]) { e.preventDefault(); if (!e.repeat) { kdown = k; hold(KN[k]); } return; } if (KP[k]) { e.preventDefault(); if (KP[k] === 'set') { if (window.QSET) window.QSET.open(); return; } st.panel = st.panel === KP[k] ? '' : KP[k]; pop(); return; } const m = { '0': zero, '[': () => hop(-1), ']': () => hop(1), '<': () => swap(-1), '>': () => swap(1), t: add, x: () => shut(cur().id), r: reloadWorld, p: flip, f: saveCur, c: copy, y: toggleSync, m: () => { const b = $('[data-theme-btn]'); if (b) b.click(); }, '/': () => { const i = $('.qb-omni input'); if (i) i.focus(); } }[k]; if (m) { e.preventDefault(); if (!e.repeat) m(); } };
 document.addEventListener('keyup', (e) => { const k = e.key.length === 1 ? e.key.toLowerCase() : e.key; if (k === kdown) { kdown = ''; stop(); } });
-/* tab drag: every exit path ends in dragEnd, so a tab cannot stay stuck */
 let dg = null, lp = false, lpT = 0, lpX = 0, lpY = 0, sup = false, settling = false;
 const GAP = 2;
 const vib = (n) => { try { if (navigator.vibrate && !(window.QSET && window.QSET.get('haptics') === '0')) navigator.vibrate(n); } catch (x) {} };
@@ -986,7 +923,6 @@ window.QBAPI = { count: () => ({ worlds: st.worlds.length, hist: st.hist.length,
 Q.dashboard = () => { base(); mount(); if (st.sync) pull().then(push); };
 if (window.screen && window.screen.current === 'dashboard' && !$('#qbHost')) setTimeout(() => Q.dashboard(), 0);
 })();
-/* ---------- qb orb v2: glass ball that turns into the 3D control (XY drag + depth) ---------- */
 (() => {
 const Q = window.QA; if (!Q) return; if (!Q.dashboard) return;
 const $ = (s) => document.querySelector(s);
@@ -1033,11 +969,11 @@ const km = new T.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity
 const rm = new T.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, side: T.DoubleSide });
 const kn = new T.Mesh(new T.SphereGeometry(0.13, 24, 16), km), rg = new T.Mesh(new T.RingGeometry(0.27, 0.3, 40), rm);
 const gm = new T.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthWrite: false }), gl = new T.Mesh(new T.SphereGeometry(0.3, 24, 16), gm); sc.add(gl); sc.add(kn); sc.add(rg);
-let g = 0, rx = 0, ry = 0, spin = 0, tt = 0, kx = 0, ky = 0, last = performance.now(); const t0 = last;
+let g = 0, rx = 0, ry = 0, spin = 0, tt = 0, kx = 0, ky = 0, last = performance.now();
 const loop = (now) => {
 if (!document.body.contains(cv)) { r.dispose(); return; }
 requestAnimationFrame(loop); if (document.hidden || document.getElementById('qload') || now - last < 30) return;
-if (!cv.offsetParent) { last = now; return; } const dt = Math.min(0.1, (now - last) / 1000), k = (now - t0) / 1000, d = dark(); last = now;
+if (!cv.offsetParent) { last = now; return; } const dt = Math.min(0.1, (now - last) / 1000), d = dark(); last = now;
 g += (S.act - g) * 0.12; spin += dt * 0.16; tt += dt * 0.5;
 rx += (S.tx - rx) * 0.15; ry += (S.ty - ry) * 0.15; kx += (S.kx - kx) * 0.3; ky += (S.ky - ky) * 0.3;
 U.uA.value = 0; U.uT.value = tt; U.uC.value.setHex(d ? 0xf2f2f4 : 0x1a1a1d);
@@ -1052,7 +988,7 @@ requestAnimationFrame(loop);
 };
 const init = (oid, cid) => {
 const orb = $('#' + oid), cv = $('#' + cid); if (!orb) return; if (!cv) return; if (cv.dataset.on) return; cv.dataset.on = '1';
-const S = { act: 0, tx: 0, ty: 0, kx: 0, ky: 0 }; let it = 0, held = false, drag = false, dir = '', zone = 'xy', sx = 0, sy = 0, mv = 0, st0 = 0;
+const S = { act: 0, tx: 0, ty: 0, kx: 0, ky: 0 }; let it = 0, held = false, drag = false, dir = '', zone = 'xy', sx = 0, sy = 0, mv = 0;
 const bootBall = () => { if (document.getElementById('qload')) { setTimeout(bootBall, 250); return; } lib(() => ball(cv, S)); }; bootBall();
 const poke = () => { clearTimeout(it); it = setTimeout(rest, IDLE); };
 const rest = () => { if (held) { poke(); return; } orb.classList.remove('on'); orb.setAttribute('aria-expanded', 'false'); S.act = 0; S.kx = 0; S.ky = 0; S.tx = 0; S.ty = 0; };
@@ -1067,11 +1003,11 @@ mv = Math.max(mv, Math.hypot(e.clientX - sx, e.clientY - sy));
 window.QPUSH = Math.max(0, Math.min(1, (m - R * 0.4) / (R * 0.6))); S.kx = dx / R; S.ky = dy / R; S.tx = S.ky * 0.45; S.ty = S.kx * 0.6;
  send(zone === 'z' ? (sx < b.left + b.width / 2 ? 'zout' : 'zin') : (m < R * 0.4 || mv < 8 ? '' : Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : (dy > 0 ? 'down' : 'up'))); poke();
 };
-const end = () => { if (!drag) return; drag = false; const bb = orb.getBoundingClientRect(), tk = zone === 'z' ? (sx < bb.left + bb.width / 2 ? 'zout' : 'zin') : '', tap = mv < 8 && Date.now() - st0 < 300; send('');  window.QPUSH = null; window.QHOLD = null; S.kx = 0; S.ky = 0; S.tx = 0; S.ty = 0; held = false; rest(); };
+const end = () => { if (!drag) return; drag = false; send('');  window.QPUSH = null; window.QHOLD = null; S.kx = 0; S.ky = 0; S.tx = 0; S.ty = 0; held = false; rest(); };
 orb.addEventListener('pointerdown', (e) => {
 if (e.button > 0) return;
 if (e.target.closest('[data-n]')) { held = true; poke(); return; }
-sx = e.clientX; sy = e.clientY; mv = 0; st0 = Date.now(); const b = orb.getBoundingClientRect(); zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';
+sx = e.clientX; sy = e.clientY; mv = 0; const b = orb.getBoundingClientRect(); zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';
 if (!on()) open(); window.QHOLD = Date.now();
 drag = true; held = true; try { orb.setPointerCapture(e.pointerId); } catch (x) {} e.preventDefault(); move(e);
 });
@@ -1084,7 +1020,6 @@ window.addEventListener('pointerup', (e) => { if (!e.isTrusted) return; if (!on(
 const prev = Q.dashboard; Q.dashboard = () => { prev(); init('qbOrb', 'qbBall'); init('qbOrbK', 'qbBallK'); }; if ($('#qbOrb')) { init('qbOrb', 'qbBall'); init('qbOrbK', 'qbBallK'); }
 })();
 
-/* ---------- dashboard only: validated loading screen + music (never on the landing page) ---------- */
 (() => {
   const isDash = () => /^#dashboard/.test(location.hash);
   const S = ['Sources/Musics/Qasthra.mp3', 'Sources/Musics/Qasthra.m4a'];
@@ -1111,9 +1046,7 @@ const prev = Q.dashboard; Q.dashboard = () => { prev(); init('qbOrb', 'qbBall');
     else { window.QWAIT = false; if (!isDash()) { delete document.documentElement.dataset.screenTransition; if (window.QAUTH) window.QAUTH.hideVeil(); } }
   })();
 })();
-// ---------- input guards: stop bad input while typing, before anything is submitted ----------
 (() => {
-  // Allowed email endings. Add or remove domains here.
   const DOMAINS = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'proton.me'];
   const BADCH = /[<>{}\[\]`\u0000-\u0009\u000b-\u001f\u007f]/g;
   const EMAIL_OK = new RegExp('^[a-z0-9]+(?:[._%+-][a-z0-9]+)*@(?:' + DOMAINS.map((d) => d.replace('.', '\\.')).join('|') + ')$');
@@ -1194,7 +1127,6 @@ const prev = Q.dashboard; Q.dashboard = () => { prev(); init('qbOrb', 'qbBall');
 })();
 ['keyup', 'compositionend', 'paste', 'focusout'].forEach((t) => document.addEventListener(t, (e) => { const f = e.target && e.target.closest ? e.target.closest('.cs-form') : null; if (f && window.csGate) setTimeout(() => window.csGate(f), 0); }));
 (function(){var last=null,app=document.getElementById('app');function close(){var p=document.querySelector('.pop');if(!p)return;p.remove();document.documentElement.classList.remove('pop-open');if(app)app.inert=false;if(last&&last.focus)last.focus();last=null}function open(id,from){close();last=from;var p=document.createElement('div');p.className='pop';p.setAttribute('role','dialog');p.setAttribute('aria-modal','true');p.setAttribute('aria-label',from.textContent);p.dataset.pop=id;var b=document.createElement('button');b.type='button';b.className='pop-x';b.setAttribute('aria-label','Close');b.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';p.appendChild(b);document.body.appendChild(p);document.documentElement.classList.add('pop-open');if(app)app.inert=true;b.focus()}document.addEventListener('click',function(e){var a=e.target.closest('a[data-pop]');if(a){e.preventDefault();open(a.dataset.pop,a);return}if(e.target.closest('.pop-x'))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})})();
-/* ---------- settings: full-screen render, Manage page, 8 categories ---------- */
 (() => {
 const $ = (s, r) => (r || document).querySelector(s); const html = document.documentElement; const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => '&#' + c.charCodeAt(0) + ';'); const rd = (k) => { try { return localStorage.getItem('qs:' + k); } catch (e) { return null; } }; const wr = (k, v) => { try { localStorage.setItem('qs:' + k, String(v)); } catch (e) {} }; const D = { music: '1', vol: '8', haptics: '1', restore: '1', confirm: '0', text: 'default', motion: '0' }; const get = (k) => { const v = rd(k); return v === null ? D[k] : v; };
 const apply = () => { html.dataset.text = get('text'); html.dataset.motion = get('motion') === '1' ? 'reduce' : 'off'; }; const set = (k, v) => { wr(k, v); apply(); window.dispatchEvent(new Event('qsetchange')); }; const th = () => { try { return localStorage.getItem('theme') || 'system'; } catch (e) { return 'system'; } }; const setTheme = (v) => { try { if (v === 'system') { localStorage.removeItem('theme'); delete html.dataset.theme; } else { localStorage.setItem('theme', v); html.dataset.theme = v; } } catch (e) {} window.dispatchEvent(new Event('themechange')); }; apply();
@@ -1202,8 +1134,8 @@ const P = { sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.
 const DS = { Favorites: 'Saved Worlds and coordinates.', History: 'Searches and closed Worlds.', Transfers: 'Uploads and downloads.', Wirings: 'Shield, Reader and more.', Theme: 'Dark, light or your device.', Text: 'Change the size of text.', Motion: 'Animations across the site. Off turns them all off.', 'Restore': 'Reopen your tabs after a restart.', 'Warnings': 'Ask before closing a World.', Haptics: 'Vibration feedback on touch.', Music: 'Background music on the dashboard.', Volume: 'How loud the music plays.', Encrypted: 'Your browsing is marked as encrypted.', Decrypted: 'Turn on to mark your browsing as encrypted.', Synced: 'Your data is kept on every device.', Unsynced: 'Turn on to keep your data on every device.', Export: 'Download your data as a file.', Import: 'Replace all your data from a file.', Storage: 'Space used on this device.', 'Reset': 'Put every setting back to default.', Version: 'Current release of Qasthra.' }; const dsc = (t) => (DS[t] ? '<small>' + DS[t] + '</small>' : ''); const row = (n, t, c) => '<div class="qs-row"><i class="qs-ic">' + ic(n) + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div>' + c + '</div>'; const tog = (n, t, k, on) => '<div class="qs-row qs-hit" data-tr="' + k + '"><i class="qs-ic">' + ic(n) + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div><button class="qb-sw" type="button" role="switch" aria-checked="' + on + '" aria-label="' + t + '"></button></div>'; const pick = (n, t, k, o, cur) => '<div class="qs-row qs-pick"><i class="qs-ic">' + ic(n) + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div><span class="qs-v">' + (o.find((x) => x[0] === cur) || o[0])[1] + '</span><i class="qs-ch">' + ic('chev') + '</i><select data-k="' + k + '" aria-label="' + t + '">' + o.map((x) => '<option value="' + x[0] + '"' + (x[0] === cur ? ' selected' : '') + '>' + x[1] + '</option>').join('') + '</select></div>'; const act = (n, t, d, v, x, arg) => '<button class="qs-row qs-hit' + (x ? ' ' + x : '') + '" type="button" data-do="' + d + '"' + (arg ? ' data-arg="' + arg + '"' : '') + '><i class="qs-ic">' + ic(n) + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div>' + (v !== '' && v != null ? '<span class="qs-v">' + v + '</span>' : '') + '<i class="qs-ch">' + ic('chev') + '</i></button>'; const lnk = (t, id) => '<a class="qs-row qs-hit" href="#" data-pop="' + id + '"><i class="qs-ic">' + ic('file') + '</i><div class="qs-tx"><b>' + t + '</b>' + dsc(t) + '</div><i class="qs-ch">' + ic('chev') + '</i></a>';
 const usage = () => { let n = 0; try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (/^(qb|qs):/.test(k)) n += k.length + String(localStorage.getItem(k)).length; } } catch (e) {} return n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; }; const CAT = [['library', 'Library', 'star'], ['appearance', 'Appearance', 'sun'], ['browsing', 'Browsing', 'tab'], ['sound', 'Sound', 'music'], ['privacy', 'Privacy', 'shield'], ['data', 'Data', 'db']]; const K = [['Move left or right', 'A', 'D'], ['Move up or down', 'W', 'S'], ['Depth in or out', 'E', 'Q'], ['Go to Qasthra', '0'], ['Back or Next', '[', ']'], ['Previous or next World', '<', '>'], ['New World', 'T'], ['Close World', 'X'], ['Reload', 'R'], ['Encrypted', 'P'], ['Favorite', 'F'], ['Copy coordinates', 'C'], ['Sync', 'Y'], ['Theme', 'M'], ['Search', '/', 'Ctrl K'], ['Panels', 'H', 'U', 'L', ',']];
 const sec = (id, t, rows) => '<section class="qs-sec" data-c="' + id + '"><h3 class="qs-cap">' + t + '</h3><div class="qs-list">' + rows.join('') + '</div></section>'; const secs = () => { const B = window.QBAPI, c = B ? B.count() : { hist: 0, favs: 0 }; const S = { library: [act('star', 'Favorites', 'panel', c.favs, '', 'saved'), act('clock', 'History', 'panel', c.hist, '', 'history'), act('download', 'Transfers', 'panel', '', '', 'xfer'), act('plug', 'Wirings', 'panel', '', '', 'plug')], appearance: [pick('sun', 'Theme', 'theme', [['system', 'System'], ['light', 'Light'], ['dark', 'Dark']], th()), pick('text', 'Text', 'text', [['small', 'Small'], ['default', 'Default'], ['large', 'Large']], get('text')), tog('motion', 'Motion', 'motion', get('motion') !== '1')], browsing: [tog('tab', 'Restore', 'restore', get('restore') === '1'), tog('warn', 'Warnings', 'confirm', get('confirm') === '1'), tog('haptic', 'Haptics', 'haptics', get('haptics') === '1')], sound: [tog('music', 'Music', 'music', get('music') === '1'), row('volume', 'Volume', '<input class="qs-rng" type="range" min="0" max="100" step="1" value="' + get('vol') + '" data-r="vol" aria-label="Volume"><span class="qs-v qs-pc">' + get('vol') + '%</span>')], privacy: [tog('lock', (B ? B.enc() : false) ? 'Encrypted' : 'Decrypted', 'enc', B ? B.enc() : false)], data: [tog('sync', (B ? B.syncOn() : false) ? 'Synced' : 'Unsynced', 'sync', B ? B.syncOn() : false), act('download', 'Export', 'export', 'JSON'), act('upload', 'Import', 'import', 'JSON'), row('db', 'Storage', '<span class="qs-v">' + usage() + '</span>'), act('reset', 'Reset', 'reset', '')], shortcuts: K.map((x) => '<div class="qs-row qs-sc"><div class="qs-tx"><b>' + x[0] + '</b></div><span class="qs-keys">' + x.slice(1).map((k) => '<kbd>' + esc(k) + '</kbd>').join('') + '</span></div>'), about: [row('info', 'Version', '<span class="qs-v">A1.00</span>'), lnk('Licenses and Policies', 'licenses'), lnk('Terms and Conditions', 'terms'), lnk('Guidance', 'guidance'), lnk('Recovery', 'recovery'), lnk('Certificates', 'certificates')] }; return CAT.map((x) => sec(x[0], x[1], S[x[0]])).join(''); };
-const LANG = ['English', 'Filipino', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Dutch', 'Russian', 'Ukrainian', 'Polish', 'Turkish', 'Arabic', 'Hebrew', 'Persian', 'Hindi', 'Bengali', 'Urdu', 'Tamil', 'Indonesian', 'Malay', 'Thai', 'Vietnamese', 'Chinese', 'Japanese', 'Korean', 'Swahili', 'Cebuano', 'Ilocano', 'Other']; const fld = (n, l, t, m, x) => '<label class="cs-f"><span>' + l + '</span><input name="' + n + '" type="' + t + '" maxlength="' + m + '"' + (x || '') + '></label>'; const selF = (n, l, o) => '<label class="cs-f"><span>' + l + '</span><select name="' + n + '"><option value="">Select</option>' + o.map((v) => '<option value="' + v + '">' + v + '</option>').join('') + '</select></label>'; const prof = (m) => '<div class="qs-prof"><div class="qs-av" data-av>?</div><h2 class="qs-nm" data-nm>Account</h2><p class="qs-em" data-em></p>' + (m ? '<button class="btn btn-mono qs-man" type="button" data-do="manage">Manage' + ic('chev') + '</button>' : '') + '</div>';
-const card = () => '<div class="qs-card"><div class="qs-ct qs-tap" data-do="profile" role="button" tabindex="0" aria-label="Open profile"><div class="qs-av" data-av>?</div><div class="qs-who"><h2 class="qs-nm" data-nm>Account</h2><p class="qs-un" data-un></p></div></div><div class="qs-cf"><button class="qs-pill" type="button" data-do="signout" aria-label="Switch account">' + ic('user') + '<span>Switch</span></button><button class="qs-pill qs-circ" type="button" data-do="manage" aria-label="Edit">' + ic('pencil') + '</button></div></div>'; 
+const LANG = ['English', 'Filipino', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Dutch', 'Russian', 'Ukrainian', 'Polish', 'Turkish', 'Arabic', 'Hebrew', 'Persian', 'Hindi', 'Bengali', 'Urdu', 'Tamil', 'Indonesian', 'Malay', 'Thai', 'Vietnamese', 'Chinese', 'Japanese', 'Korean', 'Swahili', 'Cebuano', 'Ilocano', 'Other']; const fld = (n, l, t, m, x) => '<label class="cs-f"><span>' + l + '</span><input name="' + n + '" type="' + t + '" maxlength="' + m + '"' + (x || '') + '></label>';
+const card = () => '<div class="qs-card"><div class="qs-ct qs-tap" data-do="profile" role="button" tabindex="0" aria-label="Open profile"><div class="qs-av" data-av>?</div><div class="qs-who"><h2 class="qs-nm" data-nm>Account</h2><p class="qs-un" data-un></p></div></div><div class="qs-cf"><button class="qs-pill" type="button" data-do="signout" aria-label="Switch account">' + ic('user') + '<span>Switch</span></button><button class="qs-pill qs-circ" type="button" data-do="manage" aria-label="Edit">' + ic('pencil') + '</button></div></div>';
 const AK = ['full_name', 'recovery_email', 'phone', 'gender', 'sex', 'language', 'address_home', 'address_work', 'bio'];
 const ALB = { username: 'Username', full_name: 'Name', birthday: 'Birthday', recovery_email: 'Email', phone: 'Phone', address_home: 'Home address', address_work: 'Work address', gender: 'Gender', sex: 'Sex', language: 'Language', bio: 'About' };
 const ATX = { full_name: ['text', 60, 'name'], recovery_email: ['email', 120, 'email'], phone: ['tel', 24, 'tel'], address_home: ['text', 160, 'off'], address_work: ['text', 160, 'off'], bio: ['area', 260, 'off'] };
