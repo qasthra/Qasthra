@@ -340,7 +340,6 @@ html[data-cap]:not([data-cap="ok"]) .au-go{opacity:.5;cursor:not-allowed}
 .qb-w:hover{background:color-mix(in srgb,var(--gray) 14%,transparent);color:var(--mono)}
 .qb-w[aria-selected="true"]{background:var(--bg);color:var(--mono)}
 .qb-w span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.qb-w[data-priv] span::before{content:"";display:inline-block;width:6px;height:6px;margin-right:7px;border-radius:50%;background:currentColor;vertical-align:middle}
 .qb-x{flex:none;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;border-radius:6px;background:transparent;color:inherit;opacity:.7;cursor:pointer}
 .qb-x:hover{opacity:1;background:color-mix(in srgb,var(--gray) 22%,transparent)}
 .qb-x svg{width:12px;height:12px}
@@ -454,7 +453,6 @@ html[data-cap]:not([data-cap="ok"]) .au-go{opacity:.5;cursor:not-allowed}
 .qb-gear-m{display:none}
 @media (max-width:560px){.qb-gear-m{display:inline-flex;flex:none;width:42px;height:42px;border-radius:12px}}
 .qb-acts2{display:flex;gap:6px}
-.qb[data-priv="1"] .qb-omni{border-style:dashed}
 /* magnifier sits close to the text */
 .qb-omni{gap:2px;padding:0 3px 0 6px}
 .qb-omni .qb-mag{width:26px;height:26px;color:var(--gray);cursor:text}
@@ -540,7 +538,6 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 @media (min-width:561px){.qb-mob{display:none!important}}
 .qb-w{padding-left:10px}
 .qb-fav{flex:none;width:16px;height:16px;border-radius:4px;object-fit:contain;pointer-events:none}
-.qb-w[data-priv] .qb-fav{opacity:.85}
 .qb-omni,.qb-omni:hover,.qb-omni:active,.qb-omni:focus-within{border-color:var(--line);box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}
 .qb-omni .qb-ic,.qb-omni .qb-ic:hover:not(:disabled),.qb-omni .qb-ic:active,.qb-omni .qb-ic:focus,.qb-omni .qb-ic:focus-visible{background:transparent;color:var(--gray);outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}
 .qb-omni input,.qb-omni input:focus,.qb-omni .qb-disp,.qb-omni .qb-disp:hover,.qb-omni .qb-disp:active,.qb-omni .qb-disp:focus,.qb-omni .qb-disp:focus-visible{outline:none;box-shadow:none;transition:none;-webkit-tap-highlight-color:transparent}

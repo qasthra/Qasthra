@@ -497,3 +497,83 @@
     -> Appended to style.css
 [2026-11-23 15:18:25] DONE /auto(1)
     -> 7/7 applied
+[2026-11-24 08:10:12] RUN  /auto(1)
+    -> 13 planner command(s)
+[2026-11-24 08:10:13] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_081013.js
+[2026-11-24 08:10:13] OK   /replace(script.js|priv: false,|priv: ld('acstatus', 'Public') === 'Private',)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:13] OK   /replace(script.js|{ id: uid(), p: st.priv, tr:|{ id: uid(), tr:)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:14] OK   /replace(script.js|sv('worlds', st.worlds.filter((w) => !w.p));|if (!st.priv) sv('worlds', st.worlds);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:14] OK   /replace(script.js|st.worlds.filter((w) => !w.p).map((w, n)|st.worlds.map((w, n))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:15] OK   /replace(script.js|if (st.worlds.some((w) => !w.p && ent(w).k !== 'universe')) return;|if (st.worlds.some((w) => ent(w).k !== 'universe')) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:15] OK   /replace(script.js|{ id: x.id, p: false, tr: [e], i: 0 }|{ id: x.id, tr: [e], i: 0 })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:16] OK   /replace(script.js|if (!w.p && ent(w).k !== 'universe') rec(|if (!st.priv && ent(w).k !== 'universe') rec()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:16] OK   /replace(script.js|off = x.p ? true : !!st.priv|off = !!st.priv)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:17] OK   /replace(script.js|if (w.p) return; if (st.priv) return;|if (st.priv) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:17] OK   /replace(script.js|+ '"' + (x.p ? ' data-priv="1"' : '') + '><img|+ '"><img)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:18] OK   /replace(script.js|const flip = () => { st.priv = !st.priv; if (st.priv) { add(); say('Private on. New Worlds leave no history and are never stored.'); return; } st.worlds = st.worlds.filter((w) => !w.p); if (!st.worlds.length) st.worlds.push(nw()); if (!st.worlds.some((w) => w.id === st.active)) st.active = st.worlds[0].id; st.panel = ''; keep(); draw(); say('Public. Private Worlds were closed and nothing was kept.'); };|const flip = () => { st.priv = !st.priv; sv('acstatus', st.priv ? 'Private' : 'Public'); st.panel = ''; draw(); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:10:18] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_081018.css
+[2026-11-24 08:10:18] OK   /delete(style.css|.qb-w[data-priv] span::before)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 08:10:19] OK   /delete(style.css|.qb-w[data-priv] .qb-fav)
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 08:10:19] DONE /auto(1)
+    -> 13/13 applied
+[2026-11-24 08:13:52] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-24 08:13:52] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_081352.js
+[2026-11-24 08:13:53] OK   /replace(script.js|  let state = '', tok = '', wid = null, wait = 0, hold = 0, tries = 0;|  let state = '', tok = '', wid = null, wait = 0, hold = 0, tries = 0;\n  const onDash = () => /^#dashboard/.test(location.hash);\n  const stop = () => { clearTimeout(wait); clearTimeout(hold); tries = 0; tok = ''; try { if (wid !== null && window.turnstile) window.turnstile.remove(wid); } catch (e) {} wid = null; box.innerHTML = ''; box.classList.remove('chal'); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:13:53] OK   /replace(script.js|    const t = window.turnstile;|    if (onDash()) { stop(); return; }\n    const t = window.turnstile;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:13:54] OK   /replace(script.js|  window.CAP = { state: () => state,|  let was = onDash();\n  window.addEventListener('hashchange', () => { const d = onDash(); if (d === was) return; was = d; if (d) stop(); else { set('check'); start(); } });\n  window.CAP = { state: () => state,)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:13:55] OK   /replace(script.js|const st = { worlds: [],|/* PUBLIC / PRIVATE (acstatus) - DESIGN NOTE, DO NOT REMOVE\n   Yoan's intent: this is a SECURITY status, not a privacy or anonymity feature.\n   It marks whether the account's browser activity is secured (encryption and decryption of user browser activity) or not.\n   It is only a localStorage flag: key qb:acstatus, value Public or Private, same on every device.\n   It must never create tabs, dots or private Worlds. No Supabase and no SQL for now.\n   Encryption itself is NOT built yet. This flag is the hook for it.\n   To review later: while Private, history, favorites and tab saving are paused (st.priv checks). That is leftover privacy behavior. */\nconst st = { worlds: [],)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:13:55] DONE /auto(1)
+    -> 4/4 applied
+[2026-11-24 08:16:02] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-24 08:16:02] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_081602.js
+[2026-11-24 08:16:02] OK   /replace(script.js|if (!st.priv) sv('worlds', st.worlds);|sv('worlds', st.worlds);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:03] OK   /replace(script.js|if (!st.priv) st.hist.forEach(|st.hist.forEach()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:03] OK   /replace(script.js|if (!st.priv && ent(w).k !== 'universe') rec(|if (ent(w).k !== 'universe') rec()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:04] OK   /replace(script.js|const f = starOf(x), off = !!st.priv; return|const f = starOf(x); return)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:04] OK   /replace(script.js|(off ? 'Favorites are off in Private' : f ? 'Favorited. Long-press for Favorites' : 'Favorite. Long-press for Favorites')|(f ? 'Favorited. Long-press for Favorites' : 'Favorite. Long-press for Favorites'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:05] OK   /replace(script.js| + (off ? ' disabled' : '')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:05] OK   /replace(script.js|if (st.priv) return; const e = ent(w);|const e = ent(w);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:06] OK   /replace(script.js|(st.priv ? '<p class="qb-cap">History is off in Private.</p>' : '') + |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:06] OK   /replace(script.js|const qq = $('.qb', h); if (qq) qq.dataset.priv = st.priv ? '1' : ''; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:06] OK   /replace(script.js|New Worlds leave no history and are never stored.|Security status of your browsing: Private or Public. Saved on this device.)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:07] OK   /replace(script.js|\n   To review later: while Private, history, favorites and tab saving are paused (st.priv checks). That is leftover privacy behavior. */|\n   Nothing else may depend on it: no history, favorites, sync or tab-saving rules, and no dashed or dotted UI. */)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:16:07] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_081607.css
+[2026-11-24 08:16:07] OK   /delete(style.css|.qb[data-priv="1"] .qb-omni{border-style:dashed})
+    -> Deleted 1 line(s) from style.css
+[2026-11-24 08:16:07] DONE /auto(1)
+    -> 12/12 applied
