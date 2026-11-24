@@ -666,3 +666,5 @@ html.qs-open,html.qs-open body{overflow:hidden} html[data-text="small"]{zoom:.92
 /* ---------- settings: hidden scrollbar ---------- */
 .qs,.qs-pf,.qs-sh-c{scrollbar-width:none;-ms-overflow-style:none}
 .qs::-webkit-scrollbar,.qs-pf::-webkit-scrollbar,.qs-sh-c::-webkit-scrollbar{display:none;width:0;height:0}
+/* settings: stable volume row */ .qs-row .qs-rng{flex:none} .qs-row .qs-pc{flex:none;min-width:4ch;text-align:right;font-variant-numeric:tabular-nums}
+/* settings: no scrollbar on any settings screen */ html.qs-open,html.qs-open *{scrollbar-width:none;-ms-overflow-style:none} html.qs-open::-webkit-scrollbar,html.qs-open *::-webkit-scrollbar{display:none;width:0;height:0}

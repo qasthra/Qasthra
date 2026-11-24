@@ -985,3 +985,83 @@
     -> Appended to style.css
 [2026-11-24 15:21:34] DONE /auto(1)
     -> 1/1 applied
+[2026-11-24 16:31:13] RUN  /auto(1)
+    -> 25 planner command(s)
+[2026-11-24 16:31:14] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_163114.js
+[2026-11-24 16:31:14] OK   /replace(script.js|act('plug', 'Plugins', 'panel'|act('plug', 'Wirings', 'panel')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:14] OK   /replace(script.js|Plugins: 'Shield, Reader and more.'|Wirings: 'Shield, Reader and more.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:15] OK   /replace(script.js|'Restore Worlds'|'Restore')
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-24 16:31:15] OK   /replace(script.js|'Confirm close'|'Warnings')
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-24 16:31:16] OK   /replace(script.js|act('reset', 'Reset settings', 'reset', '')|act('reset', 'Reset', 'reset', ''))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:16] OK   /replace(script.js|'Reset settings': 'Put every setting back to default.'|'Reset': 'Put every setting back to default.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:17] OK   /replace(script.js|tog('lock', 'Encrypted', 'enc', B ? B.enc() : false)|tog('lock', (B ? B.enc() : false) ? 'Encrypted' : 'Decrypted', 'enc', B ? B.enc() : false))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:17] OK   /replace(script.js|Encrypted: 'Mark your browsing as encrypted.', 'Clear history': 'Remove searches and closed Worlds.', 'Clear favorites': 'Remove every saved favorite.'|Encrypted: 'Your browsing is marked as encrypted.', Decrypted: 'Turn on to mark your browsing as encrypted.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:18] OK   /replace(script.js|tog('sync', 'Sync', 'sync', B ? B.syncOn() : false)|tog('sync', (B ? B.syncOn() : false) ? 'Synced' : 'Unsynced', 'sync', B ? B.syncOn() : false))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:18] OK   /replace(script.js|Sync: 'Keep your data on every device.'|Synced: 'Your data is kept on every device.', Unsynced: 'Turn on to keep your data on every device.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:18] OK   /replace(script.js|const flipT = async (sw, k) => {|const relab = (sw, t) => { const r = sw.closest('.qs-row'); if (!r) return; const b = r.querySelector('.qs-tx b'), s = r.querySelector('.qs-tx small'); if (b) b.textContent = t; if (s) s.textContent = DS[t] ? DS[t] : ''; sw.setAttribute('aria-label', t); }; const flipT = async (sw, k) => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:19] OK   /replace(script.js|sw.setAttribute('aria-checked', String(window.QBAPI.syncOn())); return; }|sw.setAttribute('aria-checked', String(window.QBAPI.syncOn())); relab(sw, window.QBAPI.syncOn() ? 'Synced' : 'Unsynced'); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:19] OK   /replace(script.js|sw.setAttribute('aria-checked', String(on)); };|sw.setAttribute('aria-checked', String(on)); if (k === 'enc') relab(sw, on ? 'Encrypted' : 'Decrypted'); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:20] OK   /replace(script.js|, act('trash', 'Clear history', 'clearhist', ''), act('trash', 'Clear favorites', 'clearfavs', '')|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:20] OK   /replace(script.js|a.loop = true;|a.loop = false; const me = a; me.addEventListener('ended', () => { setTimeout(() => { if (a === me) { me.currentTime = 0; go(); } }, 30000); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:21] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261124_163120.css
+[2026-11-24 16:31:21] OK   /append(style.css|/* settings: stable volume row */ .qs-row .qs-rng{flex:none} .qs-row .qs-pc{flex:none;min-width:4ch;text-align:right;font-variant-numeric:tabular-nums}\n/* settings: no scrollbar on any settings screen */ html.qs-open,html.qs-open *{scrollbar-width:none;-ms-overflow-style:none} html.qs-open::-webkit-scrollbar,html.qs-open *::-webkit-scrollbar{display:none;width:0;height:0})
+    -> Appended to style.css
+[2026-11-24 16:31:21] OK   /replace(script.js|download: '<path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>'|download: '<path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>', upload: '<path d="M12 16V5M7 9l5-5 5 5M5 20h14"/>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:22] OK   /replace(script.js|act('download', 'Export', 'export', 'JSON')|act('download', 'Export', 'export', 'JSON'), act('upload', 'Import', 'import', 'JSON'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:22] OK   /replace(script.js|Export: 'Download your data as a file.'|Export: 'Download your data as a file.', Import: 'Replace all your data from a file.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:23] OK   /replace(script.js|exportData: () => ({ favorites: st.saved,|importData: async (x) => { st.saved.splice(0, st.saved.length, ...x.favorites); st.hist.splice(0, st.hist.length, ...x.history.slice(0, 200)); st.hist.sort((p, q) => q.at - p.at); sv('saved', st.saved); sv('hist', st.hist); try { ob.length = 0; sv('outbox', ob); } catch (e) {} try { pop(); } catch (e) {} if (!st.sync || !window.db) return true; const u = await who(); if (!u) return true; try { const a = await window.db.from('worlds_saved').delete().eq('user_id', u); if (a.error) return false; const b = await window.db.from('worlds_history').delete().eq('user_id', u); if (b.error) return false; if (st.saved.length) { const r = await window.db.from('worlds_saved').upsert(st.saved.map((s) => ({ id: s.id, user_id: u, title: s.title, q: s.q, tier: s.tier, at: s.at })), { onConflict: 'id' }); if (r.error) return false; } if (st.hist.length) { const r = await window.db.from('worlds_history').upsert(st.hist.map((h) => ({ id: h.id, user_id: u, kind: h.k, q: h.q, at: h.at })), { onConflict: 'id' }); if (r.error) return false; } return true; } catch (e) { return false; } }, exportData: () => ({ favorites: st.saved,)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:23] OK   /replace(script.js|const exportData = () => {|const importCheck = (d) => { const isO = (x) => x !== null && typeof x === 'object' && !Array.isArray(x), str = (x, n) => typeof x === 'string' && x.length > 0 && x.length <= n, txt = (x, n) => typeof x === 'string' && x.length <= n, num = (x) => typeof x === 'number' && isFinite(x), bin = (x) => x === '0' || x === '1'; if (!isO(d) || !str(d.exported, 40) || isNaN(Date.parse(d.exported)) || !isO(d.settings) || !isO(d.browser)) return null; const s = d.settings, b = d.browser, vol = Number(s.volume); if (['system', 'light', 'dark'].indexOf(s.theme) < 0 || ['small', 'default', 'large'].indexOf(s.text) < 0 || !bin(s.motion) || !bin(s.music) || !bin(s.haptics) || !bin(s.restore) || !bin(s.confirm) || !(vol >= 0 && vol <= 100) || !Array.isArray(b.favorites) || !Array.isArray(b.history) || b.favorites.length > 1000 || b.history.length > 200) return null; const seen = {}, fav = [], his = []; for (const x of b.favorites) { if (!isO(x) || !str(x.id, 64) || !txt(x.title, 300) || !txt(x.q, 2000) || ['Core', 'Orbit', 'Archive'].indexOf(x.tier) < 0 || !num(x.at) || seen['f' + x.id]) return null; seen['f' + x.id] = 1; fav.push({ id: x.id, title: x.title, q: x.q, tier: x.tier, at: x.at }); } for (const x of b.history) { if (!isO(x) || !str(x.id, 64) || !str(x.k, 20) || !txt(x.q, 2000) || !num(x.at) || seen['h' + x.id]) return null; seen['h' + x.id] = 1; his.push({ id: x.id, k: x.k, q: x.q, at: x.at }); } return { settings: { theme: s.theme, text: s.text, motion: s.motion, music: s.music, haptics: s.haptics, restore: s.restore, confirm: s.confirm, vol: String(Math.round(vol)) }, favorites: fav, history: his }; }; const importFlow = () => { const inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json,application/json'; inp.style.cssText = 'position:fixed;left:-9999px;opacity:0'; inp.addEventListener('cancel', () => inp.remove()); inp.addEventListener('change', async () => { const f = inp.files && inp.files[0]; inp.remove(); if (!f) return; const bad = () => toast('That file is not a valid Qasthra export.'); if (f.size > 2000000) return bad(); let d; try { d = JSON.parse(await f.text()); } catch (e) { return bad(); } const v = importCheck(d); if (!v) return bad(); if (!confirm('Warning: importing replaces ALL your data on this device and online with the contents of this file. This cannot be undone. Continue?')) return; try { setTheme(v.settings.theme); ['text', 'motion', 'music', 'haptics', 'restore', 'confirm', 'vol'].forEach((k) => wr(k, v.settings[k])); apply(); window.dispatchEvent(new Event('qsetchange')); const ok = window.QBAPI ? await window.QBAPI.importData(v) : false; refresh(); toast(ok ? 'Data imported.' : 'Imported on this device. Online update failed.'); } catch (e) { toast('Import failed.'); } }); document.body.appendChild(inp); inp.click(); }; const exportData = () => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:23] OK   /replace(script.js|export: exportData, reset:|export: exportData, import: importFlow, reset:)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:24] OK   /replace(script.js|img.onerror = () => {|L.dataset.s = Date.now(); img.onload = () => { img.dataset.t = Date.now(); }; img.onerror = () => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:24] OK   /replace(script.js|const finish = () => { if (window.QWAIT)|const finish = () => { const t = +img.dataset.t, s = +L.dataset.s, need = ms ? ms : 2200, n = Date.now(); if ((t > 0 ? n - t < need - 300 : true) && n - s < need + 3000) { veilTimer = setTimeout(finish, 100); return; } if (window.QWAIT))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:25] OK   /replace(script.js|root.setAttribute('aria-label', 'Settings');|root.setAttribute('aria-label', 'Settings'); try { new Image().src = 'Sources/Videos/Qasthra_outro.gif'; } catch (e) {})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:31:25] DONE /auto(1)
+    -> 25/25 applied
+[2026-11-24 16:38:52] RUN  /auto(1)
+    -> 8 planner command(s)
+[2026-11-24 16:38:52] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_163852.js
+[2026-11-24 16:38:53] OK   /replace(script.js|tog('motion', 'Reduce motion', 'motion', get('motion') === '1')|tog('motion', 'Motion', 'motion', get('motion') !== '1'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:53] OK   /replace(script.js|'Reduce motion': 'Calm animations across the site.'|Motion: 'Animations across the site. Off turns them all off.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:53] OK   /replace(script.js|else set(k, on ? '1' : '0');|else set(k, k === 'motion' ? (on ? '0' : '1') : (on ? '1' : '0'));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:54] OK   /replace(script.js|const importCheck = (d) => {|const importProf = (p) => { const out = {}; if (p === undefined || p === null) return out; if (typeof p !== 'object' || Array.isArray(p)) return null; const cl = (s) => String(s || '').replace(/[\u0000-\u001f\u007f<>{}\[\]`]/g, ' ').replace(/\s+/g, ' ').trim(); for (const k of AK) { if (!Object.prototype.hasOwnProperty.call(p, k)) continue; const raw = p[k]; if (raw !== null && typeof raw !== 'string') return null; let v = raw === null ? '' : (k === 'bio' ? cl(raw).slice(0, 260) : cl(raw)); if (k === 'recovery_email') v = v.toLowerCase(); if (AOP[k]) { if (v && AOP[k].indexOf(v) < 0) return null; } else if (v || k === 'full_name' || k === 'recovery_email' || k === 'phone') { if (chkTxt(k, v)) return null; if ((k === 'full_name' || k === 'bio' || k.indexOf('address_') === 0) && v && fixTxt(k, v) !== v) return null; } if (v) out[k] = v; else if (k === 'address_home' || k === 'address_work' || k === 'bio') out[k] = null; } return out; }; const importCheck = (d) => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:54] OK   /replace(script.js|const seen = {}, fav = [], his = [];|const pr = importProf(d.profile); if (pr === null) return null; const seen = {}, fav = [], his = [];)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:55] OK   /replace(script.js|favorites: fav, history: his }; }; const importFlow|favorites: fav, history: his, profile: pr }; }; const importFlow)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:55] OK   /replace(script.js|online with the contents of this file.|online with the contents of this file, including your editable profile details (never your username, birthday or password).)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:56] OK   /replace(script.js|const ok = window.QBAPI ? await window.QBAPI.importData(v) : false; refresh(); toast(ok ? 'Data imported.' : 'Imported on this device. Online update failed.');|const ok = window.QBAPI ? await window.QBAPI.importData(v) : false; let pok = true; if (Object.keys(v.profile).length) { try { if (!window.db) throw 0; const r = await window.db.auth.updateUser({ data: v.profile }); if (r.error) throw r.error; U = r.data.user; paint(); } catch (e) { pok = false; } } refresh(); toast(!pok ? 'Imported, but your profile could not be saved.' : ok ? 'Data imported.' : 'Imported on this device. Online update failed.');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 16:38:56] DONE /auto(1)
+    -> 8/8 applied
