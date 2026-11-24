@@ -1068,3 +1068,47 @@
 [2026-11-24 16:51:07] FAIL status
     -> 'status' is not in the /command(data) format.
     -> fix: Write it like /replace(file|old|new) and use /help to see every format.
+[2026-11-24 21:35:21] RUN  /auto(1)
+    -> 19 planner command(s)
+[2026-11-24 21:35:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_213521.js
+[2026-11-24 21:35:21] OK   /replace(script.js|History: 'Searches and closed Worlds.'|History: 'Past searches and closed Worlds.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:22] OK   /replace(script.js|Transfers: 'Uploads and downloads.'|Transfers: 'Uploaded and downloaded files.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:22] OK   /replace(script.js|Wirings: 'Shield, Reader and more.'|Wirings: 'Add-ons.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:23] OK   /replace(script.js|Theme: 'Dark, light or your device.'|Theme: 'Interface colors.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:23] OK   /replace(script.js|Text: 'Change the size of text.'|Text: 'Text size.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:23] OK   /replace(script.js|Motion: 'Animations across the site. Off turns them all off.'|Motion: 'Animations.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:24] OK   /replace(script.js|'Restore': 'Reopen your tabs after a restart.'|'Restore': 'Tabs from the last session.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:24] OK   /replace(script.js|'Warnings': 'Ask before closing a World.'|'Warnings': 'Prompts before closing.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:25] OK   /replace(script.js|Haptics: 'Vibration feedback on touch.'|Haptics: 'Touch vibration.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:25] OK   /replace(script.js|Music: 'Background music on the dashboard.'|Music: 'Background music.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:26] OK   /replace(script.js|Volume: 'How loud the music plays.'|Volume: 'Music loudness.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:26] OK   /replace(script.js|Encrypted: 'Your browsing is marked as encrypted.'|Encrypted: 'Browsing security mode.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:27] OK   /replace(script.js|Decrypted: 'Turn on to mark your browsing as encrypted.'|Decrypted: 'Browsing security mode.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:27] OK   /replace(script.js|Synced: 'Your data is kept on every device.'|Synced: 'Data across devices.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:27] OK   /replace(script.js|Unsynced: 'Turn on to keep your data on every device.'|Unsynced: 'Data across devices.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:28] OK   /replace(script.js|Export: 'Download your data as a file.'|Export: 'Data as a file.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:28] OK   /replace(script.js|Import: 'Replace all your data from a file.'|Import: 'Data from a file.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:29] OK   /replace(script.js|'Reset': 'Put every setting back to default.'|'Reset': 'Default settings.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:29] OK   /replace(script.js|Version: 'Current release of Qasthra.'|Version: 'Current release.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 21:35:29] DONE /auto(1)
+    -> 19/19 applied
