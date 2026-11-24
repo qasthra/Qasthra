@@ -1212,3 +1212,65 @@
     -> Deleted 1 line(s) from style.css
 [2026-11-24 22:51:31] DONE /auto(1)
     -> 19/19 applied
+[2026-11-25 07:26:13] RUN  /auto(1)
+    -> 27 planner command(s)
+[2026-11-25 07:26:13] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_072613.js
+[2026-11-25 07:26:13] OK   /replace(script.js|const qfull = (w) => st.worlds.filter((x) => x !== w && title(x) === 'Qasthra').length >= 2;|const qfull = (w) => st.worlds.filter((x) => x !== w && title(x) === 'Qasthra').length >= 1;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:14] OK   /replace(script.js|QMSG = 'Only 2 Qasthra tabs are allowed.'|QMSG = 'Only 1 Qasthra tab is allowed.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:14] OK   /replace(script.js|ld('worlds', [])).filter((w) => w && Array.isArray(w.tr) && w.tr[w.i]);|ld('worlds', [])).filter((w) => w && Array.isArray(w.tr) && w.tr[w.i]).filter((w, n, a) => { const q0 = (x) => x.tr[x.i].k === 'universe' ? true : x.tr[x.i].k === 'coord' && x.tr[x.i].q === QZ; return !q0(w) ? true : a.findIndex(q0) === n; });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:15] OK   /replace(script.js|const rec = (k, q) => { if (!q) return;|const rec = (k, q) => { if (!q || k === 'world') return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:15] OK   /replace(script.js|hist: ld('hist', [])|hist: ld('hist', []).filter((h) => h && h.k !== 'world'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:16] OK   /replace(script.js|if (!st.hist.some((h) => h.id === r.id)) st.hist.push(|if (r.kind !== 'world' && !st.hist.some((h) => h.id === r.id)) st.hist.push()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:16] OK   /replace(script.js|...x.history.slice(0, 200))|...x.history.filter((h) => h.k !== 'world').slice(0, 200))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:17] OK   /replace(script.js|History: 'Past searches and closed Worlds.'|History: 'Past searches.')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:17] OK   /replace(script.js|Clear searches and closed Worlds on this device.|Clear searches on this device.)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:17] OK   /replace(script.js|favs: st.saved.length })|favs: st.saved.length, xfer: st.xfer.length })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:18] OK   /replace(script.js|{ hist: 0, favs: 0 }|{ hist: 0, favs: 0, xfer: 0 })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:18] OK   /replace(script.js|act('download', 'Transfers', 'panel', '', '', 'xfer')|act('download', 'Transfers', 'panel', c.xfer, '', 'xfer'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:19] OK   /replace(script.js|data-p="xfer"', 'Uploads and Downloads'|data-p="xfer"', 'Transfers')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:19] OK   /replace(script.js|data-p="xfer">' + I.xfer + '<span>Uploads and Downloads</span>|data-p="xfer">' + I.xfer + '<span>Transfers</span>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:20] OK   /delete(script.js|history: () => { const k = st.tab)
+    -> Deleted 1 line(s) from script.js
+[2026-11-25 07:26:20] OK   /delete(script.js|saved: () => '<div class="qb-top"><h3 class="qb-h">Favorites)
+    -> Deleted 1 line(s) from script.js
+[2026-11-25 07:26:21] OK   /delete(script.js|xfer: () => '<div class="qb-top"><h3 class="qb-h">Uploads and Downloads)
+    -> Deleted 1 line(s) from script.js
+[2026-11-25 07:26:21] OK   /replace(script.js|const pop = () => { document.querySelectorAll('.qb-set [data-p]')|const qbDay = (t) => { const d = new Date(t), n = new Date(), f = (x) => new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime(), k = Math.round((f(n) - f(d)) / 864e5); return k <= 0 ? 'Today' : k === 1 ? 'Yesterday' : d.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' }); }; const qbClk = (t) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); const qbSheet = (t, n, act, bar, body) => '<div class="qb-bd" data-a="shutp"></div><div class="qb-sheet" role="dialog" aria-modal="true" aria-label="' + t + '"><header class="qb-sh-h"><h3 class="qb-sh-t">' + t + '</h3>' + (n === '' ? '' : '<span class="qb-sh-n">' + n + '</span>') + '<span class="qb-sh-a">' + act + '</span><button class="qb-sh-x" type="button" data-a="shutp" aria-label="Close">' + I.x + '</button></header>' + bar + '<div class="qb-sh-b">' + body + '</div></div>'; const qbFbar = (ph) => '<div class="qb-fs-w"><input class="qb-fs" type="search" placeholder="' + ph + '" aria-label="' + ph + '" autocomplete="off" spellcheck="false"></div>'; const qbXb = (a, v, l) => '<button class="qb-ix" type="button" data-' + a + '="' + v + '" aria-label="' + l + '">' + I.x + '</button>'; const QSHEETS = { history: () => { const r = st.hist.filter((h) => h.k === 'search'); let last = '', out = ''; r.forEach((h) => { const g = qbDay(h.at); if (g !== last) { last = g; out += '<p class="qb-cap">' + g + '</p>'; } out += '<div class="qb-item"><span class="qb-ii">' + I.clock + '</span><button class="qb-grow" type="button" data-run="' + esc(h.q) + '"><span>' + esc(lbl(h.q)) + '</span></button><small>' + qbClk(h.at) + '</small>' + qbXb('hx', esc(h.id), 'Remove') + '</div>'; }); return qbSheet('History', r.length, r.length ? '<button class="qb-btn" type="button" data-a="clear">Clear all</button>' : '', qbFbar('Search history'), r.length ? '<div class="qb-list">' + out + '</div>' : '<p class="qb-empty">No history yet.</p>'); }, saved: () => { const out = TIERS.map((t) => { const r = st.saved.filter((s) => s.tier === t); return r.length ? '<p class="qb-cap">' + t + '</p><div class="qb-list">' + r.map((s) => '<div class="qb-item"><span class="qb-ii">' + I.star + '</span><button class="qb-grow" type="button" data-run="' + esc(s.q) + '"><span>' + esc(s.title) + '</span></button><button class="qb-chip" type="button" data-tier="' + esc(s.id) + '" title="Change tier">' + t + '</button>' + qbXb('del', esc(s.id), 'Remove') + '</div>').join('') + '</div>' : ''; }).join(''); return qbSheet('Favorites', st.saved.length, '<button class="qb-btn" type="button" data-a="save">Add current</button>', qbFbar('Search favorites'), out ? out : '<p class="qb-empty">No favorites yet. Open a World and press Add current.</p>'); }, xfer: () => qbSheet('Transfers', '', '', '', '') }; const pop = () => { document.querySelectorAll('.qb-set [data-p]'))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:22] OK   /replace(script.js|if (!st.panel) { p.hidden = true; return; } p.hidden = false; p.className = 'qb-pop' + (st.panel === 'quick' ? ' wide' : ''); p.innerHTML = PANELS[st.panel]();|const sh = !!QSHEETS[st.panel]; clearTimeout(p._t); if (!st.panel) { if (p.hidden) return; if (!p.classList.contains('sheet')) { p.hidden = true; return; } p.classList.add('out'); p._t = setTimeout(() => { p.hidden = true; p.classList.remove('out'); p.innerHTML = ''; p.dataset.m = ''; }, 190); return; } const was = sh && !p.hidden && p.dataset.m === st.panel && !p.classList.contains('out'), sb = was ? p.querySelector('.qb-sh-b') : null, y = sb ? sb.scrollTop : 0; p.hidden = false; p.dataset.m = st.panel; p.className = 'qb-pop' + (sh ? ' sheet' : '') + (st.panel === 'quick' ? ' wide' : '') + (was ? ' still' : ''); p.innerHTML = sh ? QSHEETS[st.panel]() : PANELS[st.panel](); if (y) { const nb = p.querySelector('.qb-sh-b'); if (nb) nb.scrollTop = y; } if (sh && !was) { const xb = p.querySelector('.qb-sh-x'); if (xb) xb.focus({ preventScroll: true }); } if (!window.QBEsc) { window.QBEsc = 1; document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && QSHEETS[st.panel]) { st.panel = ''; pop(); } }); })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:22] OK   /replace(script.js|[data-del],[data-tab]|[data-del],[data-hx],[data-tab])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:22] OK   /replace(script.js|if (d.tab) { st.tab = d.tab; pop(); return; }|if (d.hx) { st.hist = st.hist.filter((h) => h.id !== d.hx); sv('hist', st.hist); drop('worlds_history', 'id', d.hx); pop(); return; } if (d.tab) { st.tab = d.tab; pop(); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:23] OK   /replace(script.js|signout: signout }[d.a]|signout: signout, shutp: () => { st.panel = ''; pop(); } }[d.a])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 07:26:23] OK   /append(script.js|document.addEventListener('input', (e) => { const i = e.target; if (!i.classList.contains('qb-fs')) return; const b = i.closest('.qb-sheet'); if (!b) return; const q = i.value.trim().toLowerCase(); b.querySelectorAll('.qb-item').forEach((x) => { x.hidden = !!q && x.textContent.toLowerCase().indexOf(q) < 0; }); b.querySelectorAll('.qb-cap').forEach((c) => { let n = c.nextElementSibling, any = false; while (n && !n.classList.contains('qb-cap')) { if (n.matches('.qb-item:not([hidden])') || n.querySelector('.qb-item:not([hidden])')) any = true; n = n.nextElementSibling; } c.hidden = !any; }); });)
+    -> Appended to script.js
+[2026-11-25 07:26:24] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_072624.css
+[2026-11-25 07:26:24] OK   /append(style.css|.qb-pop.sheet{position:fixed;inset:0;width:auto;max-height:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;z-index:970;display:flex;align-items:center;justify-content:center}.qb-pop.sheet[hidden]{display:none}.qb-bd{position:absolute;inset:0;background:rgba(0,0,0,.55);animation:qbFade .2s ease both}.qb-sheet{position:relative;display:flex;flex-direction:column;width:min(560px,calc(100vw - 32px));height:min(660px,calc(100dvh - 64px));overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--bg);color:var(--mono);box-shadow:0 24px 60px rgba(0,0,0,.45);animation:qbPop .26s cubic-bezier(.2,.8,.2,1) both})
+    -> Appended to style.css
+[2026-11-25 07:26:24] OK   /append(style.css|.qb-sh-h{flex:none;display:flex;align-items:center;gap:10px;padding:14px 14px 14px 18px;border-bottom:1px solid var(--line)}.qb-sh-t{margin:0;font:700 17px/1.2 var(--font);letter-spacing:-.01em}.qb-sh-n{min-width:22px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--gray);font:600 12px/1 var(--font);text-align:center}.qb-sh-a{margin-left:auto;display:flex;gap:8px}.qb-sh-x{flex:none;width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--mono);cursor:pointer}.qb-sh-x:hover,.qb-ix:hover{border-color:var(--gray);background:color-mix(in srgb,var(--gray) 14%,transparent)}.qb-sh-x:focus-visible,.qb-ix:focus-visible{outline:2px solid var(--mono);outline-offset:2px})
+    -> Appended to style.css
+[2026-11-25 07:26:25] OK   /append(style.css|.qb-fs-w{flex:none;padding:12px 14px 4px}.qb-fs{width:100%;box-sizing:border-box;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--mono);font:500 16px/1 var(--font);outline:0}.qb-fs:focus{border-color:var(--gray)}.qb-fs::placeholder{color:var(--gray)}.qb-sh-b{flex:1;min-height:0;overflow:auto;padding:6px 10px calc(16px + env(safe-area-inset-bottom,0px));overscroll-behavior:contain;scrollbar-width:none}.qb-sh-b::-webkit-scrollbar{display:none}.qb-sheet .qb-cap{margin:14px 8px 4px}.qb-sheet .qb-empty{margin:56px 12px;text-align:center}.qb-item[hidden]{display:none}.qb-item .qb-ii{flex:none;display:inline-flex;color:var(--gray)}.qb-ix{flex:none;width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:var(--gray);cursor:pointer}.qb-ix svg{width:16px;height:16px})
+    -> Appended to style.css
+[2026-11-25 07:26:25] OK   /append(style.css|@keyframes qbFade{from{opacity:0}to{opacity:1}}@keyframes qbFadeOut{from{opacity:1}to{opacity:0}}@keyframes qbPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}@keyframes qbPopOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(10px) scale(.98)}}@keyframes qbUp{from{transform:translateY(100%)}to{transform:none}}@keyframes qbDown{from{transform:none}to{transform:translateY(100%)}}.qb-pop.out .qb-sheet{animation:qbPopOut .18s ease both}.qb-pop.out .qb-bd{animation:qbFadeOut .18s ease both}@media (max-width:640px){.qb-pop.sheet{align-items:flex-end}.qb-sheet{width:100%;height:calc(100dvh - 28px - env(safe-area-inset-top,0px));border-width:1px 0 0;border-radius:20px 20px 0 0;animation-name:qbUp}.qb-pop.out .qb-sheet{animation-name:qbDown}}.qb-pop.still .qb-sheet,.qb-pop.still .qb-bd{animation:none})
+    -> Appended to style.css
+[2026-11-25 07:26:25] DONE /auto(1)
+    -> 27/27 applied
