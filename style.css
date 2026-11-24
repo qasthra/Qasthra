@@ -497,7 +497,7 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 .qb-star[aria-pressed="true"]{opacity:1}
 .qb-star[aria-pressed="true"] svg{fill:currentColor}
 .qb-star:disabled{opacity:.28;cursor:default}
-.qb-star.pop svg{animation:qPop .42s cubic-bezier(.2,.9,.3,1.5)}
+.qb-star.qb-bump svg{animation:qPop .42s cubic-bezier(.2,.9,.3,1.5)}
 .qb-w.shift{transition:transform .22s cubic-bezier(.2,.8,.2,1),background .15s ease,color .15s ease}
 .qb-w.drag{transition:none;z-index:5;cursor:grabbing;background:color-mix(in srgb,var(--gray) 26%,var(--bg));color:var(--mono)}
 .qb-nav{align-items:center;gap:2px;flex:none}
@@ -511,7 +511,7 @@ html[data-screen-transition="1"] #qload{visibility:visible}
 .qb-sync[data-s="busy"]::after{animation:qBlink 1s ease-in-out infinite}
 .qb-sync[data-s="err"]{color:#e5484d}
 .qb-sync[data-s="err"]::after{background:#e5484d}
-@media (prefers-reduced-motion:reduce){.qb-sync svg,.qb-sync::after,.qb-star.pop svg{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.qb-sync svg,.qb-sync::after,.qb-star.qb-bump svg{animation:none!important}}
 .qb-col{display:contents}
 .qb-kirby{display:none}
 @media (min-width:561px){
