@@ -577,3 +577,40 @@
     -> Deleted 1 line(s) from style.css
 [2026-11-24 08:16:07] DONE /auto(1)
     -> 12/12 applied
+[2026-11-24 08:21:18] RUN  /auto(1)
+    -> 9 planner command(s)
+[2026-11-24 08:21:18] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_082118.js
+[2026-11-24 08:21:18] FAIL /replace(script.js|/* SECURED / UNSECURED (acstatus)|/* ENCRYPTED / DECRYPTED (acstatus))
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-24 08:21:18] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-24 08:21:18] STOP /auto(1)
+    -> stopped at step 1/9, nothing was applied
+[2026-11-24 08:22:20] RUN  /auto(1)
+    -> 10 planner command(s)
+[2026-11-24 08:22:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261124_082221.js
+[2026-11-24 08:22:21] OK   /replace(script.js|if (st.priv) { say('Favorites are off in Private.'); return; } |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:21] OK   /replace(script.js|/* PUBLIC / PRIVATE (acstatus)|/* ENCRYPTED / DECRYPTED (acstatus))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:22] OK   /replace(script.js|is secured (encryption and decryption of user browser activity) or not.|is encrypted or decrypted (encryption and decryption of user browser activity).)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:22] OK   /replace(script.js|value Public or Private, same on every device.|value Decrypted or Encrypted, same on every device. The labels are Encrypted and Decrypted on purpose, never Public, Private, Secured or Unsecured.)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:23] OK   /replace(script.js|ld('acstatus', 'Public') === 'Private'|['Encrypted', 'Private'].includes(ld('acstatus', 'Decrypted')))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:23] OK   /replace(script.js|st.priv ? 'Private' : 'Public'|st.priv ? 'Encrypted' : 'Decrypted')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:24] OK   /replace(script.js|<b>Private</b><small>Security status of your browsing: Private or Public.|<b>Encrypted</b><small>Security status of your browsing: Encrypted or Decrypted.)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:24] OK   /replace(script.js|aria-label="Private"|aria-label="Encrypted")
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:25] OK   /replace(script.js|'Private, tap for Public' : 'Public, tap for Private'|'Encrypted, tap to decrypt' : 'Decrypted, tap to encrypt')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:25] OK   /replace(script.js|'Public, tap for Private', I.unlock|'Decrypted, tap to encrypt', I.unlock)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-24 08:22:25] DONE /auto(1)
+    -> 10/10 applied
