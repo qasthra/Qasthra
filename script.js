@@ -1,3 +1,4 @@
+// Copyrights Applies to this file
 // IMPORTANT: Never add a forced cache system or trust the presence of an auth-token key.
 // The old code treated stale local Supabase tokens as valid, which showed the loading GIF,
 // redirected to the dashboard, and eventually opened the Create an account form after the

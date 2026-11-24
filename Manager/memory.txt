@@ -1065,3 +1065,6 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-24 16:38:56] DONE /auto(1)
     -> 8/8 applied
+[2026-11-24 16:51:07] FAIL status
+    -> 'status' is not in the /command(data) format.
+    -> fix: Write it like /replace(file|old|new) and use /help to see every format.
