@@ -1494,3 +1494,21 @@
     -> Appended to style.css
 [2026-11-25 12:34:20] DONE /auto(1)
     -> 2/2 applied
+[2026-11-25 12:52:14] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-25 12:52:15] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_125215.js
+[2026-11-25 12:52:15] OK   /replace(script.js|const siteFind = async (q, n) => { if (!window.db) return []; const t = q.trim().slice(0, 60); if (!t) return [];|const QC = { gap: 0, hits: [], lock: 0, db: [], fly: 0 }; const clean = (s, n) => String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180B-\u180E\u200B\u200E\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\u3164\uFEFF\uFFA0\uFFF9-\uFFFB]/g, '').replace(/\s+/g, ' ').slice(0, n).replace(/[\uD800-\uDBFF]$/, ''); const okGo = () => { const t = Date.now(); QC.hits = QC.hits.filter((x) => t - x < 10000); if (t < QC.lock || t - QC.gap < 350) return false; if (QC.hits.length >= 8) { QC.lock = t + 5000; return false; } QC.hits.push(t); QC.gap = t; return true; }; const dbOk = () => { const t = Date.now(); QC.db = QC.db.filter((x) => t - x < 60000); if (QC.fly >= 3 || QC.db.length >= 30 || t - (QC.db[QC.db.length - 1] || 0) < 150) return false; QC.db.push(t); return true; }; const siteFind = async (q, n) => { if (!window.db) return []; const t = clean(q, 60).trim(); if (!t) return [];)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:15] OK   /replace(script.js|if (hit && Date.now() - hit.t < 60000) return hit.r; try {|if (hit && Date.now() - hit.t < 60000) return hit.r; if (!dbOk()) return hit ? hit.r : []; QC.fly++; try {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:16] OK   /replace(script.js|SC.set(key, { t: Date.now(), r: r }); return r; } catch (e) { return []; } };|if (SC.size > 200) SC.clear(); SC.set(key, { t: Date.now(), r: r }); return r; } catch (e) { return []; } finally { QC.fly--; } };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:16] OK   /replace(script.js|const t = v.trim(); if (t.length < 2) return; if (coords(t)) return;|const t = clean(v, 60).trim(); if (t.length < 2) return; if (coords(t)) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:17] OK   /replace(script.js|const go = (q) => { q = String(q).trim(); if (!q) return;|const go = (q) => { q = clean(q, 200).trim(); if (!q) return; if (!okGo()) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:18] OK   /replace(script.js|oi.addEventListener('blur', () => { sugDraw(false); dispDraw(); });|oi.addEventListener('paste', (e) => { const d = e.clipboardData; if (!d) return; e.preventDefault(); const t = clean(d.getData('text'), 400), a = oi.selectionStart, z = oi.selectionEnd, room = 400 - (oi.value.length - (z - a)); if (room > 0) { oi.setRangeText(t.slice(0, room), a, z, 'end'); oi.dispatchEvent(new Event('input', { bubbles: true })); } }); oi.addEventListener('blur', () => { sugDraw(false); dispDraw(); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:52:18] DONE /auto(1)
+    -> 6/6 applied
