@@ -2357,3 +2357,13 @@
     -> Replaced 1 occurrence(s) in style.css
 [2026-11-25 16:38:15] DONE /auto(1)
     -> 1/1 applied
+[2026-11-25 16:42:57] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 16:42:58] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_164258.js
+[2026-11-25 16:42:59] OK   /replace(script.js|f.accept='.jpg,.jpeg,.png,.webp';|f.accept='.jpg,.jpeg,.png,image/jpeg,image/png';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:43:00] OK   /replace(script.js|var x=f.files&&f.files[0];if(!x)return;if(x.size>8000000){|var x=f.files&&f.files[0];if(!x)return;if(['image/jpeg','image/png'].indexOf(x.type)<0||['jpg','jpeg','png'].indexOf(x.name.toLowerCase().split('.').pop())<0){f.value='';msg.textContent='Only PNG and JPG images are allowed.';return}if(x.size>8000000){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:43:00] DONE /auto(1)
+    -> 2/2 applied
