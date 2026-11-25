@@ -671,3 +671,4 @@ body:has(.qs-pf) .qs{overflow:hidden}
 .qb-pfv .qs-pf-x{display:none!important}
 .qb-orb,.qb-orb *,.qb-nb{touch-action:none!important}
 .qb-kirby .qb-orb{touch-action:none!important}
+html.qx body > *:not(#qload):not(script){visibility:hidden!important}

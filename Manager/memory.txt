@@ -2571,3 +2571,25 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 21:19:12] DONE /auto(1)
     -> 1/1 applied
+[2026-11-26 06:14:15] RUN  /auto(1)
+    -> 7 planner command(s)
+[2026-11-26 06:14:15] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_061415.js
+[2026-11-26 06:14:15] OK   /replace(script.js|const signOut = async () => { sP = null;|const signOut = async () => { document.documentElement.classList.add('qx'); sP = null;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:14:16] OK   /replace(script.js|await veil; location.hash = ''; hideVeil(); window.QBLOCK = false;|await veil; location.hash = ''; hideVeil(); window.QBLOCK = false; setTimeout(() => document.documentElement.classList.remove('qx'), 300);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:14:16] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_061416.css
+[2026-11-26 06:14:16] OK   /append(style.css|html.qx body > *:not(#qload):not(script){visibility:hidden!important})
+    -> Appended to style.css
+[2026-11-26 06:14:17] OK   /append(script.js|(() => { const H = document.documentElement; let busy = false, at = 0; const hint = () => { try { return Object.keys(localStorage).some((k) => /auth-token/i.test(k)); } catch (e) { return false; } }; const gone = (e) => !!e && (e.status === 403 || e.status === 404 || /user_not_found|user.*not.*exist/i.test(String(e.code || '') + ' ' + String(e.message || ''))); const wipe = async () => { H.classList.add('qx'); try { await window.db.auth.signOut({ scope: 'local' }); } catch (e) {} try { ['hist', 'saved', 'worlds', 'outbox'].forEach((k) => localStorage.removeItem('qb:' + k)); localStorage.removeItem('qs:owner'); } catch (e) {} try { if (window.caches) { for (const k of await caches.keys()) await caches.delete(k); } } catch (e) {} location.replace(location.pathname + location.search); }; const check = async (force) => { if (busy || window.QBLOCK || !window.db || !window.db.auth || !hint() || navigator.onLine === false) return; if (!force && Date.now() - at < 15000) return; busy = true; at = Date.now(); try { const s = await window.db.auth.getSession(); if (s && s.data && !s.data.session && !s.error && hint()) { await wipe(); } else if (s && s.data && s.data.session) { const r = await window.db.auth.getUser(); if (r.error && gone(r.error)) await wipe(); } } catch (e) {} busy = false; }; setTimeout(() => check(true), 3000); setInterval(() => check(true), 180000); document.addEventListener('visibilitychange', () => { if (!document.hidden) check(false); }); window.addEventListener('online', () => check(true)); })();)
+    -> Appended to script.js
+[2026-11-26 06:14:17] OK   /replace(script.js|full_name: ['text', 60, 'name']|full_name: ['text', 40, 'name'])
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:14:18] OK   /replace(script.js|U = r.data.user; accReset(); toast(wantPw ? 'Password changed.' : 'Changes saved.');|U = r.data.user; try { const pu = {}; if (data.full_name) pu.display_name = String(data.full_name).slice(0, 40); if (data.bio !== undefined) pu.bio = data.bio; if (Object.keys(pu).length) await window.db.from('profiles').update(pu).eq('id', U.id); } catch (e) {} accReset(); toast(wantPw ? 'Password changed.' : 'Changes saved.');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:14:18] OK   /replace(script.js|var r=await DB().from('profiles').update(o).eq('id',d.id);if(r.error)throw r.error;shut();done()|var r=await DB().from('profiles').update(o).eq('id',d.id);if(r.error)throw r.error;try{await window.db.auth.updateUser({data:{full_name:n,bio:cln(bi.value,260)||null}})}catch(e){}shut();done())
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:14:18] DONE /auto(1)
+    -> 7/7 applied
