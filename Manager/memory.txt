@@ -2349,3 +2349,11 @@
     -> Appended to style.css
 [2026-11-25 16:36:22] DONE /auto(1)
     -> 3/3 applied
+[2026-11-25 16:38:12] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 16:38:14] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_163814.css
+[2026-11-25 16:38:15] OK   /replace(style.css|.pfx-av,.pfx-eav{overflow:hidden}|.pfx-av{overflow:hidden}.pfx-eav{overflow:visible}.pfx-ecam{z-index:3})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 16:38:15] DONE /auto(1)
+    -> 1/1 applied

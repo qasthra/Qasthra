@@ -660,5 +660,5 @@ body:has(.qs-pf) .qs{overflow:hidden}
 .pfx-form .pfx-fl:has(select){flex-direction:row;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:var(--mono)} .pfx-form .pfx-fl select.pfx-fi{width:auto;min-width:130px;padding:7px 10px;border-radius:10px;font-size:13px;font-weight:500;color:var(--gray)} .pfx-cap{margin:4px 0 -6px;font-size:12px;font-weight:600;color:var(--gray)} .pfx-sv:disabled{opacity:.4;color:var(--gray);cursor:not-allowed}
 .pfx-gap{height:9px}
 .pfx-av svg,.pfx-eav svg{width:60%;height:60%;color:var(--gray)}
-.qs-av svg{display:block;width:52%;height:52%;color:var(--mono-ink)}.qs-av.has-img svg,.qs-card .qs-av.ld svg{display:none}.pfx-eav>span{display:contents}.pfx-av svg,.pfx-eav svg{display:block;width:56%;height:56%;margin:0}.pfx-av,.pfx-eav{overflow:hidden}
+.qs-av svg{display:block;width:52%;height:52%;color:var(--mono-ink)}.qs-av.has-img svg,.qs-card .qs-av.ld svg{display:none}.pfx-eav>span{display:contents}.pfx-av svg,.pfx-eav svg{display:block;width:56%;height:56%;margin:0}.pfx-av{overflow:hidden}.pfx-eav{overflow:visible}.pfx-ecam{z-index:3}
 .qs-pf-x{right:auto;left:max(14px,env(safe-area-inset-left))}.pfx-tl{left:auto;right:max(14px,env(safe-area-inset-right))}.pfx-tr{right:calc(max(14px,env(safe-area-inset-right)) + 36px)}.pfx-tr:first-child{right:max(14px,env(safe-area-inset-right))}
