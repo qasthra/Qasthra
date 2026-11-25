@@ -2377,3 +2377,11 @@
     -> Appended to style.css
 [2026-11-25 16:45:48] DONE /auto(1)
     -> 2/2 applied
+[2026-11-25 16:49:58] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 16:50:00] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_165000.css
+[2026-11-25 16:50:01] OK   /append(style.css|*,*::before,*::after{-webkit-tap-highlight-color:transparent}button,a,summary,select,label,[role="button"],[role="tab"],[role="option"],[role="switch"],[data-n],[data-a],[data-p]{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;touch-action:manipulation}button,[role="button"],[role="tab"],.btn,.qb-ic,.qb-w,.qb-item,.qs-row,.qs-op,.qs-nv{-webkit-user-select:none;user-select:none}button:focus:not(:focus-visible),a:focus:not(:focus-visible),summary:focus:not(:focus-visible),[role="button"]:focus:not(:focus-visible),[role="tab"]:focus:not(:focus-visible),[role="switch"]:focus:not(:focus-visible){outline:none;box-shadow:none}button::-moz-focus-inner{border:0})
+    -> Appended to style.css
+[2026-11-25 16:50:01] DONE /auto(1)
+    -> 1/1 applied
