@@ -1,7 +1,8 @@
-# 1 hide the edit pen when a profile is opened from @username search
-/replace(script.js|page.appendChild(tb('pfx-tr','Edit profile',IC_PEN,function(){editForm(d,load)}))|if(!uname)page.appendChild(tb('pfx-tr','Edit profile',IC_PEN,function(){editForm(d,load)})))
-# 2 sync icon changes the moment you tap
-/replace(script.js|sv('sync', st.sync); pop(); if (st.sync) {|sv('sync', st.sync); pop(); syncDraw(); if (st.sync) {)
-# 3 profile save tells settings to refresh the name and profile card in place
-/replace(script.js|}})}catch(e){}shut();done()|}})}catch(e){}try{window.dispatchEvent(new Event('qprof'))}catch(e){}shut();done())
-/replace(script.js|window.QSET = { open: open,|window.addEventListener('qprof', () => { if (root) load(); }); window.QSET = { open: open,)
+# 1 sync spins while turning off (state shows busy during the off work)
+/replace(script.js|(!st.sync ? 'off' : navigator.onLine === false|(!st.sync ? (syncB > 0 ? 'busy' : 'off') : navigator.onLine === false)
+/replace(script.js|if (st.sync) { await pull(); await push(); } else { const u = await who();|if (st.sync) { await pull(); await push(); } else { syncB++; syncDraw(); const u = await who();)
+/replace(script.js|ob.length = 0; sv('outbox', ob); } catch (e) {} } } pop(); };|ob.length = 0; sv('outbox', ob); } catch (e) {} } syncB--; setTimeout(syncDraw, 350); } pop(); };)
+# 2 sync look in desktop mode (wider than 560px): no dot, gray off, white on, spin only
+/append(style.css|@media (min-width:561px){.qb-sync::after{display:none!important}.qb-sync[data-s="off"]{opacity:1;color:var(--gray)}.qb-sync[data-s="on"],.qb-sync[data-s="busy"]{color:var(--mono)}.qb-sync[data-s="err"]{color:#e5484d}})
+# 3 landscape: keep content clear of camera notches (the bars themselves are hidden by fullscreen)
+/append(style.css|body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}.qb-dock{padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))})

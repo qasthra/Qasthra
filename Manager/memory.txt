@@ -2607,3 +2607,21 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-26 06:29:40] DONE /auto(1)
     -> 4/4 applied
+[2026-11-26 06:44:12] RUN  /auto(1)
+    -> 5 planner command(s)
+[2026-11-26 06:44:13] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_064412.js
+[2026-11-26 06:44:13] OK   /replace(script.js|(!st.sync ? 'off' : navigator.onLine === false|(!st.sync ? (syncB > 0 ? 'busy' : 'off') : navigator.onLine === false)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:44:13] OK   /replace(script.js|if (st.sync) { await pull(); await push(); } else { const u = await who();|if (st.sync) { await pull(); await push(); } else { syncB++; syncDraw(); const u = await who();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:44:14] OK   /replace(script.js|ob.length = 0; sv('outbox', ob); } catch (e) {} } } pop(); };|ob.length = 0; sv('outbox', ob); } catch (e) {} } syncB--; setTimeout(syncDraw, 350); } pop(); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:44:14] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_064414.css
+[2026-11-26 06:44:15] OK   /append(style.css|@media (min-width:561px){.qb-sync::after{display:none!important}.qb-sync[data-s="off"]{opacity:1;color:var(--gray)}.qb-sync[data-s="on"],.qb-sync[data-s="busy"]{color:var(--mono)}.qb-sync[data-s="err"]{color:#e5484d}})
+    -> Appended to style.css
+[2026-11-26 06:44:15] OK   /append(style.css|body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}.qb-dock{padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))})
+    -> Appended to style.css
+[2026-11-26 06:44:15] DONE /auto(1)
+    -> 5/5 applied
