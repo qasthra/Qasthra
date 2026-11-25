@@ -21,7 +21,7 @@ from datetime import datetime
 MANAGER = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(MANAGER)
 MEMORY = os.path.join(MANAGER, "memory.txt")
-PLANNER = os.path.join(MANAGER, "planner.txt")
+PLANNER = os.path.join(MANAGER, "planner.md")
 MATERIALS = os.path.join(ROOT, "Materials")
 FOLDERS = {"backup": "Backups", "chunk": "Chunks", "proto": "Prototypes"}
 TYPES = {".html": "HTML", ".css": "CSS", ".js": "JS"}
@@ -135,7 +135,7 @@ def unesc(s):
 
 
 def planner_commands():
-    """Every command line in planner.txt (blank lines and # comments skipped)."""
+    """Every command line in planner.md (blank lines and # comments skipped)."""
     return [l.strip() for l in read(PLANNER).splitlines()
             if l.strip() and not l.strip().startswith("#")]
 
@@ -375,7 +375,7 @@ def _check(name, args):
 def c_status(a):
     cmds = planner_commands()
     if not cmds:
-        print("Planner is empty (Manager/planner.txt)")
+        print("Planner is empty (Manager/planner.md)")
         return "Planner empty"
     counts = {}
     for c in cmds:
@@ -423,8 +423,8 @@ Commands
   /chunk(file|10-50)        save lines 10 to 50 as one chunk
   /proto(file)              newest draft in Materials/Prototypes becomes file
   /proto(draft|file)        a named draft becomes file
-  /auto(1)                  run Manager/planner.txt, backing up each file first
-  /auto(0)                  run Manager/planner.txt with no backups
+  /auto(1)                  run Manager/planner.md, backing up each file first
+  /auto(0)                  run Manager/planner.md with no backups
   /status                   check whether the current planner is applied
   /help                     show this help
 
@@ -445,7 +445,7 @@ How /status decides
   If you edit the files by hand afterwards, a line may show PENDING or UNKNOWN.
 
 Files
-  Manager/planner.txt   one command per line, # starts a comment
+  Manager/planner.md   one command per line, # starts a comment
   Manager/memory.txt    log of every attempt (OK / FAIL) with the reason
 
 Speed
@@ -654,7 +654,7 @@ def c_auto(flag):
     cmds = planner_commands()
     if not cmds:
         raise OpError("The planner is empty.",
-                      "Add one command per line to Manager/planner.txt, then run it again.")
+                      "Add one command per line to Manager/planner.md, then run it again.")
     return run_batch(cmds, f"/auto({flag})", flag == "1")
 
 
