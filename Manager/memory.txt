@@ -2543,3 +2543,31 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 18:59:41] DONE /auto(1)
     -> 1/1 applied
+[2026-11-25 21:16:08] RUN  /auto(1)
+    -> 7 planner command(s)
+[2026-11-25 21:16:08] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_211608.js
+[2026-11-25 21:16:09] OK   /replace(script.js|window.QAUTH = { session, showVeil, hideVeil, signOut };|const GB = {}; ['Sources/Videos/Qasthra.gif', 'Sources/Videos/Qasthra_intro.gif', 'Sources/Videos/Qasthra_outro.gif'].forEach((u) => { fetch(u).then((r) => (r.ok ? r.blob() : null)).then((b) => { if (b) GB[u] = b; }).catch(() => {}); }); window.QGIF = { url: (u) => (GB[u] ? URL.createObjectURL(GB[u]) : u + (u.indexOf('?') < 0 ? '?' : '&') + 'r=' + Date.now()) }; window.QAUTH = { session, showVeil, hideVeil, signOut };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:09] OK   /replace(script.js|const img = L.querySelector('img'); img.src = src|const img = L.querySelector('img'); img.src = window.QGIF ? window.QGIF.url(src || fallback) : src)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:09] OK   /replace(script.js|<img class="qb-world-loader" src="Sources/Videos/Qasthra.gif" alt="Loading">|<img class="qb-world-loader" src="' + (window.QGIF ? window.QGIF.url('Sources/Videos/Qasthra.gif') : 'Sources/Videos/Qasthra.gif') + '" alt="Loading">)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:10] OK   /replace(script.js|ld.src='Sources/Videos/Qasthra.gif';|ld.src=window.QGIF?window.QGIF.url('Sources/Videos/Qasthra.gif'):'Sources/Videos/Qasthra.gif';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:10] OK   /replace(script.js|P.card=async function(f){|P.reset=function(){P.ca=P.cc=P.cd=P.ct=0;P.busy=0;var r=document.querySelector('.qs'),av=r&&r.querySelector('.qs-av'),ct=r&&r.querySelector('.qs-ct');if(av){av.style.backgroundImage='';av.classList.remove('has-img')}if(ct){ct.style.backgroundImage='';ct.classList.remove('has-cv')}};(function w(){var lu=null;if(window.db&&window.db.auth){window.db.auth.onAuthStateChange(function(e,s){var id=s&&s.user?s.user.id:null;if(e==='SIGNED_OUT'){lu=null;P.reset()}else if(id&&lu&&id!==lu){P.reset()}if(id)lu=id})}else setTimeout(w,400)})();P.card=async function(f){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:11] OK   /replace(script.js|const signOut = async () => { sP = null; window.QBLOCK = true;|const signOut = async () => { sP = null; try { if (window.QPROF && window.QPROF.reset) window.QPROF.reset(); } catch (e) {} window.QBLOCK = true;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:11] OK   /replace(script.js|wire(); wireAcc(); showCat(cat); paint(); load();|wire(); wireAcc(); showCat(cat); U = null; paint(); load();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:16:11] DONE /auto(1)
+    -> 7/7 applied
+[2026-11-25 21:19:09] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 21:19:11] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_211911.js
+[2026-11-25 21:19:12] OK   /replace(script.js|const signout = async () => { if (window.QAUTH && window.QAUTH.signOut) await window.QAUTH.signOut();|const wipeLocal = () => { ['hist', 'saved', 'worlds', 'outbox'].forEach((k) => { try { localStorage.removeItem('qb:' + k); } catch (e) {} }); try { clearTimeout(kt); clearTimeout(hrec); } catch (e) {} st.hist = []; st.saved = []; st.xfer = []; st.panel = ''; ob.length = 0; st.worlds = [nw()]; st.active = st.worlds[0].id; }; const ownChk = async () => { const u = await who(); if (!u) return; let o = null; try { o = localStorage.getItem('qs:owner'); } catch (e) {} if (o && o !== u) { wipeLocal(); try { draw(); } catch (e) {} } try { localStorage.setItem('qs:owner', u); } catch (e) {} }; (function w() { if (window.db && window.db.auth) { window.db.auth.onAuthStateChange((e) => { if (e === 'SIGNED_IN' || e === 'INITIAL_SESSION') setTimeout(ownChk, 0); }); } else setTimeout(w, 400); })(); const signout = async () => { if (window.QAUTH && window.QAUTH.signOut) await window.QAUTH.signOut(); wipeLocal(); try { localStorage.removeItem('qs:owner'); } catch (e) {})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 21:19:12] DONE /auto(1)
+    -> 1/1 applied
