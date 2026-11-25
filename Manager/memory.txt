@@ -2367,3 +2367,13 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 16:43:00] DONE /auto(1)
     -> 2/2 applied
+[2026-11-25 16:45:45] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 16:45:46] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_164546.css
+[2026-11-25 16:45:46] OK   /replace(style.css|.pfx-ecam{z-index:3}|.pfx-ecam{z-index:1})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 16:45:48] OK   /append(style.css|.pfx-hd{z-index:10}.pfx-eav .pfx-ecam svg{width:16px;height:16px;color:var(--mono-ink)}.pfx-ecv>.pfx-ecam svg{color:var(--mono-ink)})
+    -> Appended to style.css
+[2026-11-25 16:45:48] DONE /auto(1)
+    -> 2/2 applied
