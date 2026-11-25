@@ -2593,3 +2593,17 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-26 06:14:18] DONE /auto(1)
     -> 7/7 applied
+[2026-11-26 06:29:37] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-26 06:29:37] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_062937.js
+[2026-11-26 06:29:38] OK   /replace(script.js|page.appendChild(tb('pfx-tr','Edit profile',IC_PEN,function(){editForm(d,load)}))|if(!uname)page.appendChild(tb('pfx-tr','Edit profile',IC_PEN,function(){editForm(d,load)})))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:29:39] OK   /replace(script.js|sv('sync', st.sync); pop(); if (st.sync) {|sv('sync', st.sync); pop(); syncDraw(); if (st.sync) {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:29:39] OK   /replace(script.js|}})}catch(e){}shut();done()|}})}catch(e){}try{window.dispatchEvent(new Event('qprof'))}catch(e){}shut();done())
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:29:40] OK   /replace(script.js|window.QSET = { open: open,|window.addEventListener('qprof', () => { if (root) load(); }); window.QSET = { open: open,)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 06:29:40] DONE /auto(1)
+    -> 4/4 applied
