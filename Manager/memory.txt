@@ -1526,3 +1526,16 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 13:01:19] DONE /auto(1)
     -> 4/4 applied
+[2026-11-25 13:15:19] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-25 13:15:20] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_131520.js
+[2026-11-25 13:15:20] OK   /replace(script.js|const siteFind = async (q, n) => { if (!window.db) return []; const t = clean(q, 60).trim();|const fnCall = async (body) => { try { const ac = new AbortController(), tm = setTimeout(() => ac.abort(), 6000); const q = await fetch('https://hwffsxhonbymzwomhoyd.supabase.co/functions/v1/search-sites', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: 'sb_publishable_Rqtyo62gG01MIWkF5Jz8Qw_Xe-UoXCZ' }, body: JSON.stringify(body), signal: ac.signal }); clearTimeout(tm); if (!q.ok) return null; return await q.json(); } catch (e) { return null; } }; const siteFind = async (q, n) => { if (!window.db) return []; const t = clean(q, 60).trim();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:15:21] FAIL /replace(script.js|const [a, b] = await Promise.all([window.db.from('sites').select(sel).eq('official', true).ilike('name', '%' + p + '%').order('searches', { ascending: false }).limit(n), window.db.from('sites').select(sel).eq('official', false).ilike('name', p + '%').order('searches', { ascending: false }).limit(n)]);|const j = await fnCall({ op: 'find', q: t, n: n }); const a = { data: j && Array.isArray(j.r) ? j.r : [] }, b = { data: [] };)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 13:15:21] ROLL /auto(1)
+    -> 1 file(s) restored, 1 helper file(s) removed
+[2026-11-25 13:15:21] STOP /auto(1)
+    -> stopped at step 2/4, nothing was applied
