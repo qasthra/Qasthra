@@ -1512,3 +1512,17 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 12:52:18] DONE /auto(1)
     -> 6/6 applied
+[2026-11-25 13:01:16] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-25 13:01:17] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_130117.js
+[2026-11-25 13:01:17] OK   /replace(script.js|const siteFind = async (q, n) => { if (!window.db) return []; const t = clean(q, 60).trim();|const fnCall = async (body) => { try { const ac = new AbortController(), tm = setTimeout(() => ac.abort(), 6000); const q = await fetch('https://hwffsxhonbymzwomhoyd.supabase.co/functions/v1/search-sites', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: 'sb_publishable_Rqtyo62gG01MIWkF5Jz8Qw_Xe-UoXCZ' }, body: JSON.stringify(body), signal: ac.signal }); clearTimeout(tm); if (!q.ok) return null; return await q.json(); } catch (e) { return null; } }; const siteFind = async (q, n) => { if (!window.db) return []; const t = clean(q, 60).trim();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:01:18] OK   /replace(script.js|const [a, b] = await Promise.all([window.db.from('sites').select(sel).eq('official', true).ilike('name', '%' + p + '%').order('searches', { ascending: false }).limit(n), window.db.from('sites').select(sel).eq('official', false).ilike('name', p + '%').order('searches', { ascending: false }).limit(n)]);|const j = await fnCall({ op: 'find', q: t, n: n }); const a = { data: j && Array.isArray(j.r) ? j.r : [] }, b = { data: [] };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:01:19] OK   /replace(script.js|const r = await window.db.from('sites').select('name,icon').eq('coord', k).maybeSingle();|const r = await fnCall({ op: 'coord', coord: k }).then((j) => ({ data: j ? j.r : null, error: j ? null : 1 }));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:01:19] OK   /replace(script.js|r2 = await window.db.from('sites').select('name,qst').eq('coord', k).maybeSingle();|r2 = await fnCall({ op: 'coord', coord: k, full: true }).then((j) => ({ data: j ? j.r : null, error: j ? null : 1 }));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:01:19] DONE /auto(1)
+    -> 4/4 applied
