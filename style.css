@@ -664,3 +664,10 @@ body:has(.qs-pf) .qs{overflow:hidden}
 .qs-pf-x{right:auto;left:max(14px,env(safe-area-inset-left))}.pfx-tl{left:auto;right:max(14px,env(safe-area-inset-right))}.pfx-tr{right:calc(max(14px,env(safe-area-inset-right)) + 36px)}.pfx-tr:first-child{right:max(14px,env(safe-area-inset-right))}
 .pfx-hd{z-index:10}.pfx-eav .pfx-ecam svg{width:16px;height:16px;color:var(--mono-ink)}.pfx-ecv>.pfx-ecam svg{color:var(--mono-ink)}
 *,*::before,*::after{-webkit-tap-highlight-color:transparent}button,a,summary,select,label,[role="button"],[role="tab"],[role="option"],[role="switch"],[data-n],[data-a],[data-p]{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;touch-action:manipulation}button,[role="button"],[role="tab"],.btn,.qb-ic,.qb-w,.qb-item,.qs-row,.qs-op,.qs-nv{-webkit-user-select:none;user-select:none}button:focus:not(:focus-visible),a:focus:not(:focus-visible),summary:focus:not(:focus-visible),[role="button"]:focus:not(:focus-visible),[role="tab"]:focus:not(:focus-visible),[role="switch"]:focus:not(:focus-visible){outline:none;box-shadow:none}button::-moz-focus-inner{border:0}
+.qb-pfv{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;-ms-overflow-style:none;background:var(--bg);color:var(--mono)}
+.qb-pfv::-webkit-scrollbar{display:none;width:0;height:0}
+.qb-pfv .pfx{padding-top:48px}
+.qb-pfv .pfx-tb{top:12px}
+.qb-pfv .qs-pf-x{display:none!important}
+.qb-orb,.qb-orb *,.qb-nb{touch-action:none!important}
+.qb-kirby .qb-orb{touch-action:none!important}

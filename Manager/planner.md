@@ -1,2 +1,2 @@
-# Remove native tap highlight (blue square) on all buttons for a native feel
-/append(style.css|*,*::before,*::after{-webkit-tap-highlight-color:transparent}button,a,summary,select,label,[role="button"],[role="tab"],[role="option"],[role="switch"],[data-n],[data-a],[data-p]{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;touch-action:manipulation}button,[role="button"],[role="tab"],.btn,.qb-ic,.qb-w,.qb-item,.qs-row,.qs-op,.qs-nv{-webkit-user-select:none;user-select:none}button:focus:not(:focus-visible),a:focus:not(:focus-visible),summary:focus:not(:focus-visible),[role="button"]:focus:not(:focus-visible),[role="tab"]:focus:not(:focus-visible),[role="switch"]:focus:not(:focus-visible){outline:none;box-shadow:none}button::-moz-focus-inner{border:0})
+# orb: bring back Z by dragging from the orb's sides
+/replace(script.js|zone = 'xy';|zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';)

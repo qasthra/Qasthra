@@ -1,5 +1,5 @@
 // Qasthra service worker: network-first so updates always arrive, cache only as an offline fallback.
-const CACHE = 'qasthra-offline-v1';
+const CACHE = 'qasthra-offline-v4';
 const SHELL = ['./', 'index.html', 'style.css', 'script.js', 'manifest.webmanifest',
                'Sources/Icons/Qasthra.svg', 'Sources/Images/Qasthra-192.png'];
 

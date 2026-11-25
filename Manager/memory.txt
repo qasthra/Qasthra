@@ -2385,3 +2385,153 @@
     -> Appended to style.css
 [2026-11-25 16:50:01] DONE /auto(1)
     -> 1/1 applied
+[2026-11-25 18:09:47] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 18:09:48] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_180948.js
+[2026-11-25 18:09:50] OK   /replace(script.js|const go = (q) => { q = clean(q, 200).trim(); if (!q) return; if (!okGo()) return;|const go = (q) => { q = clean(q, 200).trim(); if (!q) return; if (!okGo()) return; if (q.charAt(0) === '@') { if (/^@[A-Za-z][A-Za-z0-9_-]{4,24}$/.test(q) && window.QPROF) window.QPROF.open(q.slice(1)); else say('Use @username: 5 to 25 letters, numbers, _ or -.'); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:09:50] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-25 18:14:53] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-25 18:14:53] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_181453.js
+[2026-11-25 18:14:54] OK   /replace(script.js|P.mount=async function(host,uname){|P.mount=async function(host,uname,miss){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:14:54] OK   /replace(script.js|page.appendChild(mk('p','pfx-msg pfx-load','Profile not found.'));return}|if(miss){var m0=miss;miss=null;m0();return}page.appendChild(mk('p','pfx-msg pfx-load','Profile not found.'));return})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:14:55] OK   /replace(script.js|const qOpen = (e) => { const o = $('.qb-ov'); if (!o) return;|const pOpen = (e) => { const o = $('.qb-ov'); if (!o) return; const tok = ++qTok, nm = e.q.slice(1).toLowerCase(); qSeen = ''; window.QST = null; o.innerHTML = '<div class="qb-pfv"></div>'; const back = () => { if (tok !== qTok) return; const w = cur(); if (!w) return; if (ent(w) !== e) return; if (!qfull(w)) { w.tr[w.i] = { k: 'universe', q: '' }; keep(); draw(); } else { const p = w.i; hop(-1); if (w.i === p) { const x = st.worlds.indexOf(w); st.worlds.splice(x, 1); st.active = st.worlds[Math.max(0, x - 1)].id; keep(); draw(); } } }; if (!/^[a-z][a-z0-9_-]{4,24}$/.test(nm)) { back(); return; } if (!window.QPROF) { back(); return; } window.QPROF.mount(o.firstChild, nm, back); }; const qOpen = (e) => { if (e.k === 'search' && e.q.charAt(0) === '@') { pOpen(e); return; } const o = $('.qb-ov'); if (!o) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:14:56] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_181455.css
+[2026-11-25 18:14:56] OK   /append(style.css|.qb-pfv{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;-ms-overflow-style:none;background:var(--bg);color:var(--mono)}\n.qb-pfv::-webkit-scrollbar{display:none;width:0;height:0}\n.qb-pfv .pfx{padding-top:48px}\n.qb-pfv .pfx-tb{top:12px})
+    -> Appended to style.css
+[2026-11-25 18:14:56] DONE /auto(1)
+    -> 4/4 applied
+[2026-11-25 18:17:34] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-25 18:17:34] OK   [auto] /backup(sw.js)
+    -> Backup saved: Materials/Backups/JS/sw_20261125_181734.js
+[2026-11-25 18:17:35] OK   /replace(sw.js|qasthra-offline-v1|qasthra-offline-v2)
+    -> Replaced 1 occurrence(s) in sw.js
+[2026-11-25 18:17:35] OK   [auto] /backup(pwa.js)
+    -> Backup saved: Materials/Backups/JS/pwa_20261125_181735.js
+[2026-11-25 18:17:36] OK   /replace(pwa.js|if ('serviceWorker' in navigator) {|if ('serviceWorker' in navigator) {\n  let had = !!navigator.serviceWorker.controller, calm = true, fresh = false;\n  const idle = () => { calm = false; };\n  ['pointerdown', 'keydown', 'touchstart'].forEach(t => window.addEventListener(t, idle, { passive: true }));\n  navigator.serviceWorker.addEventListener('controllerchange', () => {\n    if (!had) { had = true; return; }\n    if (document.hidden) { location.reload(); return; }\n    if (calm) { location.reload(); return; }\n    fresh = true;\n  });)
+    -> Replaced 1 occurrence(s) in pwa.js
+[2026-11-25 18:17:37] OK   /replace(pwa.js|if (!document.hidden) reg.update().catch(() => {});|if (document.hidden) return;\n        calm = true;\n        if (fresh) { location.reload(); return; }\n        reg.update().catch(() => {});)
+    -> Replaced 1 occurrence(s) in pwa.js
+[2026-11-25 18:17:37] DONE /auto(1)
+    -> 3/3 applied
+[2026-11-25 18:19:40] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 18:19:41] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_181941.js
+[2026-11-25 18:19:42] OK   /replace(script.js|if (q.charAt(0) === '@') { if (/^@[A-Za-z][A-Za-z0-9_-]{4,24}$/.test(q) && window.QPROF) window.QPROF.open(q.slice(1)); else say('Use @username: 5 to 25 letters, numbers, _ or -.'); return; } |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:19:43] OK   [auto] /backup(sw.js)
+    -> Backup saved: Materials/Backups/JS/sw_20261125_181943.js
+[2026-11-25 18:19:43] OK   /replace(sw.js|qasthra-offline-v2|qasthra-offline-v3)
+    -> Replaced 1 occurrence(s) in sw.js
+[2026-11-25 18:19:43] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 18:26:12] RUN  /auto(1)
+    -> 5 planner command(s)
+[2026-11-25 18:26:13] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_182612.js
+[2026-11-25 18:26:13] OK   /replace(script.js|var u=location.origin+location.pathname,t=nm|var u=location.origin+location.pathname+'#dashboard',t=nm)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:26:13] OK   /replace(script.js|+') on Qasthra';try{if(navigator.share)|+') on Qasthra. Search @'+(d.username?d.username:'')+' in the dashboard.';try{if(navigator.share))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:26:14] OK   /replace(script.js|else{var rl=d.relation,pm=null;page.appendChild(tb('pfx-tr','Report profile',IC_WARN,reportSheet));|else{var rl=d.relation,pm=null;page.appendChild(tb('pfx-tl','Share profile',IC_SHR,function(){share(nm)}));page.appendChild(tb('pfx-tr','Report profile',IC_WARN,reportSheet));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:26:15] OK   /replace(script.js|if (fresh) { noLoad = true; draw(); noLoad = false; } else { lite(); } return true; };|if (fresh) { const pv = $('.qb-pfv'); if (pv) pv.remove(); qTok++; noLoad = true; draw(); noLoad = false; } else { lite(); } return true; };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:26:15] OK   [auto] /backup(sw.js)
+    -> Backup saved: Materials/Backups/JS/sw_20261125_182615.js
+[2026-11-25 18:26:15] OK   /replace(sw.js|qasthra-offline-v3|qasthra-offline-v4)
+    -> Replaced 1 occurrence(s) in sw.js
+[2026-11-25 18:26:15] DONE /auto(1)
+    -> 5/5 applied
+[2026-11-25 18:32:20] RUN  /auto(1)
+    -> 8 planner command(s)
+[2026-11-25 18:32:20] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_183220.js
+[2026-11-25 18:32:20] OK   /replace(script.js|route() { const h = location.hash; api.render(|route() { const h = location.hash; document.title = /^#dashboard/.test(h) ? 'Dashboard | Qasthra' : /^#signin/.test(h) ? 'Sign in | Qasthra' : /^#info/.test(h) ? 'Information | Qasthra' : /^#contact/.test(h) ? 'Contact | Qasthra' : /^#support/.test(h) ? 'Support | Qasthra' : 'Qasthra'; api.render()
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:21] OK   /replace(script.js|const nudge = (k, amount) => { const a = AX[k]; if (!a) return false;|const nudge = (k, amount) => { const a = AX[k]; if (!a) return false; { const pf = $('.qb-pfv'); if (pf) { pf.remove(); qTok++; } })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:21] OK   /replace(script.js|if (!okGo()) return; if (/^qasthra$/i.test(q)) q = QZ;|if (!okGo()) return; { const pf = $('.qb-pfv'); if (pf && q.charAt(0) !== '@') { pf.remove(); qTok++; } } if (/^qasthra$/i.test(q)) q = QZ;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:22] OK   /replace(script.js|window.QPROF.mount(o.firstChild, nm, back); }; const qOpen|window.QPROF.mount(o.firstChild, nm, back); const xb = document.createElement('button'); xb.type = 'button'; xb.className = 'qs-pf-x'; xb.style.zIndex = '5'; xb.setAttribute('aria-label', 'Close profile'); xb.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'; xb.onclick = () => { const t = qTok; back(); if (t === qTok) { const pf = $('.qb-pfv'); if (pf) pf.remove(); } }; o.firstChild.appendChild(xb); }; const qOpen)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:22] OK   /replace(script.js|try{if(navigator.share){await navigator.share({title:'Qasthra',text:t,url:u});return}await navigator.clipboard.writeText(t+' '+u)}catch(e){}}|t='@'+(d.username||'');try{await navigator.clipboard.writeText(t);note('Copied '+t)}catch(e){try{var x=document.createElement('textarea');x.value=t;x.style.cssText='position:fixed;opacity:0';document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();note('Copied '+t)}catch(e2){note('Could not copy.')}}})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:23] OK   /replace(script.js|let it = 0, held = false, drag = false, dir = '',|let it = 0, pid = -1, held = false, drag = false, dir = '',)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:23] OK   /replace(script.js|drag = true; held = true; try { orb.setPointerCapture(e.pointerId); } catch (x) {} e.preventDefault(); move(e);|drag = true; held = true; pid = e.pointerId; try { orb.setPointerCapture(e.pointerId); } catch (x) {} e.preventDefault(); move(e);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:23] OK   /replace(script.js|orb.addEventListener('pointermove', (e) => { if (drag) move(e); });|window.addEventListener('pointermove', (e) => { if (drag && e.pointerId === pid) move(e); }); window.addEventListener('pointerup', (e) => { if (drag && e.pointerId === pid) end(); }, true); window.addEventListener('pointercancel', (e) => { if (drag && e.pointerId === pid) end(); }, true); window.addEventListener('blur', () => { if (drag) end(); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:32:23] DONE /auto(1)
+    -> 8/8 applied
+[2026-11-25 18:38:16] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 18:38:17] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_183817.css
+[2026-11-25 18:38:18] OK   /append(style.css|.qb-pfv .qs-pf-x{display:none!important})
+    -> Appended to style.css
+[2026-11-25 18:38:19] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_183819.js
+[2026-11-25 18:38:19] OK   /replace(script.js|;note('Copied '+t)|)
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-25 18:38:19] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 18:42:42] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-25 18:42:42] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_184242.js
+[2026-11-25 18:42:43] OK   /replace(script.js|R = b.width * 0.3|R = 110)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:42:44] OK   /replace(script.js|(m - R * 0.4) / (R * 0.6)|(m - R * 0.12) / (R * 0.88))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:42:44] OK   /replace(script.js|(m < R * 0.4|(m < R * 0.12)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:42:45] OK   /replace(script.js|zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';|zone = 'xy';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:42:45] DONE /auto(1)
+    -> 4/4 applied
+[2026-11-25 18:47:50] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-25 18:47:51] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_184751.js
+[2026-11-25 18:47:51] OK   /replace(script.js|window.QBAPI = { count:|window.QNUDGE = { hold: hold, stop: stop }; window.QBAPI = { count:)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:52] OK   /replace(script.js|if (dir) window.dispatchEvent(new Event('pointerup')); dir = k; if (!k) return; const b = orb.querySelector('[data-n="' + k + '"]'); if (b) b.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, button: 0 }));|dir = k; if (window.QNUDGE) { if (k) window.QNUDGE.hold(k); else window.QNUDGE.stop(); })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:52] OK   /replace(script.js|const b = orb.getBoundingClientRect(), R = 110;|const b = orb.getBoundingClientRect(), R = 70, V = Math.max(24, b.width * 0.3);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:53] OK   /replace(script.js|S.kx = dx / R; S.ky = dy / R; S.tx = S.ky * 0.45; S.ty = S.kx * 0.6;|const mc = Math.hypot(dx, dy) || 1, f = Math.min(1, mc / V); S.kx = dx / mc * f; S.ky = dy / mc * f; S.tx = S.ky * 0.45; S.ty = S.kx * 0.6;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:53] OK   /replace(script.js|d * 0.35 + h * 0.65|d * 0.75 + h * 0.25)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:54] OK   /replace(script.js|orb.addEventListener('pointercancel', () => { mv = 99; end(); });|orb.addEventListener('pointercancel', () => { mv = 99; end(); }); orb.addEventListener('contextmenu', (e) => e.preventDefault());)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:47:54] DONE /auto(1)
+    -> 6/6 applied
+[2026-11-25 18:50:20] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 18:50:22] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_185022.css
+[2026-11-25 18:50:23] OK   /append(style.css|.qb-orb,.qb-orb *,.qb-nb{touch-action:none!important}\n.qb-kirby .qb-orb{touch-action:none!important})
+    -> Appended to style.css
+[2026-11-25 18:50:23] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-25 18:51:19] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 18:51:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_185121.js
+[2026-11-25 18:51:22] OK   /replace(script.js|zone = 'xy';|zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:51:22] DONE /auto(1)
+    -> 1/1 applied
