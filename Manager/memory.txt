@@ -1388,3 +1388,109 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 08:17:54] DONE /auto(1)
     -> 2/2 applied
+[2026-11-25 12:21:28] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 12:21:28] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_122128.js
+[2026-11-25 12:21:29] OK   /replace(script.js|: '<p class="qb-empty">No history yet.</p>')|: '')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:21:29] OK   /replace(script.js|out ? out : '<p class="qb-empty">No favorites yet. Tap the star on a World to add it.</p>')|out)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:21:30] OK   /replace(script.js|qbFbar('Search transfers')|'')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:21:30] OK   /replace(script.js|if (on) { tsOn(); } else { tsOff();|if (on) { tsOn(); setTimeout(() => { try { w.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {} }, 60); } else { tsOff();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:21:30] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_122130.css
+[2026-11-25 12:21:30] OK   /append(style.css|/* password: simple + mobile */)
+    -> Appended to style.css
+[2026-11-25 12:21:31] OK   /append(style.css|.qs-acc .qs-pw>.qs-hit{min-height:56px})
+    -> Appended to style.css
+[2026-11-25 12:21:31] OK   /append(style.css|.qs-acc .qs-ei{gap:12px;padding:0 16px 16px})
+    -> Appended to style.css
+[2026-11-25 12:21:32] OK   /append(style.css|.qs-acc .qs-ei .cs-f{gap:6px})
+    -> Appended to style.css
+[2026-11-25 12:21:32] OK   /append(style.css|.qs-acc .qs-ei .cs-f input{box-sizing:border-box;width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--mono);font:500 16px/1.2 var(--font);-webkit-appearance:none;appearance:none;touch-action:manipulation})
+    -> Appended to style.css
+[2026-11-25 12:21:33] OK   /append(style.css|.qs-acc .qs-ei .cs-f input:focus{border-color:var(--mono);outline:0})
+    -> Appended to style.css
+[2026-11-25 12:21:33] OK   /append(style.css|.qs .qs-chg{position:static;margin-top:16px;box-shadow:none})
+    -> Appended to style.css
+[2026-11-25 12:21:34] OK   /append(style.css|.qs .qs-chg .qs-save,.qs .qs-chg .qs-cx{min-height:48px})
+    -> Appended to style.css
+[2026-11-25 12:21:34] DONE /auto(1)
+    -> 12/12 applied
+[2026-11-25 12:24:28] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 12:24:29] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_122429.js
+[2026-11-25 12:24:30] OK   /replace(script.js|: ''; }, saved: () =>|: ''); }, saved: () =>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:24:31] OK   /replace(script.js|, out; }, xfer:|, out); }, xfer:)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:24:31] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 12:28:28] RUN  /auto(1)
+    -> 7 planner command(s)
+[2026-11-25 12:28:28] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_122828.js
+[2026-11-25 12:28:28] OK   /replace(script.js|r.length ? '<button class="qb-btn" type="button" data-a="clear">Clear all</button>' : ''|'')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:28:29] OK   /replace(script.js|<div class="qs-cb"><button class="btn btn-second qs-cx"|<div class="qs-acts"><button class="btn btn-second qs-cx")
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:28:29] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_122829.css
+[2026-11-25 12:28:29] OK   /append(style.css|/* password actions: equal buttons */)
+    -> Appended to style.css
+[2026-11-25 12:28:30] OK   /append(style.css|.qs .qs-chg .qs-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:auto;height:auto;padding:0;border:0;border-radius:0})
+    -> Appended to style.css
+[2026-11-25 12:28:30] OK   /append(style.css|.qs .qs-chg .qs-acts .btn{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:0 16px;border-radius:12px;font:600 15px/1 var(--font)})
+    -> Appended to style.css
+[2026-11-25 12:28:31] OK   /append(style.css|.qs-acc .qs-ts.chal{display:block;box-sizing:border-box;width:100%;max-width:100%;min-height:65px;overflow:hidden;border-radius:12px})
+    -> Appended to style.css
+[2026-11-25 12:28:31] OK   /append(style.css|.qs-acc .qs-ts iframe{max-width:100%!important})
+    -> Appended to style.css
+[2026-11-25 12:28:31] DONE /auto(1)
+    -> 7/7 applied
+[2026-11-25 12:32:53] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 12:32:53] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_123253.js
+[2026-11-25 12:32:54] OK   /replace(script.js|const pwrow = () =>|const pwf = (n, l, a) => '<label class="cs-f"><span>' + l + '</span><div class="qs-pwf"><input name="' + n + '" type="password" maxlength="72" autocomplete="' + a + '" autocapitalize="none" autocorrect="off" spellcheck="false"><button class="qs-eye" type="button" data-do="eye" aria-label="Show password" aria-pressed="false">Show</button></div></label>'; const pwrow = () =>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:32:54] OK   /replace(script.js|fld('pw0', 'Current', 'password', 72, ' autocomplete="current-password"') + fld('pw1', 'Replacer', 'password', 72, ' autocomplete="new-password"') + '<div class="qs-ts"|pwf('pw0', 'Current', 'current-password') + pwf('pw1', 'Replacer', 'new-password') + '<div class="qs-ts"")
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:32:55] OK   /replace(script.js|pwx: () => accPw(),|pwx: () => accPw(), eye: (a) => { const i = a.parentNode.querySelector('input'); if (!i) return; const on = i.type === 'password'; i.type = on ? 'text' : 'password'; a.textContent = on ? 'Hide' : 'Show'; a.setAttribute('aria-pressed', String(on)); a.setAttribute('aria-label', on ? 'Hide password' : 'Show password'); },)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:32:55] OK   /replace(script.js|if (f.elements[k]) f.elements[k].value = ''; });|if (f.elements[k]) { f.elements[k].value = ''; f.elements[k].type = 'password'; } }); f.querySelectorAll('.qs-eye').forEach((b) => { b.textContent = 'Show'; b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', 'Show password'); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:32:55] OK   /replace(script.js|f.elements[k].value = ''; }); accSync(); }|f.elements[k].value = ''; f.elements[k].type = 'password'; }); f.querySelectorAll('.qs-eye').forEach((b) => { b.textContent = 'Show'; b.setAttribute('aria-pressed', 'false'); }); accSync(); })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 12:32:56] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_123256.css
+[2026-11-25 12:32:56] OK   /append(style.css|/* password: note + show/hide */)
+    -> Appended to style.css
+[2026-11-25 12:32:56] OK   /append(style.css|.qs .qs-chg .qs-note{text-align:center})
+    -> Appended to style.css
+[2026-11-25 12:32:57] OK   /append(style.css|.qs-acc .qs-pwf{position:relative;display:flex;align-items:center;width:100%})
+    -> Appended to style.css
+[2026-11-25 12:32:57] OK   /append(style.css|.qs-acc .qs-pwf input{flex:1;min-width:0;padding-right:72px!important;text-overflow:ellipsis})
+    -> Appended to style.css
+[2026-11-25 12:32:58] OK   /append(style.css|.qs-acc .qs-eye{position:absolute;top:50%;right:6px;transform:translateY(-50%);min-width:60px;height:36px;padding:0 10px;border:0;border-radius:8px;background:var(--bg);color:var(--gray);font:600 13px/1 var(--font);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation})
+    -> Appended to style.css
+[2026-11-25 12:32:58] OK   /append(style.css|.qs-acc .qs-eye:hover,.qs-acc .qs-eye[aria-pressed="true"]{color:var(--mono)})
+    -> Appended to style.css
+[2026-11-25 12:32:59] OK   /append(style.css|.qs-acc .qs-eye:focus-visible{outline:2px solid var(--mono);outline-offset:-2px})
+    -> Appended to style.css
+[2026-11-25 12:32:59] DONE /auto(1)
+    -> 12/12 applied
+[2026-11-25 12:34:17] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 12:34:18] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_123418.css
+[2026-11-25 12:34:19] OK   /delete(style.css|.qs-acc .qs-eye:hover,.qs-acc .qs-eye[aria-pressed="true"])
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 12:34:20] OK   /append(style.css|.qs-acc .qs-eye,.qs-acc .qs-eye:hover,.qs-acc .qs-eye:active,.qs-acc .qs-eye:focus,.qs-acc .qs-eye[aria-pressed="true"]{color:var(--gray)!important;background:var(--bg)})
+    -> Appended to style.css
+[2026-11-25 12:34:20] DONE /auto(1)
+    -> 2/2 applied
