@@ -1539,3 +1539,15 @@
     -> 1 file(s) restored, 1 helper file(s) removed
 [2026-11-25 13:15:21] STOP /auto(1)
     -> stopped at step 2/4, nothing was applied
+[2026-11-25 13:29:23] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-25 13:29:23] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_132923.js
+[2026-11-25 13:29:24] OK   /replace(script.js|const accSync = () => { const f = accForm(); if (!f) return;|const PWBAD = /[\u0000-\u001F\u007F-\u009F\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180B-\u180E\u200B\u200E\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\u3164\uFEFF\uFFA0\uFFF9-\uFFFB]/g; const pwClean = (s) => { s = String(s == null ? '' : s).replace(PWBAD, ''); const e = new TextEncoder(), a = Array.from(s); while (a.length && e.encode(a.join('')).length > 72) a.pop(); return a.join(''); }; const PWCOMMON = new Set('password password1 password12 password123 password1234 passw0rd p@ssw0rd p@ssword 12345678 123456789 1234567890 11111111 00000000 12341234 123123123 qwertyui qwerty123 qwerty1234 qwertyuiop 1q2w3e4r 1q2w3e4r5t 1qaz2wsx qazwsxedc asdfghjk asdfghjkl zxcvbnm123 iloveyou iloveyou1 abc12345 abcd1234 abcdefgh abcdefg1 letmein1 letmein123 welcome1 welcome123 admin123 administrator monkey123 dragon123 football1 baseball1 superman1 trustno1 sunshine1 princess1 master123 shadow123 michael1 jessica1 charlie1 starwars1 whatever1 changeme changeme1 default123 test1234 testing123 login123 user1234 guest123 qasthra qasthra1 qasthra123 qasthra2026 secret123 football123 batman123 liverpool1 chelsea123 arsenal123 mustang1 access123 hello123 hello1234 freedom1 summer123 winter123 spring123 autumn123 internet1 computer1 samsung1 google123 iphone123 pass1234 pass12345 pass123456 pa55word pa55w0rd 987654321 98765432 123456abc 1234qwer qwer1234 zaq12wsx 1qazxsw2 2wsx3edc q1w2e3r4 q1w2e3r4t5 a1b2c3d4 a1b2c3d4e5'.split(' ')); const pwOk = (p) => { p = String(p == null ? '' : p); return p.length >= 8 && p.length <= 72 && /\p{L}/u.test(p) && /\p{N}/u.test(p) && !PWCOMMON.has(p.toLowerCase()); }; const accSync = (ev) => { const f = accForm(); if (!f) return; const w1 = f.elements.pw1; if (w1 && !(ev && ev.isComposing)) { const c1 = pwClean(w1.value); if (c1 !== w1.value) w1.value = c1; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:29:25] OK   /replace(script.js|const bar = $('.qs-chg', f); if (bar) bar.hidden = !(dirty|const sb = $('.qs-save', f); if (sb && !f.dataset.busy) sb.disabled = pwFilled(f) && !pwOk(f.elements.pw1 ? f.elements.pw1.value : ''); const bar = $('.qs-chg', f); if (bar) bar.hidden = !(dirty)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:29:25] OK   /replace(script.js|if (p1 === p0) { say('Your replacer must be different from the current password.'); return; }|if (p1 === p0) { say('Your replacer must be different from the current password.'); return; } if (!pwOk(p1)) return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 13:29:25] DONE /auto(1)
+    -> 3/3 applied
