@@ -1841,3 +1841,511 @@
     -> Appended to style.css
 [2026-11-25 14:04:31] DONE /auto(1)
     -> 97/97 applied
+[2026-11-25 14:23:50] FAIL /auto(1)
+    -> The planner is empty.
+    -> fix: Add one command per line to Manager/planner.md, then run it again.
+[2026-11-25 14:25:16] RUN  /auto(1)
+    -> 17 planner command(s)
+[2026-11-25 14:25:16] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_142516.js
+[2026-11-25 14:25:17] OK   /replace(script.js|page.appendChild(mk('p','pfx-msg pfx-load','Loading...'))|var ld=mk('img','pfx-ld');ld.src='Sources/Videos/Qasthra.gif';ld.alt='Loading';page.appendChild(ld))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:17] OK   /replace(script.js|function bt(t,c,fn){var b=mk('button','btn '+c+' pfx-b',t);b.type='button';b.onclick=fn;return b}|function bt(t,c,fn){var b=mk('button','btn '+c+' pfx-b',t);b.type='button';b.onclick=fn;return b}\nvar SV='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',IC_PEN='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>',IC_SHR=SV+'<circle cx="6.4" cy="12" r="2.8" fill="currentColor" stroke="none"/><circle cx="17.6" cy="6.2" r="2.8" fill="currentColor" stroke="none"/><circle cx="17.6" cy="17.9" r="2.8" fill="currentColor" stroke="none"/><path d="M6.4 12L17.6 6.2M6.4 12l11.2 5.9"/></svg>',IC_WARN=SV+'<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.01"/></svg>',IC_PLUS=SV+'<path d="M12 5v14M5 12h14"/></svg>',IC_MINUS=SV+'<path d="M5 12h14"/></svg>';\nfunction tb(c,l,s,f){var b=mk('button','pfx-tb '+c);b.type='button';b.setAttribute('aria-label',l);b.innerHTML=s;b.onclick=f;return b})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:18] OK   /replace(script.js|function draw(){page.innerHTML='';var cv=mk('div','pfx-cv'),|function draw(){page.innerHTML='';var pmb=null,who=mk('div','pfx-who'),cv=mk('div','pfx-cv'),)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:18] OK   /replace(script.js|if(d.is_owner){ac.appendChild(bt('Share','btn-second',function(){share(nm)}));ac.appendChild(bt('Edit profile','btn-mono',function(){editForm(d,load)}))}|if(d.is_owner){page.appendChild(tb('pfx-tl','Share profile',IC_SHR,function(){share(nm)}));page.appendChild(tb('pfx-tr','Edit profile',IC_PEN,function(){editForm(d,load)}))})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:18] OK   /replace(script.js|else{var rl=d.relation;if(rl==='none')ac.appendChild(bt('Add partner','btn-mono',function(){act('partner_request',{t:d.id},'Request sent.')}));if(rl==='pending_out')ac.appendChild(bt('Request sent','btn-second',function(){if(confirm('Cancel this request?'))act('partner_remove',{t:d.id})}));|else{var rl=d.relation,pm=null;page.appendChild(tb('pfx-tr','Report profile',IC_WARN,reportSheet));if(rl==='none')pm=['+','Add partner',function(){act('partner_request',{t:d.id},'Request sent.')}];if(rl==='pending_out')pm=['-','Cancel request',function(){if(confirm('Cancel this request?'))act('partner_remove',{t:d.id})}];)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:19] OK   /replace(script.js|if(rl==='pending_in'){ac.appendChild(bt('Decline','btn-second',function(){act('partner_respond',{t:d.id,accept:false})}));ac.appendChild(bt('Accept','btn-mono',function(){act('partner_respond',{t:d.id,accept:true},'You are now partners.')}))}|if(rl==='pending_in')pm=['+','Accept request',function(){if(confirm('Accept this partner request?'))act('partner_respond',{t:d.id,accept:true},'You are now partners.');else if(confirm('Decline it instead?'))act('partner_respond',{t:d.id,accept:false})}];)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:19] OK   /replace(script.js|if(rl==='partners')ac.appendChild(bt('Partners','btn-second',function(){if(confirm('Remove this partner?'))act('partner_remove',{t:d.id})}));ac.appendChild(bt('Report','btn-second',reportSheet))}|if(rl==='partners')pm=['-','Remove partner',function(){if(confirm('Remove this partner?'))act('partner_remove',{t:d.id})}];if(pm){var pb=mk('button','pfx-pm');pb.type='button';pb.setAttribute('aria-label',pm[1]);pb.innerHTML=pm[0]==='+'?IC_PLUS:IC_MINUS;pb.onclick=pm[2];pmb=pb}})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:20] OK   /replace(script.js|inn.appendChild(mk('h2','pfx-nm',nm));|inn.appendChild(who);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:20] OK   /replace(script.js|inn.appendChild(mk('p','pfx-un','@'+(d.username|who.appendChild(mk('h2','pfx-un','@'+(d.username)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:21] OK   /replace(script.js|;if(d.bio)inn.appendChild(mk('p','pfx-bio',d.bio));|;who.appendChild(mk('p','pfx-nm',nm));if(pmb)inn.appendChild(pmb);if(d.bio)inn.appendChild(mk('p','pfx-bio',d.bio));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:21] OK   /replace(script.js|if(d.age!=null){var mt=mk('div','pfx-meta');mt.appendChild(mk('span','','Age '+d.age));inn.appendChild(mt)}|if(d.age!=null||d.partners_count!=null){var mt=mk('div','pfx-meta');if(d.age!=null)mt.appendChild(mk('span','','Age '+d.age));if(d.partners_count!=null){var sb=mk('span');sb.appendChild(mk('b','',String(d.partners_count)));sb.appendChild(document.createTextNode(' Partners'));mt.appendChild(sb)}inn.appendChild(mt)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:22] OK   /replace(script.js|if(d.partners_count!=null){var s=mk('div','pfx-st'),sb=mk('span');sb.appendChild(mk('b','',String(d.partners_count)));sb.appendChild(document.createTextNode('Partners'));s.appendChild(sb);inn.appendChild(s)}|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:25:22] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_142522.css
+[2026-11-25 14:25:22] OK   /replace(style.css|.pfx-act{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;min-height:52px;padding-top:14px}|.pfx-act{height:52px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:25:23] OK   /replace(style.css|.pfx-nm{margin:14px 0 0;font-size:24px;font-weight:800;line-height:1.2;overflow-wrap:anywhere}|.pfx-nm{margin:3px 0 0;font-size:12px;font-weight:500;line-height:1.2;color:var(--gray);overflow-wrap:anywhere})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:25:23] OK   /replace(style.css|.pfx-un{margin:2px 0 0;color:var(--gray);font-size:15px}|.pfx-un{margin:0;font-size:24px;font-weight:800;line-height:1.1;color:var(--mono);overflow-wrap:anywhere})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:25:23] OK   /replace(style.css|.pfx-act{padding-top:18px}.pfx-nm{margin-top:30px}|.pfx-act{height:64px}.pfx-who{height:64px;left:148px}.pfx-pm{top:-59px;left:95px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:25:24] OK   /append(style.css|.pfx-who{position:absolute;left:110px;right:0;top:0;height:52px;display:flex;flex-direction:column;justify-content:flex-end;min-width:0}\n.pfx-tb{position:absolute;z-index:3;top:calc(12px + env(safe-area-inset-top,0px));width:32px;height:32px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:transparent;color:var(--mono);cursor:pointer;-webkit-tap-highlight-color:transparent}\n.pfx-tl{left:max(14px,env(safe-area-inset-left))}\n.pfx-tr{right:calc(max(14px,env(safe-area-inset-right)) + 36px)}\n.pfx-tb svg{width:18px;height:18px}\n.pfx-ld{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:block;width:min(42vw,220px);height:auto;max-height:45vh;object-fit:contain;border-radius:12px}\n.pfx-meta b{margin-right:2px;color:var(--mono)}\n.pfx-pm{position:absolute;top:-44px;left:68px;z-index:2;width:28px;height:28px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:var(--bg);color:var(--mono);cursor:pointer;-webkit-tap-highlight-color:transparent}\n.pfx-pm::before{content:"";position:absolute;inset:0;border-radius:50%;padding:2px;background:conic-gradient(var(--mono),color-mix(in srgb,var(--mono) 8%,transparent),var(--mono));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:pfxSpin 3s linear infinite}\n.pfx-pm svg{width:14px;height:14px;stroke-width:2.4}\n.pfx-tb:focus-visible,.pfx-pm:focus-visible{outline:2px solid var(--mono);outline-offset:2px}\n@keyframes pfxSpin{to{transform:rotate(1turn)}}\n@media (prefers-reduced-motion:reduce){.pfx-pm::before{animation:none}}\n.qs-pf{overscroll-behavior:contain}\nhtml:has(.qs-pf),html:has(.qs-pf) body{overflow:hidden}\nbody:has(.qs-pf) .qs{overflow:hidden})
+    -> Appended to style.css
+[2026-11-25 14:25:24] DONE /auto(1)
+    -> 17/17 applied
+[2026-11-25 14:39:29] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-25 14:39:29] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_143929.js
+[2026-11-25 14:39:30] OK   /replace(script.js|f.accept='image/jpeg,image/png,image/webp';|f.accept='.jpg,.jpeg,.png,.webp';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:39:31] OK   /replace(script.js|b.onclick=function(){f.click()};f.onchange=|b.onclick=function(){var bd=mk('div','pfx-form'),sh;[['Local','Files on this device'],['Cloud','Drive, Dropbox and other cloud apps']].forEach(function(o){var x=mk('button','btn btn-second pfx-b pfx-src',o[0]);x.type='button';x.onclick=function(){sh();f.click()};x.appendChild(mk('small','',o[1]));bd.appendChild(x)});sh=sheet('Choose from',bd)};f.onchange=)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:39:31] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_143931.css
+[2026-11-25 14:39:32] OK   /append(style.css|.pfx-src{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;height:auto;padding:12px 16px;text-align:left}\n.pfx-src small{color:var(--gray);font-size:12px;font-weight:500})
+    -> Appended to style.css
+[2026-11-25 14:39:32] DONE /auto(1)
+    -> 3/3 applied
+[2026-11-25 14:45:18] RUN  /auto(1)
+    -> 5 planner command(s)
+[2026-11-25 14:45:19] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_144519.js
+[2026-11-25 14:45:19] OK   /replace(script.js|function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}|var INF=[['full_name','Full name'],['birthday','Birthday'],['recovery_email','Email'],['phone','Phone'],['address_home','Home address'],['address_work','Work address'],['gender','Gender'],['sex','Sex'],['language','Language']];\nfunction mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:45:20] OK   /replace(script.js|body.appendChild(field('Who can see my Partners',sp));body.appendChild(msg);|body.appendChild(field('Who can see my Partners',sp));body.appendChild(mk('p','pfx-hint','Personal info. Edit the values in Settings > Account.'));var iv={};INF.forEach(function(o){iv[o[0]]=pick((d.info_vis&&d.info_vis[o[0]])||'nobody');body.appendChild(field(o[1]+' visible to',iv[o[0]]))});body.appendChild(msg);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:45:20] OK   /replace(script.js|show_age:sa.value,show_partners:sp.value};|show_age:sa.value,show_partners:sp.value,info_vis:(function(){var vv={};INF.forEach(function(x){vv[x[0]]=iv[x[0]].value});return vv})()};)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:45:21] OK   /replace(script.js|inn.appendChild(mk('p','pfx-note'));bd.appendChild(inn)|if(d.info){var il=mk('dl','pfx-info');INF.forEach(function(o){var v=d.info[o[0]];if(!v)return;if(o[0]==='birthday'){var dt=new Date(v+'T00:00:00');if(!isNaN(dt))v=dt.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})}var row=mk('div','pfx-ir');row.appendChild(mk('dt','',o[1]));row.appendChild(mk('dd','',v));il.appendChild(row)});if(il.children.length)inn.appendChild(il)}inn.appendChild(mk('p','pfx-note'));bd.appendChild(inn))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:45:21] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_144521.css
+[2026-11-25 14:45:21] OK   /append(style.css|.pfx-info{margin:16px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}\n.pfx-ir{display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px}\n.pfx-ir:last-child{border-bottom:0}\n.pfx-ir dt{flex:none;color:var(--gray)}\n.pfx-ir dd{margin:0;text-align:right;overflow-wrap:anywhere})
+    -> Appended to style.css
+[2026-11-25 14:45:21] DONE /auto(1)
+    -> 5/5 applied
+[2026-11-25 14:52:49] RUN  /auto(1)
+    -> 10 planner command(s)
+[2026-11-25 14:52:49] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_145249.js
+[2026-11-25 14:52:49] OK   /replace(script.js|var INF=[['full_name','Full name'],|var ICO={full_name:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.5-1.5 1.5-2 2.5-2s2 .5 2.5 2M14 10h4M14 14h4"/>',birthday:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',recovery_email:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',address_home:'<path d="M4 11l8-7 8 7M6 10v10h12V10"/>',address_work:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/>',gender:'<circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/>',sex:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/>',language:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>'};\nvar INF=[['full_name','Full name'],)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:52:50] OK   /replace(script.js|var row=mk('div','pfx-ir');row.appendChild(mk('dt','',o[1]));row.appendChild(mk('dd','',v));il.appendChild(row)}|var row=mk('div','pfx-ir'),ic=mk('span','pfx-ii');ic.innerHTML=SV+(ICO[o[0]]||'')+'</svg>';row.appendChild(ic);row.appendChild(mk('dt','',o[1]+':'));row.appendChild(mk('dd','',v));il.appendChild(row)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:52:50] OK   /replace(script.js|P.open=function(u){|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av||!DB())return;try{var x=await DB().rpc('get_profile',{u:''});if(x.error||!x.data)return;var a=ok(x.data.avatar_url),c=ok(x.data.cover_url),sc='color-mix(in srgb,var(--bg) 74%,transparent)';av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c)}catch(e){}};\nP.open=function(u){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:52:51] OK   /replace(script.js|d=r.data;draw()}|d=r.data;draw();if(d.is_owner)P.card(true)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:52:51] OK   /replace(script.js|root.querySelectorAll('[data-nm]').forEach((x) => { x.textContent = nm; });|root.querySelectorAll('[data-nm]').forEach((x) => { x.textContent = nm; }); if (window.QPROF && window.QPROF.card) window.QPROF.card();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:52:51] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_145251.css
+[2026-11-25 14:52:52] OK   /replace(style.css|.pfx-info{margin:16px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}|.pfx-info{margin:18px 0 0;display:grid;gap:14px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:52:52] OK   /replace(style.css|.pfx-ir{display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px}|.pfx-ir{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.4})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:52:53] OK   /replace(style.css|.pfx-ir:last-child{border-bottom:0}|.pfx-ii{flex:none;display:grid;place-items:center;height:1.4em;color:var(--gray)}.pfx-ii svg{width:16px;height:16px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:52:53] OK   /replace(style.css|.pfx-ir dd{margin:0;text-align:right;overflow-wrap:anywhere}|.pfx-ir dd{margin:0;min-width:0;overflow-wrap:anywhere;white-space:pre-wrap})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:52:54] OK   /append(style.css|.qs-av.has-img{background-size:cover;background-position:center;background-repeat:no-repeat;color:transparent;font-size:0}\n.qs-card .qs-ct.has-cv{background-size:cover;background-position:center;background-repeat:no-repeat})
+    -> Appended to style.css
+[2026-11-25 14:52:54] DONE /auto(1)
+    -> 10/10 applied
+[2026-11-25 14:55:25] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 14:55:26] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_145526.js
+[2026-11-25 14:55:27] OK   /replace(script.js|await navigator.clipboard.writeText(t+' '+u);note('Link copied.')|await navigator.clipboard.writeText(t+' '+u))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 14:55:28] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_145528.css
+[2026-11-25 14:55:28] OK   /replace(style.css|.pfx{min-height:100%;display:flex;flex-direction:column}|.pfx{min-height:100%;display:flex;flex-direction:column;padding-top:calc(56px + env(safe-area-inset-top,0px))})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 14:55:28] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 15:05:24] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:05:24] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_150524.js
+[2026-11-25 15:05:25] OK   /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:25] OK   /replace(script.js|mt.appendChild(mk('span','','Age '+d.age))|mt.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old'))))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:26] OK   /replace(script.js|row.appendChild(mk('dt','',o[1]+':'));|row.appendChild(mk('dt','pfx-sr',o[1]));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:26] OK   /replace(script.js|session().then((s) => { if (s) location.hash = 'dashboard'; });|session().then((s) => { if (s) location.replace('#dashboard'); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:27] OK   /replace(script.js|if (!r.error) { location.hash = 'dashboard'; return; }|if (!r.error) { location.replace('#dashboard'); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:27] OK   /replace(script.js|if (r.data && r.data.session) { location.hash = 'dashboard'; }|if (r.data && r.data.session) { location.replace('#dashboard'); })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:27] OK   /replace(script.js|if (await session()) { location.hash = 'dashboard'; return; }|if (await session()) { location.replace('#dashboard'); return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:28] OK   /replace(script.js|if (saved && !isDash()) { location.hash = 'dashboard'; window.QWAIT = false; }|if (saved && !isDash()) { location.replace('#dashboard'); window.QWAIT = false; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:05:28] OK   /append(script.js|(() => { const home = () => !location.hash || location.hash === '#'; window.addEventListener('hashchange', () => { if (!home() || !window.db) return; window.db.auth.getSession().then((r) => { if (r && r.data && r.data.session && home() && !window.QBLOCK) location.replace('#dashboard'); }).catch(() => {}); }); })();)
+    -> Appended to script.js
+[2026-11-25 15:05:29] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_150529.css
+[2026-11-25 15:05:29] OK   /replace(style.css|.pfx-info{margin:18px 0 0;display:grid;gap:14px}|.pfx-info{margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px 22px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 15:05:29] OK   /replace(style.css|.pfx-ir{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.4}|.pfx-ir{display:inline-flex;align-items:flex-start;gap:8px;max-width:100%;font-size:14px;line-height:1.4})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-25 15:05:30] OK   /append(style.css|.pfx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}\n.qs-card .qs-av.ld{position:relative;overflow:hidden;color:transparent;font-size:0;background:color-mix(in srgb,var(--gray) 22%,var(--bg))}\n.qs-card .qs-ct.ld{position:relative;overflow:hidden;background:color-mix(in srgb,var(--gray) 14%,var(--bg))}\n.qs-card .qs-av.ld::after,.qs-card .qs-ct.ld::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 30%,color-mix(in srgb,var(--mono) 14%,transparent) 50%,transparent 70%);transform:translateX(-100%);animation:qsShim 1s ease-in-out infinite}\n@keyframes qsShim{to{transform:translateX(100%)}}\n@media (prefers-reduced-motion:reduce){.qs-card .qs-av.ld::after,.qs-card .qs-ct.ld::after{animation:none}})
+    -> Appended to style.css
+[2026-11-25 15:05:30] DONE /auto(1)
+    -> 12/12 applied
+[2026-11-25 15:40:26] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:40:26] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154026.js
+[2026-11-25 15:40:26] FAIL /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:40:26] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:40:26] STOP /auto(1)
+    -> stopped at step 1/12, nothing was applied
+[2026-11-25 15:42:21] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:42:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154221.js
+[2026-11-25 15:42:21] FAIL /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:42:21] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:42:21] STOP /auto(1)
+    -> stopped at step 1/12, nothing was applied
+[2026-11-25 15:42:57] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:42:57] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154257.js
+[2026-11-25 15:42:57] FAIL /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:42:57] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:42:57] STOP /auto(1)
+    -> stopped at step 1/12, nothing was applied
+[2026-11-25 15:43:41] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:43:41] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154341.js
+[2026-11-25 15:43:41] FAIL /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:43:42] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:43:42] STOP /auto(1)
+    -> stopped at step 1/12, nothing was applied
+[2026-11-25 15:45:05] RUN  /auto(1)
+    -> 12 planner command(s)
+[2026-11-25 15:45:05] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154505.js
+[2026-11-25 15:45:05] FAIL /replace(script.js|P.card=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();|P.card=async function(f){var r=document.querySelector('.qs'),ct=r&&r.querySelector('.qs-ct'),av=r&&r.querySelector('.qs-av');if(!ct||!av)return;var sc='color-mix(in srgb,var(--bg) 74%,transparent)',ap=function(){var a=P.ca,c=P.cc;av.style.backgroundImage=a?'url("'+a+'")':'';av.classList.toggle('has-img',!!a);ct.style.backgroundImage=c?'linear-gradient('+sc+','+sc+'),url("'+c+'")':'';ct.classList.toggle('has-cv',!!c);av.classList.remove('ld');ct.classList.remove('ld')};if(P.cd&&!f){ap();if(Date.now()-P.ct<5000)return}else{if(P.busy&&!f)return;P.busy=1;av.classList.add('ld');ct.classList.add('ld')}P.ct=Date.now();var t0=Date.now();try{var x=DB()?await DB().rpc('get_profile',{u:''}):null;if(x&&!x.error&&x.data){P.ca=ok(x.data.avatar_url);P.cc=ok(x.data.cover_url);if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}P.cd=1}}catch(e){}P.busy=0;if(document.body.contains(ct))ap()};\nP.cardOld=async function(f){if(!f&&P.ct&&Date.now()-P.ct<2000)return;P.ct=Date.now();)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:45:06] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:45:06] STOP /auto(1)
+    -> stopped at step 1/12, nothing was applied
+[2026-11-25 15:47:52] RUN  /auto(1)
+    -> 10 planner command(s)
+[2026-11-25 15:47:52] FAIL /replace(script.js|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd)}|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd);bioCycle(bp)}
+    -> planner line 9: '/replace(script.js|bd.appendChild(inn);page.app...' is not in the /command(data) format.
+    -> fix: Write it like /replace(file|old|new) and use /help to see every format.
+[2026-11-25 15:47:52] STOP /auto(1)
+    -> invalid line, nothing was applied
+[2026-11-25 15:48:25] RUN  /auto(1)
+    -> 10 planner command(s)
+[2026-11-25 15:48:25] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_154825.js
+[2026-11-25 15:48:25] OK   /replace(script.js|var v=d.info[o[0]];if(!v)return;|var v=d.info[o[0]];if(!v||v==='Prefer not to say')return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:26] OK   /replace(script.js|function mk(t,c,x){|function shown(d,k){var v=(d.info&&d.info[k])||(d.um&&d.um[k])||'';return !!v&&v!=='Prefer not to say'}function mk(t,c,x){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:26] OK   /replace(script.js|body.appendChild(field(o[1]+' visible to',iv[o[0]]))|if(shown(d,o[0]))body.appendChild(field(o[1]+' visible to',iv[o[0]])))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:27] OK   /replace(script.js|d=r.data;draw();|d=r.data;if(d.is_owner){try{var ss=await DB().auth.getSession();d.um=ss.data.session.user.user_metadata||{}}catch(e){d.um={}}}draw();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:27] OK   /replace(script.js|ap=function(){var a=P.ca,c=P.cc;|pre=function(u){return new Promise(function(z){if(!u){z('');return}var i=new Image(),t=setTimeout(function(){z('')},10000);i.onload=function(){clearTimeout(t);z(u)};i.onerror=function(){clearTimeout(t);z('')};i.src=u})},ap=function(){var a=P.ca,c=P.cc;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:27] OK   /replace(script.js|if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}|var pp=await Promise.all([pre(P.ca),pre(P.cc)]);P.ca=pp[0];P.cc=pp[1];var w=200-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)}))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:28] OK   /replace(script.js|if(d.bio)inn.appendChild(mk('p','pfx-bio',d.bio));|var bp=null;if(d.bio){bp=mk('p','pfx-bio',d.bio);inn.appendChild(bp)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:28] OK   /replace(script.js|function draw(){page.innerHTML='';|function fin(el,s){el.textContent='';var b='';s.forEach(function(k){if(k.i){if(b){el.appendChild(document.createTextNode(b));b=''}var w=mk('span','pfx-ic');w.innerHTML=k.i;el.appendChild(w)}else b+=k.c});if(b)el.appendChild(document.createTextNode(b))}function widths(el,s){var b=mk('span','pfx-mb');el.appendChild(b);s.forEach(function(k){var t=mk('span','pfx-m');if(k.i)t.innerHTML=k.i;else t.textContent=k.c;b.appendChild(t)});var w=Array.prototype.map.call(b.children,function(t){return t.getBoundingClientRect().width});b.remove();return w}function slotsOf(x){var s=[];if(x.i){s.push({i:x.i});s.push({c:' '})}Array.from(String(x.t)).forEach(function(c){s.push({c:c})});return s}function rowsNow(){var r=[],ic=function(p){return SV+p+'</svg>'},src=d.info||d.um;if(d.age!=null)r.push({i:ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),t:d.age+(d.age===1?' Year old':' Years old')});if(d.partners_count!=null)r.push({i:ic('<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .8 3 2.7 3 6"/>'),t:d.partners_count+' Partners'});if(src)INF.forEach(function(o){var v=src[o[0]];if(!v||v==='Prefer not to say')return;if(o[0]==='birthday'){var dt=new Date(v+'T00:00:00');if(!isNaN(dt))v=dt.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})}r.push({i:ic(ICO[o[0]]||''),t:String(v)})});return r}function morph(el,a,b){return new Promise(function(done){var wa=widths(el,a),wb=widths(el,b),sp=widths(el,[{c:' '}])[0],N=Math.max(a.length,b.length),S=Math.min(420,Math.max(120,N*12)),D=300,an=[];el.textContent='';for(var i=0;i<N;i++){var o=a[i],n=b[i],s=mk('span','pfx-s'),oe=null,ne=null;if(o){oe=mk('span','pfx-o');if(o.i)oe.innerHTML=o.i;else oe.textContent=o.c;s.appendChild(oe)}if(n){ne=mk('span','pfx-n');if(n.i)ne.innerHTML=n.i;else ne.textContent=n.c;s.appendChild(ne)}s.style.width=(o?wa[i]:0)+'px';el.appendChild(s);var op={duration:D,delay:Math.round(i/N*S),fill:'both',easing:'cubic-bezier(.2,.8,.2,1)'};an.push(s.animate([{width:(o?wa[i]:0)+'px'},{width:sp+'px',offset:.35},{width:(n?wb[i]:0)+'px'}],op));if(oe)an.push(oe.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.4)',offset:.35},{opacity:0,transform:'scale(.4)'}],op));if(ne)an.push(ne.animate([{opacity:0,transform:'scale(.4)'},{opacity:0,transform:'scale(.4)',offset:.35},{opacity:1,transform:'scale(1)'}],op))}Promise.all(an.map(function(x){return x.finished})).then(function(){done()},function(){done()})})}function bioCycle(bp){if(!bp)return;var rs=rowsNow();if(!rs.length)return;var k=page._k,bio=Array.from(d.bio).map(function(c){return{c:c}}),alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},swap=function(a,b){return mot()?morph(bp,a,b).then(function(){fin(bp,b)}):Promise.resolve(fin(bp,b))};(async function(){for(;;){await sleep(5000);if(!alive())return;if(document.hidden||document.querySelector('.pfx-ov'))continue;bp.style.minHeight=bp.getBoundingClientRect().height+'px';var hold=Math.max(350,Math.round(1500/rs.length)),cur=bio;for(var i=0;i<rs.length;i++){var nx=slotsOf(rs[i]);await swap(cur,nx);if(!alive())return;cur=nx;await sleep(hold);if(!alive())return}await swap(cur,bio);if(!alive())return;bp.style.minHeight=''}})()}function draw(){clearTimeout(page._t);page._k=(page._k||0)+1;page.innerHTML='';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:29] OK   /replace(script.js|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd)}|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd);bioCycle(bp)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:48:29] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_154829.css
+[2026-11-25 15:48:29] OK   /append(style.css|.pfx-bio{position:relative}\n.pfx-s{position:relative;display:inline-block;vertical-align:top;height:1.5em;white-space:pre}\n.pfx-o,.pfx-n{display:inline-block;transform-origin:50% 60%;will-change:transform,opacity}\n.pfx-n{position:absolute;left:0;top:0}\n.pfx-ic{display:inline-block;vertical-align:top;height:1.5em}\n.pfx-s svg,.pfx-ic svg{display:block;margin-top:3px}\n.pfx-mb{position:absolute;left:0;top:0;visibility:hidden;white-space:pre;pointer-events:none}\n.pfx-m{display:inline-block}\n.pfx-bio .pfx-ic+.pfx-ic{margin-left:0})
+    -> Appended to style.css
+[2026-11-25 15:48:29] DONE /auto(1)
+    -> 10/10 applied
+[2026-11-25 15:51:41] RUN  /auto(1)
+    -> 9 planner command(s)
+[2026-11-25 15:51:41] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_155141.js
+[2026-11-25 15:51:41] OK   /replace(script.js|var v=d.info[o[0]];if(!v)return;|var v=d.info[o[0]];if(!v||v==='Prefer not to say')return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:42] OK   /replace(script.js|function mk(t,c,x){|function shown(d,k){var v=(d.info&&d.info[k])||(d.um&&d.um[k])||'';return !!v&&v!=='Prefer not to say'}function mk(t,c,x){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:42] OK   /replace(script.js|body.appendChild(field(o[1]+' visible to',iv[o[0]]))|if(shown(d,o[0]))body.appendChild(field(o[1]+' visible to',iv[o[0]])))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:42] OK   /replace(script.js|d=r.data;draw();|d=r.data;if(d.is_owner){try{var ss=await DB().auth.getSession();d.um=ss.data.session.user.user_metadata||{}}catch(e){d.um={}}}draw();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:43] OK   /replace(script.js|ap=function(){var a=P.ca,c=P.cc;|pre=function(u){return new Promise(function(z){if(!u){z('');return}var i=new Image(),t=setTimeout(function(){z('')},10000);i.onload=function(){clearTimeout(t);z(u)};i.onerror=function(){clearTimeout(t);z('')};i.src=u})},ap=function(){var a=P.ca,c=P.cc;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:43] OK   /replace(script.js|if(!P.cd){var w=1000-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)})}|var pp=await Promise.all([pre(P.ca),pre(P.cc)]);P.ca=pp[0];P.cc=pp[1];var w=200-(Date.now()-t0);if(w>0)await new Promise(function(z){setTimeout(z,w)});)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:44] OK   /replace(script.js|if(d.bio)inn.appendChild(mk('p','pfx-bio',d.bio));|var bp=null;if(d.bio){bp=mk('p','pfx-bio',d.bio);inn.appendChild(bp)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:44] OK   /replace(script.js|function draw(){page.innerHTML='';|function fin(el,s){el.textContent='';var b='';s.forEach(function(k){if(k.i){if(b){el.appendChild(document.createTextNode(b));b=''}var w=mk('span','pfx-ic');w.innerHTML=k.i;el.appendChild(w)}else b+=k.c});if(b)el.appendChild(document.createTextNode(b))}function widths(el,s){var b=mk('span','pfx-mb');el.appendChild(b);s.forEach(function(k){var t=mk('span','pfx-m');if(k.i)t.innerHTML=k.i;else t.textContent=k.c;b.appendChild(t)});var w=Array.prototype.map.call(b.children,function(t){return t.getBoundingClientRect().width});b.remove();return w}function slotsOf(x){var s=[];if(x.i){s.push({i:x.i});s.push({c:' '})}Array.from(String(x.t)).forEach(function(c){s.push({c:c})});return s}function rowsNow(){var r=[],ic=function(p){return SV+p+'</svg>'},src=d.info||d.um;if(d.age!=null)r.push({i:ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),t:d.age+(d.age===1?' Year old':' Years old')});if(d.partners_count!=null)r.push({i:ic('<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .8 3 2.7 3 6"/>'),t:d.partners_count+' Partners'});if(src)INF.forEach(function(o){var v=src[o[0]];if(!v||v==='Prefer not to say')return;if(o[0]==='birthday'){var dt=new Date(v+'T00:00:00');if(!isNaN(dt))v=dt.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})}r.push({i:ic(ICO[o[0]]||''),t:String(v)})});return r}function morph(el,a,b){return new Promise(function(done){var wa=widths(el,a),wb=widths(el,b),sp=widths(el,[{c:' '}])[0],N=Math.max(a.length,b.length),S=Math.min(420,Math.max(120,N*12)),D=300,an=[];el.textContent='';for(var i=0;i<N;i++){var o=a[i],n=b[i],s=mk('span','pfx-s'),oe=null,ne=null;if(o){oe=mk('span','pfx-o');if(o.i)oe.innerHTML=o.i;else oe.textContent=o.c;s.appendChild(oe)}if(n){ne=mk('span','pfx-n');if(n.i)ne.innerHTML=n.i;else ne.textContent=n.c;s.appendChild(ne)}s.style.width=(o?wa[i]:0)+'px';el.appendChild(s);var op={duration:D,delay:Math.round(i/N*S),fill:'both',easing:'cubic-bezier(.2,.8,.2,1)'};an.push(s.animate([{width:(o?wa[i]:0)+'px'},{width:sp+'px',offset:.35},{width:(n?wb[i]:0)+'px'}],op));if(oe)an.push(oe.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.4)',offset:.35},{opacity:0,transform:'scale(.4)'}],op));if(ne)an.push(ne.animate([{opacity:0,transform:'scale(.4)'},{opacity:0,transform:'scale(.4)',offset:.35},{opacity:1,transform:'scale(1)'}],op))}Promise.all(an.map(function(x){return x.finished})).then(function(){done()},function(){done()})})}function bioCycle(bp){if(!bp)return;var rs=rowsNow();if(!rs.length)return;var k=page._k,bio=Array.from(d.bio).map(function(c){return{c:c}}),alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},swap=function(a,b){return mot()?morph(bp,a,b).then(function(){fin(bp,b)}):Promise.resolve(fin(bp,b))};(async function(){for(;;){await sleep(5000);if(!alive())return;if(document.hidden||document.querySelector('.pfx-ov'))continue;bp.style.minHeight=bp.getBoundingClientRect().height+'px';var hold=Math.max(350,Math.round(1500/rs.length)),cur=bio;for(var i=0;i<rs.length;i++){var nx=slotsOf(rs[i]);await swap(cur,nx);if(!alive())return;cur=nx;await sleep(hold);if(!alive())return}await swap(cur,bio);if(!alive())return;bp.style.minHeight=''}})()}function draw(){clearTimeout(page._t);page._k=(page._k||0)+1;page.innerHTML='';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:45] OK   /replace(script.js|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd)}|bd.appendChild(inn);page.appendChild(cv);page.appendChild(bd);bioCycle(bp)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:51:45] DONE /auto(1)
+    -> 9/9 applied
+[2026-11-25 15:54:40] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-25 15:54:40] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_155440.js
+[2026-11-25 15:54:41] OK   /replace(script.js|inn.appendChild(mt)|mt=null)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:41] OK   /replace(script.js|inn.appendChild(il)|il=null)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:42] OK   /replace(script.js|var bp=null;if(d.bio){bp=mk('p','pfx-bio',d.bio);inn.appendChild(bp)}|var bp=null;if(d.bio||rowsNow().length){bp=mk('p','pfx-bio',d.bio||'');inn.appendChild(bp)})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:42] OK   /replace(script.js|bio=Array.from(d.bio).map(function(c){return{c:c}})|bio=Array.from(d.bio||'').map(function(c){return{c:c}}))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:43] OK   /replace(script.js|if(!rs.length)return;var k=page._k,|if(!rs.length)return;if(!d.bio){var al=[];rs.forEach(function(r,n){if(n){al.push({c:' '});al.push({c:' '})}slotsOf(r).forEach(function(s){al.push(s)})});fin(bp,al);return}var k=page._k,)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:43] OK   /replace(script.js|var hold=Math.max(350,Math.round(1500/rs.length)),cur=bio;for(var i=0;i<rs.length;i++){var nx=slotsOf(rs[i]);await swap(cur,nx);if(!alive())return;cur=nx;await sleep(hold);if(!alive())return}await swap(cur,bio);|var all=[];rs.forEach(function(r,n){if(n){all.push({c:' '});all.push({c:' '})}slotsOf(r).forEach(function(s){all.push(s)})});await swap(bio,all);if(!alive())return;await sleep(1500);if(!alive())return;await swap(all,bio);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 15:54:43] DONE /auto(1)
+    -> 6/6 applied
+[2026-11-25 15:59:50] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-25 15:59:50] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_155950.js
+[2026-11-25 15:59:50] FAIL /replace(script.js|inn.appendChild(mt)|mt=null)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 15:59:50] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 15:59:50] STOP /auto(1)
+    -> stopped at step 1/6, nothing was applied
+[2026-11-25 16:00:36] OK   /find(script.js|function bioCycle)
+    -> 1 match(es) for 'function bioCycle'
+[2026-11-25 16:01:24] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-25 16:01:25] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_160124.js
+[2026-11-25 16:01:25] FAIL /replace(script.js|inn.appendChild(mt)|mt=null)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-25 16:01:25] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-25 16:01:25] STOP /auto(1)
+    -> stopped at step 1/6, nothing was applied
+[2026-11-25 16:01:57] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 16:01:58] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_160158.js
+[2026-11-25 16:01:59] OK   /replace(script.js|function bioCycle(bp){if(!bp)return;var rs=rowsNow();|function bioCycle(bp){return cyc(bp)}function cyc(bp){if(!bp)return;var k=page._k,items=[],rs=rowsNow().filter(function(r){return !/Years? old$/.test(r.t)&&!/ Partners$/.test(r.t)});if(d.bio)items.push({c:d.bio});rs.forEach(function(r){items.push(r)});var st=mk('div','pfx-stat');if(d.age!=null)st.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old')));if(d.partners_count!=null){var pc=mk('span');pc.appendChild(document.createTextNode('Partners: '));pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}if(st.children.length)bp.after(st);if(!items.length){bp.remove();return}var show=function(it){bp.textContent='';var w=mk('span','pfx-slide');if(it.c!=null)w.textContent=it.c;else{if(it.i){var e=mk('span','pfx-ic');e.innerHTML=it.i;w.appendChild(e);w.appendChild(document.createTextNode(' '))}w.appendChild(document.createTextNode(it.t))}bp.appendChild(w);return w},h=0;items.forEach(function(it){show(it);h=Math.max(h,bp.offsetHeight)});bp.style.minHeight=h+'px';var cur=show(items[0]);if(items.length<2)return;var alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},an=function(el,a,b){return el.animate([a,b],{duration:300,easing:'ease',fill:'forwards'}).finished.catch(function(){})};(async function(){var n=0;for(;;){await sleep(3000);if(!alive())return;if(document.hidden||document.querySelector('.pfx-ov'))continue;if(mot()){await an(cur,{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-6px)'});if(!alive())return}n=(n+1)%items.length;cur=show(items[n]);if(mot())await an(cur,{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'})}})()}function bioOld(bp){if(!bp)return;var rs=rowsNow();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:01:59] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_160159.css
+[2026-11-25 16:02:00] OK   /append(style.css|.pfx-stat{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 0;color:var(--gray);font-size:14px}.pfx-stat b{color:var(--mono);font-weight:700}.pfx-slide{display:inline-block;max-width:100%})
+    -> Appended to style.css
+[2026-11-25 16:02:00] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 16:04:17] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 16:04:18] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_160418.js
+[2026-11-25 16:04:19] OK   /replace(script.js|function bioCycle(bp){return cyc(bp)}function cyc(bp){|function bioCycle(bp){return cyc2(bp)}function cyc2(bp){if(!bp)return;var k=page._k,rs=rowsNow().filter(function(r){return !/Years? old$/.test(r.t)&&!/ Partners$/.test(r.t)}),bt=d.bio?d.bio:'',st=mk('div','pfx-stat');if(d.age!=null)st.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old')));if(d.partners_count!=null){var pc=mk('span');pc.appendChild(document.createTextNode('Partners: '));pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}if(st.children.length)bp.after(st);if(!rs.length){if(bt)bp.textContent=bt;else bp.remove();return}var bio=mk('span','pfx-b0',bt),box=mk('span','pfx-ext'),mk1=function(r){var s=mk('span','pfx-it');if(r.i){var e=mk('span','pfx-ic');e.innerHTML=r.i;s.appendChild(e)}s.appendChild(document.createTextNode(r.t));return s};bp.textContent='';bp.appendChild(bio);bp.appendChild(box);rs.forEach(function(r){box.appendChild(mk1(r))});bp.style.minHeight=bp.offsetHeight+'px';box.textContent='';var alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},an=function(el,a,b,ms){return el.animate([a,b],{duration:ms,easing:'ease',fill:'forwards'}).finished.catch(function(){})};(async function(){for(;;){await sleep(3000);if(!alive())return;if(document.hidden){continue}if(document.querySelector('.pfx-ov')){continue}for(var i=0;i<rs.length;i++){var el=mk1(rs[i]);box.appendChild(el);if(mot())an(el,{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'},400);await sleep(1200);if(!alive())return}await sleep(1800);if(!alive())return;if(mot())await an(box,{opacity:1},{opacity:0},400);box.getAnimations().forEach(function(a){a.cancel()});box.textContent='';if(!alive())return}})()}function cycOld(bp){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:04:20] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_160420.css
+[2026-11-25 16:04:20] OK   /append(style.css|.pfx-ext{display:inline}.pfx-it{display:inline-block;margin-right:18px}.pfx-it .pfx-ic{margin-right:6px}.pfx-b0:not(:empty){margin-right:18px})
+    -> Appended to style.css
+[2026-11-25 16:04:20] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 16:06:02] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 16:06:03] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_160603.js
+[2026-11-25 16:06:05] OK   /replace(script.js|function bioCycle(bp){return cyc2(bp)}function cyc2(bp){|function bioCycle(bp){return cyc3(bp)}function cyc3(bp){if(!bp)return;var k=page._k,rs=rowsNow().filter(function(r){return !/Years? old$/.test(r.t)&&!/ Partners$/.test(r.t)}),bt=d.bio?d.bio:'',st=mk('div','pfx-stat');if(d.age!=null)st.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old')));if(d.partners_count!=null){var pc=mk('span');pc.appendChild(document.createTextNode('Partners: '));pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}if(st.children.length)bp.after(st);if(!rs.length){if(bt)bp.textContent=bt;else bp.remove();return}var mk1=function(r){var s=mk('span','pfx-it');if(r.i){var e=mk('span','pfx-ic');e.innerHTML=r.i;s.appendChild(e)}s.appendChild(document.createTextNode(r.t));return s};bp.textContent=bt;var h=bp.offsetHeight;bp.textContent='';rs.forEach(function(r){bp.appendChild(mk1(r))});h=Math.max(h,bp.offsetHeight);bp.style.minHeight=h+'px';bp.textContent=bt;var alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},an=function(el,a,b,ms){return el.animate([a,b],{duration:ms,easing:'ease',fill:'forwards'}).finished.catch(function(){})};(async function(){for(;;){await sleep(3000);if(!alive())return;if(document.hidden)continue;if(document.querySelector('.pfx-ov'))continue;if(mot())await an(bp,{opacity:1},{opacity:0},300);if(!alive())return;bp.getAnimations().forEach(function(a){a.cancel()});bp.textContent='';for(var i=0;i<rs.length;i++){var el=mk1(rs[i]);bp.appendChild(el);if(mot())an(el,{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'},400);await sleep(1200);if(!alive())return}await sleep(2000);if(!alive())return;if(mot())await an(bp,{opacity:1},{opacity:0},300);bp.getAnimations().forEach(function(a){a.cancel()});bp.textContent=bt;if(mot())await an(bp,{opacity:0},{opacity:1},300)}})()}function cyc2Old(bp){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:06:05] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-25 16:07:55] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-25 16:07:56] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_160756.js
+[2026-11-25 16:07:56] OK   /replace(script.js|h=Math.max(h,bp.offsetHeight);bp.style.minHeight=h+'px';bp.textContent=bt;|bp.textContent=bt;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:07:57] OK   /replace(script.js|bp.textContent=bt;var alive=function(){|bp.textContent=bt;var fit=function(f){var a=bp.offsetHeight;f();var b=bp.offsetHeight;if(mot()&&a!==b){bp.style.overflow='hidden';bp.animate([{height:a+'px'},{height:b+'px'}],{duration:300,easing:'ease'}).finished.catch(function(){}).then(function(){bp.style.overflow=''})}};var alive=function(){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:07:58] OK   /replace(script.js|bp.textContent='';for(var i=0;i<rs.length;i++){var el=mk1(rs[i]);bp.appendChild(el);|fit(function(){bp.textContent='';bp.appendChild(mk1(rs[0]))});await sleep(1200);if(!alive())return;for(var i=1;i<rs.length;i++){var el=mk1(rs[i]);bp.appendChild(el);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:07:59] OK   /replace(script.js|bp.textContent=bt;if(mot())await an(bp,{opacity:0},{opacity:1},300)|fit(function(){bp.textContent=bt});if(mot())await an(bp,{opacity:0},{opacity:1},300))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:07:59] DONE /auto(1)
+    -> 4/4 applied
+[2026-11-25 16:12:05] RUN  /auto(1)
+    -> 23 planner command(s)
+[2026-11-25 16:12:06] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_161206.js
+[2026-11-25 16:12:06] OK   /delete(script.js|P.cardOld=async function)
+    -> Deleted 1 line(s) from script.js
+[2026-11-25 16:12:06] OK   /delete(script.js|set: () => '<h3 class="qb-h">Settings</h3>)
+    -> Deleted 1 line(s) from script.js
+[2026-11-25 16:12:07] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_161207.css
+[2026-11-25 16:12:07] OK   /delete(style.css|.qb-count{width:auto;padding:0 8px})
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:07] OK   /delete(style.css|.qb-count b{font:700 12px/1 var(--font)})
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:08] OK   /delete(style.css|.qb-acts2{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:08] OK   /delete(style.css|.qb-pill{display:inline-flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:09] OK   /delete(style.css|.qb-pill:hover{color)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:09] OK   /delete(style.css|.qb-pill[aria-pressed="true"]{background)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:10] OK   /delete(style.css|.qb-h{margin:0 0 10px;font:700 15px)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:10] OK   /delete(style.css|.qb-empty{margin:8px 0)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:11] OK   /delete(style.css|.qb-page h2{margin:0;max-width)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:11] OK   /delete(style.css|.qb-page p{margin:0;color:var(--gray))
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:12] OK   /delete(style.css|.qs-cb{width:36px)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:12] OK   /delete(style.css|.qs-cb:hover{color)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:12] OK   /delete(style.css|.qs-cb:focus-visible{outline)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:13] OK   /delete(style.css|.pfx-st{display:flex;gap:18px)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:13] OK   /delete(style.css|.pfx-meta{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:14] OK   /delete(style.css|.pfx-meta b{margin-right)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:14] OK   /delete(style.css|.pfx-info{margin:18px 0 0)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:15] OK   /delete(style.css|.pfx-ir{display:inline-flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:15] OK   /delete(style.css|.pfx-ii{flex:none)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:16] OK   /delete(style.css|.pfx-ir dt{flex:none)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:16] OK   /delete(style.css|.pfx-ir dd{margin:0)
+    -> Deleted 1 line(s) from style.css
+[2026-11-25 16:12:16] DONE /auto(1)
+    -> 23/23 applied
+[2026-11-25 16:17:51] RUN  /auto(1)
+    -> 11 planner command(s)
+[2026-11-25 16:17:51] FAIL /replace(script.js|if(onSave){sv.onclick=function(){onSave(shut,sv)};hd.appendChild(sv)}|if(onSave){sv.onclick=function(){if(sv.disabled)return;onSave(shut,sv)};hd.appendChild(sv);ov._sv=sv}"
+    -> planner line 2: '/replace(script.js|if(onSave){sv.onclick=functi...' is not in the /command(data) format.
+    -> fix: Write it like /replace(file|old|new) and use /help to see every format.
+[2026-11-25 16:17:51] STOP /auto(1)
+    -> invalid line, nothing was applied
+[2026-11-25 16:18:21] RUN  /auto(1)
+    -> 11 planner command(s)
+[2026-11-25 16:18:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_161821.js
+[2026-11-25 16:18:22] OK   /replace(script.js|hd.appendChild(mk('b','pfx-tt',title));|hd.appendChild(mk('b','pfx-tt',title==='Edit profile'?'':title));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:22] OK   /replace(script.js|if(onSave){sv.onclick=function(){onSave(shut,sv)};hd.appendChild(sv)}|if(onSave){sv.onclick=function(){if(sv.disabled)return;onSave(shut,sv)};hd.appendChild(sv);ov._sv=sv})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:23] OK   /replace(script.js|bi.maxLength=260;bi.rows=4;|bi.maxLength=260;bi.rows=4;bi.placeholder='Bio';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:23] OK   /replace(script.js|body.appendChild(field('Name',ni));|body.appendChild(ni);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:23] OK   /replace(script.js|body.appendChild(field('Bio',bi));|body.appendChild(bi);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:24] OK   /replace(script.js|body.appendChild(mk('p','pfx-hint','@'+(d.username|void(0&&mk('p','pfx-hint','@'+(d.username)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:24] OK   /replace(script.js|body.appendChild(field('Who can see my age',sa));body.appendChild(field('Who can see my Partners',sp));|body.appendChild(mk('p','pfx-cap','Visible to'));body.appendChild(field('Age',sa));body.appendChild(field('Partners',sp));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:25] OK   /replace(script.js|field(o[1]+' visible to',iv[o[0]])|field(o[1],iv[o[0]]))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:25] OK   /replace(script.js|{blob:bl,url:URL.createObjectURL(bl)};msg.textContent='';paint()}|{blob:bl,url:URL.createObjectURL(bl)};msg.textContent='';paint();if(window.QPFCHK)window.QPFCHK()})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:26] OK   /replace(script.js|sheet('Edit profile',body,async function(shut,sv){|var ni0=ni.value,bi0=bi.value,v0=[sa.value,sp.value];INF.forEach(function(o){v0.push(iv[o[0]].value)});var chk=function(){var ov=body.closest('.pfx-ov'),b=ov?ov._sv:null;if(!b)return;var ch=ni.value.trim()!==ni0.trim();if(bi.value!==bi0)ch=true;if(sa.value!==v0[0])ch=true;if(sp.value!==v0[1])ch=true;INF.forEach(function(o,n){if(iv[o[0]].value!==v0[n+2])ch=true});if(st.cover)ch=true;if(st.avatar)ch=true;b.disabled=!ch};window.QPFCHK=chk;body.addEventListener('input',chk);body.addEventListener('change',chk);setTimeout(chk,0);sheet('Edit profile',body,async function(shut,sv){)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:18:26] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_161826.css
+[2026-11-25 16:18:26] OK   /append(style.css|.pfx-form .pfx-fl:has(select){flex-direction:row;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:var(--mono)} .pfx-form .pfx-fl select.pfx-fi{width:auto;min-width:130px;padding:7px 10px;border-radius:10px;font-size:13px;font-weight:500;color:var(--gray)} .pfx-cap{margin:4px 0 -6px;font-size:12px;font-weight:600;color:var(--gray)} .pfx-sv:disabled{opacity:.4;color:var(--gray);cursor:not-allowed})
+    -> Appended to style.css
+[2026-11-25 16:18:26] DONE /auto(1)
+    -> 11/11 applied
+[2026-11-25 16:23:51] RUN  /auto(1)
+    -> 7 planner command(s)
+[2026-11-25 16:23:51] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_162351.js
+[2026-11-25 16:23:52] OK   /replace(script.js|body.appendChild(mk('p','pfx-cap','Visible to'));|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:52] OK   /replace(script.js|body.appendChild(mk('p','pfx-hint','Personal info. Edit the values in Settings > Account.'));|body.appendChild(mk('div','pfx-gap'));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:52] OK   /replace(script.js|<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>|<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:53] OK   /replace(script.js|bd.appendChild(x)});sh=sheet('Choose from',bd)};|bd.appendChild(x)});var has=st[kind]?!st[kind].gone:!!ok(kind==='cover'?d.cover_url:d.avatar_url);if(has){var rm=mk('button','btn btn-second pfx-b pfx-rm','Remove');rm.type='button';rm.onclick=function(){st[kind]={gone:true};sh();msg.textContent='';paint();if(window.QPFCHK)window.QPFCHK()};bd.appendChild(rm)}sh=sheet('Choose from',bd)};)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:53] OK   /replace(script.js|o.cover_url=await put('covers',d.id,st.cover.blob)|o.cover_url=st.cover.gone?null:await put('covers',d.id,st.cover.blob))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:54] OK   /replace(script.js|o.avatar_url=await put('avatars',d.id,st.avatar.blob)|o.avatar_url=st.avatar.gone?null:await put('avatars',d.id,st.avatar.blob))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:23:54] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_162354.css
+[2026-11-25 16:23:54] OK   /append(style.css|.pfx-gap{height:9px})
+    -> Appended to style.css
+[2026-11-25 16:23:54] DONE /auto(1)
+    -> 7/7 applied
+[2026-11-25 16:31:46] RUN  /auto(1)
+    -> 5 planner command(s)
+[2026-11-25 16:31:47] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_163147.js
+[2026-11-25 16:31:47] OK   /replace(script.js|who.appendChild(mk('p','pfx-nm',nm));|who.appendChild(mk('p','pfx-nm',shown(d,'full_name')?(d.info&&d.info.full_name?d.info.full_name:d.um.full_name):'Unknown'));)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:31:48] OK   /replace(script.js|if(src)INF.forEach(function(o){var v=src[o[0]];|if(src)INF.forEach(function(o){var v=src[o[0]];if(o[0]==='full_name')return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:31:48] OK   /replace(script.js|else av.textContent=ini(nm);|else av.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.7 3.8-7.5 8.5-7.5s8.5 2.8 8.5 7.5z"/></svg>';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:31:49] OK   /replace(script.js|av.firstChild.textContent=a?'':ini(nm)|av.firstChild.innerHTML=a?'':'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.7 3.8-7.5 8.5-7.5s8.5 2.8 8.5 7.5z"/></svg>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:31:49] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_163149.css
+[2026-11-25 16:31:50] OK   /append(style.css|.pfx-av svg,.pfx-eav svg{width:60%;height:60%;color:var(--gray)})
+    -> Appended to style.css
+[2026-11-25 16:31:50] DONE /auto(1)
+    -> 5/5 applied
+[2026-11-25 16:34:04] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 16:34:05] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_163405.js
+[2026-11-25 16:34:05] OK   /replace(script.js|x.textContent = String(nm).trim().split(/\s+/).slice(0, 2).map((w) => w.charAt(0).toUpperCase()).join('')|x.innerHTML = '<svg viewBox="3.5 3.8 17 17.2" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.7 3.8-7.5 8.5-7.5s8.5 2.8 8.5 7.5z"/></svg>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:34:06] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_163406.css
+[2026-11-25 16:34:07] OK   /append(style.css|.qs-av svg{display:block;width:52%;height:52%;color:var(--mono-ink)}.qs-av.has-img svg,.qs-card .qs-av.ld svg{display:none}.pfx-eav>span{display:contents}.pfx-av svg,.pfx-eav svg{display:block;width:56%;height:56%;margin:0}.pfx-av,.pfx-eav{overflow:hidden})
+    -> Appended to style.css
+[2026-11-25 16:34:07] DONE /auto(1)
+    -> 2/2 applied
+[2026-11-25 16:36:19] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-25 16:36:20] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_163620.js
+[2026-11-25 16:36:20] OK   /replace(script.js|b.className = 'qs-pf-x'; b.setAttribute('aria-label', 'Close'); b.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/>|b.className = 'qs-pf-x'; b.setAttribute('aria-label', 'Back'); b.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:36:21] OK   /replace(script.js|b.setAttribute('aria-label','Close');b.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';b.onclick=function(){p.remove()}|b.setAttribute('aria-label','Back');b.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';b.onclick=function(){p.remove()})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 16:36:22] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261125_163622.css
+[2026-11-25 16:36:22] OK   /append(style.css|.qs-pf-x{right:auto;left:max(14px,env(safe-area-inset-left))}.pfx-tl{left:auto;right:max(14px,env(safe-area-inset-right))}.pfx-tr{right:calc(max(14px,env(safe-area-inset-right)) + 36px)}.pfx-tr:first-child{right:max(14px,env(safe-area-inset-right))})
+    -> Appended to style.css
+[2026-11-25 16:36:22] DONE /auto(1)
+    -> 3/3 applied
