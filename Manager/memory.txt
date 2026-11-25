@@ -1378,3 +1378,13 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 08:00:28] DONE /auto(1)
     -> 21/21 applied
+[2026-11-25 08:17:51] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-25 08:17:52] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_081752.js
+[2026-11-25 08:17:53] OK   /replace(script.js|const spEl = () => (root ? $('.qs-sp', root) : null);|const spEl = () => (root ? $('.qs-sh.qs-sp', root) : null);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 08:17:54] OK   /replace(script.js|s.hidden = false; }; const A = { pick: (a) => spOpen(a)|s.hidden = false; let on = $('.qs-op[aria-selected="true"]', s); if (!on) on = $('.qs-op', s); if (on) { try { on.focus({ preventScroll: true }); on.scrollIntoView({ block: 'center' }); } catch (e) {} } }; const A = { pick: (a) => spOpen(a))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 08:17:54] DONE /auto(1)
+    -> 2/2 applied
