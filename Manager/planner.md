@@ -1,2 +1,2 @@
-# orb: bring back Z by dragging from the orb's sides
-/replace(script.js|zone = 'xy';|zone = Math.abs(sx - (b.left + b.width / 2)) > b.width * 0.22 ? 'z' : 'xy';)
+# hide the (+) tab button while a Qasthra tab exists, show it when none
+/replace(script.js|strip.querySelectorAll('.qb-fav').forEach(favBind);|strip.querySelectorAll('.qb-fav').forEach(favBind); const ab = $('.qb-worlds > [data-a="add"]', h); if (ab) ab.hidden = st.worlds.some((x) => title(x) === 'Qasthra');)

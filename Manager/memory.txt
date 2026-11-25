@@ -2535,3 +2535,11 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-25 18:51:22] DONE /auto(1)
     -> 1/1 applied
+[2026-11-25 18:59:38] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-25 18:59:39] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261125_185939.js
+[2026-11-25 18:59:41] OK   /replace(script.js|strip.querySelectorAll('.qb-fav').forEach(favBind);|strip.querySelectorAll('.qb-fav').forEach(favBind); const ab = $('.qb-worlds > [data-a="add"]', h); if (ab) ab.hidden = st.worlds.some((x) => title(x) === 'Qasthra');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-25 18:59:41] DONE /auto(1)
+    -> 1/1 applied
