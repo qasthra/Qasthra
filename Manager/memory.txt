@@ -2818,3 +2818,11 @@
     -> Appended to style.css
 [2026-11-26 17:34:29] DONE /auto(1)
     -> 1/1 applied
+[2026-11-26 18:20:23] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-26 18:20:24] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_182024.css
+[2026-11-26 18:20:26] OK   /replace(style.css|html:has(.wc:not(.out)) .qa{flex:1;min-height:0;overflow:hidden}|html:has(.wc:not(.out)) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-26 18:20:26] DONE /auto(1)
+    -> 1/1 applied

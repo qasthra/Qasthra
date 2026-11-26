@@ -1,2 +1,2 @@
-# Welcome screen: static, centered, no scroll
-/append(style.css|html:has(.wc:not(.out)),html:has(.wc:not(.out)) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}\nhtml:has(.wc:not(.out)) .qa{flex:1;min-height:0;overflow:hidden}\n@media (max-width:560px){.wc{bottom:calc(60px + env(safe-area-inset-bottom,0px))}})
+# Fix: give .qa a real height so the initial display renders again
+/replace(style.css|html:has(.wc:not(.out)) .qa{flex:1;min-height:0;overflow:hidden}|html:has(.wc:not(.out)) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden})
