@@ -32,7 +32,7 @@ jobs:
           mkdir -p dist
           "$BT/apksigner" sign --ks "$RUNNER_TEMP/signing.keystore" --ks-key-alias "$KEY_ALIAS" --ks-pass env:KEYSTORE_PASSWORD --key-pass env:KEY_PASSWORD --out dist/Qasthra.apk "$RUNNER_TEMP/aligned.apk"
           "$BT/apksigner" verify --print-certs dist/Qasthra.apk | head -n 5
-          cp $OUT/bundle/release/*.aab dist/Qasthra.aab
+          cp "$(ls $OUT/bundle/release/*.aab | head -n 1)" dist/Qasthra.aab
           jarsigner -keystore "$RUNNER_TEMP/signing.keystore" -storepass:env KEYSTORE_PASSWORD -keypass:env KEY_PASSWORD dist/Qasthra.aab "$KEY_ALIAS"
           rm -f "$RUNNER_TEMP/signing.keystore"
       - uses: actions/upload-artifact@v4
