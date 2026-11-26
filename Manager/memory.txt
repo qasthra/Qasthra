@@ -2665,3 +2665,17 @@
     -> Appended to style.css
 [2026-11-26 10:00:44] DONE /auto(1)
     -> 1/1 applied
+[2026-11-26 10:17:21] RUN  /auto(1)
+    -> 4 planner command(s)
+[2026-11-26 10:17:22] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_101722.js
+[2026-11-26 10:17:22] OK   /replace(script.js|const syncDraw = () => {|const syncSpin = (b, s) => { const g = b.querySelector('svg'); if (!g) return; if (s !== 'off') { g.style.animation = ''; g.style.transition = ''; g.style.transform = ''; b._sp = 1; return; } if (!b._sp) return; b._sp = 0; let a = 0; const m = getComputedStyle(g).transform, v = m && m.match(/matrix\(([^)]+)\)/); if (v) { const p = v[1].split(',').map(Number); a = Math.atan2(p[1], p[0]) * 180 / Math.PI; if (a < 0) a += 360; } let t = 360 - a; if (t < 100) t += 360; g.style.animation = 'none'; g.style.transition = 'none'; g.style.transform = 'rotate(' + a + 'deg)'; void g.getBoundingClientRect(); g.style.transition = 'transform 1.4s cubic-bezier(.1,.55,.25,1)'; g.style.transform = 'rotate(' + (a + t) + 'deg)'; g.addEventListener('transitionend', () => { g.style.transition = ''; g.style.transform = ''; g.style.animation = ''; }, { once: true }); }; const syncDraw = () => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 10:17:23] OK   /replace(script.js|b.dataset.s = s; });|b.dataset.s = s; syncSpin(b, s); });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 10:17:24] OK   /replace(script.js|.filter((w) => w && Array.isArray(w.tr) && w.tr[w.i])|.filter((w) => w && Array.isArray(w.tr) && w.tr[w.i]).map((w) => ({ id: w.id, tr: [w.tr[w.i]], i: 0 })))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 10:17:24] OK   /replace(script.js|const hop = (d) => {|window.addEventListener('pagehide', () => { try { sv('worlds', st.worlds.map((w) => ({ id: w.id, tr: [w.tr[w.i]], i: 0 }))); } catch (e) {} }); const hop = (d) => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 10:17:24] DONE /auto(1)
+    -> 4/4 applied
