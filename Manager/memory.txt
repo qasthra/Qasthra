@@ -2795,3 +2795,26 @@
     -> Appended to style.css
 [2026-11-26 16:47:39] DONE /auto(1)
     -> 6/6 applied
+[2026-11-26 17:33:22] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-26 17:33:23] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_173323.css
+[2026-11-26 17:33:23] OK   /append(style.css|@media (min-width:0px){.qn{display:flex;flex-direction:column;max-height:min(46vh,380px)}.qn-h{flex:none}.qn-l{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}})
+    -> Appended to style.css
+[2026-11-26 17:33:23] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_173323.js
+[2026-11-26 17:33:23] FAIL /replace(script.js|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (el) el.outerHTML = html(); };|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (!el) return; const l = el.querySelector('.qn-l'), y = l ? l.scrollTop : 0; el.outerHTML = html(); const n = $('.qs [data-nt] .qn-l'); if (n && y) n.scrollTop = y; };)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-26 17:33:23] ROLL /auto(1)
+    -> 1 file(s) restored, 2 helper file(s) removed
+[2026-11-26 17:33:23] STOP /auto(1)
+    -> stopped at step 2/6, nothing was applied
+[2026-11-26 17:34:26] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-26 17:34:28] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_173428.css
+[2026-11-26 17:34:29] OK   /append(style.css|html:has(.wc:not(.out)),html:has(.wc:not(.out)) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}\nhtml:has(.wc:not(.out)) .qa{flex:1;min-height:0;overflow:hidden}\n@media (max-width:560px){.wc{bottom:calc(60px + env(safe-area-inset-bottom,0px))}})
+    -> Appended to style.css
+[2026-11-26 17:34:29] DONE /auto(1)
+    -> 1/1 applied

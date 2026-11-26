@@ -685,3 +685,6 @@ body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inse
 .wb.out{opacity:0} :root[data-motion="reduce"] .wb{transition:none}
 @media (min-width:0px){.qn{display:flex;flex-direction:column;max-height:min(46vh,380px)}.qn-h{flex:none}.qn-l{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}}
 @media (min-width:561px){.qb-sync{transition:color .12s ease,opacity .12s ease}}
+html:has(.wc:not(.out)),html:has(.wc:not(.out)) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}
+html:has(.wc:not(.out)) .qa{flex:1;min-height:0;overflow:hidden}
+@media (max-width:560px){.wc{bottom:calc(60px + env(safe-area-inset-bottom,0px))}}
