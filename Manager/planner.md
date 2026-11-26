@@ -1,7 +1,8 @@
-# Background fades out with the card when Browse is tapped
-/replace(style.css|.qa-view{background:url(|.wb{position:absolute;inset:0;z-index:0;pointer-events:none;transition:opacity .25s ease;background:url()
-/replace(style.css|.qa-view::before|.wb::before)
-/replace(style.css|.qa-view::after|.wb::after)
-/replace(style.css| .qb-page.qb-qast{background:transparent}|)
-/append(style.css|.wb.out{opacity:0} :root[data-motion="reduce"] .wb{transition:none})
-/append(script.js|(() => { const mk = () => { const v = document.querySelector('.qa-view'); if (!v || !v.querySelector('.wc')) return false; if (v.querySelector('.wb')) return true; const b = document.createElement('div'); b.className = 'wb'; b.setAttribute('aria-hidden', 'true'); v.insertBefore(b, v.firstChild); const go = v.querySelector('.wc-go'); if (go) go.addEventListener('click', () => { b.classList.add('out'); setTimeout(() => b.remove(), 260); }); return true; }; const mo = new MutationObserver(() => { if (mk()) mo.disconnect(); }); mo.observe(document.body, { childList: true, subtree: true }); mk(); })();)
+# Notifications: capped, scrollable, keeps scroll position on redraw
+/append(style.css|@media (min-width:0px){.qn{display:flex;flex-direction:column;max-height:min(46vh,380px)}.qn-h{flex:none}.qn-l{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}})
+/replace(script.js|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (el) el.outerHTML = html(); };|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (!el) return; const l = el.querySelector('.qn-l'), y = l ? l.scrollTop : 0; el.outerHTML = html(); const n = $('.qs [data-nt] .qn-l'); if (n && y) n.scrollTop = y; };)
+# Sync: turning off no longer waits on cloud cleanup, ending spin starts at once
+/replace(script.js|} else { syncB++; syncDraw(); const u = await who();|} else { const u = await who();)
+/replace(script.js|catch (e) {} } syncB--; setTimeout(syncDraw, 350); } pop(); };|catch (e) {} } } pop(); };)
+/replace(script.js|transform 1.4s cubic-bezier(.1,.55,.25,1)|transform .8s cubic-bezier(.1,.55,.25,1))
+/append(style.css|@media (min-width:561px){.qb-sync{transition:color .12s ease,opacity .12s ease}})

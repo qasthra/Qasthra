@@ -2775,3 +2775,23 @@
     -> Appended to script.js
 [2026-11-26 11:43:02] DONE /auto(1)
     -> 6/6 applied
+[2026-11-26 16:47:36] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-26 16:47:36] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261126_164736.css
+[2026-11-26 16:47:36] OK   /append(style.css|@media (min-width:0px){.qn{display:flex;flex-direction:column;max-height:min(46vh,380px)}.qn-h{flex:none}.qn-l{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}})
+    -> Appended to style.css
+[2026-11-26 16:47:37] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261126_164737.js
+[2026-11-26 16:47:37] OK   /replace(script.js|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (el) el.outerHTML = html(); };|const draw = () => { badge(); const el = $('.qs [data-nt]'); if (!el) return; const l = el.querySelector('.qn-l'), y = l ? l.scrollTop : 0; el.outerHTML = html(); const n = $('.qs [data-nt] .qn-l'); if (n && y) n.scrollTop = y; };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 16:47:38] OK   /replace(script.js|} else { syncB++; syncDraw(); const u = await who();|} else { const u = await who();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 16:47:38] OK   /replace(script.js|catch (e) {} } syncB--; setTimeout(syncDraw, 350); } pop(); };|catch (e) {} } } pop(); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 16:47:39] OK   /replace(script.js|transform 1.4s cubic-bezier(.1,.55,.25,1)|transform .8s cubic-bezier(.1,.55,.25,1))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-26 16:47:39] OK   /append(style.css|@media (min-width:561px){.qb-sync{transition:color .12s ease,opacity .12s ease}})
+    -> Appended to style.css
+[2026-11-26 16:47:39] DONE /auto(1)
+    -> 6/6 applied
