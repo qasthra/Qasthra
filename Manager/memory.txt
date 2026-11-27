@@ -3530,3 +3530,120 @@
     -> Appended to style.css
 [2026-11-27 18:05:26] DONE /auto(1)
     -> 11/11 applied
+[2026-11-27 18:11:08] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-27 18:11:10] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_181110.css
+[2026-11-27 18:11:11] OK   /append(style.css|/* Shrink = Card-screen mode, Expanded = Full-screen mode */\n.sc.full .sc-card{border:0;border-radius:0;box-shadow:none;background:var(--bg)}\n.sc.full .wk-cf{fill:var(--bg)}\n.sc .wk-cf{fill:color-mix(in srgb,var(--gray) 6%,var(--bg))}\n.sc-card{background:color-mix(in srgb,var(--gray) 6%,var(--bg))}\n.sc.full .sc-card{background:var(--bg)}\n.sc-ex,.sc-ex:hover,.sc-ex:active,.sc-ex:focus,.sc-ex:focus-visible{background:none;border:0;box-shadow:none;outline:0;color:var(--mono)}\n.sc-ex svg{width:14px;height:14px;margin:-7px 0 0 -7px}\n.wk-cs{stroke:var(--gray);stroke-width:.6;opacity:.8}\n@media (max-width:560px){.qb-dock{z-index:90;visibility:visible}.sc{bottom:0}}\n)
+    -> Appended to style.css
+[2026-11-27 18:11:11] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-27 18:24:15] RUN  /auto(1)
+    -> 22 planner command(s)
+[2026-11-27 18:24:15] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_182415.js
+[2026-11-27 18:24:16] OK   /delete(script.js|window.QCARD = {)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 18:24:16] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_182416.css
+[2026-11-27 18:24:16] OK   /delete(style.css|Card-screen mode)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:24:17] OK   /delete(style.css|.sc{)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:24:17] OK   /delete(style.css|.sc-card{)
+    -> Deleted 5 line(s) from style.css
+[2026-11-27 18:24:18] OK   /delete(style.css|.sc-card.on{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:24:18] FAIL /delete(style.css|.sc.full .sc-card{)
+    -> No line in style.css contains '.sc.full .sc-card{'.
+    -> fix: Run /find(file|text) to check the text, or /status because it may already be deleted.
+[2026-11-27 18:24:18] ROLL /auto(1)
+    -> 2 file(s) restored, 2 helper file(s) removed
+[2026-11-27 18:24:18] STOP /auto(1)
+    -> stopped at step 6/22, nothing was applied
+[2026-11-27 18:25:34] RUN  /auto(1)
+    -> 20 planner command(s)
+[2026-11-27 18:25:34] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_182534.js
+[2026-11-27 18:25:35] OK   /delete(script.js|window.QCARD = {)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 18:25:35] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_182535.css
+[2026-11-27 18:25:35] OK   /delete(style.css|Card-screen mode)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:25:36] OK   /delete(style.css|.sc{)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:25:36] OK   /delete(style.css|.sc-card{)
+    -> Deleted 5 line(s) from style.css
+[2026-11-27 18:25:36] OK   /delete(style.css|.sc-card.on{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:37] OK   /delete(style.css|.sc-body{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:37] OK   /delete(style.css|.sc-body>*{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:38] OK   /delete(style.css|.sc-body>.qb-pfv{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:38] OK   /delete(style.css|@keyframes scIn)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:39] OK   /delete(style.css|.sc-ex svg{)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:25:39] OK   /delete(style.css|.sc-ex .ic-s{)
+    -> Deleted 2 line(s) from style.css
+[2026-11-27 18:25:40] OK   /delete(style.css|.sc-ex .ic-x{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:40] OK   /delete(style.css|.sc-err{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:40] OK   /delete(style.css|.sc-err a{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:41] OK   /delete(style.css|.sc.full .wk-cf{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:41] OK   /delete(style.css|.sc .wk-cf{)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:42] OK   /delete(style.css|.sc-ex,.sc-ex:hover)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:42] OK   /delete(style.css|.wk-cs{stroke:var(--gray))
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 18:25:43] OK   /append(script.js|(() => { const X = '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M4 4l6 6M15 4h5v5M20 4l-6 6M20 15v5h-5M20 20l-6-6M9 20H4v-5M4 20l6-6"/></svg>', S = '<svg class="ic-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h6V4M10 10L3 3M20 10h-6V4M14 10l7-7M20 14h-6v6M14 14l7 7M4 14h6v6M10 14l-7 7"/></svg>'; const gif = () => (window.QGIF ? window.QGIF.url('Sources/Videos/Qasthra.gif') : 'Sources/Videos/Qasthra.gif'); const rs = (s) => { s.classList.remove('full'); const b = s.querySelector('.sc-ex'); if (b) { b.setAttribute('aria-label', 'Expand'); b.setAttribute('aria-pressed', 'false'); } }; const card = (o) => { let s = o.querySelector(':scope > .sc'); Array.from(o.children).forEach((c) => { if (c !== s) c.remove(); }); if (s) return s; s = document.createElement('div'); s.className = 'sc'; s.innerHTML = '<div class="sc-card"><div class="wk-c"><svg class="wk-cv" viewBox="0 0 88 44" preserveAspectRatio="none" aria-hidden="true"><path class="wk-cf" d="M0 0H88A44 44 0 0 1 0 0Z"/><path class="wk-cs" d="M88 0A44 44 0 0 1 0 0"/></svg><button class="wk-dots sc-ex" type="button" aria-label="Expand" aria-pressed="false">' + X + S + '</button></div><div class="sc-body"></div></div>'; o.appendChild(s); requestAnimationFrame(() => requestAnimationFrame(() => { const c = s.querySelector('.sc-card'); if (c) c.classList.add('on'); })); return s; }; const body = (o, fresh) => { const s = card(o); if (fresh) rs(s); const b = s.querySelector('.sc-body'); b.textContent = ''; b.style.animation = 'none'; void b.offsetWidth; b.style.animation = ''; b.style.animationDelay = fresh ? '' : '0s'; return b; }; window.QCARD = { open: (o, prof) => { const b = body(o, true); if (prof) { const p = document.createElement('div'); p.className = 'qb-pfv'; b.appendChild(p); return p; } const i = document.createElement('img'); i.className = 'qb-world-loader'; i.alt = 'Loading'; i.src = gif(); b.appendChild(i); return b; }, show: (o, t) => { const b = body(o, false), p = document.createElement('div'); p.className = t ? 'qb-qtext' : 'sc-err'; p.textContent = t || 'This World is empty.'; b.appendChild(p); }, err: (o) => { const b = body(o, false), p = document.createElement('p'), a = document.createElement('a'); p.className = 'sc-err'; p.appendChild(document.createTextNode('Error: World does not exist or is set to private, learn more at ')); a.href = '#'; a.setAttribute('data-pop', 'guidance'); a.textContent = 'Guidance & Recovery'; p.appendChild(a); p.appendChild(document.createTextNode('.')); b.appendChild(p); } }; document.addEventListener('click', (e) => { const b = e.target.closest ? e.target.closest('.sc-ex') : null; if (!b) return; const s = b.closest('.sc'), on = s.classList.toggle('full'); b.setAttribute('aria-label', on ? 'Shrink' : 'Expand'); b.setAttribute('aria-pressed', String(on)); }); document.addEventListener('keydown', (e) => { if (e.key !== 'Escape') return; const s = document.querySelector('.sc'); if (!s || document.querySelector('.pop') || document.documentElement.classList.contains('qs-open')) return; if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return; if (s.classList.contains('full')) { s.querySelector('.sc-ex').click(); return; } const w = document.querySelector('.qb-strip .qb-w'); if (w) w.click(); }); new MutationObserver(() => { const b = document.querySelector('.sc-body'); if (b && !b.firstChild) { const s = b.closest('.sc'); if (s) s.remove(); } }).observe(document.body, { childList: true, subtree: true }); })();)
+    -> Appended to script.js
+[2026-11-27 18:25:43] OK   /append(style.css|/* Shrink = Card-screen mode, Expanded = Full-screen mode */\n.sc{position:absolute;inset:0;z-index:4;display:grid;place-items:center}\n.sc-card{--sc:color-mix(in srgb,var(--gray) 6%,var(--bg));position:relative;display:flex;flex-direction:column;overflow:hidden;width:min(420px,calc(100% - 48px));height:min(300px,70%);border:1px solid var(--line);border-radius:16px;background:var(--sc);box-shadow:0 24px 60px rgba(0,0,0,.3);transition:width .5s cubic-bezier(.2,.8,.2,1),height .5s cubic-bezier(.2,.8,.2,1),border-radius .5s cubic-bezier(.2,.8,.2,1)}\n.sc-card.on{width:90%;height:90%}\n.sc.full .sc-card{width:100%;height:100%;border:0;border-radius:0;box-shadow:none}\n.sc-card .wk-cf{fill:var(--sc)}\n.wk-cs{stroke:var(--gray);stroke-width:.6;opacity:.8}\n.sc-body{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;padding:44px 16px 16px;opacity:0;animation:scIn .3s ease .45s forwards;scrollbar-width:none}\n.sc-body::-webkit-scrollbar{display:none}\n.sc-body>*{margin:auto}\n@keyframes scIn{to{opacity:1}}\n.sc-ex,.sc-ex:hover,.sc-ex:active,.sc-ex:focus,.sc-ex:focus-visible{background:none;border:0;box-shadow:none;outline:0;color:var(--mono)}\n.sc-ex svg{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;transition:opacity .25s ease,transform .4s cubic-bezier(.2,.8,.2,1)}\n.sc-ex .ic-s{opacity:0;transform:scale(.5) rotate(-90deg)}\n.sc.full .sc-ex .ic-s{opacity:1;transform:none}\n.sc.full .sc-ex .ic-x{opacity:0;transform:scale(.5) rotate(90deg)}\n.sc-err{max-width:36em;text-align:center;color:var(--gray);font:500 14px/1.6 var(--font)}\n.sc-err a{color:var(--mono);font-weight:700;text-decoration:none}\n.sc-body>.qb-pfv{position:relative;inset:auto;width:100%;margin:0;overflow:visible;background:transparent}\n.sc .qb-pfv .pfx{padding-top:8px}\n.sc .pfx-bd{background:transparent}\n.sc .pfx-av,.sc .pfx-eav{border-color:var(--sc)}\n.sc .pfx-pm{background:var(--sc)}\nhtml:has(.sc),html:has(.sc) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}\nhtml:has(.sc) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden}\n)
+    -> Appended to style.css
+[2026-11-27 18:25:43] DONE /auto(1)
+    -> 20/20 applied
+[2026-11-27 18:38:10] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-27 18:38:10] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_183810.js
+[2026-11-27 18:38:11] OK   /replace(script.js|err: (o) => { const b = body(o, false), p = document.createElement('p'), a = document.createElement('a'); p.className = 'sc-err'; p.appendChild(document.createTextNode('Error: World does not exist or is set to private, learn more at ')); a.href = '#'; a.setAttribute('data-pop', 'guidance'); a.textContent = 'Guidance & Recovery'; p.appendChild(a); p.appendChild(document.createTextNode('.')); b.appendChild(p); }|err: (o) => { body(o, false); }, _keep: 0)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:38:12] OK   /replace(script.js|if (b && !b.firstChild) { const s = b.closest('.sc'); if (s) s.remove(); }|void b;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:38:12] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_183812.css
+[2026-11-27 18:38:13] OK   /append(style.css|html:has(.qb-stage),html:has(.qb-stage) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}html:has(.qb-stage) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden})
+    -> Appended to style.css
+[2026-11-27 18:38:13] DONE /auto(1)
+    -> 3/3 applied
+[2026-11-27 18:50:08] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-27 18:50:10] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_185010.js
+[2026-11-27 18:50:11] OK   /replace(script.js|const reloadWorld = () => {|const ensureCard = () => { if (ctlOn || rep || noLoad || document.hidden) return; const w = cur(); if (!w || !$('.qb-ov')) return; const e = ent(w); if (e.k === 'universe' || $('.qb-pfv')) return; if (e.k === 'search' && e.q.charAt(0) === '@') return; if (!$('.sc') || (e.k === 'coord' && qSeen !== ctext(e.c))) view(w); }; setInterval(ensureCard, 700); const reloadWorld = () => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:50:11] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-27 18:52:25] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-27 18:52:27] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_185227.js
+[2026-11-27 18:52:28] OK   /replace(script.js|const reloadWorld = () => {|const ensureCard = () => { if (ctlOn || rep || noLoad || document.hidden) return; const w = cur(); if (!w || !$('.qb-ov')) return; const e = ent(w); if (e.k === 'universe' || $('.qb-pfv')) return; if (e.k === 'search' && e.q.charAt(0) === '@') return; if (!$('.sc') || (e.k === 'coord' && qSeen !== ctext(e.c))) view(w); }; setInterval(ensureCard, 700); const reloadWorld = () => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:52:28] DONE /auto(1)
+    -> 1/1 applied
+[2026-11-27 20:51:44] RUN  /auto(1)
+    -> 1 planner command(s)
+[2026-11-27 20:51:46] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_205146.js
+[2026-11-27 20:51:47] OK   /replace(script.js|} else { drop(c); if (!(b && !b.classList.contains('out'))) {|} else { if (q('.sc', v)) drop(c); if (!(b && !b.classList.contains('out'))) {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 20:51:47] DONE /auto(1)
+    -> 1/1 applied
