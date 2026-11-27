@@ -2826,3 +2826,23 @@
     -> Replaced 1 occurrence(s) in style.css
 [2026-11-26 18:20:26] DONE /auto(1)
     -> 1/1 applied
+[2026-11-27 08:52:27] RUN  /auto(1)
+    -> 6 planner command(s)
+[2026-11-27 08:52:27] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_085227.js
+[2026-11-27 08:52:27] OK   /replace(script.js|['data', 'Data', 'db']]; const K =|['data', 'Data', 'db'], ['contrib', 'Contributions', 'file']]; const K =)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 08:52:28] OK   /replace(script.js|const S = { library:|const QC = '<div class="qs-qc"><img class="qs-qc-l" src="Sources/Icons/Qast.svg" alt="" width="56" height="56"><h3 class="qs-qc-t">Contributions</h3><p class="qs-qc-d">Build Worlds and share what you know. Push and pull knowledge to Qasth, the native Qasthra wiki.</p><button class="btn btn-mono qs-qc-b" type="button" data-qh="1">Qasthub</button></div>'; const S = { library:)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 08:52:28] OK   /replace(script.js|about: [row('info', 'Version'|contrib: [QC], about: [row('info', 'Version')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 08:52:29] OK   /append(script.js|(() => { const SH = () => document.querySelector('.qh'); const shut = () => { const o = SH(); if (!o) return; o.remove(); const b = document.querySelector('.qs-qc-b'); if (b) { try { b.focus({ preventScroll: true }); } catch (e) {} } }; document.addEventListener('click', (e) => { const t = e.target.closest && e.target.closest('[data-qh]'); if (t) { if (SH()) return; const o = document.createElement('div'); o.className = 'qh'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true'); o.setAttribute('aria-label', 'Qasthub'); o.innerHTML = '<button class="qh-x" type="button" aria-label="Back"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>'; document.body.appendChild(o); o.querySelector('.qh-x').focus(); return; } if (e.target.closest && e.target.closest('.qh-x')) shut(); }, true); document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && SH()) { e.stopPropagation(); shut(); } }, true); window.addEventListener('hashchange', shut); })();)
+    -> Appended to script.js
+[2026-11-27 08:52:29] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_085229.css
+[2026-11-27 08:52:30] OK   /append(style.css|.qs-sec[data-c="contrib"] .qs-list{overflow:visible;border:0;background:none}.qs-qc{display:grid;justify-items:start;gap:10px;padding:20px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,transparent);text-align:left}.qs-qc-l{width:56px;height:56px;object-fit:contain;background:none}.qs-qc-t{margin:0;font:700 18px/1.2 var(--font);letter-spacing:-.02em}.qs-qc-d{margin:0;color:var(--gray);font:500 14px/1.5 var(--font)}.qs-qc-b{margin-top:6px})
+    -> Appended to style.css
+[2026-11-27 08:52:30] OK   /append(style.css|.qh{position:fixed;inset:0;z-index:1200;background:#000;color:#fff;animation:pageIn .3s cubic-bezier(.2,.8,.2,1)}.qh-x{position:absolute;top:max(14px,env(safe-area-inset-top));left:max(14px,env(safe-area-inset-left));width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:none;color:#fff;cursor:pointer}.qh-x:focus-visible{outline:2px solid #fff;outline-offset:2px}html:has(.qh),html:has(.qh) body{overflow:hidden}@media (prefers-reduced-motion:reduce){.qh{animation:none}})
+    -> Appended to style.css
+[2026-11-27 08:52:30] DONE /auto(1)
+    -> 6/6 applied
