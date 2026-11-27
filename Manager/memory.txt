@@ -3125,3 +3125,82 @@
     -> Replaced 1 occurrence(s) in style.css
 [2026-11-27 09:56:24] DONE /auto(1)
     -> 15/15 applied
+[2026-11-27 10:37:07] RUN  /auto(1)
+    -> 15 planner command(s)
+[2026-11-27 10:37:08] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_103708.js
+[2026-11-27 10:37:08] FAIL /replace(script.js|const N = 120;|const N = 80;)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-27 10:37:08] ROLL /auto(1)
+    -> 0 file(s) restored, 1 helper file(s) removed
+[2026-11-27 10:37:08] STOP /auto(1)
+    -> stopped at step 1/15, nothing was applied
+[2026-11-27 10:39:19] RUN  /auto(1)
+    -> 30 planner command(s)
+[2026-11-27 10:39:19] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_103919.js
+[2026-11-27 10:39:20] OK   /delete(script.js|'aria-label', 'Qasthub')
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 10:39:20] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_103920.css
+[2026-11-27 10:39:20] OK   /delete(style.css|.qh{position:fixed;inset:0;z-index:1200)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 10:39:21] OK   /append(script.js|// ===== QASTHUB: developer hub for Qasthra worlds =====)
+    -> Appended to script.js
+[2026-11-27 10:39:21] OK   /append(script.js|// Desktop layout: [rail] [center panel] [right panel]. Mobile (<=860px): one column, Display/Editor tabs, menu becomes a bottom bar.)
+    -> Appended to script.js
+[2026-11-27 10:39:21] OK   /append(script.js|// 1) Leftmost panel (.qh-rail) = MAIN MENU. Future buttons go into .qh-menu. The logo returns to Settings.)
+    -> Appended to script.js
+[2026-11-27 10:39:22] OK   /append(script.js|// 2) Central panel (.qh-disp) = DISPLAY of the active main menu button. Render into .qh-dv.)
+    -> Appended to script.js
+[2026-11-27 10:39:22] OK   /append(script.js|// 3) Rightmost panel (.qh-ed) = CODE EDITING and related tools. Render into .qh-code.)
+    -> Appended to script.js
+[2026-11-27 10:39:23] OK   /append(script.js|// 4) Top-right bar (.qh-top) = FUTURE buttons and search bar.)
+    -> Appended to script.js
+[2026-11-27 10:39:23] OK   /append(script.js|// Exit: logo tap, Esc or native back returns to Settings (Settings stays open underneath). Music is untouched because the hash stays #dashboard.)
+    -> Appended to script.js
+[2026-11-27 10:39:24] OK   /append(script.js|(() => {)
+    -> Appended to script.js
+[2026-11-27 10:39:24] OK   /append(script.js|const SH = () => document.querySelector('.qh'); let out = 0;)
+    -> Appended to script.js
+[2026-11-27 10:39:25] OK   /append(script.js|const LOGO = '<img class="qh-li" src="Sources/Icons/Qast.svg" alt="" draggable="false">';)
+    -> Appended to script.js
+[2026-11-27 10:39:25] OK   /append(script.js|const HTML = '<div class="qh-rail"><button class="qh-logo" type="button" aria-label="Back to settings" title="Back to settings">' + LOGO + '</button><nav class="qh-menu" aria-label="Main menu"></nav></div><aside class="qh-disp"><header class="qh-id"><h2 class="qh-t">Qasthub</h2><p class="qh-u">@username</p></header><div class="qh-tabs" role="tablist" aria-label="Panels"><button class="qh-tab" type="button" role="tab" data-v="d" aria-selected="true">Display</button><button class="qh-tab" type="button" role="tab" data-v="e" aria-selected="false">Editor</button></div><div class="qh-dv"></div></aside><section class="qh-ed" aria-label="Editor"><div class="qh-top"></div><div class="qh-code"></div></section>';)
+    -> Appended to script.js
+[2026-11-27 10:39:26] OK   /append(script.js|const who = (o) => { try { if (!window.db) return; window.db.auth.getSession().then((r) => { const m = r && r.data && r.data.session ? r.data.session.user.user_metadata || {} : {}; const n = String(m.username || '').replace(/[^a-z0-9_-]/gi, ''); const el = o.querySelector('.qh-u'); if (n && el && el.isConnected) el.textContent = '@' + n; }).catch(() => {}); } catch (e) {} };)
+    -> Appended to script.js
+[2026-11-27 10:39:26] OK   /append(script.js|const ui = () => { out = 0; const o = SH(); if (!o) return; o.remove(); document.documentElement.classList.remove('qh-open'); const s = document.querySelector('.qs'); if (s) s.inert = false; const b = document.querySelector('.qs-qc-b'); if (b) { try { b.focus({ preventScroll: true }); } catch (e) {} } };)
+    -> Appended to script.js
+[2026-11-27 10:39:26] OK   /append(script.js|const shut = () => { if (!SH() || out) return; out = 1; if (history.state && history.state.qh) { history.back(); setTimeout(ui, 600); } else ui(); };)
+    -> Appended to script.js
+[2026-11-27 10:39:27] OK   /append(script.js|const open = () => { if (SH()) return; out = 0; const o = document.createElement('div'); o.className = 'qh'; o.dataset.v = 'd'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true'); o.setAttribute('aria-label', 'Qasthub hub'); o.innerHTML = HTML; document.body.appendChild(o); document.documentElement.classList.add('qh-open'); const s = document.querySelector('.qs'); if (s) s.inert = true; try { history.pushState({ qh: 1 }, '', location.href); } catch (e) {} who(o); o.querySelector('.qh-logo').focus({ preventScroll: true }); };)
+    -> Appended to script.js
+[2026-11-27 10:39:27] OK   /append(script.js|document.addEventListener('click', (e) => { const t = e.target.closest && e.target.closest('[data-qh]'); if (t) { open(); return; } const o = SH(); if (!o) return; if (e.target.closest('.qh-logo')) { shut(); return; } const b = e.target.closest('.qh-tab'); if (!b) return; o.dataset.v = b.dataset.v; o.querySelectorAll('.qh-tab').forEach((x) => x.setAttribute('aria-selected', String(x === b))); }, true);)
+    -> Appended to script.js
+[2026-11-27 10:39:28] OK   /append(script.js|document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && SH()) { e.stopPropagation(); shut(); } }, true);)
+    -> Appended to script.js
+[2026-11-27 10:39:28] OK   /append(script.js|window.addEventListener('popstate', ui); window.addEventListener('hashchange', ui);)
+    -> Appended to script.js
+[2026-11-27 10:39:29] OK   /append(script.js|})();)
+    -> Appended to script.js
+[2026-11-27 10:39:29] OK   /append(style.css|/* QASTHUB: rail (main menu) | display panel | editor panel. Only the 5 site tokens are used, so light and dark both work. */)
+    -> Appended to style.css
+[2026-11-27 10:39:30] OK   /append(style.css|.qh{z-index:1200;position:fixed;inset:0;display:grid;grid-template-columns:clamp(64px,7.4vw,96px) clamp(260px,18vw,360px) minmax(0,1fr);grid-template-rows:minmax(0,1fr);background:var(--bg);color:var(--mono);font-family:var(--font);contain:layout paint}.qh button{font-family:inherit}html.qh-open,html.qh-open body{overflow:hidden})
+    -> Appended to style.css
+[2026-11-27 10:39:30] OK   /append(style.css|.qh-rail{display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 0 16px;min-height:0;background:color-mix(in srgb,var(--line) 55%,var(--bg))}.qh-logo{flex:none;width:clamp(40px,2.6vw,48px);height:clamp(40px,2.6vw,48px);padding:0;border:0;border-radius:50%;background:none;color:var(--mono);cursor:pointer;transition:transform .15s ease,opacity .15s ease}.qh-logo:hover{opacity:.88}.qh-logo:active{transform:scale(.94)}.qh-logo:focus-visible,.qh-tab:focus-visible{outline:2px solid var(--mono);outline-offset:3px}.qh-li{display:block;width:100%;height:100%;object-fit:contain;border-radius:50%;-webkit-user-drag:none})
+    -> Appended to style.css
+[2026-11-27 10:39:31] OK   /append(style.css|.qh-menu{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:10px}.qh-menu:empty{display:none})
+    -> Appended to style.css
+[2026-11-27 10:39:31] OK   /append(style.css|.qh-disp{display:flex;flex-direction:column;min-width:0;min-height:0;margin-right:20px;background:color-mix(in srgb,var(--gray) 7%,var(--bg));border:1px solid var(--line);border-left:0;border-radius:0 32px 32px 0;overflow:hidden}.qh-id{padding:clamp(28px,4.4vh,48px) 28px 12px}.qh-t{margin:0;font-size:clamp(26px,2.2vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1.1}.qh-u{margin:4px 0 0;font-size:clamp(15px,1.1vw,18px);font-weight:600;color:var(--gray);overflow:hidden;text-overflow:ellipsis;white-space:nowrap})
+    -> Appended to style.css
+[2026-11-27 10:39:32] OK   /append(style.css|.qh-dv{flex:1;min-height:0;overflow:auto;padding:16px 28px 28px}.qh-dv:empty::before,.qh-code:empty::before{content:"Nothing here yet";color:var(--gray);font:500 14px/1.4 var(--font)}.qh-tabs{display:none})
+    -> Appended to style.css
+[2026-11-27 10:39:32] OK   /append(style.css|.qh-ed{display:flex;flex-direction:column;min-width:0;min-height:0;background:color-mix(in srgb,var(--gray) 7%,var(--bg));border:1px solid var(--line);border-right:0;border-radius:32px 0 0 32px;overflow:hidden}.qh-top{flex:none;display:flex;align-items:center;gap:12px;height:clamp(56px,10.9vh,96px);padding:0 24px;background:color-mix(in srgb,var(--line) 55%,var(--bg));border-bottom:1px solid var(--line)}.qh-code{flex:1;min-height:0;overflow:auto;padding:24px})
+    -> Appended to style.css
+[2026-11-27 10:39:32] OK   /append(style.css|.qh-tab{height:38px;border:0;border-radius:10px;background:transparent;color:var(--gray);font:600 14px/1 var(--font);cursor:pointer;transition:background .15s ease,color .15s ease}.qh-tab[aria-selected="true"]{background:var(--mono);color:var(--mono-ink)})
+    -> Appended to style.css
+[2026-11-27 10:39:33] OK   /append(style.css|@media (max-width:860px){.qh{grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;grid-template-areas:"logo id" "tabs tabs" "view view" "menu menu";gap:12px 14px;padding:calc(env(safe-area-inset-top,0px) + 14px) calc(env(safe-area-inset-right,0px) + 14px) calc(env(safe-area-inset-bottom,0px) + 14px) calc(env(safe-area-inset-left,0px) + 14px)}.qh-rail,.qh-disp{display:contents}.qh-logo{grid-area:logo;width:44px;height:44px}.qh-id{grid-area:id;align-self:center;padding:0;min-width:0}.qh-t{font-size:24px}.qh-u{font-size:15px;margin:2px 0 0}.qh-tabs{grid-area:tabs;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--line) 55%,var(--bg))}.qh-dv,.qh-ed{grid-area:view;margin:0;border:1px solid var(--line);border-radius:24px;background:color-mix(in srgb,var(--gray) 7%,var(--bg))}.qh-dv{padding:20px}.qh[data-v="d"] .qh-ed,.qh[data-v="e"] .qh-dv{display:none}.qh-top{height:52px;padding:0 16px}.qh-code{padding:16px}.qh-menu{grid-area:menu;flex-direction:row;justify-content:center;margin:0;padding:8px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--line) 55%,var(--bg))}.qh-menu:empty{display:none}})
+    -> Appended to style.css
+[2026-11-27 10:39:33] DONE /auto(1)
+    -> 30/30 applied
