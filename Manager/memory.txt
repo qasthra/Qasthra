@@ -3228,3 +3228,93 @@
     -> Appended to script.js
 [2026-11-27 11:49:09] DONE /auto(1)
     -> 8/8 applied
+[2026-11-27 12:01:37] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-27 12:01:38] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_120138.css
+[2026-11-27 12:01:38] OK   /replace(style.css|html[data-screen-transition="1"] #app{visibility:hidden}|#app{transition:opacity .5s ease,visibility .5s} html[data-screen-transition="1"] #app{opacity:0;visibility:hidden} html[data-motion="reduce"] #app{transition:none})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 12:01:39] OK   /replace(style.css|content:"Nothing here yet";|content:none;)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 12:01:40] OK   /append(style.css|.qh-rail{background:var(--bg);border-right:1px solid var(--line)} .qh-disp,.qh-ed{background:color-mix(in srgb,var(--gray) 6%,var(--bg))} .qh-top{background:var(--bg);border-bottom:1px solid var(--line)} .qh-tabs{padding:4px;border:1px solid var(--line);border-radius:12px;background:var(--bg)} .qh-tab{height:38px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--gray);font:600 14px/1 var(--font);transition:background .2s ease,color .2s ease,border-color .2s ease} .qh-tab:hover{color:var(--mono)} .qh-tab[aria-selected="true"]{background:var(--mono);color:var(--mono-ink)} .qh-menu{background:var(--bg)} .qh-dv:empty::before,.qh-code:empty::before{color:transparent})
+    -> Appended to style.css
+[2026-11-27 12:01:40] DONE /auto(1)
+    -> 3/3 applied
+[2026-11-27 12:23:11] RUN  /auto(1)
+    -> 35 planner command(s)
+[2026-11-27 12:23:12] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_122311.js
+[2026-11-27 12:23:12] OK   /replace(script.js|, ['contrib', 'Contributions', 'file']|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:12] OK   /replace(script.js|const QC = '<div class="qs-qc"><img class="qs-qc-l" src="Sources/Icons/Qast.svg" alt="" width="56" height="56"><h3 class="qs-qc-t">Contributions</h3><p class="qs-qc-d">Build Worlds and share what you know. Push and pull knowledge to Qasth, the native Qasthra wiki.</p><button class="btn btn-mono qs-qc-b" type="button" data-qh="1">Qasthub</button></div>'; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:13] OK   /replace(script.js|contrib: [QC], |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:13] OK   /replace(script.js|(() => {\nconst SH = () => document.querySelector('.qh'); let out = 0;\n|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:14] OK   /replace(script.js|window.addEventListener('popstate', ui); window.addEventListener('hashchange', ui);\n})();\n|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:14] OK   /delete(script.js|// ===== QASTHUB)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:15] OK   /delete(script.js|// Desktop layout: [rail])
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:15] OK   /delete(script.js|// 1) Leftmost panel)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:16] OK   /delete(script.js|// 2) Central panel)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:16] OK   /delete(script.js|// 3) Rightmost panel)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:16] OK   /delete(script.js|// 4) Top-right bar)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:17] OK   /delete(script.js|// Exit: logo tap)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:17] OK   /delete(script.js|const LOGO = '<img class="qh-li")
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:18] OK   /delete(script.js|const HTML = '<div class="qh-rail">)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:18] OK   /delete(script.js|const who = (o) =>)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:19] OK   /delete(script.js|const ui = () => { out = 0;)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:19] OK   /delete(script.js|const shut = () => { if (!SH())
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:20] OK   /delete(script.js|const open = () => { if (SH()) return;)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:20] OK   /delete(script.js|e.target.closest('[data-qh]'))
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:21] OK   /delete(script.js|if (e.key === 'Escape' && SH()))
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 12:23:21] OK   /replace(script.js|HC.contains('qh-open') ? true : |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:22] OK   /replace(script.js| data-qh="1">Contribute</button>|>Contribute</button>)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 12:23:22] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_122322.css
+[2026-11-27 12:23:22] OK   /delete(style.css|.qs-qc-b{margin-top:6px)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:23] OK   /delete(style.css|/* QASTHUB: rail)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:23] OK   /delete(style.css|.qh{z-index:1200)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:23] OK   /delete(style.css|.qh-rail{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:24] OK   /delete(style.css|.qh-menu{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:24] OK   /delete(style.css|.qh-disp{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:25] OK   /delete(style.css|.qh-dv{flex:1)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:25] OK   /delete(style.css|.qh-ed{display:flex)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:26] OK   /delete(style.css|.qh-tab{height:38px;border:0)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:26] OK   /delete(style.css|@media (max-width:860px){.qh{grid-template-columns)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:27] OK   /delete(style.css|.qh-rail{background:var(--bg);border-right)
+    -> Deleted 1 line(s) from style.css
+[2026-11-27 12:23:27] OK   /replace(style.css|.qh{animation:pageIn .3s cubic-bezier(.2,.8,.2,1)} .qh.out{animation:qhOut .2s ease both;pointer-events:none} @keyframes qhOut{to{opacity:0;transform:translateY(10px)}} |)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 12:23:27] OK   /replace(style.css|html[data-motion="reduce"] .qh,|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 12:23:28] DONE /auto(1)
+    -> 35/35 applied
