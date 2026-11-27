@@ -3204,3 +3204,27 @@
     -> Appended to style.css
 [2026-11-27 10:39:33] DONE /auto(1)
     -> 30/30 applied
+[2026-11-27 11:49:06] RUN  /auto(1)
+    -> 8 planner command(s)
+[2026-11-27 11:49:06] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_114906.css
+[2026-11-27 11:49:06] OK   /replace(style.css|(prefers-reduced-motion:reduce){|(prefers-reduced-motion:reduce) and (min-width:99999px){)
+    -> Replaced 20 occurrence(s) in style.css
+[2026-11-27 11:49:06] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_114906.js
+[2026-11-27 11:49:07] OK   /replace(script.js|matchMedia('(prefers-reduced-motion: reduce)').matches|false)
+    -> Replaced 4 occurrence(s) in script.js
+[2026-11-27 11:49:07] OK   /delete(script.js|if (window.QWELC) return;)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 11:49:07] OK   /delete(script.js|if (v.querySelector('.wb')) return true;)
+    -> Deleted 1 line(s) from script.js
+[2026-11-27 11:49:08] OK   /replace(script.js|document.title = /^#dashboard/.test(h) ? 'Dashboard |document.title = /^#dashboard/.test(h) ? 'Dashboard' : /^#x-unused/.test(h) ? ')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 11:49:08] OK   /replace(script.js|if (!o) return; o.remove(); document.documentElement.classList.remove('qh-open');|if (!o) return; o.classList.add('out'); setTimeout(() => { if (o.parentNode) o.remove(); }, 220); document.documentElement.classList.remove('qh-open');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 11:49:09] OK   /append(style.css|.qh{animation:pageIn .3s cubic-bezier(.2,.8,.2,1)} .qh.out{animation:qhOut .2s ease both;pointer-events:none} @keyframes qhOut{to{opacity:0;transform:translateY(10px)}} .wc{animation:wcIn .25s ease} .wc-card{animation:pageIn .35s cubic-bezier(.2,.8,.2,1)} @keyframes wcIn{from{opacity:0}to{opacity:1}} html[data-motion="reduce"] .qh,html[data-motion="reduce"] .wc,html[data-motion="reduce"] .wc-card{animation:none})
+    -> Appended to style.css
+[2026-11-27 11:49:09] OK   /append(script.js|(() => { const q = (s, r) => (r || document).querySelector(s); const blank = () => { const t = q('.qb-w[aria-selected="true"] > span'); return !!t && t.textContent.trim() === 'Qasthra'; }; const drop = (el) => { if (!el || el.classList.contains('out')) return; el.classList.add('out'); setTimeout(() => { if (el.classList.contains('out')) el.remove(); }, 260); }; const sync = () => { const v = q('.qa-view'); if (!v || !q('.qb-stage', v)) return; const c = q('.wc', v), b = q('.wb', v); if (blank()) { if (c && !c.classList.contains('out')) return; if (c) c.remove(); if (b) b.remove(); const wb = document.createElement('div'); wb.className = 'wb'; wb.setAttribute('aria-hidden', 'true'); wb.innerHTML = '<span class="wr wt"><i></i></span><span class="wr wl"><i></i></span>'; v.insertBefore(wb, v.firstChild); const w = document.createElement('div'); w.className = 'wc'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-label', 'Welcome'); w.innerHTML = '<div class="wc-card"><img class="wc-logo" src="Sources/Icons/Qasthra.svg" alt="" width="40" height="40"><h2 class="wc-t">Welcome to Qasthra</h2><p class="wc-d">Search by name or coordinates and move through the web one World at a time.</p><button class="btn btn-mono wc-go" type="button" data-qh="1">Contribute</button></div>'; w.addEventListener('keydown', (e) => e.stopPropagation()); v.appendChild(w); } else { drop(c); drop(b); } }; let tm = 0; const later = () => { clearTimeout(tm); tm = setTimeout(sync, 30); }; new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-selected'] }); window.addEventListener('hashchange', later); later(); })();)
+    -> Appended to script.js
+[2026-11-27 11:49:09] DONE /auto(1)
+    -> 8/8 applied
