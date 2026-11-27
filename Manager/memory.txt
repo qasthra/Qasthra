@@ -3356,3 +3356,177 @@
     -> Appended to style.css
 [2026-11-27 13:40:49] DONE /auto(1)
     -> 1/1 applied
+[2026-11-27 15:45:05] RUN  /auto(1)
+    -> 68 planner command(s)
+[2026-11-27 15:45:06] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_154506.js
+[2026-11-27 15:45:06] OK   /replace(script.js|LOAD = 2500|LOAD = 4000)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 15:45:06] OK   /replace(script.js|Math.max(0, LOAD - (Date.now() - t0))|Math.max(0, 1400 - (Date.now() - t0)))
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 15:45:07] OK   /replace(script.js|if (k0 === QZ) { const w1 = cur();|if (k0 !== QZ) { qSeen = k0; window.QST = null; ov.innerHTML = ''; dispDraw(); keep(); return; } if (k0 === QZ) { const w1 = cur();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 15:45:07] OK   /replace(script.js|if (res.name) SITES[res.k] = res.name;|if (res.name) SITES[res.k] = res.name; if (window.QCOSMOS) window.QCOSMOS.add(res.k, res.name);)
+    -> Replaced 2 occurrence(s) in script.js
+[2026-11-27 15:45:08] OK   /replace(script.js|window.QNUDGE = { hold: hold, stop: stop };|window.QCS = { st: st, cur: cur, ent: ent, ctext: ctext, coords: coords }; window.QNUDGE = { hold: hold, stop: stop };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 15:45:08] OK   /append(script.js|// ---- COSMOS: search warp, sphere chain, camera-relative stars ----)
+    -> Appended to script.js
+[2026-11-27 15:45:09] OK   /append(script.js|(() => {)
+    -> Appended to script.js
+[2026-11-27 15:45:09] OK   /append(script.js|const q = (s, r) => (r || document).querySelector(s), RM = () => document.documentElement.dataset.motion === 'reduce';)
+    -> Appended to script.js
+[2026-11-27 15:45:10] OK   /append(script.js|const MAXS = 4000, FWD = 8, FAR = 3000, BIG = 10n ** 306n;)
+    -> Appended to script.js
+[2026-11-27 15:45:10] OK   /append(script.js|let view = null, root = null, trk = null, cvw = null, ro = null, shown = null, busy = false, P = null, g = null, camOn = false, aimKey = '', tk = 0, raf = 0, pt = 0, prm = 0;)
+    -> Appended to script.js
+[2026-11-27 15:45:10] OK   /append(script.js|let R = null, SC = null, CM = null, geo = null, attr = null, posA = null, U = null, relT = new Float64Array(0);)
+    -> Appended to script.js
+[2026-11-27 15:45:11] OK   /append(script.js|const cam = { S: [0n, 0n, 0n], T: [0n, 0n, 0n], dm: 0, u: [0, 0, 0], t0: 0, dur: 1, on: false }, stars = new Map();)
+    -> Appended to script.js
+[2026-11-27 15:45:11] OK   /append(script.js|const lerp = (a, b, e) => a + (b - a) * e, wait = (ms) => new Promise((r) => setTimeout(r, RM() ? 0 : ms));)
+    -> Appended to script.js
+[2026-11-27 15:45:12] OK   /append(script.js|const ez = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;)
+    -> Appended to script.js
+[2026-11-27 15:45:12] OK   /append(script.js|const tw = (ms, fn) => new Promise((res) => { if (RM() || ms <= 0) { fn(1); res(); return; } const t0 = performance.now(); const step = (t) => { const u = Math.max(0, Math.min(1, (t - t0) / ms)); fn(ez(u)); if (u < 1) requestAnimationFrame(step); else res(); }; requestAnimationFrame(step); });)
+    -> Appended to script.js
+[2026-11-27 15:45:13] OK   /append(script.js|const num = (raw) => { const neg = raw.charAt(0) === '-', p = raw.replace(/^[+-]/, '').split('.'); let big = false; const ex = (s) => (s || '').replace(/(\d)\{(\d+)\}/g, (m, d, n) => { if (+n > 300) { big = true; return d; } return d.repeat(+n); }); const i = ex(p[0]), f = ex(p[1]).slice(0, 6).padEnd(6, '0'); if (big || i.length > 300) return neg ? -BIG : BIG; const v = BigInt((i || '0') + f); return neg ? -v : v; };)
+    -> Appended to script.js
+[2026-11-27 15:45:13] OK   /append(script.js|const vec = (c) => [num(c.X.raw), num(c.Y.raw), num(c.Z.raw)];)
+    -> Appended to script.js
+[2026-11-27 15:45:14] OK   /append(script.js|const fl = (b) => { const n = Number(b) / 1e6; return isFinite(n) ? n : b < 0n ? -1e300 : 1e300; };)
+    -> Appended to script.js
+[2026-11-27 15:45:14] OK   /append(script.js|const hsh = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };)
+    -> Appended to script.js
+[2026-11-27 15:45:15] OK   /append(script.js|const pseudo = (s) => { const h = hsh(s), r = (k) => ((h >>> (k * 8)) & 255) - 128; return [BigInt(r(0)) * 3000000000n, BigInt(r(1)) * 3000000000n, BigInt(Math.abs(r(2)) + 40) * 3000000000n]; };)
+    -> Appended to script.js
+[2026-11-27 15:45:15] OK   /append(script.js|const dest = (n) => n.e.k === 'coord' ? vec(n.e.c) : n.e.k === 'search' ? pseudo(n.e.q) : [0n, 0n, 0n];)
+    -> Appended to script.js
+[2026-11-27 15:45:15] OK   /append(script.js|const rem = () => { if (!cam.on) return [0, 0, 0]; const u = (performance.now() - cam.t0) / cam.dur; if (u >= 1) { cam.on = false; return [0, 0, 0]; } const e = 1 - Math.pow(1 - Math.max(0, u), 3), r = Math.pow(cam.dm + 1, 1 - e) - 1; return [cam.u[0] * r, cam.u[1] * r, cam.u[2] * r]; };)
+    -> Appended to script.js
+[2026-11-27 15:45:16] OK   /append(script.js|const cl = (x) => Math.max(-1e300, Math.min(1e300, x * 1e6));)
+    -> Appended to script.js
+[2026-11-27 15:45:16] OK   /append(script.js|const rel = () => { relT = new Float64Array(stars.size * 3); let k = 0; stars.forEach((s) => { for (let i = 0; i < 3; i++) relT[k++] = fl(s.v[i] - cam.T[i]); }); };)
+    -> Appended to script.js
+[2026-11-27 15:45:17] OK   /append(script.js|const setT = (T, snap) => { const r = rem(), c = cam.T.map((v, i) => v + BigInt(Math.trunc(cl(r[i])))); cam.S = snap ? T.slice() : c; cam.T = T; const D = cam.S.map((v, i) => fl(v - T[i])), m = Math.max(Math.abs(D[0]), Math.abs(D[1]), Math.abs(D[2])); cam.dm = m === 0 ? 0 : m * Math.hypot(D[0] / m, D[1] / m, D[2] / m); cam.u = m === 0 ? [0, 0, 0] : D.map((x) => x / cam.dm); cam.dur = 1000 * Math.min(1.5, 0.3 + 0.2 * Math.log10(1 + cam.dm)); cam.t0 = performance.now(); cam.on = !snap && cam.dm > 1e-6; prm = cam.dm; pt = cam.t0; rel(); need(); };)
+    -> Appended to script.js
+[2026-11-27 15:45:17] OK   /append(script.js|const VS = ['uniform vec3 uDir; uniform float uLen; uniform float uK; uniform vec2 uRes; uniform float uMax;', 'varying vec2 vD; varying float vH; varying float vA; varying float vR;', 'void main() {', 'vec4 a = modelViewMatrix * vec4(position, 1.0); vec4 b = modelViewMatrix * vec4(position - uDir * uLen, 1.0);', 'vec4 ca = projectionMatrix * a; vec4 cb = projectionMatrix * b;', 'if (a.z > -0.5 || b.z > -0.5) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); gl_PointSize = 0.0; vA = 0.0; vH = 0.0; vR = 1.0; vD = vec2(1.0, 0.0); return; }', 'vec2 sa = ca.xy / ca.w * uRes * 0.5; vec2 sb = cb.xy / cb.w * uRes * 0.5; vec2 d = sa - sb; float l = length(d);', 'vD = l > 0.5 ? d / l : vec2(1.0, 0.0);', 'float rad = clamp(uK / -a.z, 1.0, 6.0); float L = min(l, 60.0);', 'vR = rad; vH = L * 0.5; vA = 1.0 - smoothstep(uMax * 0.4, uMax, length(position));', 'gl_PointSize = L + rad * 2.0 + 2.0; gl_Position = (ca + cb) * 0.5;', '}'].join(' ');)
+    -> Appended to script.js
+[2026-11-27 15:45:18] OK   /append(script.js|const FS = ['uniform vec3 uC; varying vec2 vD; varying float vH; varying float vA; varying float vR;', 'void main() {', 'float sz = vH * 2.0 + vR * 2.0 + 2.0; vec2 p = (gl_PointCoord - 0.5) * vec2(1.0, -1.0) * sz;', 'float t = clamp(dot(p, vD), -vH, vH); float d = length(p - vD * t);', 'float al = smoothstep(vR, vR * 0.25, d) * vA; if (al < 0.02) discard;', 'gl_FragColor = vec4(uC, al);', '}'].join(' ');)
+    -> Appended to script.js
+[2026-11-27 15:45:18] OK   /append(script.js|const gl = () => { if (R) return true; const T3 = window.THREE; if (!T3) return false; try { R = new T3.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' }); } catch (e) { R = null; return false; } const pr = Math.min(window.devicePixelRatio || 1, 1.5); R.setPixelRatio(pr); R.setClearColor(0x000000, 0); SC = new T3.Scene(); CM = new T3.PerspectiveCamera(70, 1, 0.5, FAR + 200); U = { uDir: { value: new T3.Vector3() }, uLen: { value: 0 }, uK: { value: 200 * pr }, uRes: { value: new T3.Vector2(1, 1) }, uMax: { value: FAR }, uC: { value: new T3.Color(1, 1, 1) } }; posA = new Float32Array(MAXS * 3); attr = new T3.BufferAttribute(posA, 3); attr.setUsage(T3.DynamicDrawUsage); geo = new T3.BufferGeometry(); geo.setAttribute('position', attr); geo.setDrawRange(0, 0); const pts = new T3.Points(geo, new T3.ShaderMaterial({ uniforms: U, vertexShader: VS, fragmentShader: FS, transparent: true, depthWrite: false, depthTest: false })); pts.frustumCulled = false; SC.add(pts); return true; };)
+    -> Appended to script.js
+[2026-11-27 15:45:19] OK   /append(script.js|const need = () => { if (!raf && camOn && R && stars.size) raf = requestAnimationFrame(frame); };)
+    -> Appended to script.js
+[2026-11-27 15:45:19] OK   /append(script.js|const frame = () => { raf = 0; if (!camOn || !R || !stars.size) return; const now = performance.now(), r = rem(), n = Math.min(stars.size, MAXS), dt = Math.max(1, now - pt) / 1000; pt = now; for (let i = 0; i < n; i++) { const k = i * 3, dx = relT[k] - r[0], dy = relT[k + 1] - r[1], dz = relT[k + 2] - r[2] + FWD; if (dx > -FAR && dx < FAR && dy > -FAR && dy < FAR && dz > 0.5 && dz < FAR) { posA[k] = dx; posA[k + 1] = dy; posA[k + 2] = -dz; } else { posA[k] = 0; posA[k + 1] = 0; posA[k + 2] = 1; } } attr.needsUpdate = true; geo.setDrawRange(0, n); const rm = Math.hypot(r[0], r[1], r[2]), v = Math.abs(prm - rm) / dt; prm = rm; U.uLen.value = cam.on && v > 2 ? Math.min(150, 8 * Math.log10(v)) : 0; U.uDir.value.set(cam.u[0], cam.u[1], -cam.u[2]); R.render(SC, CM); if (cam.on || U.uLen.value > 0) need(); };)
+    -> Appended to script.js
+[2026-11-27 15:45:20] OK   /append(script.js|const geom = () => { const r = view.getBoundingClientRect(), iw = window.innerWidth, ih = window.innerHeight, W = r.width, H = r.height, R1 = Math.min(0.96 * iw, 0.66 * ih), R2 = Math.min(0.6 * iw, 0.38 * ih); return { W, H, C: Math.hypot(W, H) * 0.52, R1, R2, R2h: R2 * 0.78, pit: 2 * R1 + 0.12 * H }; };)
+    -> Appended to script.js
+[2026-11-27 15:45:20] OK   /append(script.js|const cv = () => { if (!cvw) { cvw = document.createElement('div'); cvw.className = 'cs-cv'; } if (gl() && R.domElement.parentNode !== cvw) cvw.appendChild(R.domElement); return cvw; };)
+    -> Appended to script.js
+[2026-11-27 15:45:20] OK   /append(script.js|const fit = () => { if (!cvw || !g) return; cvw.style.width = g.W + 'px'; cvw.style.height = g.H + 'px'; cvw.style.margin = (-g.H / 2) + 'px 0 0 ' + (-g.W / 2) + 'px'; if (R) { R.setSize(g.W, g.H, false); CM.aspect = g.W / g.H; CM.updateProjectionMatrix(); R.getDrawingBufferSize(U.uRes.value); } };)
+    -> Appended to script.js
+[2026-11-27 15:45:21] OK   /append(script.js|const sph = () => { const d = document.createElement('div'); d.className = 'cs-sp'; d.style.width = d.style.height = (2 * g.C) + 'px'; d.style.margin = (-g.C) + 'px 0 0 ' + (-g.C) + 'px'; return d; };)
+    -> Appended to script.js
+[2026-11-27 15:45:21] OK   /append(script.js|const put = (d, y, kx, ky, ro2) => { d.style.transform = 'translate3d(0,' + y + 'px,0) scale(' + kx + ',' + ky + ')'; d.style.setProperty('--ro', ro2); };)
+    -> Appended to script.js
+[2026-11-27 15:45:22] OK   /append(script.js|const paint = () => { trk.style.transform = 'translate3d(0,' + P.tr + 'px,0)'; P.sp.forEach((s) => { const z = s === P.zs, k = z ? P.kz : P.k0; put(s.el, s.y + (s === P.top ? P.oa : 0), k, k, z ? Math.max(0, Math.min(1, (1 - k) / (1 - P.k0))) : 1); }); if (P.bt) put(P.bt, P.by, P.bx, P.bh, 1); };)
+    -> Appended to script.js
+[2026-11-27 15:45:22] OK   /append(script.js|const build = (a, b) => { g = geom(); root.innerHTML = ''; root.style.display = ''; trk = document.createElement('div'); trk.className = 'cs-trk'; root.appendChild(trk); const k0 = Math.min(0.95, g.R1 / g.C); P = { sp: [], k0: k0, kz: k0, tr: 0, oa: 0, by: 0, bx: g.R2 / g.C, bh: g.R2h / g.C, bt: null, zs: null, top: null }; for (let i = Math.min(a, b); i <= Math.max(a, b); i++) { const el = sph(); trk.appendChild(el); P.sp.push({ i: i, el: el, y: -(i - a) * g.pit }); } };)
+    -> Appended to script.js
+[2026-11-27 15:45:23] OK   /append(script.js|const at = (i) => P.sp.find((s) => s.i === i);)
+    -> Appended to script.js
+[2026-11-27 15:45:23] OK   /append(script.js|const hostOn = (s) => { P.zs = s; s.el.insertBefore(cv(), s.el.firstChild); fit(); if (U) U.uC.value.set(getComputedStyle(view).color); camOn = true; need(); };)
+    -> Appended to script.js
+[2026-11-27 15:45:24] OK   /append(script.js|const steady = (n) => { build(n.idx, n.idx); hostOn(at(n.idx)); P.kz = 1; paint(); };)
+    -> Appended to script.js
+[2026-11-27 15:45:24] OK   /append(script.js|const instant = (n) => { if (n.mode === 'cos') { steady(n); setT(dest(n), true); aimKey = n.key; } else { root.innerHTML = ''; root.style.display = 'none'; camOn = false; view.classList.remove('cs-hold'); } };)
+    -> Appended to script.js
+[2026-11-27 15:45:24] OK   /append(script.js|const trans = async (a, b) => { busy = true; try { build(a.idx, b.idx); const fromIdle = a.mode === 'idle', toIdle = b.mode === 'idle', same = a.id === b.id, A = at(a.idx), B = at(b.idx), k0 = P.k0, yT = 0.43 * g.H - g.R1 - g.H / 2, yB = 0.59 * g.H + g.R2h - g.H / 2, yO = g.H / 2 + g.R2h * 1.2; camOn = false; if (toIdle) view.classList.add('cs-hold');)
+    -> Appended to script.js
+[2026-11-27 15:45:25] OK   /append(script.js|if (fromIdle) { const wb = q('.wb', view); if (wb) wb.style.visibility = 'hidden'; P.top = A; P.oa = yT; P.bt = sph(); root.appendChild(P.bt); P.by = yB; paint(); await wait(260); await tw(550, (e) => { P.by = lerp(yB, yO, e); paint(); }); await tw(700, (e) => { P.oa = lerp(yT, 0, e); paint(); }); P.bt.remove(); P.bt = null; P.top = null; })
+    -> Appended to script.js
+[2026-11-27 15:45:25] OK   /append(script.js|else { hostOn(A); P.kz = 1; paint(); await tw(500, (e) => { P.kz = lerp(1, k0, e); paint(); }); })
+    -> Appended to script.js
+[2026-11-27 15:45:26] OK   /append(script.js|const dn = Math.abs(b.idx - a.idx); if (dn) { const t1 = (b.idx - a.idx) * g.pit; await tw(Math.min(1400, 500 + 120 * dn), (e) => { P.tr = t1 * e; paint(); }); })
+    -> Appended to script.js
+[2026-11-27 15:45:26] OK   /append(script.js|if (toIdle) { P.zs = null; P.top = B; P.oa = 0; P.bt = sph(); root.appendChild(P.bt); P.by = yO; paint(); await tw(650, (e) => { P.oa = lerp(0, yT, e); paint(); }); await tw(550, (e) => { P.by = lerp(yO, yB, e); paint(); }); root.innerHTML = ''; root.style.display = 'none'; camOn = false; view.classList.remove('cs-hold'); view.classList.add('cs-fin'); setTimeout(() => view.classList.remove('cs-fin'), 500); setT([0n, 0n, 0n], true); aimKey = ''; })
+    -> Appended to script.js
+[2026-11-27 15:45:27] OK   /append(script.js|else { setT(same ? [0n, 0n, 0n] : dest(b), true); aimKey = same ? '' : b.key; hostOn(B); P.kz = k0; paint(); await tw(700, (e) => { P.kz = lerp(k0, 1, e); paint(); }); steady(b); } } catch (err) { try { instant(b); } catch (e2) {} } finally { busy = false; sched(); } };)
+    -> Appended to script.js
+[2026-11-27 15:45:27] OK   /append(script.js|const aim = (n) => { if (!camOn || n.key === aimKey) return; aimKey = n.key; setT(dest(n), RM()); };)
+    -> Appended to script.js
+[2026-11-27 15:45:28] OK   /append(script.js|const read = () => { const A = window.QCS; if (!A || !view) return null; const w = A.cur(); if (!w) return null; const e = A.ent(w); return { id: w.id, idx: A.st.worlds.indexOf(w), e: e, mode: e.k === 'universe' ? 'idle' : e.k === 'search' && e.q.charAt(0) === '@' ? 'prof' : 'cos', key: e.k === 'coord' ? A.ctext(e.c) : e.k + ':' + e.q }; };)
+    -> Appended to script.js
+[2026-11-27 15:45:28] OK   /append(script.js|const ensure = () => { const v = q('.qa-view'); if (!v) { view = null; return false; } if (v !== view || !root || !root.isConnected) { view = v; root = document.createElement('div'); root.className = 'cs'; root.style.display = 'none'; v.insertBefore(root, v.firstChild); if (ro) ro.disconnect(); ro = new ResizeObserver(() => { if (busy || !shown || shown.mode !== 'cos') return; const n = read(); if (n && n.mode === 'cos') steady(n); }); ro.observe(v); if (shown && shown.mode === 'cos') setTimeout(() => { const n = read(); if (n && n.mode === 'cos') steady(n); }, 0); } return true; };)
+    -> Appended to script.js
+[2026-11-27 15:45:28] OK   /append(script.js|const tick = () => { tk = 0; if (document.hidden || busy || !ensure()) return; const n = read(); if (!n) return; const a = shown; if (!a) { shown = n; if (n.mode === 'cos') instant(n); return; } if (n.id === a.id && n.mode === a.mode) { shown = n; if (n.mode === 'cos') aim(n); return; } if (n.mode === 'idle' && a.mode === 'idle') { shown = n; return; } shown = n; if (n.mode === 'prof' || a.mode === 'prof') instant(n); else trans(a, n); };)
+    -> Appended to script.js
+[2026-11-27 15:45:29] OK   /append(script.js|const sched = () => { if (!tk) tk = setTimeout(tick, 0); };)
+    -> Appended to script.js
+[2026-11-27 15:45:29] OK   /append(script.js|window.QCOSMOS = { add: (k, name) => { const A = window.QCS, c = A && A.coords(k); if (!c || stars.has(k) || stars.size >= MAXS) return; stars.set(k, { n: name, v: vec(c) }); rel(); need(); }, clear: () => { stars.clear(); rel(); }, size: () => stars.size };)
+    -> Appended to script.js
+[2026-11-27 15:45:30] OK   /append(script.js|new MutationObserver(sched).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-selected'] }); setInterval(tick, 60); window.addEventListener('hashchange', sched);)
+    -> Appended to script.js
+[2026-11-27 15:45:30] OK   /append(script.js|})();)
+    -> Appended to script.js
+[2026-11-27 15:45:31] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_154530.css
+[2026-11-27 15:45:31] OK   /append(style.css|/* cosmos */)
+    -> Appended to style.css
+[2026-11-27 15:45:31] OK   /append(style.css|.cs{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none})
+    -> Appended to style.css
+[2026-11-27 15:45:32] OK   /append(style.css|.cs-trk{position:absolute;inset:0;will-change:transform})
+    -> Appended to style.css
+[2026-11-27 15:45:32] OK   /append(style.css|.cs-sp{position:absolute;left:50%;top:50%;border-radius:50%;overflow:hidden;transform-origin:50% 50%;will-change:transform;backface-visibility:hidden})
+    -> Appended to style.css
+[2026-11-27 15:45:33] OK   /append(style.css|.cs-sp::before,.cs-sp::after{content:"";position:absolute;inset:0;border-radius:50%;opacity:var(--ro,1)})
+    -> Appended to style.css
+[2026-11-27 15:45:33] OK   /append(style.css|.cs-sp::before{z-index:2;background:radial-gradient(circle closest-side,transparent 0,transparent 55%,color-mix(in srgb,var(--mono) 7%,transparent) 82%,color-mix(in srgb,var(--mono) 24%,transparent) 97%,color-mix(in srgb,var(--mono) 70%,transparent) 99.3%,transparent 100%)})
+    -> Appended to style.css
+[2026-11-27 15:45:33] OK   /append(style.css|.cs-sp::after{z-index:3;background:conic-gradient(from var(--wa),transparent 0deg,color-mix(in srgb,var(--mono) 18%,transparent) 5deg,color-mix(in srgb,var(--mono) 95%,transparent) 11deg,color-mix(in srgb,var(--mono) 18%,transparent) 17deg,transparent 24deg,transparent 360deg);-webkit-mask-image:radial-gradient(circle closest-side,transparent 0,transparent 94%,#000 99.3%,transparent 100%);mask-image:radial-gradient(circle closest-side,transparent 0,transparent 94%,#000 99.3%,transparent 100%);animation:wl-t 4s ease-in-out infinite alternate})
+    -> Appended to style.css
+[2026-11-27 15:45:34] OK   /append(style.css|.cs-cv{position:absolute;left:50%;top:50%;z-index:0;pointer-events:none})
+    -> Appended to style.css
+[2026-11-27 15:45:34] OK   /append(style.css|.cs-cv canvas{display:block;width:100%;height:100%})
+    -> Appended to style.css
+[2026-11-27 15:45:35] OK   /append(style.css|.cs-hold .wb,.cs-hold .wc{visibility:hidden})
+    -> Appended to style.css
+[2026-11-27 15:45:35] OK   /append(style.css|.cs-fin .wb,.cs-fin .wc{animation:wcIn .4s ease})
+    -> Appended to style.css
+[2026-11-27 15:45:36] OK   /append(style.css|.qb-qast:has(.qb-world-loader){display:none})
+    -> Appended to style.css
+[2026-11-27 15:45:36] OK   /append(style.css|:root[data-motion="reduce"] .cs-sp::after{animation:none})
+    -> Appended to style.css
+[2026-11-27 15:45:36] DONE /auto(1)
+    -> 68/68 applied
+[2026-11-27 18:05:21] RUN  /auto(1)
+    -> 11 planner command(s)
+[2026-11-27 18:05:21] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_180521.js
+[2026-11-27 18:05:21] OK   /replace(script.js|o.innerHTML = '<div class="qb-page qb-qast"><img class="qb-world-loader" src="' + (window.QGIF ? window.QGIF.url('Sources/Videos/Qasthra.gif') : 'Sources/Videos/Qasthra.gif') + '" alt="Loading"></div>';|window.QCARD.open(o);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:22] OK   /replace(script.js|ov.innerHTML = '<div class="qb-page qb-qast"><div class="qb-qtext"></div></div>'; ov.querySelector('.qb-qtext').textContent = res.text;|window.QCARD.show(ov, res.text);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:22] OK   /replace(script.js|ov.innerHTML = ''; const t2 =|window.QCARD.show(ov, ''); const t2 =)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:23] OK   /replace(script.js|draw(); return; } const w = cur(); if (!qfull(w)) {|draw(); return; } if (window.QCARD) { window.QCARD.err(ov); return; } const w = cur(); if (!qfull(w)) {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:23] OK   /replace(script.js|o.innerHTML = '<div class="qb-pfv"></div>';|const pv = window.QCARD ? window.QCARD.open(o, 1) : (o.innerHTML = '<div class="qb-pfv"></div>', o.firstChild);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:24] OK   /replace(script.js|window.QPROF.mount(o.firstChild, nm, back);|window.QPROF.mount(pv, nm, back);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:24] OK   /replace(script.js|o.firstChild.appendChild(xb);|pv.appendChild(xb);)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:25] OK   /replace(script.js|return !!t && t.textContent.trim() === 'Qasthra'; };|return !!t && t.textContent.trim() === 'Qasthra' && !q('.sc'); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:25] OK   /replace(script.js|else { drop(c); drop(b); }|else { drop(c); if (!(b && !b.classList.contains('out'))) { if (b) b.remove(); const wb2 = document.createElement('div'); wb2.className = 'wb'; wb2.setAttribute('aria-hidden', 'true'); wb2.innerHTML = '<span class="wr wt"><i></i></span><span class="wr wl"><i></i></span>'; v.insertBefore(wb2, v.firstChild); } })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 18:05:26] OK   /append(script.js|(() => { const X = '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M4 4l6 6M15 4h5v5M20 4l-6 6M20 15v5h-5M20 20l-6-6M9 20H4v-5M4 20l6-6"/></svg>', S = '<svg class="ic-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h6V4M10 10L3 3M20 10h-6V4M14 10l7-7M20 14h-6v6M14 14l7 7M4 14h6v6M10 14l-7 7"/></svg>'; const gif = () => (window.QGIF ? window.QGIF.url('Sources/Videos/Qasthra.gif') : 'Sources/Videos/Qasthra.gif'); const card = (o) => { let s = o.querySelector(':scope > .sc'); Array.from(o.children).forEach((c) => { if (c !== s) c.remove(); }); if (s) return s; s = document.createElement('div'); s.className = 'sc'; s.innerHTML = '<div class="sc-card"><div class="wk-c"><svg class="wk-cv" viewBox="0 0 88 44" preserveAspectRatio="none" aria-hidden="true"><path class="wk-cf" d="M0 0H88A44 44 0 0 1 0 0Z"/><path class="wk-cs" d="M88 0A44 44 0 0 1 0 0"/></svg><button class="wk-dots sc-ex" type="button" aria-label="Expand" aria-pressed="false">' + X + S + '</button></div><div class="sc-body"></div></div>'; o.appendChild(s); requestAnimationFrame(() => requestAnimationFrame(() => { const c = s.querySelector('.sc-card'); if (c) c.classList.add('on'); })); return s; }; const body = (o) => { const b = card(o).querySelector('.sc-body'); b.textContent = ''; return b; }; window.QCARD = { open: (o, prof) => { const b = body(o); if (prof) { const p = document.createElement('div'); p.className = 'qb-pfv'; b.appendChild(p); return p; } const i = document.createElement('img'); i.className = 'qb-world-loader'; i.alt = 'Loading'; i.src = gif(); b.appendChild(i); return b; }, show: (o, t) => { const b = body(o), p = document.createElement('div'); p.className = t ? 'qb-qtext' : 'sc-err'; p.textContent = t || 'This World is empty.'; b.appendChild(p); }, err: (o) => { const b = body(o), p = document.createElement('p'), a = document.createElement('a'); p.className = 'sc-err'; p.appendChild(document.createTextNode('Error: World does not exist or is set to private, learn more at ')); a.href = '#'; a.setAttribute('data-pop', 'guidance'); a.textContent = 'Guidance & Recovery'; p.appendChild(a); p.appendChild(document.createTextNode('.')); b.appendChild(p); } }; document.addEventListener('click', (e) => { const b = e.target.closest ? e.target.closest('.sc-ex') : null; if (!b) return; const s = b.closest('.sc'), on = s.classList.toggle('full'); b.setAttribute('aria-label', on ? 'Shrink' : 'Expand'); b.setAttribute('aria-pressed', String(on)); }); document.addEventListener('keydown', (e) => { if (e.key !== 'Escape') return; const s = document.querySelector('.sc'); if (!s || document.querySelector('.pop') || document.documentElement.classList.contains('qs-open')) return; if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return; if (s.classList.contains('full')) { s.querySelector('.sc-ex').click(); return; } const w = document.querySelector('.qb-strip .qb-w'); if (w) w.click(); }); new MutationObserver(() => { const b = document.querySelector('.sc-body'); if (b && !b.firstChild) { const s = b.closest('.sc'); if (s) s.remove(); } }).observe(document.body, { childList: true, subtree: true }); })();)
+    -> Appended to script.js
+[2026-11-27 18:05:26] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_180526.css
+[2026-11-27 18:05:26] OK   /append(style.css|/* Shrink = Card-screen mode, Expanded = Full-screen mode */\n.sc{position:absolute;inset:0;z-index:5;display:grid;place-items:center}\n.sc-card{position:relative;display:flex;flex-direction:column;overflow:hidden;width:min(420px,calc(100% - 48px));height:min(300px,70%);border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,var(--bg));box-shadow:0 24px 60px rgba(0,0,0,.3);transition:width .5s cubic-bezier(.2,.8,.2,1),height .5s cubic-bezier(.2,.8,.2,1),border-radius .5s cubic-bezier(.2,.8,.2,1)}\n.sc-card.on{width:90%;height:90%}\n.sc.full .sc-card{width:100%;height:100%;border-radius:0}\n.sc-body{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;overflow:auto;padding:44px 16px 16px;opacity:0;animation:scIn .3s ease .45s forwards}\n.sc-body>*{margin:auto}\n.sc-body>.qb-pfv{margin:0}\n@keyframes scIn{to{opacity:1}}\n.sc-ex svg{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;transition:opacity .25s ease,transform .4s cubic-bezier(.2,.8,.2,1)}\n.sc-ex .ic-s{opacity:0;transform:scale(.5) rotate(-90deg)}\n.sc.full .sc-ex .ic-s{opacity:1;transform:none}\n.sc.full .sc-ex .ic-x{opacity:0;transform:scale(.5) rotate(90deg)}\n.sc-err{max-width:36em;text-align:center;color:var(--gray);font:500 14px/1.6 var(--font)}\n.sc-err a{color:var(--mono);font-weight:700;text-decoration:none}\n)
+    -> Appended to style.css
+[2026-11-27 18:05:26] DONE /auto(1)
+    -> 11/11 applied
