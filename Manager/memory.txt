@@ -2864,3 +2864,190 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-27 08:56:26] DONE /auto(1)
     -> 5/5 applied
+[2026-11-27 09:02:54] RUN  /auto(1)
+    -> 80 planner command(s)
+[2026-11-27 09:02:55] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_090255.js
+[2026-11-27 09:02:55] OK   /replace(script.js|function cyc2Old(bp){if(!bp)return;var k=page._k,rs=rowsNow().filter(function(r){return !/Years? old$/.test(r.t)&&!/ Partners$/.test(r.t)}),bt=d.bio?d.bio:'',st=mk('div','pfx-stat');if(d.age!=null)st.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old')));if(d.partners_count!=null){var pc=mk('span');pc.appendChild(document.createTextNode('Partners: '));pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}if(st.children.length)bp.after(st);if(!rs.length){if(bt)bp.textContent=bt;else bp.remove();return}var bio=mk('span','pfx-b0',bt),box=mk('span','pfx-ext'),mk1=function(r){var s=mk('span','pfx-it');if(r.i){var e=mk('span','pfx-ic');e.innerHTML=r.i;s.appendChild(e)}s.appendChild(document.createTextNode(r.t));return s};bp.textContent='';bp.appendChild(bio);bp.appendChild(box);rs.forEach(function(r){box.appendChild(mk1(r))});bp.style.minHeight=bp.offsetHeight+'px';box.textContent='';var alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},an=function(el,a,b,ms){return el.animate([a,b],{duration:ms,easing:'ease',fill:'forwards'}).finished.catch(function(){})};(async function(){for(;;){await sleep(3000);if(!alive())return;if(document.hidden){continue}if(document.querySelector('.pfx-ov')){continue}for(var i=0;i<rs.length;i++){var el=mk1(rs[i]);box.appendChild(el);if(mot())an(el,{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'},400);await sleep(1200);if(!alive())return}await sleep(1800);if(!alive())return;if(mot())await an(box,{opacity:1},{opacity:0},400);box.getAnimations().forEach(function(a){a.cancel()});box.textContent='';if(!alive())return}})()}|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:02:55] OK   /replace(script.js|const qbFbar = (ph) => '<div class="qb-fs-w"><input class="qb-fs" type="search" placeholder="' + ph + '" aria-label="' + ph + '" autocomplete="off" spellcheck="false"></div>'; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:02:56] OK   /replace(script.js|const p = likeEsc(t), sel = 'id,name,coord,official,searches,icon'; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:02:56] OK   /replace(script.js|var u=location.origin+location.pathname+'#dashboard',t=nm+|var t=nm+)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:02:57] FAIL /replace(script.js|const likeEsc = (t) => t.replace(/[%_\\\\]/g, '\\\\$&');|)
+    -> The old text was not found in script.js.
+    -> fix: Run /find(file|part of the old text) and copy the exact text, or run /status because it may already be applied.
+[2026-11-27 09:02:57] ROLL /auto(1)
+    -> 1 file(s) restored, 1 helper file(s) removed
+[2026-11-27 09:02:57] STOP /auto(1)
+    -> stopped at step 5/80, nothing was applied
+[2026-11-27 09:13:33] RUN  /auto(1)
+    -> 80 planner command(s)
+[2026-11-27 09:13:34] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_091333.js
+[2026-11-27 09:13:34] OK   /replace(script.js|function cyc2Old(bp){if(!bp)return;var k=page._k,rs=rowsNow().filter(function(r){return !/Years? old$/.test(r.t)&&!/ Partners$/.test(r.t)}),bt=d.bio?d.bio:'',st=mk('div','pfx-stat');if(d.age!=null)st.appendChild(mk('span','',d.age+(d.age===1?' Year old':' Years old')));if(d.partners_count!=null){var pc=mk('span');pc.appendChild(document.createTextNode('Partners: '));pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}if(st.children.length)bp.after(st);if(!rs.length){if(bt)bp.textContent=bt;else bp.remove();return}var bio=mk('span','pfx-b0',bt),box=mk('span','pfx-ext'),mk1=function(r){var s=mk('span','pfx-it');if(r.i){var e=mk('span','pfx-ic');e.innerHTML=r.i;s.appendChild(e)}s.appendChild(document.createTextNode(r.t));return s};bp.textContent='';bp.appendChild(bio);bp.appendChild(box);rs.forEach(function(r){box.appendChild(mk1(r))});bp.style.minHeight=bp.offsetHeight+'px';box.textContent='';var alive=function(){return page._k===k&&document.contains(bp)},mot=function(){return document.documentElement.dataset.motion!=='reduce'&&!matchMedia('(prefers-reduced-motion: reduce)').matches},sleep=function(ms){return new Promise(function(z){page._t=setTimeout(z,ms)})},an=function(el,a,b,ms){return el.animate([a,b],{duration:ms,easing:'ease',fill:'forwards'}).finished.catch(function(){})};(async function(){for(;;){await sleep(3000);if(!alive())return;if(document.hidden){continue}if(document.querySelector('.pfx-ov')){continue}for(var i=0;i<rs.length;i++){var el=mk1(rs[i]);box.appendChild(el);if(mot())an(el,{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'},400);await sleep(1200);if(!alive())return}await sleep(1800);if(!alive())return;if(mot())await an(box,{opacity:1},{opacity:0},400);box.getAnimations().forEach(function(a){a.cancel()});box.textContent='';if(!alive())return}})()}|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:13:34] OK   /replace(script.js|const qbFbar = (ph) => '<div class="qb-fs-w"><input class="qb-fs" type="search" placeholder="' + ph + '" aria-label="' + ph + '" autocomplete="off" spellcheck="false"></div>'; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:13:35] OK   /replace(script.js|const p = likeEsc(t), sel = 'id,name,coord,official,searches,icon'; |)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:13:35] OK   /replace(script.js|var u=location.origin+location.pathname+'#dashboard',t=nm+|var t=nm+)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:13:35] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_091335.css
+[2026-11-27 09:13:36] OK   /replace(style.css|#showBtn{transition:opacity .25s ease,transform .15s ease,border-color .15s ease,background .15s ease}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:36] OK   /replace(style.css|.au-card{width:100%;max-width:460px;display:grid;gap:18px;padding:clamp(22px,5vw,34px);border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,transparent);animation:pageIn .35s cubic-bezier(.2,.8,.2,1)}|.au-card{width:100%;max-width:460px;display:grid;padding:clamp(22px,5vw,34px);border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,transparent);animation:pageIn .35s cubic-bezier(.2,.8,.2,1)})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:37] OK   /replace(style.css|.au-setup{display:grid;gap:14px;padding:2px 2px 4px}|.au-setup{display:grid;padding:2px 2px 4px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:37] OK   /replace(style.css|.au-more[open]{padding-bottom:14px;display:grid;gap:14px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:37] OK   /replace(style.css|.au-why{display:grid;gap:10px;padding-top:16px;border-top:1px solid var(--line);color:var(--gray);font-size:12.5px;line-height:1.6;font-weight:500}|.au-why{display:grid;border-top:1px solid var(--line);color:var(--gray);font-size:12.5px;line-height:1.6;font-weight:500})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:38] OK   /replace(style.css|.au-setup{gap:12px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:38] OK   /replace(style.css|.qa-bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:flex-end;height:64px;padding:0 clamp(12px,4vw,32px);border-bottom:1px solid var(--line);background:var(--bg)}|.qa-bar{position:sticky;top:0;z-index:50;align-items:center;justify-content:flex-end;padding:0 clamp(12px,4vw,32px);background:var(--bg)})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:39] OK   /replace(style.css|.qb-w{flex:0 1 176px;min-width:96px;height:32px;display:flex;align-items:center;gap:6px;padding:0 6px 0 12px;border-radius:8px 8px 0 0;color:var(--gray);font:600 12.5px/1 var(--font);cursor:pointer;transition:background .15s ease,color .15s ease}|.qb-w{flex:0 1 176px;height:32px;display:flex;align-items:center;gap:6px;padding:0 6px 0 12px;border-radius:8px 8px 0 0;color:var(--gray);font:600 12.5px/1 var(--font);cursor:pointer;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:39] OK   /replace(style.css|.qb-ic:focus-visible,.qb-btn:focus-visible,.qb-pill:focus-visible,.qb-w:focus-visible,.qb-tile:focus-visible,.qb-sw:focus-visible,.qb-item:focus-visible,.qb-grow:focus-visible{outline:2px solid var(--mono);outline-offset:2px}|.qb-ic:focus-visible,.qb-w:focus-visible,.qb-sw:focus-visible,.qb-item:focus-visible,.qb-grow:focus-visible{outline:2px solid var(--mono);outline-offset:2px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:40] OK   /replace(style.css|.qb-omni{flex:1;min-width:0;display:flex;align-items:center;gap:6px;height:34px;padding:0 3px 0 13px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--gray) 6%,transparent);transition:border-color .15s ease,box-shadow .15s ease}|.qb-omni{flex:1;min-width:0;display:flex;align-items:center;height:34px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--gray) 6%,transparent);transition:border-color .15s ease,box-shadow .15s ease})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:40] OK   /replace(style.css|.qb-omni input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--mono);font:500 14px/1 var(--font)}|.qb-omni input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--mono);})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:41] OK   /replace(style.css|.qb-btn{flex:none;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--mono);font:600 12.5px/1 var(--font);cursor:pointer;transition:border-color .15s ease,background .15s ease}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:41] OK   /replace(style.css|.qb-btn:hover{border-color:var(--gray);background:color-mix(in srgb,var(--gray) 12%,transparent)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:42] OK   /replace(style.css|.qb-row2{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:42] OK   /replace(style.css|.qb-row2:last-of-type{border-bottom:0}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:42] OK   /replace(style.css|.qb-row2 b{display:block;font:600 13px/1.3 var(--font)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:43] OK   /replace(style.css|.qb-row2 small{display:block;margin-top:3px;color:var(--gray);font:500 12px/1.4 var(--font)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:43] OK   /replace(style.css|.qb-worlds{display:none}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:44] OK   /replace(style.css|.qb-btn{padding:12px 14px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:44] OK   /replace(style.css|.qb-pill{height:38px;padding:0 14px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:45] OK   /replace(style.css|.qb-row2{padding:14px 0}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:45] OK   /replace(style.css|.qb-x,.qb-tile .qb-x{width:32px;height:32px}|.qb-x{width:32px;height:32px})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:45] OK   /replace(style.css|.qb-btn:disabled{opacity:.4;cursor:default}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:46] OK   /replace(style.css|.qb-omni .qb-mag{width:26px;height:26px;color:var(--gray);cursor:text}|.qb-omni .qb-mag{width:26px;height:26px;color:var(--gray);})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:46] OK   /replace(style.css|.qb-disp{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:0 6px 0 2px;border:0;background:transparent;color:var(--mono);font:500 14px/1.2 var(--font);text-align:left;cursor:text;overflow:hidden}|.qb-disp{flex:1;min-width:0;gap:8px;padding:0 6px 0 2px;border:0;background:transparent;color:var(--mono);text-align:left;cursor:text;overflow:hidden})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:47] OK   /replace(style.css|.qb-nm{flex:none;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700;color:var(--mono)}|.qb-nm{flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:47] OK   /replace(style.css|.qb-orb{display:block;position:absolute;left:50%;top:0;z-index:2;width:64px;height:64px;border-radius:50%;background:var(--bg);transform:translate(-50%,-50%);box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--line);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;outline:0;transition:width .4s cubic-bezier(.2,.8,.2,1),height .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease}|.qb-orb{display:block;position:absolute;left:50%;top:0;z-index:2;width:64px;height:64px;border-radius:50%;background:var(--bg);transform:translate(-50%,-50%);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;outline:0;transition:width .4s cubic-bezier(.2,.8,.2,1),height .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:48] OK   /replace(style.css|.qb-orb.on{width:104px;height:104px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:48] OK   /replace(style.css|.qb-orb .qb-zd{left:-32px;right:auto}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:49] OK   /replace(style.css|.qb-orb .qb-zu{left:auto;right:-32px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:49] OK   /replace(style.css|.qb-orb .qb-zb svg{width:16px;height:16px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:49] OK   /replace(style.css|.qb-arc{position:absolute;left:50%;top:50%;width:100px;height:100px;margin:-50px 0 0 -50px;overflow:visible;pointer-events:none;opacity:0;transition:opacity .2s ease}|.qb-arc{position:absolute;left:50%;top:50%;pointer-events:none;transition:opacity .2s ease})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:50] OK   /replace(style.css|.qb-arc path{fill:none;stroke-width:3;stroke-linecap:round}|.qb-arc path{fill:none;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:50] OK   /replace(style.css|.qb-at{stroke:var(--line)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:51] OK   /replace(style.css|.qb-af{stroke:var(--mono);stroke-dasharray:100;stroke-dashoffset:100}|.qb-af{stroke:var(--mono);stroke-dashoffset:100})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:51] OK   /replace(style.css|.qb-arc{width:144px;height:80px;margin:-72px 0 0 -72px;opacity:1}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:52] OK   /replace(style.css|.qb-arc{width:120px;height:64px;margin:-60px 0 0 -60px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:52] OK   /replace(style.css|.qb-orb .qb-zb:active{background:var(--mono);opacity:.75}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:53] OK   /replace(style.css|.qb-orb .qb-zd{left:-28px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:53] OK   /replace(style.css|.qb-orb .qb-zu{right:-28px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:54] OK   /replace(style.css|.qb-arc{width:100px;height:56px;margin:-50px 0 0 -50px;opacity:1;overflow:visible}|.qb-arc{opacity:1;overflow:visible})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:54] OK   /replace(style.css|.qb-arc .qb-at{stroke:var(--mono);stroke-width:12;stroke-linecap:butt;opacity:1}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:55] OK   /replace(style.css|.qb-arc .qb-ag{stroke:var(--bg);stroke-width:4;stroke-linecap:round;opacity:.22}|.qb-arc .qb-ag{stroke-linecap:round;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:55] OK   /replace(style.css|.qb-arc .qb-af{stroke:var(--bg);stroke-width:4;stroke-linecap:round;opacity:1;stroke-dasharray:100 200}|.qb-arc .qb-af{stroke-linecap:round;opacity:1;stroke-dasharray:100 200})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:55] OK   /replace(style.css|.qb-orb .qb-zd{left:-22px;right:auto}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:56] OK   /replace(style.css|.qb-orb .qb-zu{left:auto;right:-22px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:56] OK   /replace(style.css|.qb-arc .qb-ae{fill:none;stroke:var(--oe);stroke-width:15.6;stroke-linecap:butt;opacity:1}|.qb-arc .qb-ae{fill:none;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:57] OK   /replace(style.css|.qb-arc .qb-at{stroke:var(--ob);stroke-width:14;stroke-linecap:butt;opacity:1}|.qb-arc .qb-at{stroke:var(--ob);opacity:1})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:57] OK   /replace(style.css|.qb-orb .qb-zb svg{width:10px;height:10px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:58] OK   /replace(style.css|.qb-arc .qb-ae{stroke-width:14.2}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:58] OK   /replace(style.css|.qb-arc .qb-at{stroke-width:12.6}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:59] OK   /replace(style.css|.qb-orb .qb-zb svg{width:8px;height:8px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:59] OK   /replace(style.css|.qb-arc{width:135px;height:75.6px;margin:-67.5px 0 0 -67.5px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:13:59] OK   /replace(style.css|.qb-arc .qb-ae{stroke:var(--oi);stroke-width:15.6;opacity:1}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:00] OK   /replace(style.css|.qb-orb .qb-zb svg{width:11px;height:11px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:00] OK   /replace(style.css|.qb-arc .qb-ae{stroke:var(--oi);stroke-width:14.35;stroke-linecap:round;opacity:1}|.qb-arc .qb-ae{stroke:var(--oi);opacity:1})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:01] OK   /replace(style.css|.qb-arc .qb-at{stroke-width:12.6;stroke-linecap:round}|.qb-arc .qb-at{stroke-width:12.6;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:01] OK   /replace(style.css|.qb-omni{flex:1 1 720px;max-width:720px;margin:0 auto}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:02] OK   /replace(style.css|.qb-mob{display:none!important}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:02] OK   /replace(style.css|.btn,.qb-btn,.qb-item,.qb-w,.cs-copy{touch-action:manipulation}|.btn,.qb-item,.qb-w,.cs-copy{touch-action:manipulation})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:03] OK   /replace(style.css|.qb-star.qb-bump svg{animation:qPop .42s cubic-bezier(.2,.9,.3,1.5)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:03] OK   /replace(style.css|.qb-w.shift{transition:transform .22s cubic-bezier(.2,.8,.2,1),background .15s ease,color .15s ease}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:03] OK   /replace(style.css|.qs-pl{display:block;padding:9px 10px;border-radius:8px;color:var(--mono);font:500 13px/1.2 var(--font);text-decoration:none}|.qs-pl{padding:9px 10px;border-radius:8px;color:var(--mono);font:500 13px/1.2 var(--font);text-decoration:none})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:04] OK   /replace(style.css|.qs-card{display:grid;gap:14px;padding:16px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,transparent);text-align:left}|.qs-card{display:grid;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--gray) 6%,transparent);text-align:left})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:04] OK   /replace(style.css|.qs-card{gap:10px;padding:10px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:05] OK   /replace(style.css|.qs-card .qs-cf{padding:2px 6px 4px;border-top:0}|.qs-card .qs-cf{border-top:0})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:05] OK   /replace(style.css|.qs-acc .qs-er.ed>.qs-hit .qs-ch{transform:rotate(90deg)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:06] OK   /replace(style.css|.qs-acc .qs-ei{display:none;gap:14px;padding:0 16px 16px}|.qs-acc .qs-ei{display:none;})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:06] OK   /replace(style.css|.qs-acc .qs-ts.chal{display:block}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:07] OK   /replace(style.css|.qs-cb{display:grid;grid-template-columns:auto 1fr;gap:8px}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:07] OK   /replace(style.css|.qb-sheet .qb-empty{margin:56px 12px;text-align:center}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:08] OK   /replace(style.css|.pfx-hd{position:sticky;top:0;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg)}|.pfx-hd{position:sticky;top:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg)})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:08] OK   /replace(style.css|.pfx-cap{margin:4px 0 -6px;font-size:12px;font-weight:600;color:var(--gray)}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:08] OK   /replace(style.css|.qs-bug{display:grid;gap:8px;padding-top:12px;border-top:1px solid var(--line);animation:pageIn .2s ease}|.qs-bug{display:grid;padding-top:12px;border-top:1px solid var(--line);animation:pageIn .2s ease})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:09] OK   /replace(style.css|@media (min-width:561px){}|)
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:14:09] OK   /replace(script.js|const likeEsc = (t) => t.replace(/[%_\\]/g, '\\$&');|)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:14:09] DONE /auto(1)
+    -> 80/80 applied
