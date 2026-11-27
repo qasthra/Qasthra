@@ -3051,3 +3051,27 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-27 09:14:09] DONE /auto(1)
     -> 80/80 applied
+[2026-11-27 09:35:44] RUN  /auto(1)
+    -> 8 planner command(s)
+[2026-11-27 09:35:44] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_093544.js
+[2026-11-27 09:35:44] OK   /replace(script.js|if (!cv.offsetParent) { last = now; return; } const dt = Math.min(0.1, (now - last) / 1000), d = dark(); last = now;|if (!cv.offsetParent) { last = now; return; } const HC = document.documentElement.classList; if (HC.contains('qs-open') ? true : HC.contains('qh-open') ? true : HC.contains('pop-open')) { last = now; return; } if (!S.act && now - last < 66) return; const dt = Math.min(0.1, (now - last) / 1000), d = dark(); last = now;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:35:45] OK   /replace(script.js|new MutationObserver(scan).observe(document.body, { childList: true, subtree: true }); scan();|let sq = 0; new MutationObserver(() => { if (sq) return; sq = 1; requestAnimationFrame(() => { sq = 0; scan(); }); }).observe(document.body, { childList: true, subtree: true }); scan();)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:35:45] OK   /replace(script.js|const usage = () => { let n = 0; try {|let UC = null, UT = 0; const usage = () => { if (UC !== null && Date.now() - UT < 3000) return UC; let n = 0; try {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:35:46] OK   /replace(script.js|return n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; };|UC = n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; UT = Date.now(); return UC; };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 09:35:46] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261127_093546.css
+[2026-11-27 09:35:46] OK   /replace(style.css|html.qs-open,html.qs-open *{scrollbar-width:none;-ms-overflow-style:none}|html.qs-open,.qs,.qs *{scrollbar-width:none;-ms-overflow-style:none})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:35:47] OK   /replace(style.css|html.qs-open::-webkit-scrollbar,html.qs-open *::-webkit-scrollbar{display:none;width:0;height:0}|html.qs-open::-webkit-scrollbar,.qs::-webkit-scrollbar,.qs *::-webkit-scrollbar{display:none;width:0;height:0})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:35:47] OK   /replace(style.css|color:var(--mono);padding:0 0 env(safe-area-inset-bottom,0px);animation:pageIn .3s cubic-bezier(.2,.8,.2,1)}|color:var(--mono);padding:0 0 env(safe-area-inset-bottom,0px);animation:pageIn .16s cubic-bezier(.2,.8,.2,1)})
+    -> Replaced 1 occurrence(s) in style.css
+[2026-11-27 09:35:47] OK   /append(style.css|button,a,summary,[role="button"],[role="switch"],.qs-row,.qs-nv,.qs-op,.qs-ct{touch-action:manipulation;-webkit-tap-highlight-color:transparent}.qs-hit:active,.qs-nv:active,.qs-op:active{background:color-mix(in srgb,var(--gray) 14%,transparent)})
+    -> Appended to style.css
+[2026-11-27 09:35:47] DONE /auto(1)
+    -> 8/8 applied
