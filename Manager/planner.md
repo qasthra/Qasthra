@@ -1,2 +1,4 @@
-# Qasthra: keep the welcome card until the popup card appears while nudging
-/replace(script.js|} else { drop(c); if (!(b && !b.classList.contains('out'))) {|} else { if (q('.sc', v)) drop(c); if (!(b && !b.classList.contains('out'))) {)
+# Qasthra: screen mode (expand/shrink) persists across searches and tabs
+/replace(script.js|const rs = (s) => { s.classList.remove('full'); const b = s.querySelector('.sc-ex'); if (b) { b.setAttribute('aria-label', 'Expand'); b.setAttribute('aria-pressed', 'false'); } };|const fm = () => { try { return localStorage.getItem('qb:full') === '1'; } catch (e) { return false; } }; const rs = (s) => { const f = fm(); s.classList.toggle('full', f); const b = s.querySelector('.sc-ex'); if (b) { b.setAttribute('aria-label', f ? 'Shrink' : 'Expand'); b.setAttribute('aria-pressed', String(f)); } };)
+/replace(script.js|})); return s; }; const body = (o, fresh) => {|})); rs(s); return s; }; const body = (o, fresh) => {)
+/replace(script.js|on = s.classList.toggle('full'); b.setAttribute('aria-label', on ? 'Shrink' : 'Expand');|on = s.classList.toggle('full'); try { localStorage.setItem('qb:full', on ? '1' : '0'); } catch (e) {} b.setAttribute('aria-label', on ? 'Shrink' : 'Expand');)

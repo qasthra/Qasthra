@@ -3647,3 +3647,15 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-27 20:51:47] DONE /auto(1)
     -> 1/1 applied
+[2026-11-27 21:00:58] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-27 21:00:59] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261127_210059.js
+[2026-11-27 21:00:59] OK   /replace(script.js|const rs = (s) => { s.classList.remove('full'); const b = s.querySelector('.sc-ex'); if (b) { b.setAttribute('aria-label', 'Expand'); b.setAttribute('aria-pressed', 'false'); } };|const fm = () => { try { return localStorage.getItem('qb:full') === '1'; } catch (e) { return false; } }; const rs = (s) => { const f = fm(); s.classList.toggle('full', f); const b = s.querySelector('.sc-ex'); if (b) { b.setAttribute('aria-label', f ? 'Shrink' : 'Expand'); b.setAttribute('aria-pressed', String(f)); } };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 21:01:00] OK   /replace(script.js|})); return s; }; const body = (o, fresh) => {|})); rs(s); return s; }; const body = (o, fresh) => {)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 21:01:01] OK   /replace(script.js|on = s.classList.toggle('full'); b.setAttribute('aria-label', on ? 'Shrink' : 'Expand');|on = s.classList.toggle('full'); try { localStorage.setItem('qb:full', on ? '1' : '0'); } catch (e) {} b.setAttribute('aria-label', on ? 'Shrink' : 'Expand');)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-27 21:01:01] DONE /auto(1)
+    -> 3/3 applied
