@@ -1,4 +1,19 @@
-# sw.js: cache v5, offline Qast logo, cache-first media
-/replace(sw.js|qasthra-offline-v4|qasthra-offline-v5)
-/replace(sw.js|'Sources/Icons/Qasthra.svg', 'Sources/Images/Qasthra-192.png'];|'Sources/Icons/Qasthra.svg', 'Sources/Icons/Qast.svg', 'Sources/Images/Qasthra-192.png'];)
-/replace(sw.js|const res = await fetch(r, { cache: 'no-cache' });|const media = u.pathname.indexOf('/Sources/') >= 0;\n      if (media) { const hit0 = await caches.match(r); if (hit0) return hit0; }\n      const res = await fetch(r, { cache: media ? 'default' : 'no-cache' });)
+# 1: home globe. 120 to 80 nodes, stop rendering off home, only update colors that changed
+/replace(script.js|const N = 120;|const N = 80;)
+/replace(script.js|if (!visible |if (document.documentElement.dataset.screen !== 'home' || !visible )
+/replace(script.js|const lit = new Uint8Array(synCount).fill(1);|const lit = new Uint8Array(synCount).fill(1); const nodeLit = new Uint8Array(N).fill(1);)
+/replace(script.js|theme(); lit.fill(1);|theme(); lit.fill(1); nodeLit.fill(1);)
+/replace(script.js|let changed = false;|let changed = false, nodeChanged = false;)
+/replace(script.js|const g = glowNode[i] *= decay;|if (glowNode[i] < .004 && !nodeLit[i]) continue; const g = glowNode[i] *= decay; nodeLit[i] = g < .004 ? 0 : 1; nodeChanged = true;)
+/replace(script.js|nodes.instanceColor.needsUpdate = true;|if (nodeChanged) nodes.instanceColor.needsUpdate = true;)
+/replace(script.js|nodes.instanceMatrix.needsUpdate = true;|if (nodeChanged) nodes.instanceMatrix.needsUpdate = true;)
+# 2/3: dashboard orb. Do not create a WebGL context for the hidden orb
+/replace(script.js|if (document.getElementById('qload')) { setTimeout(bootBall, 250); return; }|if (document.getElementById('qload') || !cv.offsetParent) { setTimeout(bootBall, 400); return; })
+# 4: dashboard background. Static masks, GPU-rotated beams
+/replace(script.js|b.setAttribute('aria-hidden', 'true'); v.insertBefore(b, v.firstChild);|b.setAttribute('aria-hidden', 'true'); b.innerHTML = '<span class="wr wt"><i></i></span><span class="wr wl"><i></i></span>'; v.insertBefore(b, v.firstChild);)
+/append(style.css|.wb::before,.wb::after{display:none!important;animation:none!important}.wr{position:absolute;inset:0;pointer-events:none}.wr i{position:absolute;display:block;will-change:transform;backface-visibility:hidden}@keyframes wl-t2{from{transform:rotate(0deg)}to{transform:rotate(90deg)}}@keyframes wl-b2{from{transform:rotate(0deg)}to{transform:rotate(80deg)}})
+/append(style.css|.wt{-webkit-mask-image:radial-gradient(circle var(--r1) at 50% calc(43% - var(--r1)),transparent 0,transparent 94%,#000 99.3%,transparent 100%);mask-image:radial-gradient(circle var(--r1) at 50% calc(43% - var(--r1)),transparent 0,transparent 94%,#000 99.3%,transparent 100%)}.wt i{left:50%;top:calc(43% - var(--r1));width:calc(var(--r1)*2.2);height:calc(var(--r1)*2.2);margin:calc(var(--r1)*-1.1) 0 0 calc(var(--r1)*-1.1);background:conic-gradient(from 124deg,transparent 0deg,color-mix(in srgb,var(--mono) 18%,transparent) 5deg,color-mix(in srgb,var(--mono) 95%,transparent) 11deg,color-mix(in srgb,var(--mono) 18%,transparent) 17deg,transparent 24deg,transparent 360deg);animation:wl-t2 4s ease-in-out infinite alternate})
+/append(style.css|.wl{-webkit-mask-image:radial-gradient(ellipse var(--r2) var(--r2h) at 50% calc(59% + var(--r2h)),transparent 0,transparent 93%,#000 98.4%,transparent 100%);mask-image:radial-gradient(ellipse var(--r2) var(--r2h) at 50% calc(59% + var(--r2h)),transparent 0,transparent 93%,#000 98.4%,transparent 100%)}.wl i{left:50%;top:calc(59% + var(--r2h));width:calc(var(--r2)*2.2);height:calc(var(--r2)*2.2);margin:calc(var(--r2)*-1.1) 0 0 calc(var(--r2)*-1.1);background:conic-gradient(from -50deg,transparent 0deg,color-mix(in srgb,var(--mono) 14%,transparent) 5deg,color-mix(in srgb,var(--mono) 80%,transparent) 11deg,color-mix(in srgb,var(--mono) 14%,transparent) 17deg,transparent 24deg,transparent 360deg);animation:wl-b2 4s ease-in-out -2s infinite alternate-reverse})
+/append(style.css|:root[data-motion="reduce"] .wt i{animation:none;transform:rotate(45deg)}:root[data-motion="reduce"] .wl i{animation:none;transform:rotate(39deg)}@media (prefers-reduced-motion:reduce){.wt i{animation:none;transform:rotate(45deg)}.wl i{animation:none;transform:rotate(39deg)}})
+# 5: welcome card. Remove blur, solid tinted card
+/replace(style.css|background:color-mix(in srgb,var(--bg) 80%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);|background:color-mix(in srgb,var(--gray) 6%,var(--bg));)
