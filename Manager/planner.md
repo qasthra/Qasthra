@@ -1,8 +1,4 @@
-/replace(script.js|if (!cv.offsetParent) { last = now; return; } const dt = Math.min(0.1, (now - last) / 1000), d = dark(); last = now;|if (!cv.offsetParent) { last = now; return; } const HC = document.documentElement.classList; if (HC.contains('qs-open') ? true : HC.contains('qh-open') ? true : HC.contains('pop-open')) { last = now; return; } if (!S.act && now - last < 66) return; const dt = Math.min(0.1, (now - last) / 1000), d = dark(); last = now;)
-/replace(script.js|new MutationObserver(scan).observe(document.body, { childList: true, subtree: true }); scan();|let sq = 0; new MutationObserver(() => { if (sq) return; sq = 1; requestAnimationFrame(() => { sq = 0; scan(); }); }).observe(document.body, { childList: true, subtree: true }); scan();)
-/replace(script.js|const usage = () => { let n = 0; try {|let UC = null, UT = 0; const usage = () => { if (UC !== null && Date.now() - UT < 3000) return UC; let n = 0; try {)
-/replace(script.js|return n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; };|UC = n < 1024 ? n + ' B' : (n / 1024).toFixed(1) + ' KB'; UT = Date.now(); return UC; };)
-/replace(style.css|html.qs-open,html.qs-open *{scrollbar-width:none;-ms-overflow-style:none}|html.qs-open,.qs,.qs *{scrollbar-width:none;-ms-overflow-style:none})
-/replace(style.css|html.qs-open::-webkit-scrollbar,html.qs-open *::-webkit-scrollbar{display:none;width:0;height:0}|html.qs-open::-webkit-scrollbar,.qs::-webkit-scrollbar,.qs *::-webkit-scrollbar{display:none;width:0;height:0})
-/replace(style.css|color:var(--mono);padding:0 0 env(safe-area-inset-bottom,0px);animation:pageIn .3s cubic-bezier(.2,.8,.2,1)}|color:var(--mono);padding:0 0 env(safe-area-inset-bottom,0px);animation:pageIn .16s cubic-bezier(.2,.8,.2,1)})
-/append(style.css|button,a,summary,[role="button"],[role="switch"],.qs-row,.qs-nv,.qs-op,.qs-ct{touch-action:manipulation;-webkit-tap-highlight-color:transparent}.qs-hit:active,.qs-nv:active,.qs-op:active{background:color-mix(in srgb,var(--gray) 14%,transparent)})
+# sw.js: cache v5, offline Qast logo, cache-first media
+/replace(sw.js|qasthra-offline-v4|qasthra-offline-v5)
+/replace(sw.js|'Sources/Icons/Qasthra.svg', 'Sources/Images/Qasthra-192.png'];|'Sources/Icons/Qasthra.svg', 'Sources/Icons/Qast.svg', 'Sources/Images/Qasthra-192.png'];)
+/replace(sw.js|const res = await fetch(r, { cache: 'no-cache' });|const media = u.pathname.indexOf('/Sources/') >= 0;\n      if (media) { const hit0 = await caches.match(r); if (hit0) return hit0; }\n      const res = await fetch(r, { cache: media ? 'default' : 'no-cache' });)

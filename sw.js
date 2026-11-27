@@ -1,7 +1,7 @@
 // Qasthra service worker: network-first so updates always arrive, cache only as an offline fallback.
-const CACHE = 'qasthra-offline-v4';
+const CACHE = 'qasthra-offline-v5';
 const SHELL = ['./', 'index.html', 'style.css', 'script.js', 'manifest.webmanifest',
-               'Sources/Icons/Qasthra.svg', 'Sources/Images/Qasthra-192.png'];
+               'Sources/Icons/Qasthra.svg', 'Sources/Icons/Qast.svg', 'Sources/Images/Qasthra-192.png'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();
@@ -22,7 +22,9 @@ self.addEventListener('fetch', e => {
   if (u.origin !== location.origin) return; // Supabase, Turnstile, fonts and CDNs are never touched
   e.respondWith((async () => {
     try {
-      const res = await fetch(r, { cache: 'no-cache' });
+      const media = u.pathname.indexOf('/Sources/') >= 0;
+      if (media) { const hit0 = await caches.match(r); if (hit0) return hit0; }
+      const res = await fetch(r, { cache: media ? 'default' : 'no-cache' });
       if (res.status === 200) {
         const c = await caches.open(CACHE);
         c.put(r, res.clone()).catch(() => {});
