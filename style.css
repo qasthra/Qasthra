@@ -728,3 +728,35 @@ html:has(.sc) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-a
 html:has(.qb-stage),html:has(.qb-stage) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}html:has(.qb-stage) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden}
 .au-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .qs-cp{margin:0;padding:0 10px 6px;border-top:0;white-space:normal;line-height:1.4}
+/* Accent */
+:root{--accent:var(--mono);--accent-ink:var(--mono-ink)}
+html[data-accent="red"]{--ad:#f87171;--al:#dc2626;--il:#fff}
+html[data-accent="orange"]{--ad:#fb923c;--al:#c2410c;--il:#fff}
+html[data-accent="yellow"]{--ad:#facc15;--al:#ca8a04;--il:#050505}
+html[data-accent="green"]{--ad:#4ade80;--al:#15803d;--il:#fff}
+html[data-accent="teal"]{--ad:#2dd4bf;--al:#0f766e;--il:#fff}
+html[data-accent="blue"]{--ad:#60a5fa;--al:#2563eb;--il:#fff}
+html[data-accent="indigo"]{--ad:#818cf8;--al:#4f46e5;--il:#fff}
+html[data-accent="purple"]{--ad:#c084fc;--al:#7e22ce;--il:#fff}
+html[data-accent="pink"]{--ad:#f472b6;--al:#db2777;--il:#fff}
+html[data-accent]{--accent:var(--ad);--accent-ink:#050505}
+@media (prefers-color-scheme:light){html[data-accent]:not([data-theme="dark"]){--accent:var(--al);--accent-ink:var(--il)}}
+html[data-accent][data-theme="light"]{--accent:var(--al);--accent-ink:var(--il)}
+.btn.btn-mono{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nav .btn-nav.active,.nav .nav-text.active{color:var(--accent)}
+.nav .nav-links .btn-nav.active{border-color:var(--accent)}
+.qb-w[aria-selected="true"]{color:var(--accent)}
+.qb-sw[aria-checked="true"]{background:var(--accent);border-color:var(--accent)}
+.qb-sw[aria-checked="true"]::after{background:var(--accent-ink)}
+.qs-rng{accent-color:var(--accent)}
+html:root :focus-visible{outline-color:var(--accent)}
+.qb-orb:focus-visible{box-shadow:0 0 0 5px var(--bg),0 0 0 7px var(--accent)}
+.qb-kirby .qb-orb:focus-visible{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent)}
+.cs-f input:focus,.cs-f textarea:focus,.cs-f select:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.cs-txt a:hover,.au-links a:hover{color:var(--accent)}
+.cs-note[data-ok="1"]{color:var(--accent)}
+.qs-op[aria-selected="true"] svg{color:var(--accent)}
+html[data-accent] ::selection{background:var(--accent);color:var(--accent-ink)}
+.qs-sw-g{display:grid;grid-template-columns:repeat(5,32px);justify-content:space-between;row-gap:14px;padding:4px 2px 16px}
+.qs-ac{width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:box-shadow .15s ease}
+.qs-ac[aria-checked="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--mono)}
