@@ -1,3 +1,10 @@
-/replace(script.js|const on = e.k === 'coord' && document.activeElement !== i;|const prof = e.k === 'search' && e.q.charAt(0) === '@'; const on = (e.k === 'coord' || prof) && document.activeElement !== i;)
-/replace(script.js|d.firstChild.textContent = siteName(e.c); d.lastChild.textContent = e.q;|d.firstChild.textContent = prof ? e.q : siteName(e.c); d.lastChild.textContent = prof ? 'Profile' : e.q;)
-/append(style.css|.sc-body:has(>.qb-pfv){padding:0}.sc .qb-pfv .pfx{padding-top:0;min-height:0}.sc .pfx-cv{position:relative;z-index:0}.sc .pfx-bd{position:relative;z-index:1}.pfx-who{position:relative;left:auto;right:auto;top:auto;height:auto;display:block;padding-top:2px}.pfx-act{height:56px}@media (min-width:900px){.pfx-act{height:68px}.pfx-who{left:auto;top:auto;height:auto}})
+# Contributions counter + K/M/B formatter
+/replace(script.js|var P={},DB=function(){return window.db},|var P={},DB=function(){return window.db},fmtN=function(n){n=Number(n)||0;if(n<1000)return String(Math.max(0,Math.floor(n)));var u=['K','M','B','T'],i=-1,v=n;while(v>=1000&&i<3){v/=1000;i++}return (Math.floor(v*10)/10).toFixed(1)+u[i]},)
+/replace(script.js|pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}|pc.appendChild(mk('b','',fmtN(d.partners_count)));st.appendChild(pc)}if(d.contributions_count!=null){var cc=mk('span');cc.appendChild(document.createTextNode('Contributions: '));cc.appendChild(mk('b','',fmtN(d.contributions_count)));st.appendChild(cc)})
+/replace(script.js|t:d.partners_count+' Partners'|t:fmtN(d.partners_count)+' Partners')
+/replace(script.js|sp=pick(d.show_partners),nm=d.display_name|sp=pick(d.show_partners),sq=pick(d.show_contributions||'partners'),nm=d.display_name)
+/replace(script.js|body.appendChild(field('Partners',sp));|body.appendChild(field('Partners',sp));body.appendChild(field('Contributions',sq));)
+/replace(script.js|v0=[sa.value,sp.value]|v0=[sa.value,sp.value,sq.value])
+/replace(script.js|if(sp.value!==v0[1])ch=true;|if(sp.value!==v0[1])ch=true;if(sq.value!==v0[2])ch=true;)
+/replace(script.js|v0[n+2]|v0[n+3])
+/replace(script.js|show_partners:sp.value,info_vis:|show_partners:sp.value,show_contributions:sq.value,info_vis:)
