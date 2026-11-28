@@ -3787,3 +3787,17 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-28 08:57:43] DONE /auto(1)
     -> 7/7 applied
+[2026-11-28 09:05:43] RUN  /auto(1)
+    -> 3 planner command(s)
+[2026-11-28 09:05:44] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261128_090544.js
+[2026-11-28 09:05:44] OK   /replace(script.js|const on = e.k === 'coord' && document.activeElement !== i;|const prof = e.k === 'search' && e.q.charAt(0) === '@'; const on = (e.k === 'coord' || prof) && document.activeElement !== i;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 09:05:45] OK   /replace(script.js|d.firstChild.textContent = siteName(e.c); d.lastChild.textContent = e.q;|d.firstChild.textContent = prof ? e.q : siteName(e.c); d.lastChild.textContent = prof ? 'Profile' : e.q;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 09:05:46] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261128_090546.css
+[2026-11-28 09:05:46] OK   /append(style.css|.sc-body:has(>.qb-pfv){padding:0}.sc .qb-pfv .pfx{padding-top:0;min-height:0}.sc .pfx-cv{position:relative;z-index:0}.sc .pfx-bd{position:relative;z-index:1}.pfx-who{position:relative;left:auto;right:auto;top:auto;height:auto;display:block;padding-top:2px}.pfx-act{height:56px}@media (min-width:900px){.pfx-act{height:68px}.pfx-who{left:auto;top:auto;height:auto}})
+    -> Appended to style.css
+[2026-11-28 09:05:46] DONE /auto(1)
+    -> 3/3 applied
