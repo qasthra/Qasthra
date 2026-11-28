@@ -1,3 +1,3 @@
-# Reserved username message: add official brand note and Contact link
-/replace(script.js|if (ue) { say(ue); return; }|if (ue) { say(ue); if (/reserved/.test(ue)) { note.append(' Official brand or company? Request it through '); const a = document.createElement('a'); a.href = '#contact'; a.textContent = 'Contact'; note.append(a, '.'); } return; })
-/append(style.css|.au-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px})
+# Settings "i" popup: add copyright line under the version
+/replace(script.js|<span>24/11/26</span></p></div></header>|<span>24/11/26</span></p><p class="qs-ver qs-cp"><span>Copyright 2026 Qasthra. All rights reserved.</span></p></div></header>)
+/append(style.css|.qs-cp{margin:0;padding:0 10px 6px;border-top:0;white-space:normal;line-height:1.4})
