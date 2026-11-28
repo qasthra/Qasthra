@@ -760,3 +760,4 @@ html[data-accent] ::selection{background:var(--accent);color:var(--accent-ink)}
 .qs-sw-g{display:grid;grid-template-columns:repeat(5,28px);justify-content:start;column-gap:20px;row-gap:16px;padding:14px 20px 16px}
 .qs-ac{width:28px;height:28px;padding:0;border:1px solid var(--line);border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:box-shadow .15s ease}
 .qs-ac[aria-checked="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--mono)}
+.nav .nav-socbtn{display:none !important} @media (max-width:1199px){.nav .nav-soc{display:none !important}.nav .nav-socbtn{display:inline-flex !important}} @media (min-width:1200px){.nav .nav-soc{padding:6px 8px}}
