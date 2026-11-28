@@ -3875,3 +3875,37 @@
     -> Replaced 1 occurrence(s) in style.css
 [2026-11-28 10:12:51] DONE /auto(1)
     -> 7/7 applied
+[2026-11-28 10:28:28] RUN  /auto(1)
+    -> 13 planner command(s)
+[2026-11-28 10:28:28] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261128_102828.js
+[2026-11-28 10:28:28] OK   /replace(script.js|const session = () => { if (sP) return sP;|const session = () => { if (sP) return sP; try { if (localStorage.getItem('qs:guest') === '1') return Promise.resolve({ guest: true, user: { id: null, user_metadata: {} } }); } catch (e) {})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:29] OK   /replace(script.js|const signOut = async () => { document.documentElement.classList.add('qx'); sP = null;|const signOut = async () => { document.documentElement.classList.add('qx'); sP = null; try { localStorage.removeItem('qs:guest'); } catch (e) {})
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:29] OK   /replace(script.js|au-go" type="submit">Continue</button>'|au-go" type="submit">Continue</button>' + '<button class="btn btn-second au-guest" type="button">Continue as Guest</button>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:29] OK   /replace(script.js|host.innerHTML = AUTH;|host.innerHTML = AUTH; { const gb = host.querySelector('.au-guest'); if (gb) gb.addEventListener('click', () => { try { localStorage.setItem('qs:guest', '1'); } catch (e) {} sP = null; location.replace('#dashboard'); }); })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:30] OK   /replace(script.js|type="button">Contribute</button></div>'|type="button">' + (window.QGUEST && window.QGUEST.on() ? 'Upgrade' : 'Contribute') + '</button></div>')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:30] OK   /replace(script.js|<button class="qs-pill qs-circ" type="button" data-do="manage" aria-label="Edit">' + ic('pencil') + '</button>|' + (window.QGUEST && window.QGUEST.on() ? '<button class="qs-pill" type="button" data-do="manage" aria-label="Upgrade"><span>Upgrade</span></button>' : '<button class="qs-pill qs-circ" type="button" data-do="manage" aria-label="Edit">' + ic('pencil') + '</button>') + ')
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:31] OK   /replace(script.js|manage: () => { root.dataset.v = 'acc'; root.scrollTop = 0; },|manage: () => { if (window.QGUEST && window.QGUEST.on()) { window.QGUEST.upgrade(); return; } root.dataset.v = 'acc'; root.scrollTop = 0; },)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:31] OK   /replace(script.js|root.querySelectorAll('[data-nm]').forEach((x) => { x.textContent = nm; });|root.querySelectorAll('[data-nm]').forEach((x) => { x.textContent = window.QGUEST && window.QGUEST.on() ? 'Guest' : nm; });)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:32] OK   /replace(script.js|x.textContent = m.username ? '@' + m.username : '';|const gu = window.QGUEST && window.QGUEST.on(); x.classList.toggle('qs-gb', !!gu); x.textContent = gu ? 'Guest mode' : m.username ? '@' + m.username : '';)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:32] OK   /replace(script.js|if (window.QPROF) window.QPROF.mount(p, null); };|if (window.QGUEST && window.QGUEST.on()) { window.QGUEST.profile(p); return; } if (window.QPROF) window.QPROF.mount(p, null); };)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:33] OK   /replace(script.js|P.card=async function(f){|P.card=async function(f){if(window.QGUEST&&window.QGUEST.on())return;)
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 10:28:33] OK   /append(script.js|(() => { const K = 'qs:guest'; const on = () => { try { return localStorage.getItem(K) === '1'; } catch (e) { return false; } }; const upgrade = () => { try { localStorage.removeItem(K); } catch (e) {} try { if (window.QSET) window.QSET.close(); } catch (e) {} document.querySelectorAll('.qs-pf').forEach((x) => x.remove()); location.hash = 'signin'; }; const profile = (p) => { const w = document.createElement('div'); w.className = 'gp'; w.innerHTML = '<div class="gp-av" aria-hidden="true"><svg viewBox="3.5 3.8 17 17.2" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.7 3.8-7.5 8.5-7.5s8.5 2.8 8.5 7.5z"/></svg></div><h2 class="gp-nm">Guest</h2><button class="btn btn-mono gp-up" type="button">Upgrade</button>'; p.appendChild(w); w.querySelector('.gp-up').addEventListener('click', upgrade); }; window.QGUEST = { on: on, upgrade: upgrade, profile: profile }; window.addEventListener('click', (e) => { if (!on()) return; const b = e.target.closest ? e.target.closest('.wc-go') : null; if (!b) return; e.preventDefault(); e.stopImmediatePropagation(); upgrade(); }, true); })();)
+    -> Appended to script.js
+[2026-11-28 10:28:33] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261128_102833.css
+[2026-11-28 10:28:34] OK   /append(style.css|.au-guest{width:100%;padding:14px 28px}.au-card.up .au-guest{display:none}.qs-un.qs-gb{display:inline-block;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--mono);font:600 11px/1.2 var(--font)}.gp{min-height:100%;display:grid;align-content:center;justify-items:center;gap:14px;padding:64px 24px;text-align:center}.gp-av{width:96px;height:96px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--mono) 8%,transparent);color:var(--gray)}.gp-av svg{width:56px;height:56px}.gp-nm{margin:0;font:700 24px/1.2 var(--font)}.gp-up{padding:12px 28px})
+    -> Appended to style.css
+[2026-11-28 10:28:34] DONE /auto(1)
+    -> 13/13 applied
