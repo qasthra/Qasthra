@@ -757,6 +757,6 @@ html:root :focus-visible{outline-color:var(--accent)}
 .cs-note[data-ok="1"]{color:var(--accent)}
 .qs-op[aria-selected="true"] svg{color:var(--accent)}
 html[data-accent] ::selection{background:var(--accent);color:var(--accent-ink)}
-.qs-sw-g{display:grid;grid-template-columns:repeat(5,32px);justify-content:space-between;row-gap:14px;padding:4px 2px 16px}
-.qs-ac{width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:box-shadow .15s ease}
+.qs-sw-g{display:grid;grid-template-columns:repeat(5,28px);justify-content:start;column-gap:20px;row-gap:16px;padding:14px 20px 16px}
+.qs-ac{width:28px;height:28px;padding:0;border:1px solid var(--line);border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:box-shadow .15s ease}
 .qs-ac[aria-checked="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--mono)}
