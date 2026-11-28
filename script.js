@@ -653,7 +653,7 @@ show.setAttribute('aria-expanded', 'false'); show.addEventListener('click', () =
       const uname = clean(d.get('username')).toLowerCase(), pass = String(d.get('password') || '');
       const ue = userErr(uname);
       if (!uname) { say('Enter your username.'); return; }
-      if (ue) { say(ue); return; }
+      if (ue) { say(ue); if (/reserved/.test(ue)) { note.append(' Official brand or company? Request it through '); const a = document.createElement('a'); a.href = '#contact'; a.textContent = 'Contact'; note.append(a, '.'); } return; }
       const email = addr(uname);
       if (mode === 'up') { seen.delete(uname); const h1 = await lookup(uname); if (h1 === true) { exists = true; say(TAKEN); return; } if (h1 === null) { say('Could not check this username. Try again in a moment.'); return; } }
       if (mode === 'in') { if (exists === null) { busy = true; btn.disabled = true; const has0 = await lookup(uname); busy = false; btn.disabled = false; if (has0 !== null) exists = has0; else { say('Could not check this username. Try again in a moment.'); return; } } if (exists === false) { toUp(); say('This username is free. Choose a password and fill in the details to create your account.'); return; } }

@@ -3675,3 +3675,15 @@
     -> Replaced 1 occurrence(s) in script.js
 [2026-11-28 08:15:51] DONE /auto(1)
     -> 1/1 applied
+[2026-11-28 08:21:01] RUN  /auto(1)
+    -> 2 planner command(s)
+[2026-11-28 08:21:02] OK   [auto] /backup(script.js)
+    -> Backup saved: Materials/Backups/JS/script_20261128_082102.js
+[2026-11-28 08:21:03] OK   /replace(script.js|if (ue) { say(ue); return; }|if (ue) { say(ue); if (/reserved/.test(ue)) { note.append(' Official brand or company? Request it through '); const a = document.createElement('a'); a.href = '#contact'; a.textContent = 'Contact'; note.append(a, '.'); } return; })
+    -> Replaced 1 occurrence(s) in script.js
+[2026-11-28 08:21:04] OK   [auto] /backup(style.css)
+    -> Backup saved: Materials/Backups/CSS/style_20261128_082104.css
+[2026-11-28 08:21:04] OK   /append(style.css|.au-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px})
+    -> Appended to style.css
+[2026-11-28 08:21:04] DONE /auto(1)
+    -> 2/2 applied

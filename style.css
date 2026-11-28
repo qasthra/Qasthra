@@ -726,3 +726,4 @@ html:has(.sc),html:has(.sc) body{height:100dvh;min-height:0;box-sizing:border-bo
 html:has(.sc) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden}
 
 html:has(.qb-stage),html:has(.qb-stage) body{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;overscroll-behavior:none}html:has(.qb-stage) .qa{height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;overflow:hidden}
+.au-note a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px}
