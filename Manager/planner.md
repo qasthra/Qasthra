@@ -1,10 +1,8 @@
-# Contributions counter + K/M/B formatter
-/replace(script.js|var P={},DB=function(){return window.db},|var P={},DB=function(){return window.db},fmtN=function(n){n=Number(n)||0;if(n<1000)return String(Math.max(0,Math.floor(n)));var u=['K','M','B','T'],i=-1,v=n;while(v>=1000&&i<3){v/=1000;i++}return (Math.floor(v*10)/10).toFixed(1)+u[i]},)
-/replace(script.js|pc.appendChild(mk('b','',String(d.partners_count)));st.appendChild(pc)}|pc.appendChild(mk('b','',fmtN(d.partners_count)));st.appendChild(pc)}if(d.contributions_count!=null){var cc=mk('span');cc.appendChild(document.createTextNode('Contributions: '));cc.appendChild(mk('b','',fmtN(d.contributions_count)));st.appendChild(cc)})
-/replace(script.js|t:d.partners_count+' Partners'|t:fmtN(d.partners_count)+' Partners')
-/replace(script.js|sp=pick(d.show_partners),nm=d.display_name|sp=pick(d.show_partners),sq=pick(d.show_contributions||'partners'),nm=d.display_name)
-/replace(script.js|body.appendChild(field('Partners',sp));|body.appendChild(field('Partners',sp));body.appendChild(field('Contributions',sq));)
-/replace(script.js|v0=[sa.value,sp.value]|v0=[sa.value,sp.value,sq.value])
-/replace(script.js|if(sp.value!==v0[1])ch=true;|if(sp.value!==v0[1])ch=true;if(sq.value!==v0[2])ch=true;)
-/replace(script.js|v0[n+2]|v0[n+3])
-/replace(script.js|show_partners:sp.value,info_vis:|show_partners:sp.value,show_contributions:sq.value,info_vis:)
+# Remove month titles from 3D contributions globe
+/replace(script.js|,lab=mk('div','cg-l')|)
+/replace(script.js|const spans=MON.map((m)=>{const s=mk('span','',m);lab.appendChild(s);return s});|)
+/replace(script.js|wrap.append(lab,cv)|wrap.append(cv))
+/replace(script.js|const lbls=()=>{const h=cv.clientHeight;for(let m=0;m<12;m++){v.set(0,Math.sin((70-m*140/11)*Math.PI/180),0).applyMatrix4(grp.matrixWorld).project(cam);spans[m].style.transform='translateY('+((-v.y*.5+.5)*h)+'px) translateY(-50%)'}};|)
+/replace(script.js|paint();lbls();r.render|paint();r.render)
+/replace(style.css|.cg-l{position:absolute;left:0;top:0;width:34px;height:100%;pointer-events:none}|)
+/replace(style.css|.cg-l span{position:absolute;left:0;top:0;width:34px;text-align:right;color:var(--gray);font:600 10px/1 var(--font);will-change:transform}|)
